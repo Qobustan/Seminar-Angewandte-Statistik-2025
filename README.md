@@ -16,7 +16,6 @@ CI / GitHub Actions:
 
 Compilar localmente:
 - Instala TeX Live o TinyTeX y `latexmk`.
-- Instala Java (JDK 11+).
 - Genera o añade el Gradle Wrapper (recomendado).
 - Ejecuta:
   ```bash

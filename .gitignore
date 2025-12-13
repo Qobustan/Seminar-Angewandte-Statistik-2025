@@ -1,18 +1,74 @@
-# This .gitignore is appropriate for repositories deployed to GitHub Pages and using
-# a Gemfile as specified at https://github.com/github/pages-gem#conventional
+# -----------------------
+# LaTeX auxiliary files
+# -----------------------
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.ist
+*.acr
+*.alg
+*.synctex.gz
+*.fdb_latexmk
+*.run.xml
+*.auxlock
 
-# Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+# -----------------------
+# Output / build folders
+# -----------------------
+build/
+out/
+dist/
+*.zip
 
-# Additional Ruby/bundler ignore for when you run: bundle install
-/vendor
+# If you don't want to track generated PDFs in the repo:
+# seminar_skript.pdf
+# seminar_presentation.pdf
+# *.pdf
 
-# Specific ignore for GitHub Pages
-# GitHub Pages will always use its own deployed version of pages-gem 
-# This means GitHub Pages will NOT use your Gemfile.lock and therefore it is
-# counterproductive to check this file into the repository.
-# Details at https://github.com/github/pages-gem/issues/768
-Gemfile.lock
+# -----------------------
+# Images / binaries that may be large
+# -----------------------
+*.eps~
+*.svg~
+*.ai~
+*.psd
+*.xcf
+
+# -----------------------
+# Gradle / Java artifacts
+# -----------------------
+.gradle/
+.gradle-cache/
+gradle-app.setting
+/.settings/
+# keep gradle wrapper files in repo (gradlew, gradle/wrapper/**)
+
+# -----------------------
+# Editors / OS
+# -----------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+*.swp
+
+# TeXstudio specific
+*.txs-profile
+*.txs-undo

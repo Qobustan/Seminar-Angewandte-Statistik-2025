@@ -47,10 +47,16 @@ jobs:
               wget
             wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
             tar -xvzf install-tl-unx.tar.gz
-            # Finde das installierte Verzeichnis (sollte nur eines sein)
+            # Finde das Verzeichnis korrekt
             INSTALL_DIR=$(find . -maxdepth 1 -type d -name 'install-tl-*' | head -n 1)
+            if [ -z "$INSTALL_DIR" ]; then
+              echo "Installation directory not found, aborting."
+              exit 1
+            fi
+            echo "Entering installation directory: $INSTALL_DIR"
             cd "$INSTALL_DIR"
-            sudo perl install-tl --no-admin
+            # Entfernen der --no-admin Option, um eine korrekte Installation durchzuführen
+            sudo perl install-tl
             tlmgr install collection-latexrecommended
             tlmgr install collection-fontsrecommended
             tlmgr install inconsolata
@@ -123,10 +129,16 @@ jobs:
               wget
             wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
             tar -xvzf install-tl-unx.tar.gz
-            # Finde das installierte Verzeichnis (sollte nur eines sein)
+            # Finde das Verzeichnis korrekt
             INSTALL_DIR=$(find . -maxdepth 1 -type d -name 'install-tl-*' | head -n 1)
+            if [ -z "$INSTALL_DIR" ]; then
+              echo "Installation directory not found, aborting."
+              exit 1
+            fi
+            echo "Entering installation directory: $INSTALL_DIR"
             cd "$INSTALL_DIR"
-            sudo perl install-tl --no-admin
+            # Entfernen der --no-admin Option, um eine korrekte Installation durchzuführen
+            sudo perl install-tl
             tlmgr install collection-latexrecommended
             tlmgr install collection-fontsrecommended
             tlmgr install inconsolata

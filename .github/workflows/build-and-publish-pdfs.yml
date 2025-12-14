@@ -2,7 +2,7 @@ name: Kompiliere die LateX-Ausarbeitung und den Beamer-Vortrag
 
 on:
   push:
-    branches: [master]
+    branches: [main, master]
   workflow_dispatch:
 
 jobs:

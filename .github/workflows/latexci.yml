@@ -18,7 +18,7 @@ jobs:
           key: ${{ runner.os }}-texlive
 
       - name: Compile LaTeX
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: |
             thesis.tex
@@ -29,7 +29,7 @@ jobs:
         run: chktex thesis.tex
 
       - name: Upload PDF
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: thesis-pdf
           path: thesis.pdf

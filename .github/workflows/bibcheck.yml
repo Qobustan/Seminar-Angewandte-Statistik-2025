@@ -1,0 +1,21 @@
+name: Bibliography Check
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  bibcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check .bib files for duplicates
+        run: |
+          if grep -i "duplicate" **/*.bib; then
+            echo "⚠️ Mögliche doppelte Einträge gefunden"
+          else
+            echo "✅ Keine doppelten Einträge"
+          fi

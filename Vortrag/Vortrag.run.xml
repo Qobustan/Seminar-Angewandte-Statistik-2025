@@ -84,7 +84,7 @@
       <file>Vortrag-blx.bib</file>
     </requires>
     <requires type="editable">
-      <file>2023-Seminar-Dal-Vortrag-Teil-B-Final.bib</file>
+      <file>Vortrag.bib</file>
     </requires>
     <requires type="static">
       <file>biblatex.bst</file>

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  14 DEC 2025 02:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  14 DEC 2025 13:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1922,10 +1922,125 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (./Vortrag.toc) [2
 
 ]
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+45.
 
-LaTeX Warning: Empty bibliography on input line 40.
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+5.
 
-[3
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+45.
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+45.
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 45.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 45.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
+
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.f
+d
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
+
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.f
+d
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 45
+.
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 4
+5.
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry
+.fd)
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 45.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 45.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 45.
+ [3
+
+{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hsy.enc}] [4
+
+{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.
+enc}] (./Vortrag.toc) [5
+
+] [6
+
+] [7
+
+] [8
+
+] (./Vortrag.toc)
+[9
+
+] [10
+
+] [11
+
+] [12
+
+{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hit.enc}] (./Vortrag.toc) [13
+
+] [14
+
+{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hex.enc}] [15
+
+] [16
+
+]
+(./Vortrag.toc) [17
+
+] [18
+
+] (./Vortrag.toc) [19
+
+] [20
+
+] [21
+
+] (./Vortrag.toc)
+[22
+
+] [23
+
+] [24
+
+] (./Vortrag.toc) [25
+
+]
+
+LaTeX Warning: Empty bibliography on input line 220.
+
+[26
 
 ]
 \tf@nav=\write7
@@ -1939,27 +2054,36 @@ LaTeX Warning: Empty bibliography on input line 40.
 
  (./Vortrag.aux)
 Package rerunfilecheck Info: File `Vortrag.out' has not changed.
-(rerunfilecheck)             Checksum: D49B3C98697D8226284527E7A1056C6C;143.
+(rerunfilecheck)             Checksum: 483648B951F3488EA3144FE43E8F0E48;1223.
 Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 \openout1 = `Vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44614 strings out of 476025
- 926347 string characters out of 5790017
- 1863388 words of memory out of 5000000
- 64263 multiletter control sequences out of 15000+600000
- 529134 words of font info for 42 fonts, out of 8000000 for 9000
+ 44929 strings out of 476025
+ 931667 string characters out of 5790017
+ 1867388 words of memory out of 5000000
+ 64460 multiletter control sequences out of 15000+600000
+ 552841 words of font info for 68 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 128i,15n,134p,1911b,2459s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,15n,134p,1881b,2459s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
-mss10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pub
-lic/lm/lmss12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/t
-ype1/public/lm/lmss8.pfb>
-Output written on Vortrag.pdf (3 pages, 67541 bytes).
+mex10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pub
+lic/lm/lmmi10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/t
+ype1/public/lm/lmmi8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/
+fonts/type1/public/lm/lmss10.pfb></Volumes/Macintosh SSD/local/texlive/2023/tex
+mf-dist/fonts/type1/public/lm/lmss12.pfb></Volumes/Macintosh SSD/local/texlive/
+2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Volumes/Macintosh SSD/local/t
+exlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Macintosh S
+SD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></Volumes/Ma
+cintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></Vo
+lumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.
+pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm
+/lmsy8.pfb>
+Output written on Vortrag.pdf (26 pages, 220718 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
- 8 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 900 PDF objects out of 1000 (max. 8388607)
+ 824 compressed objects within 9 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 155 words of extra memory for PDF output out of 10000 (max. 10000000)
 

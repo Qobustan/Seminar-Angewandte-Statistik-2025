@@ -13,12 +13,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Compile LaTeX projects
+      - name: Build Ausarbeitung
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: |
-            *.tex
-          working_directory: |
-            Ausarbeitung
-            Vortrag
-          continue_on_error: false
+          root_file: "*.tex"
+          working_directory: Ausarbeitung
+          args: -f -gg
+
+      - name: Build Vortrag
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: "*.tex"
+          working_directory: Vortrag
+          args: -f -gg
+
+      - name: List generated PDFs
+        run: |
+          echo "Ausarbeitung:"
+          ls -lh Ausarbeitung || true
+          echo "Vortrag:"
+          ls -lh Vortrag || true

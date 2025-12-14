@@ -21,32 +21,42 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Cache TeX Live und installierte Pakete
+      - name: Cache TeX Live and installed packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.texlive
+          key: ${{ runner.os }}-texlive-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-texlive-
+
       - name: Install TeX Live (pdflatex + latexmk + tlmgr)
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            latexmk \
-            biber \
-            fonts-dejavu-core \
-            make \
-            ca-certificates \
-            texlive-full \
-            wget
-
-          # Installiere tlmgr
-          wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-          tar -xvzf install-tl-unx.tar.gz
-          cd install-tl-*
-          sudo perl install-tl --no-admin
-
-          # Installiere nur die Pakete, die im Dokument verwendet werden
-          tlmgr install collection-latexrecommended
-          tlmgr install collection-fontsrecommended
-          
-          # Optionale Pakete, falls bekannt (z.B. für spezielle Schriftarten oder Pakete)
-          tlmgr install inconsolata
+          if ! [ -d "$HOME/.texlive" ]; then
+            echo "TeX Live not found in cache, installing it."
+            sudo apt-get update
+            sudo apt-get install -y --no-install-recommends \
+              texlive-latex-recommended \
+              texlive-latex-extra \
+              latexmk \
+              biber \
+              fonts-dejavu-core \
+              make \
+              ca-certificates \
+              texlive-full \
+              wget
+            wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+            tar -xvzf install-tl-unx.tar.gz
+            # Finde das installierte Verzeichnis (sollte nur eines sein)
+            INSTALL_DIR=$(find . -maxdepth 1 -type d -name 'install-tl-*' | head -n 1)
+            cd "$INSTALL_DIR"
+            sudo perl install-tl --no-admin
+            tlmgr install collection-latexrecommended
+            tlmgr install collection-fontsrecommended
+            tlmgr install inconsolata
+          else
+            echo "TeX Live found in cache, skipping installation."
+          fi
 
       - name: Find .tex in Ausarbeitung and build (run inside its folder)
         run: |
@@ -87,32 +97,42 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Cache TeX Live und installierte Pakete
+      - name: Cache TeX Live and installed packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.texlive
+          key: ${{ runner.os }}-texlive-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-texlive-
+
       - name: Install TeX Live (pdflatex + latexmk + tlmgr)
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            latexmk \
-            biber \
-            fonts-dejavu-core \
-            make \
-            ca-certificates \
-            texlive-full \
-            wget
-
-          # Installiere tlmgr
-          wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-          tar -xvzf install-tl-unx.tar.gz
-          cd install-tl-*
-          sudo perl install-tl --no-admin
-
-          # Installiere nur die Pakete, die im Dokument verwendet werden
-          tlmgr install collection-latexrecommended
-          tlmgr install collection-fontsrecommended
-          
-          # Optionale Pakete, falls bekannt (z.B. für spezielle Schriftarten oder Pakete)
-          tlmgr install inconsolata
+          if ! [ -d "$HOME/.texlive" ]; then
+            echo "TeX Live not found in cache, installing it."
+            sudo apt-get update
+            sudo apt-get install -y --no-install-recommends \
+              texlive-latex-recommended \
+              texlive-latex-extra \
+              latexmk \
+              biber \
+              fonts-dejavu-core \
+              make \
+              ca-certificates \
+              texlive-full \
+              wget
+            wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+            tar -xvzf install-tl-unx.tar.gz
+            # Finde das installierte Verzeichnis (sollte nur eines sein)
+            INSTALL_DIR=$(find . -maxdepth 1 -type d -name 'install-tl-*' | head -n 1)
+            cd "$INSTALL_DIR"
+            sudo perl install-tl --no-admin
+            tlmgr install collection-latexrecommended
+            tlmgr install collection-fontsrecommended
+            tlmgr install inconsolata
+          else
+            echo "TeX Live found in cache, skipping installation."
+          fi
 
       - name: Find .tex in Vortrag and build (run inside its folder)
         run: |

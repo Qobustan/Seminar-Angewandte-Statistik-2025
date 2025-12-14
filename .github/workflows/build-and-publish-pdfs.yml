@@ -2,9 +2,8 @@ name: Build all LaTeX projects
 
 on:
   push:
-    branches:
-      - master
-  pull_request:
+    branches: [master]
+  workflow_dispatch:
 
 jobs:
   build-latex:
@@ -17,11 +16,9 @@ jobs:
       - name: Compile LaTeX projects
         uses: xu-cheng/latex-action@v3
         with:
-          # Alle .tex Dateien in beiden Ordnern
           root_file: |
             *.tex
           working_directory: |
             Ausarbeitung
             Vortrag
-          latexmk_use_xelatex: false
-          continue_on_error: fals
+          continue_on_error: false

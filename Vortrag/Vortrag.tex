@@ -1,0 +1,42 @@
+\documentclass{beamer}
+
+% Hier befinden sich alle Metadaten; Pakete, Einstellungen und die sonstigen Ressourcen
+\input{header.tex}
+\usepackage[utf8]{inputenc}
+
+\usepackage[ngerman]{babel}
+\usepackage[backend=bibtex, style=alphabetic]{biblatex}
+\addbibresource{2023-Seminar-Dal-Vortrag-Teil-B-Final.bib}
+
+\usetheme{Madrid}
+
+% Den \pause - Befehl steuern
+% Vortragsversion -> true; Druckversion -> false
+\newif\ifpauseswitch
+\pauseswitchtrue % setze auf \pause aktivieren
+
+\begin{document}
+	
+	\maketitle
+	
+	% TikZ - Bibliothek
+	\usetikzlibrary{arrows.meta}
+	\usetikzlibrary{shapes,arrows.meta,positioning}
+	
+	% Zeige Inhaltsverzeichnis zu Beginn jeder Section
+	\AtBeginSection[] % Do nothing for \section*
+	{
+		\begin{frame}<beamer>
+			\frametitle{Outline}
+			\tableofcontents[currentsection]
+		\end{frame}
+	}
+
+\section{Literaturverzeichnis}
+	
+	\begin{frame}[allowframebreaks]{Literaturverzeichnis}
+		% Referenzen
+		\printbibliography
+	\end{frame}
+	
+\end{document}

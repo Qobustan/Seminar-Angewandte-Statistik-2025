@@ -1,32 +1,32 @@
 # -----------------------
 # LaTeX auxiliary files
 # -----------------------
-*.aux
-*.lof
-*.log
-*.lot
-*.fls
-*.out
-*.toc
-*.fmt
-*.fot
-*.cb
-*.cb2
-*.bbl
-*.blg
-*.brf
-*.idx
-*.ilg
-*.ind
-*.glo
-*.gls
-*.ist
-*.acr
-*.alg
-*.synctex.gz
-*.fdb_latexmk
-*.run.xml
-*.auxlock
+# *.aux
+# *.lof
+# *.log
+# *.lot
+# *.fls
+# *.out
+# *.toc
+# *.fmt
+# *.fot
+# *.cb
+# *.cb2
+# *.bbl
+# *.blg
+# *.brf
+# *.idx
+# *.ilg
+# *.ind
+# *.glo
+# *.gls
+# *.ist
+# *.acr
+# *.alg
+# *.synctex.gz
+# *.fdb_latexmk
+# *.run.xml
+# *.auxlock
 
 # -----------------------
 # Output / build folders
@@ -34,21 +34,21 @@
 build/
 out/
 dist/
-*.zip
+# *.zip
 
 # If you don't want to track generated PDFs in the repo:
 # seminar_skript.pdf
 # seminar_presentation.pdf
-# *.pdf
+# # *.pdf
 
 # -----------------------
 # Images / binaries that may be large
 # -----------------------
-*.eps~
-*.svg~
-*.ai~
-*.psd
-*.xcf
+# *.eps~
+# *.svg~
+# *.ai~
+# *.psd
+# *.xcf
 
 # -----------------------
 # Gradle / Java artifacts
@@ -57,7 +57,7 @@ dist/
 .gradle-cache/
 gradle-app.setting
 /.settings/
-# keep gradle wrapper files in repo (gradlew, gradle/wrapper/**)
+# keep gradle wrapper files in repo (gradlew, gradle/wrapper/# *# *)
 
 # -----------------------
 # Editors / OS
@@ -66,9 +66,9 @@ gradle-app.setting
 Thumbs.db
 .vscode/
 .idea/
-*.iml
-*.swp
+# *.iml
+# *.swp
 
 # TeXstudio specific
-*.txs-profile
-*.txs-undo
+# *.txs-profile
+# *.txs-undo

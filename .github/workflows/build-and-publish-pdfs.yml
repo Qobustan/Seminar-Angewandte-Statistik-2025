@@ -16,7 +16,7 @@ jobs:
       - name: Build Ausarbeitung
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: ausarbeitung.tex
+          root_file: Ausarbeitung.tex
           working_directory: Ausarbeitung
           args: -f -gg
 

@@ -1,0 +1,16 @@
+name: Format LaTeX
+
+on:
+  workflow_dispatch:   # nur manuell starten
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install latexindent
+        run: sudo apt-get install -y latexindent
+
+      - name: Run latexindent
+        run: latexindent -w **/*.tex

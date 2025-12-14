@@ -12,7 +12,7 @@ CI
 A GitHub Actions workflow is provided (.github/workflows/build-and-publish-pdfs.yml).
 On pushes to main (and when manually triggered) it:
 - installs a minimal TeX Live setup
-- builds PDFs from the first .tex file found in skript/ and presentation/ using latexmk with XeLaTeX
+- builds PDFs from the first .tex file found in skript/ and presentation/ using latexmk with PDFLaTeX
 - collects the generated PDFs and publishes them to a dedicated branch named 'pdfs'
 
 Usage

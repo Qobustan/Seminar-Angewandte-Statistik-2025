@@ -30,3 +30,5 @@ Notas:
 - Si prefieres `pdflatex` o `lualatex`, cambia la opción `-xelatex` en `build.gradle`.
 - Puedes añadir publicación automática a GitHub Pages o Releases si lo deseas.
 ```
+
+[![Build all LaTeX projects](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/build-and-publish-pdfs.yml/badge.svg)](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/build-and-publish-pdfs.yml)

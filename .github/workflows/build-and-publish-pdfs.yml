@@ -21,7 +21,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install TeX Live (pdflatex + latexmk)
+      - name: Install TeX Live (pdflatex + latexmk + tlmgr)
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
@@ -31,7 +31,22 @@ jobs:
             biber \
             fonts-dejavu-core \
             make \
-            ca-certificates
+            ca-certificates \
+            texlive-full \
+            wget
+
+          # Installiere tlmgr
+          wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+          tar -xvzf install-tl-unx.tar.gz
+          cd install-tl-*
+          sudo perl install-tl --no-admin
+
+          # Installiere nur die Pakete, die im Dokument verwendet werden
+          tlmgr install collection-latexrecommended
+          tlmgr install collection-fontsrecommended
+          
+          # Optionale Pakete, falls bekannt (z.B. für spezielle Schriftarten oder Pakete)
+          tlmgr install inconsolata
 
       - name: Find .tex in Ausarbeitung and build (run inside its folder)
         run: |
@@ -72,7 +87,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install TeX Live (pdflatex + latexmk)
+      - name: Install TeX Live (pdflatex + latexmk + tlmgr)
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
@@ -82,7 +97,22 @@ jobs:
             biber \
             fonts-dejavu-core \
             make \
-            ca-certificates
+            ca-certificates \
+            texlive-full \
+            wget
+
+          # Installiere tlmgr
+          wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+          tar -xvzf install-tl-unx.tar.gz
+          cd install-tl-*
+          sudo perl install-tl --no-admin
+
+          # Installiere nur die Pakete, die im Dokument verwendet werden
+          tlmgr install collection-latexrecommended
+          tlmgr install collection-fontsrecommended
+          
+          # Optionale Pakete, falls bekannt (z.B. für spezielle Schriftarten oder Pakete)
+          tlmgr install inconsolata
 
       - name: Find .tex in Vortrag and build (run inside its folder)
         run: |

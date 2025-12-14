@@ -1,4 +1,4 @@
-name: Build all LaTeX projects
+name: Kompiliere die LateX-Ausarbeitung und den Beamer-Vortrag
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
       - name: Build Vortrag
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: vortrag.tex
+          root_file: Vortrag.tex
           working_directory: Vortrag
           args: -f -gg
 

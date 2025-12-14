@@ -1,34 +1,25 @@
-# Seminar-Angewandte-Statistik-2025
-
 ```markdown
-# Proyecto LaTeX: Seminar script + Beamer
+# Seminar: Angewandte Statistik 2025
 
-Este repositorio contiene dos documentos LaTeX:
+This repository contains materials for the "Angewandte Statistik" seminar (2025).
 
-- `seminar_skript.tex` — documento principal (script)
-- `seminar_presentation.tex` — presentación en Beamer
+Structure
+- skript/ — main LaTeX sources for the course script
+- presentation/ — LaTeX sources for the lecture presentation
 
-CI / GitHub Actions:
-- En cada push / PR (y una ejecución diaria opcional) GitHub Actions:
-  - instala TeX básico (latexmk, biber y paquetes comunes),
-  - ejecuta Gradle (tarea `assemble`) para compilar ambos `.tex`,
-  - sube los PDFs compilados como artifacts.
+CI
+A GitHub Actions workflow is provided (.github/workflows/build-and-publish-pdfs.yml). On pushes to main (and when manually triggered) it:
+- installs a minimal TeX Live setup
+- builds PDFs from the first .tex file found in skript/ and presentation/ using latexmk with XeLaTeX
+- collects the generated PDFs and publishes them to a dedicated branch named 'pdfs'
 
-Compilar localmente:
-- Instala TeX Live o TinyTeX y `latexmk`.
-- Genera o añade el Gradle Wrapper (recomendado).
-- Ejecuta:
-  ```bash
-  ./gradlew assemble
-  ```
-Salida:
-- PDFs generados en `build/`:
-  - `build/seminar_skript.pdf`
-  - `build/seminar_presentation.pdf`
+Usage
+- Edit the LaTeX sources in skript/ and presentation/ and push to main. The workflow will automatically build and update the 'pdfs' branch with the generated PDFs.
 
-Notas:
-- Si prefieres `pdflatex` o `lualatex`, cambia la opción `-xelatex` en `build.gradle`.
-- Puedes añadir publicación automática a GitHub Pages o Releases si lo deseas.
+Notes
+- The workflow looks for the first .tex file in each directory. If you use other filenames, ensure the main document is the first .tex file in the directory (or modify the workflow to point to the correct root files).
+- The workflow installs a subset of TeX Live packages (texlive-xetex and texlive-latex-extra) which should be sufficient for many documents using XeLaTeX. If your project depends on other packages, update the workflow to install additional texlive packages or a fuller TeX Live distribution.
+
+License
+Describe repository license here (if applicable).
 ```
-
-[![Build all LaTeX projects](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/build-and-publish-pdfs.yml/badge.svg)](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/build-and-publish-pdfs.yml)

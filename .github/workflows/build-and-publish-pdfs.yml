@@ -16,20 +16,20 @@ jobs:
       - name: Build Ausarbeitung
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: "*.tex"
+          root_file: ausarbeitung.tex
           working_directory: Ausarbeitung
           args: -f -gg
 
       - name: Build Vortrag
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: "*.tex"
+          root_file: vortrag.tex
           working_directory: Vortrag
           args: -f -gg
 
       - name: List generated PDFs
         run: |
           echo "Ausarbeitung:"
-          ls -lh Ausarbeitung || true
+          ls -lh Ausarbeitung/*.pdf || true
           echo "Vortrag:"
-          ls -lh Vortrag || true
+          ls -lh Vortrag/*.pdf || true

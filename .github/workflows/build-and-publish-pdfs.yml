@@ -18,14 +18,14 @@ jobs:
         with:
           root_file: Ausarbeitung.tex
           working_directory: Ausarbeitung
-          args: -f -gg
+          args: -pdf
 
       - name: Build Vortrag
         uses: xu-cheng/latex-action@v3
         with:
           root_file: Vortrag.tex
           working_directory: Vortrag
-          args: -f -gg
+          args: -pdf
 
       - name: List generated PDFs
         run: |
@@ -33,3 +33,11 @@ jobs:
           ls -lh Ausarbeitung/*.pdf || true
           echo "Vortrag:"
           ls -lh Vortrag/*.pdf || true
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v3
+        with:
+          name: latex-pdfs
+          path: |
+            Ausarbeitung/*.pdf
+            Vortrag/*.pdf

@@ -5,8 +5,8 @@
 This repository contains materials for the "Angewandte Statistik" seminar (2025).
 
 Structure
-- skript/ — main LaTeX sources for the course script
-- presentation/ — LaTeX sources for the lecture presentation
+- skript/ — main LaTeX sources for the seminar script
+- presentation/ — LaTeX sources for the seminar presentation
 
 CI
 A GitHub Actions workflow is provided (.github/workflows/build-and-publish-pdfs.yml). On pushes to main (and when manually triggered) it:

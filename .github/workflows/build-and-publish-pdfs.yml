@@ -11,17 +11,17 @@ permissions:
   contents: write
 
 jobs:
-  build-and-publish:
+  build-ausarbeitung:
+    name: Build Ausarbeitung
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: true
 
-      - name: Install TeX Live (minimal packages for pdflatex and latexmk)
+      - name: Install TeX Live (pdflatex + latexmk)
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
@@ -33,38 +33,114 @@ jobs:
             make \
             ca-certificates
 
-      - name: Build first .tex found in Ausarbeitung/
-        working-directory: ${{ github.workspace }}
+      - name: Find .tex in Ausarbeitung and build (run inside its folder)
         run: |
           set -euo pipefail
-          TEXFILE=$(find Ausarbeitung -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
-          if [ -z "${TEXFILE}" ]; then
-            echo "No .tex files found in Ausarbeitung/"; exit 1
+          TEXPATH=$(find Ausarbeitung -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
+          if [ -z "${TEXPATH}" ]; then
+            echo "No .tex found in Ausarbeitung/ — skipping build."
+            exit 0
           fi
-          echo "Building $TEXFILE with pdflatex"
-          # Use latexmk with pdflatex (explicit pdflatex command to enable nonstopmode + halt-on-error)
-          latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode -halt-on-error" -interaction=nonstopmode "$TEXFILE"
+          DIR=$(dirname "${TEXPATH}")
+          FILE=$(basename "${TEXPATH}")
+          echo "Building ${DIR}/${FILE} with pdflatex (running in ${DIR})"
+          pushd "${DIR}"
+          export TEXINPUTS=".:${PWD}:${TEXINPUTS-}"
+          latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode -halt-on-error" -interaction=nonstopmode "${FILE}"
+          popd
 
-      - name: Build first .tex found in Vortrag/
-        working-directory: ${{ github.workspace }}
+      - name: Collect Ausarbeitung PDFs
+        run: |
+          mkdir -p out/ausarbeitung
+          find Ausarbeitung -maxdepth 1 -type f -name "*.pdf" -exec cp -v {} out/ausarbeitung/ \; || true
+          ls -la out/ausarbeitung || true
+
+      - name: Upload Ausarbeitung PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ausarbeitung-pdfs
+          path: out/ausarbeitung/*.pdf
+          if-no-files-found: warn
+
+  build-vortrag:
+    name: Build Vortrag
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install TeX Live (pdflatex + latexmk)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            latexmk \
+            biber \
+            fonts-dejavu-core \
+            make \
+            ca-certificates
+
+      - name: Find .tex in Vortrag and build (run inside its folder)
         run: |
           set -euo pipefail
-          TEXFILE=$(find Vortrag -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
-          if [ -z "${TEXFILE}" ]; then
-            echo "No .tex files found in Vortrag/"; exit 1
+          TEXPATH=$(find Vortrag -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
+          if [ -z "${TEXPATH}" ]; then
+            echo "No .tex found in Vortrag/ — skipping build."
+            exit 0
           fi
-          echo "Building $TEXFILE with pdflatex"
-          latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode -halt-on-error" -interaction=nonstopmode "$TEXFILE"
+          DIR=$(dirname "${TEXPATH}")
+          FILE=$(basename "${TEXPATH}")
+          echo "Building ${DIR}/${FILE} with pdflatex (running in ${DIR})"
+          pushd "${DIR}"
+          export TEXINPUTS=".:${PWD}:${TEXINPUTS-}"
+          latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode -halt-on-error" -interaction=nonstopmode "${FILE}"
+          popd
 
-      - name: Collect generated PDFs
+      - name: Collect Vortrag PDFs
         run: |
-          set -euo pipefail
-          mkdir -p built_pdfs
-          find Ausarbeitung -maxdepth 1 -type f -name "*.pdf" -exec cp -v {} built_pdfs/ \; || true
-          find Vortrag -maxdepth 1 -type f -name "*.pdf" -exec cp -v {} built_pdfs/ \; || true
-          ls -la built_pdfs || true
+          mkdir -p out/vortrag
+          find Vortrag -maxdepth 1 -type f -name "*.pdf" -exec cp -v {} out/vortrag/ \; || true
+          ls -la out/vortrag || true
 
-      - name: Publish PDFs to 'pdfs' branch
+      - name: Upload Vortrag PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vortrag-pdfs
+          path: out/vortrag/*.pdf
+          if-no-files-found: warn
+
+  publish-pdfs:
+    name: Publish PDFs to branch 'pdfs'
+    runs-on: ubuntu-latest
+    needs: [build-ausarbeitung, build-vortrag]
+    if: always()
+
+    steps:
+      - name: Checkout repository (for push)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Download Ausarbeitung artifact (if exists)
+        uses: actions/download-artifact@v4
+        with:
+          name: ausarbeitung-pdfs
+          path: downloaded/ausarbeitung
+          if-no-files-found: warn
+
+      - name: Download Vortrag artifact (if exists)
+        uses: actions/download-artifact@v4
+        with:
+          name: vortrag-pdfs
+          path: downloaded/vortrag
+          if-no-files-found: warn
+
+      - name: Prepare pdfs branch and copy PDFs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -72,17 +148,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Create / reset pdfs branch
           git checkout --force -B pdfs
-
-          # Remove everything and add only the built PDFs (keeps branch focused)
           git rm -rf . || true
           mkdir -p pdfs
-          cp -r built_pdfs/* pdfs/ || true
 
-          # If no files to commit, exit
-          if [ -z "$(git ls-files)" ]; then
-            echo "No PDFs to publish"; exit 0
+          if [ -d downloaded/ausarbeitung ]; then cp -v downloaded/ausarbeitung/*.pdf pdfs/ 2>/dev/null || true; fi
+          if [ -d downloaded/vortrag ]; then cp -v downloaded/vortrag/*.pdf pdfs/ 2>/dev/null || true; fi
+
+          ls -la pdfs || true
+
+          if [ -z "$(ls -A pdfs 2>/dev/null || true)" ]; then
+            echo "No PDFs to publish; leaving pdfs branch empty."
+            exit 0
           fi
 
           git add -A

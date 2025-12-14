@@ -1,229 +1,44 @@
-name: Build and publish PDFs
-
+name: Build LaTeX document, check and commit to gh-pages branch
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
+    branches:
+      - master
 jobs:
-  build-ausarbeitung:
-    name: Build Ausarbeitung
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    - name: Set up Git repository
+      uses: actions/checkout@v1
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@master
+      with:
+        root_file: /Vortrag/vortrag.tex
+    - name: Check pdf file
+      run: |
+        file main.pdf | grep -q ' PDF '
+    - name: Upload
+      run: |
+        set -e
 
-      # Cache TeX Live und installierte Pakete
-      - name: Cache TeX Live and installed packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.texlive
-          key: ${{ runner.os }}-texlive-${{ hashFiles('**/*.tex') }}
-          restore-keys: |
-            ${{ runner.os }}-texlive-
+        # configure git
+        git config --global user.name "David Haberthür"
+        git config --global user.email "email@davidhaberthuer.ch"
 
-      - name: Install TeX Live (pdflatex + latexmk + tlmgr)
-        run: |
-          if ! [ -d "$HOME/.texlive" ]; then
-            echo "TeX Live not found in cache, installing it."
-            sudo apt-get update
-            sudo apt-get install -y --no-install-recommends \
-              texlive-latex-recommended \
-              texlive-latex-extra \
-              latexmk \
-              biber \
-              fonts-dejavu-core \
-              make \
-              ca-certificates \
-              texlive-full \
-              wget
-            wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-            tar -xvzf install-tl-unx.tar.gz
-            # Finde das Verzeichnis korrekt
-            INSTALL_DIR=$(find . -maxdepth 1 -type d -name 'install-tl-*' | head -n 1)
-            if [ -z "$INSTALL_DIR" ]; then
-              echo "Installation directory not found, aborting."
-              exit 1
-            fi
-            echo "Entering installation directory: $INSTALL_DIR"
-            cd "$INSTALL_DIR"
-            # Entfernen der --no-admin Option, um eine korrekte Installation durchzuführen
-            sudo perl install-tl
-            tlmgr install collection-latexrecommended
-            tlmgr install collection-fontsrecommended
-            tlmgr install inconsolata
-          else
-            echo "TeX Live found in cache, skipping installation."
-          fi
-
-      - name: Find .tex in Ausarbeitung and build (run inside its folder)
-        run: |
-          set -euo pipefail
-          TEXPATH=$(find Ausarbeitung -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
-          if [ -z "${TEXPATH}" ]; then
-            echo "No .tex found in Ausarbeitung/ — skipping build."
-            exit 0
-          fi
-          DIR=$(dirname "${TEXPATH}")
-          FILE=$(basename "${TEXPATH}")
-          echo "Building ${DIR}/${FILE} with pdflatex (running in ${DIR})"
-          pushd "${DIR}"
-          export TEXINPUTS=".:${PWD}:${TEXINPUTS-}"
-          latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode -halt-on-error" -interaction=nonstopmode "${FILE}"
-          popd
-
-      - name: Collect Ausarbeitung PDFs
-        run: |
-          mkdir -p out/ausarbeitung
-          find Ausarbeitung -maxdepth 1 -type f -name "*.pdf" -exec cp -v {} out/ausarbeitung/ \; || true
-          ls -la out/ausarbeitung || true
-
-      - name: Upload Ausarbeitung PDFs artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ausarbeitung-pdfs
-          path: out/ausarbeitung/*.pdf
-          if-no-files-found: warn
-
-  build-vortrag:
-    name: Build Vortrag
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      # Cache TeX Live und installierte Pakete
-      - name: Cache TeX Live and installed packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.texlive
-          key: ${{ runner.os }}-texlive-${{ hashFiles('**/*.tex') }}
-          restore-keys: |
-            ${{ runner.os }}-texlive-
-
-      - name: Install TeX Live (pdflatex + latexmk + tlmgr)
-        run: |
-          if ! [ -d "$HOME/.texlive" ]; then
-            echo "TeX Live not found in cache, installing it."
-            sudo apt-get update
-            sudo apt-get install -y --no-install-recommends \
-              texlive-latex-recommended \
-              texlive-latex-extra \
-              latexmk \
-              biber \
-              fonts-dejavu-core \
-              make \
-              ca-certificates \
-              texlive-full \
-              wget
-            wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-            tar -xvzf install-tl-unx.tar.gz
-            # Finde das Verzeichnis korrekt
-            INSTALL_DIR=$(find . -maxdepth 1 -type d -name 'install-tl-*' | head -n 1)
-            if [ -z "$INSTALL_DIR" ]; then
-              echo "Installation directory not found, aborting."
-              exit 1
-            fi
-            echo "Entering installation directory: $INSTALL_DIR"
-            cd "$INSTALL_DIR"
-            # Entfernen der --no-admin Option, um eine korrekte Installation durchzuführen
-            sudo perl install-tl
-            tlmgr install collection-latexrecommended
-            tlmgr install collection-fontsrecommended
-            tlmgr install inconsolata
-          else
-            echo "TeX Live found in cache, skipping installation."
-          fi
-
-      - name: Find .tex in Vortrag and build (run inside its folder)
-        run: |
-          set -euo pipefail
-          TEXPATH=$(find Vortrag -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
-          if [ -z "${TEXPATH}" ]; then
-            echo "No .tex found in Vortrag/ — skipping build."
-            exit 0
-          fi
-          DIR=$(dirname "${TEXPATH}")
-          FILE=$(basename "${TEXPATH}")
-          echo "Building ${DIR}/${FILE} with pdflatex (running in ${DIR})"
-          pushd "${DIR}"
-          export TEXINPUTS=".:${PWD}:${TEXINPUTS-}"
-          latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode -halt-on-error" -interaction=nonstopmode "${FILE}"
-          popd
-
-      - name: Collect Vortrag PDFs
-        run: |
-          mkdir -p out/vortrag
-          find Vortrag -maxdepth 1 -type f -name "*.pdf" -exec cp -v {} out/vortrag/ \; || true
-          ls -la out/vortrag || true
-
-      - name: Upload Vortrag PDFs artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: vortrag-pdfs
-          path: out/vortrag/*.pdf
-          if-no-files-found: warn
-
-  publish-pdfs:
-    name: Publish PDFs to branch 'pdfs'
-    runs-on: ubuntu-latest
-    needs: [build-ausarbeitung, build-vortrag]
-    if: always()
-
-    steps:
-      - name: Checkout repository (for push)
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: true
-
-      - name: Download Ausarbeitung artifact (if exists)
-        uses: actions/download-artifact@v4
-        with:
-          name: ausarbeitung-pdfs
-          path: downloaded/ausarbeitung
-          if-no-files-found: warn
-
-      - name: Download Vortrag artifact (if exists)
-        uses: actions/download-artifact@v4
-        with:
-          name: vortrag-pdfs
-          path: downloaded/vortrag
-          if-no-files-found: warn
-
-      - name: Prepare pdfs branch and copy PDFs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git checkout --force -B pdfs
-          git rm -rf . || true
-          mkdir -p pdfs
-
-          if [ -d downloaded/ausarbeitung ]; then cp -v downloaded/ausarbeitung/*.pdf pdfs/ 2>/dev/null || true; fi
-          if [ -d downloaded/vortrag ]; then cp -v downloaded/vortrag/*.pdf pdfs/ 2>/dev/null || true; fi
-
-          ls -la pdfs || true
-
-          if [ -z "$(ls -A pdfs 2>/dev/null || true)" ]; then
-            echo "No PDFs to publish; leaving pdfs branch empty."
-            exit 0
-          fi
-
-          git add -A
-          git commit -m "Publish PDFs from CI (${GITHUB_SHA})"
-          git push --force origin pdfs
+        # setup ssh
+        mkdir ~/.ssh
+        chmod 700 ~/.ssh
+        echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        git config --global core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+        # Copy and commit the PDF file
+        mkdir -p "$GITHUB_WORKSPACE/deploy"
+        cp -f main.pdf "$GITHUB_WORKSPACE/deploy/main.pdf"
+        cd "$GITHUB_WORKSPACE/deploy"
+        git init
+        git checkout --orphan gh-pages
+        git add main.pdf
+        git commit -m "[github actions] deploy"
+        git remote add origin git@github.com:habi/latex-test.git
+        git push --force --set-upstream origin gh-pages
+      env:
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}

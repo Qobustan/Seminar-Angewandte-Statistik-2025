@@ -1,0 +1,35 @@
+name: LaTeX CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Cache TeXLive
+        uses: actions/cache@v3
+        with:
+          path: ~/.texlive
+          key: ${{ runner.os }}-texlive
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            thesis.tex
+            appendix.tex
+          latexmk_use_xelatex: true
+
+      - name: Lint LaTeX
+        run: chktex thesis.tex
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: thesis-pdf
+          path: thesis.pdf

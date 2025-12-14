@@ -1,0 +1,89 @@
+name: Build and publish PDFs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        persist-credentials: true
+
+    - name: Install TeX Live (minimal packages for XeLaTeX and latexmk)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends \
+          texlive-latex-extra \
+          texlive-xetex \
+          latexmk \
+          biber \
+          fonts-dejavu-core \
+          make \
+          ca-certificates
+
+    - name: Build first .tex found in skript/
+      working-directory: ${{ github.workspace }}
+      run: |
+        set -euo pipefail
+        TEXFILE=$(find skript -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
+        if [ -z "${TEXFILE}" ]; then
+          echo "No .tex files found in skript/"; exit 1
+        fi
+        echo "Building $TEXFILE"
+        latexmk -pdf -xelatex -interaction=nonstopmode -halt-on-error "$TEXFILE"
+
+    - name: Build first .tex found in presentation/
+      working-directory: ${{ github.workspace }}
+      run: |
+        set -euo pipefail
+        TEXFILE=$(find presentation -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
+        if [ -z "${TEXFILE}" ]; then
+          echo "No .tex files found in presentation/"; exit 1
+        fi
+        echo "Building $TEXFILE"
+        latexmk -pdf -xelatex -interaction=nonstopmode -halt-on-error "$TEXFILE"
+
+    - name: Collect generated PDFs
+      run: |
+        set -euo pipefail
+        mkdir -p built_pdfs
+        find skript -maxdepth 1 -type f -name "*.pdf" -exec cp -v {} built_pdfs/ \; || true
+        find presentation -maxdepth 1 -type f -name "*.pdf" -exec cp -v {} built_pdfs/ \; || true
+        ls -la built_pdfs || true
+
+    - name: Publish PDFs to 'pdfs' branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        set -euo pipefail
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        # Create / reset pdfs branch
+        git checkout --force -B pdfs
+
+        # Remove everything and add only the built PDFs (keeps branch focused)
+        git rm -rf . || true
+        mkdir -p pdfs
+        cp -r built_pdfs/* pdfs/ || true
+
+        # If no files to commit, exit
+        if [ -z "$(git ls-files)" ]; then
+          echo "No PDFs to publish"; exit 0
+        fi
+
+        git add -A
+        git commit -m "Publish PDFs from CI (${GITHUB_SHA})"
+        git push --force origin pdfs

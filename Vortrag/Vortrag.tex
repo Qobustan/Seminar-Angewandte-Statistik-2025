@@ -38,16 +38,18 @@
 	\begin{columns}[T]
 		% Parametrisch
 		\begin{column}{0.45\textwidth}
-			\textbf{Parametrisch}
+			\textbf{Parametrisch (kennen wir schon $->$ Stochastik)}
 			\begin{itemize}
 				\item Annahme: Verteilung ist bekannt!
 				\item Wenige Parameter ($\mu, \sigma^2$)
 				\item Schätzung durch Parametersch\"atzer wie bspw. Maximum-Likelihood
 			\end{itemize}
 		\end{column}
+		
 		\ifpauseswitch
 			\pause
 		\fi
+		
 		% Nichtparametrisch
 		\begin{column}{0.45\textwidth}
 			\textbf{Nichtparametrisch (KDE)}
@@ -64,8 +66,8 @@
 	\centering
 	\begin{tikzpicture}[>=stealth, thick]
 		% Pfeile zwischen Konzepten
-		\draw[->] (-3,0) -- (3,0) node[midway,above]{\small Modellannahme vs. Datengetrieben};
-		\draw[->] (-3,-0.6) -- (3,-0.6) node[midway,above]{\small Einfachheit vs. Flexibilität};
+		\draw[<->] (-3,0) -- (3,0) node[midway,above]{\small Modellannahme vs. Datengetrieben};
+		\draw[<->] (-3,-0.6) -- (3,-0.6) node[midway,above]{\small Einfachheit vs. Flexibilität};
 	\end{tikzpicture}
 	
 \end{frame}
@@ -76,13 +78,15 @@
 	\textbf{Warum nichtparametrisch? \cite{BüningTrenkler+1994}}
 	\begin{itemize}
 		\item Klassische parametrische Verfahren (z.\,B. unter Annahme einer Normalverteilung) sind oft zu starr.
+		\begin{itemize}
+			\item Starke Kopplung an unsicheren Annahmen!
+		\end{itemize}
 		\item Bei unbekannter Verteilung bietet die nichtparametrische Schätzung oft bessere Einblicke in die Datenstruktur.
 	\end{itemize}
-\end{frame}
-
-
-\begin{frame}
-	\frametitle{Einleitung \& Motivation (Fortsetzung)}
+	
+	\ifpauseswitch
+		\pause
+	\fi
 	
 	\textbf{Zielsetzung:}
 	\begin{itemize}

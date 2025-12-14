@@ -7,10 +7,8 @@
 \headcommand {\beamer@framepages {2}{2}}
 \headcommand {\slideentry {1}{0}{2}{3/4}{}{0}}
 \headcommand {\beamer@framepages {3}{4}}
-\headcommand {\slideentry {1}{0}{3}{5/5}{}{0}}
-\headcommand {\beamer@framepages {5}{5}}
-\headcommand {\slideentry {1}{0}{4}{6/6}{}{0}}
-\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {1}{0}{3}{5/6}{}{0}}
+\headcommand {\beamer@framepages {5}{6}}
 \headcommand {\beamer@sectionpages {2}{6}}
 \headcommand {\beamer@subsectionpages {2}{6}}
 \headcommand {\sectionentry {2}{Der Rosenblatt-Schätzer}{7}{Der Rosenblatt-Schätzer}{0}}
@@ -83,4 +81,4 @@
 \headcommand {\beamer@subsectionpages {27}{28}}
 \headcommand {\beamer@sectionpages {27}{28}}
 \headcommand {\beamer@documentpages {28}}
-\headcommand {\gdef \inserttotalframenumber {27}}
+\headcommand {\gdef \inserttotalframenumber {26}}

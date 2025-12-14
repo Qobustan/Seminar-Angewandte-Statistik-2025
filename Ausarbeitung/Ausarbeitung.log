@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  14 DEC 2025 13:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  14 DEC 2025 18:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1890,13 +1890,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pd
 ftex.map}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/
 lm/lm-ec.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dv
-ips/lm/lm-mathit.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/font
-s/enc/dvips/lm/lm-rm.enc}] [2{/Volumes/Macintosh SSD/local/texlive/2023/texmf-d
+ips/lm/lm-mathit.enc}] [2{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/
+fonts/enc/dvips/lm/lm-rm.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-d
 ist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Volumes/Macintosh SSD/local/texlive/2023
 /texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 [3]
 
-LaTeX Warning: Empty bibliography on input line 134.
+LaTeX Warning: Empty bibliography on input line 136.
 
 [4] (./Ausarbeitung.aux)
 Package rerunfilecheck Info: File `Ausarbeitung.out' has not changed.
@@ -1908,7 +1908,7 @@ Package logreq Info: Writing requests to 'Ausarbeitung.run.xml'.
 Here is how much of TeX's memory you used:
  45031 strings out of 476025
  910220 string characters out of 5790017
- 1864388 words of memory out of 5000000
+ 1863388 words of memory out of 5000000
  64696 multiletter control sequences out of 15000+600000
  571907 words of font info for 90 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
@@ -1928,7 +1928,7 @@ olumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx
 10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public
 /lm/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type
 1/public/lm/lmsy8.pfb>
-Output written on Ausarbeitung.pdf (4 pages, 233676 bytes).
+Output written on Ausarbeitung.pdf (4 pages, 234521 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  128 compressed objects within 2 object streams

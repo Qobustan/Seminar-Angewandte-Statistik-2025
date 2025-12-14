@@ -27,6 +27,12 @@
 \maketitle
 
 \section{Einleitung \& Motivation}
+
+\ifshowtext
+% Inhaltsverzeichnis erzeugen
+\tableofcontents
+\fi
+
 		
 \subsection*{Warum nichtparametrisch?}
 Klassische parametrische Verfahren (z.\,B. unter Annahme einer Normalverteilung) sind oft zu starr. Wenn die wahre Verteilung unbekannt ist, liefert die nichtparametrische Schätzung der Dichtefunktion $f$ oft bessere Einblicke in die Datenstruktur (z.\,B. Schiefe, Multimodalität) als die reine Verteilungsfunktion $F$.
@@ -122,14 +128,6 @@ Selbst wenn wir einen linearen Trend ($Y = \alpha + \beta X$) vermuten, ist die 
 	\item \textbf{Parameter $h$:} Die Wahl der Bandbreite ist der kritischste Schritt. Es ist ein Kompromiss zwischen Rauschen (zu kleines $h$) und Informationsverlust (zu großes $h$).
 	\item \textbf{Robustheit:} Verfahren wie der Theil-Sen-Schätzer bieten mächtige Alternativen zur klassischen Regression, besonders wenn Daten Ausreißer enthalten oder nicht normalverteilt sind.
 \end{itemize}
-	
-\ifshowtext
-% Inhaltsverzeichnis erzeugen
-\tableofcontents
-\fi
-	
-Lorem ipsum dolor bla bla bla
-	
 			
 \ifshowtext
 % Referenzen

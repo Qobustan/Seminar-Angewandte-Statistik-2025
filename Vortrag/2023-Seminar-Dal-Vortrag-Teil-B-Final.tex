@@ -1,0 +1,548 @@
+\documentclass{beamer}
+
+% Hier befinden sich alle Metadaten; Pakete, Einstellungen und die sonstigen Ressourcen
+\input{header.tex}
+\usepackage[utf8]{inputenc}
+
+\usepackage[ngerman]{babel}
+\usepackage[backend=bibtex, style=alphabetic]{biblatex}
+\addbibresource{2023-Seminar-Dal-Vortrag-Teil-B-Final.bib}
+
+\usetheme{Madrid}
+
+% Den \pause - Befehl steuern
+% Vortragsversion -> true; Druckversion -> false
+\newif\ifpauseswitch
+\pauseswitchtrue % setze auf \pause aktivieren
+
+\begin{document}
+	
+	\maketitle
+	
+	% TikZ - Bibliothek
+	\usetikzlibrary{arrows.meta}
+	\usetikzlibrary{shapes,arrows.meta,positioning}
+	
+	% Zeige Inhaltsverzeichnis zu Beginn jeder Section
+	\AtBeginSection[] % Do nothing for \section*
+	{
+		\begin{frame}<beamer>
+			\frametitle{Outline}
+			\tableofcontents[currentsection]
+		\end{frame}
+	}
+	
+	\section{Vorbemerkungen}
+	
+			\begin{frame}{Vorbemerkungen}
+				\begin{vorbemerkung}
+					(\cite{SMI21},\cite{CORMEN17}, \cite{DAVIS10})
+					Wir beziehen uns ausschließlich auf die Datenstruktur ''Heap''.
+					(also u.a. nicht auf ''Garbage-Kollektor'' oder den dynamischen Speicherbereich eines Programms)
+				\end{vorbemerkung}
+				\ifpauseswitch
+					\pause
+				\fi
+					\todo[inline, color=green!40]{
+						(\cite{KNUTH73}, \cite{AHO_THE_DA74})
+					''Heaps'' sind eine M\"oglichkeit, ''Prioritätswarteschlangen'' zu implementieren;
+					Begriff auch nach Aho et al als Kurzbezeichnung f\"ur ''fusionierbare Heaps'' gebr\"auchlich.
+				}
+			\end{frame}
+	
+	\section[Wozu brauchen wir Heaps?]{Wozu brauchen wir Heaps?}
+	
+	\begin{frame}{Motivation für Fibonacci-Heaps im Kontext des Dijkstra-Algorithmus (gleich genauer; es gibt noch mehr...)}
+		\ifpauseswitch
+			\pause
+		\fi
+		\begin{figure}
+			\centering
+			\begin{tikzpicture}[->,>=Stealth,auto,node distance=2.5cm,thick]
+				
+				% Nodes
+				\node[draw,circle] (A) at (0,0) {A};
+				\node[draw,circle] (B) at (2,2) {B};
+				\node[draw,circle] (C) at (4,0) {C};
+				\node[draw,circle] (D) at (6,2) {D};
+				\node[draw,circle] (E) at (8,0) {E};
+				
+				% Edges
+				\draw (A) -- node[midway,above left] {7} (B);
+				\draw (A) -- node[midway,below] {9} (C);
+				\draw (B) -- node[midway,above] {10} (C);
+				\draw (B) -- node[midway,above right] {15} (D);
+				\draw (C) -- node[midway,below] {11} (D);
+				\draw (C) -- node[midway,below] {14} (E);
+				\draw (D) -- node[midway,above right] {6} (E);
+				
+				% Shortest path
+				\draw[red,->,>=Stealth] (A) -- node[midway,below] {9} (C);
+				\draw[red,->,>=Stealth] (C) -- node[midway,below] {14} (E);
+				
+			\end{tikzpicture}
+			\caption{Beispiel mit bin\"aren Heaps mit Laufzeit: $O((|V| + |E|) log_2|V|)$}
+		\end{figure}
+		\ifpauseswitch
+			\pause
+		\fi
+		\todo[inline, color=green!40]{
+			Mit Fibonacci-Heaps: $O(|E| + |V| \cdot log_2|V|)$
+			(\cite{CORMEN17}, \cite{OTTMANN11}, \cite{SMI21}, \cite{TAR_FRED} )
+		}
+		\ifpauseswitch
+			\pause
+		\fi
+		\begin{alertblock}{Motivation}
+			Algorithmus wird alleine durch schnellerer Datenstruktur schneller!
+		\end{alertblock}
+	\end{frame}
+
+	\section{Was ist ein Heap überhaupt und was ist das Besondere am Fibonacci-Heap in der Theorie?}
+	
+		\begin{frame}
+			\frametitle{Was ist ein Baum?}
+			\vspace{5mm}
+			\begin{definition}
+				Ein Baum ist ein zusammenhängender kreisfreier ungerichteter Graph.
+				
+				Sie besteht aus Knoten, die durch Kanten verbunden sind.
+				
+				Jeder Baum hat einen Wurzelknoten, von dem aus alle anderen Knoten erreichbar sind.
+				
+				Jeder Knoten kann eine beliebige Anzahl von Kindknoten haben.
+			\end{definition}
+			\begin{figure}[h]
+				\centering
+				\begin{tikzpicture}
+					\node[circle, draw] (root) at (0,0) {3};
+					\node[circle, draw, below left=1cm and 1cm of root] (leftchild) {0};
+					\node[circle, draw, below right=1cm and 1cm of root] (rightchild) {6};
+					\draw[->] (root) -- node[left] {linkes Kind} (leftchild);
+					\draw[->] (root) -- node[right] {rechtes Kind} (rightchild);
+					\node[above=0.1cm of root] {Wurzel};
+				\end{tikzpicture}
+				\caption{Beispiel f\"ur einen Baum, der kein Heap ist}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Was ist ein Heap denn nun konkret?}
+			\vspace{5mm}
+			\begin{definition}
+				In einem Heap (Spezialfall von B\"aumen) sind die Elemente so angeordnet, dass das größte (oder kleinste) Element immer an der Wurzel liegt.
+				
+				Heaps werden häufig verwendet, um das Maximum (oder Minimum) eines bestimmten Satzes von Elementen effizient abzurufen.
+			\end{definition}
+			\begin{figure}[h]
+				\centering
+				\begin{tikzpicture}
+					\node[circle, draw] (root) at (0,0) {1};
+					\node[circle, draw, below left=1cm and 1cm of root] (leftchild) {5};
+					\node[circle, draw, below right=1cm and 1cm of root] (rightchild) {6};
+					\draw[->] (root) -- node[left] {linkes Kind} (leftchild);
+					\draw[->] (root) -- node[right] {rechtes Kind} (rightchild);
+					\node[above=0.1cm of root] {Wurzel};
+				\end{tikzpicture}
+				\caption{Beispiel eines Min-Heaps}
+			\end{figure}
+		\end{frame}
+		
+		\begin{frame}{Laufzeiten der Heaps (angelehnt an \cite{CORMEN17})}
+			\begin{table}[H]
+				\centering
+				\renewcommand{\arraystretch}{2}
+				\resizebox{\textwidth}{!}{
+					\begin{tabular}{|c|p{4.5cm}|c|c|c|}
+						\hline
+						\rowcolor{gray!30}                    
+						\textbf{Prozedur} & \textbf{Beschreibung} &  \parbox{4.5cm}{\centering{\textbf{Binärer Heap (im schlechtesten Fall)}}} & \textbf{Fibonacci-Heap (amortisiert)} & \parbox{4.5cm}{\centering{\textbf{Fibonacci-Heap (im schlechtesten Fall)}}} \\
+						\hline
+						\textbf{Make-Heap} & \parbox{4.5cm}{\centering Erzeugt einen leeren Heap} & $\Theta(1)$ & $\Theta(1)$ & $\Theta(1)$ \\
+						\hline
+						\cellcolor{lieblingsfarbe}\textcolor{white}{\textbf{Insert}} & \cellcolor{lieblingsfarbe}\textcolor{white}{ \parbox{4.5cm}{\centering Fügt ein neues Element ein}} & \cellcolor{lieblingsfarbe} \textcolor{white}{$\Theta(\log_2 n)$} & \cellcolor{lieblingsfarbe} \textcolor{white}{$\Theta(1)$} & \cellcolor{lieblingsfarbe} \textcolor{white}{$\Theta(1)$} \\
+						\hline
+						\textbf{Minimum} & \parbox{4.5cm}{\centering Gibt das Minimum zurück} & $\Theta(1)$ & $\Theta(1)$ & $\Theta(1)$ \\
+						\hline
+						\textbf{Extract-Min} & \parbox{4.5cm}{\centering Entfernt das Minimum vom Heap} & $\Theta(\log_2 n)$ & $\Theta(\log_2 n)$ & $\Theta(n)$ \\
+						\hline
+						\cellcolor{lieblingsfarbe} \textcolor{white}{\textbf{Union}} & \cellcolor{lieblingsfarbe} \textcolor{white}{ \parbox{4.5cm}{\centering Vereinigt zwei Heaps}} & \cellcolor{lieblingsfarbe} \textcolor{white}{$\Theta(n)$} & \cellcolor{lieblingsfarbe} \textcolor{white}{$\Theta(1)$} & \cellcolor{lieblingsfarbe} \textcolor{white}{$\Theta(1)$} \\
+						\hline
+						\cellcolor{lieblingsfarbe} \textcolor{white}{\textbf{Decrease-Key}} & \cellcolor{lieblingsfarbe} \textcolor{white}{ \parbox{4.5cm}{\centering Verkleinert den Schlüsselwert eines Elements}} & \cellcolor{lieblingsfarbe}  \textcolor{white}{$\Theta(\log_2 n)$} & \cellcolor{lieblingsfarbe}  \textcolor{white}{$\Theta(1)$} & \cellcolor{lieblingsfarbe}  \textcolor{white}{$\Theta(1)$} \\
+						\hline
+					\end{tabular}
+				}
+				\caption{Die drei Operationen Insert, Union und Decrease-Key werden asymptotisch wesentlich schneller; keine andere Laufzeit verschlechtert sich dabei.}
+			\end{table}
+			\ifpauseswitch
+				\pause
+			\fi
+			\todo[inline, color=green!40]{
+				Von vorhin: Laufzeit von Dijkstra?
+			}
+			\todo[inline, color=green!40]{
+				Alles sch\"on; geht Extract-Min auch besser?
+			}
+		\end{frame}
+		
+		\begin{frame} {Laufzeit von Dijkstra}
+			\begin{itemize}
+				\item Wir m\"ussen |V| \textbf{extract-min} und |E| \textbf{decrease-key}-Operationen durchf\"uhren.
+				\item[] % Leerzeile erzeugen
+				\item \underline{\textbf{Extract-Min (f\"ur beide):}} $O(log_2|V|)$
+				\item[] % Leerzeile erzeugen				
+				\item  \underline{\textbf{Decrease-Key:}}
+				\begin{itemize}
+					\item  \underline{\textbf{Bin\"are Heaps:}} $O(log_2|V|)$
+					\item  \underline{\textbf{Fibonacci-Heaps:}} $O(1)$
+				\end{itemize}
+				\item[] % Leerzeile erzeugen
+				\item  \underline{\textbf{Daraus folgt:}}
+				\begin{itemize}
+					\item  \underline{\textbf{Bin\"are Heaps:}}  $O((|V| + |E|) log_2|V|) = O((|V| \cdot  log_2|V| + |E| \cdot log_2|V|)$
+					\item  \underline{\textbf{Fibonacci-Heaps:}} $O(|E| + |V| log_2|V|)$
+				\end{itemize}
+			\end{itemize}
+			
+		\end{frame}
+		
+		\begin{frame}{Untere Schranke f\"ur Extract-Min}
+			\begin{theorem}
+				Die theoretische Laufzeit von Extract-Min ist eine untere Schranke f\"ur Heaps im Allgemeinen, und damit optimal.
+				($\Omega(\log_2 n)$)
+			\end{theorem}
+			\ifpauseswitch
+				\pause
+			\fi
+			\begin{proof}
+				\begin{itemize}
+					\item $\Omega(n \cdot \log_2 n)$ ist eine untere Schranke für vergleichsbasierte Sortieralgorithmen (setzen wir als bekannt voraus; siehe \cite{CORMEN17},\cite{OTTMANN11},\cite{SMI21}).
+					\item Ein schnellerer Heap würde Heapsort mit $\text{O}(n)$ ermöglichen, was dem widerspricht.
+				\end{itemize}
+			\end{proof}
+		\end{frame}
+	
+		\section[Wie funktionieren Fibonacci - Heaps konkret, was ist die Idee dahinter und wie kann eine Implementierung in Pseudocode aussehen?]{Wie funktionieren Fibonacci - Heaps konkret, was ist die Idee dahinter und wie kann eine Implementierung in Pseudocode aussehen?}
+		
+		\begin{frame} {Was ist die Idee hinter Fibonacci-Heaps?}
+			Wie k\"onnte eine einfache Datenstruktur aussehen, die die Prozeduren mit den angestrebten Laufzeitschranken erf\"ullt?
+			\ifpauseswitch
+				\pause
+			\fi
+			\begin{itemize}
+				\item Vorstellung: Menge mit Werten
+				\item Zugriff in $O(1)$ sowie  Hinzuf\"ugen in $O(1)$ 
+				\item Zeiger auf das Minimum ermöglicht Zugriff darauf in $O(1)$
+				\item Werte \"andern (Decrease-Key) und Vereinigungen (Union) ebenfalls in $O(1)$ möglich
+			\end{itemize}
+			
+			\begin{figure}[h]
+				\centering % oder \hfill
+				\begin{tikzpicture}
+					% Rechteck zeichnen
+					\draw (0,0) rectangle (7.5,4);
+					
+					% Knoten einfügen
+					\foreach \x/\val in {1/1, 2/8, 3/2, 4/9, 5/3, 6/5, 7/4} {
+						\node[circle, draw, inner sep=2pt] at (\x,2) {\val};
+					}
+					
+					% Minimum bestimmen
+					\pgfmathsetmacro{\minval}{min(5,8,2,9,3,1,4)}
+					
+					% Pfeil mit Beschriftung einfügen
+					\draw[<-,=stealth] (\minval,2.3) -- node[midway, above=4mm] {Minimum} (\minval,3);
+				\end{tikzpicture}
+				\hfill
+			\end{figure}
+		\end{frame}
+			
+			\begin{frame}{Zyklische doppelt verkettete Listen}
+				\begin{itemize}
+					\item Zirkulär doppelt verkettete Liste erfüllt Anforderungen
+					\item Abgeleitet aus der doppelt verketteten Liste
+					\item Was ist das?
+				\end{itemize}
+			\end{frame}
+			
+			\begin{frame}{Wiederholung: Doppelt verkettete Liste}
+				\begin{itemize}
+					\item Daten randomisiert im Speicher abgelegt
+					\item Daten durch Zeiger in beide Richtungen verbunden
+					\item Implementierung mit Anker: Liste beginnt mit Head und endet mit Tail
+				\end{itemize}
+				\begin{figure}[h]
+					\centering
+			\begin{tikzpicture}[
+				node distance=1.0cm,
+				mynode/.style={draw,rectangle,text width=2cm,align=center},
+				myarrow/.style={-latex,shorten >=3pt,shorten <=3pt, bend angle=45, bend left},
+				mylabel/.style={text width=7em,align=center}
+				]
+				
+				% Nodes
+				\node[mynode] (head) {Head};
+				\node[mynode,right=of head] (node1) {Node 1};
+				\node[mynode,right=of node1] (node2) {Node 2};
+				\node[mynode,right=of node2] (tail) {Tail};
+				
+				% Forward arrows with separation and curve
+				\draw[myarrow] (head.east) to (node1.west);
+				\draw[myarrow] (node1.east) to (node2.west);
+				\draw[myarrow] (node2.east) to (tail.west);
+				
+				% Backward arrows with separation and curve
+				\draw[myarrow] (tail.west) to [bend left] (node2.east);
+				\draw[myarrow] (node2.west) to [bend left] (node1.east);
+				\draw[myarrow] (node1.west) to [bend left] (head.east);
+			\end{tikzpicture}
+					\caption{Doppelt verkettete Liste mit Head- und Tail-Element}
+				\end{figure}
+			\end{frame}
+	
+			\begin{frame}{Zyklische doppelt verkettete Listen (Fortsetzung)}
+				\begin{itemize}
+					\item Zyklische doppelt verkettete Listen erweitern den Ansatz
+					\item Letztes Element zeigt auf erstes, erstes auf letztes (m\"ussen nicht die beiden sein)
+					\ifpauseswitch
+						\pause
+					\fi
+					\item Schließt den Kreis, ermöglicht Durchlauf in beide Richtungen ohne Endpunkt
+				\end{itemize}
+				\begin{figure}[h]
+						\centering
+						\includegraphics[width=\textwidth,height=0.2\textheight,keepaspectratio]{Abbildungen/PNG_JPEG/zyklisch_doppelt_verkettete_liste.png}
+						\caption{Zyklische doppelt verkettete Liste (aus \cite{CORMEN17})}
+				\end{figure}
+			\end{frame}
+			\begin{frame}{Zyklische doppelt verkettete Listen (Fortsetzung)}
+				\begin{itemize}
+					\item Vorteile: vereinfachte Implementierung einiger Operationen; Einf\"ugen an beliebiger Stelle m\"oglich \cite{CORMEN17}
+					\item Zyklikalität erleichtert Hinzufügen/Entfernen am Anfang/Ende
+					\item Effiziente Implementierung von Operationen wie Durchlaufen in beide Richtungen oder Finden des letzten Elements
+				\end{itemize}
+			\end{frame}
+	
+			\begin{frame}{Anwendung dieser Datenstruktur auf unsere Operationen und Pseudocode (angelehnt an \cite{CORMEN17})}
+				Decrease-Key $O(1)$ -> Einf\"ugen an beliebiger Stelle; also so zugreifen und \"andern					
+			\end{frame}
+			
+			\begin{frame}{Anwendung dieser Datenstruktur auf unsere Operationen und Pseudocode (angelehnt an \cite{CORMEN17})}
+				Minimum $O(1)$ -> Klar (Zeigerwert zur\"uckgeben)
+				\ifpauseswitch
+					\pause
+				\fi
+				\lstinputlisting[language=pseudocode,basicstyle=\scriptsize,xleftmargin=1em]{Pseudocode/minimum.pseudo}
+			\end{frame}
+			
+			\begin{frame}{Anwendung dieser Datenstruktur auf unsere Operationen und Pseudocode (angelehnt an \cite{CORMEN17})}
+				Insert $O(1)$ -> Wert einf\"ugen mit Minimum vergleichen und ggf. Zeiger anpassen
+				\ifpauseswitch
+					\pause
+				\fi
+				\lstinputlisting[language=pseudocode,basicstyle=\scriptsize,xleftmargin=1em]{Pseudocode/insert.pseudo}
+			\end{frame}
+			
+			\begin{frame}{Anwendung dieser Datenstruktur auf unsere Operationen und Pseudocode (angelehnt an \cite{CORMEN17})}
+				Union $O(1)$ -> analog zu Insert
+				\ifpauseswitch
+					\pause
+				\fi
+				\lstinputlisting[language=pseudocode,basicstyle=\scriptsize,xleftmargin=0.5em]{Pseudocode/fib_heap_union.pseudo}
+			\end{frame}
+	
+	\begin{frame}{Was ist mit Extract-Min und warum kein Pseudocode zu Decrease-Key?}
+		\begin{itemize}
+			\item Frage: Wie k\"onnen wir Extract-Min \textit{ohne} negative Auswirkungen auf andere Operationen durchführen?
+			\item[] % Leerzeile erzeugen
+			\item Wie sieht es mit dem Pseudocode von Decrease-Key aus?
+			\item[] % Leerzeile erzeugen
+			\item Und was ist eigentlich mit der Operation Make-Heap und dessen Pseudocode?
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Was ist mit Extract-Min?}
+		\begin{itemize}
+			\item Min-Heaps verwenden einen (fast) vollständigen Binärbaum;
+			\begin{itemize}
+				\item Jede Ebene außer der untersten ist vollständig gefüllt.
+				\item Die unterste Ebene wird von links nach rechts befüllt (\cite{OTTMANN11},\cite{CORMEN17}).
+				\item Die Wurzel ist das Minimum, und jeder Elternknoten hat stets einen kleineren Wert als seine Kinder.
+			\end{itemize}
+			\ifpauseswitch
+				\pause
+			\fi
+			\item \underline{\textbf{Problem:}} Die Laufzeit wegen der Korrektur der Eigenschaften
+			\item \underline{\textbf{Ausweg:}} Verzicht auf Teile der Heapeigenschaften
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\centering
+			\begin{minipage}[t]{.5\textwidth}
+				\centering
+				\begin{tikzpicture}[scale=0.8, % Hier wird die Skalierung hinzugefügt
+					every node/.style={circle, draw},
+					level/.style={sibling distance=30mm/1}
+					]
+					\node {1}
+					child {node {2}
+						child {node {4}}
+						child {node {5}}
+					}
+					child {node {3}};
+				\end{tikzpicture}
+				\caption{Ein binärer Min-Heap}
+			\end{minipage}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Konkretisierung unserer \"Uberlegungen: Der Fibonacci - Heap}
+		\begin{itemize}
+			\item Gewurzelte Bäume: Min-Heap geordnet, Elternknoten kleiner/gleich Kindknoten
+			\item Verzicht auf binären Baum: Erlaubt mehrere Bäume, nicht vollständig/binär
+			\ifpauseswitch
+				\pause
+			\fi
+			\item Wurzelliste: Zyklische doppelt verkettete Liste, Verkettung der Wurzeln
+			\item Zeiger auf Minimum: Auf Wurzel mit kleinstem Wert
+			\item Kindlisten: Analog zu Wurzelliste, schneller Zugriff auf Kinder jedes Knotens
+			\item Zudem verketten wir die Knoten beidseitig -> Zugriff auf alle Knoten in Zeit $O(1)$
+			\item Markierungen: Möglichkeit zur Markierung bestimmter Knoten im Heap
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Beispiel Fibonacci-Heap}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[height=0.7\textheight, width=0.8\textwidth, keepaspectratio]{Abbildungen/PNG_JPEG/Beispiel_Beginn.jpeg}
+			\caption{Ein beispielhafter Fibonacci-Heap, der unseren Überlegungen entspricht (angelehnt an \cite{CORMEN17})}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Einschub: Make-Heap (Teil 0)}
+		\begin{vorbemerkung}
+			Wir benutzen struct, um im Nachfolgenden unsere Objekte zu definieren (\cite{DAVIS10}); schr\"anken uns aber nicht auf u.a. C++ ein.
+		\end{vorbemerkung}
+	\end{frame}
+	
+	\begin{frame}{Einschub: Make-Heap (Teil 1)}
+		\underline{\textbf{Knoten eines Fibonacci-Heaps:}}
+		\lstinputlisting[language=pseudocode,basicstyle=\scriptsize,xleftmargin=1em]{Pseudocode/make_heap/make_heap_1.pseudo}
+	\end{frame}
+	
+	\begin{frame}{Einschub: Make-Heap (Teil 2)}
+		\underline{\textbf{Ein Fibonacci-Heap-Baum:}}
+		\lstinputlisting[language=pseudocode,basicstyle=\scriptsize,xleftmargin=1em]{Pseudocode/make_heap/make_heap_2.pseudo}
+	\end{frame}
+	
+	\begin{frame}{Einschub: Make-Heap (Teil 3)}
+		\underline{\textbf{Methode zur Erzeugung eines Fibonacci-Heaps:}}
+		\lstinputlisting[language=pseudocode,basicstyle=\scriptsize,xleftmargin=1em]{Pseudocode/make_heap/make_heap_3.pseudo}
+	\end{frame}
+	
+	\begin{frame} {Jetzt wieder Min-Heap - Schritt 1: Neues Minimum finden}
+		\begin{figure}
+			\centering
+				\includegraphics[height=1.0\textheight, width=1.0\textwidth, keepaspectratio]{Abbildungen/PNG_JPEG/ExtractMin1.jpeg}
+			\caption{Kandidaten f\"ur das n\"achste Minimum (angelehnt an \cite{CORMEN17})}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame} {Jetzt wieder Min-Heap - Schritt 2: Altes Minimum l\"oschen}
+		\begin{figure}
+			\centering
+				\includegraphics[height=1.0\textheight, width=1.0\textwidth, keepaspectratio]{Abbildungen/PNG_JPEG/ExtractMin2.jpeg}
+			\caption{Alle Kindlisten werden zu neuen B\"aumen, Zeiger wird umgelegt, Minimum gel\"oscht (angelehnt an \cite{CORMEN17})}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Als Pseudocode (angelehnt an \cite{CORMEN17})}
+		\lstinputlisting[language=pseudocode,basicstyle=\scriptsize,xleftmargin=0.5em]{Pseudocode/fib_heap_extractmin.pseudo}
+	\end{frame}
+	
+	\begin{frame} {Essenz der Effizienz: Consolidate}
+		\begin{itemize}
+			\item Worst-Case von dieser Methode: $Omega(n)$ -> Klar
+			\item Doch: Es k\"onnen nicht alle Operationen teuer sein...
+			\item Da wir Linearzeit aufwenden m\"ussen, warum das nicht nutzen, um B\"aume zu vereinigen?
+		\end{itemize}
+	\end{frame}
+	\begin{frame}{Als Pseudocode (Teil 1; angelehnt an \cite{CORMEN17})}
+		\lstinputlisting[language=pseudocode,basicstyle=\scriptsize,xleftmargin=0.5em]{Pseudocode/consolidate1.pseudo}
+	\end{frame}
+	
+	\begin{frame}{Als Pseudocode (Teil 2; angelehnt an \cite{CORMEN17})}
+		\lstinputlisting[language=pseudocode,basicstyle=\scriptsize,xleftmargin=0.5em]{Pseudocode/consolidate2.pseudo}
+	\end{frame}
+	% TODO WAS MACHE ICH JETZT HIERMIT?
+			\begin{comment}
+			
+	\begin{frame} {Was macht Consolidate intuitiv?}
+		\begin{enumerate}
+			\item Finde zwei Wurzeln x und y mit gleichem Grad.
+		\end{enumerate}
+	\end{frame}
+			\end{comment}
+	\section{Und wie sieht es mit dieser Datenstruktur eigentlich in der Praxis aus?}
+	\begin{frame}{Bin\"are Heaps und Fibonacci-Heaps im Vergleich in der Praxis}
+		 Leider nicht sehr gut...		 
+		 \underline{\textbf{Nachteile, die den Algorithmus praktisch ung\"unstig machen:}}
+		\begin{itemize}
+			\item[] % Leerzeile erzeugen
+			\item Hoher Implementierungsaufwand und komplexe Datenstruktur, der sich nicht rentiert (siehe nachfolgende Messung)
+			\item[] % Leerzeile erzeugen
+			\item Lockere Datenstruktur und viel Overhead -> nicht rechnerarchitekturfreundlich (viele Cache-Misses) (siehe u.a. \cite{TAN14})
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Bin\"are Heaps und Fibonacci-Heaps im Vergleich in der Praxis (Teil 1)}
+			\begin{figure}[tb!]
+				\centering
+				\includegraphics[scale=0.7, clip= true, trim=80 55 70 55]{Abbildungen/PDF/planareg.pdf}
+				\caption{Graph, der eingesetzt wurde; dieser hat $n=1000$ Knoten und $m=5984$ Kanten (nach \cite{lewis2023comparison},\cite{rhyd_lewis_2023_7759164}).}
+				\label{fig:planareg}
+			\end{figure}
+	\end{frame}
+	
+		\begin{frame}{Bin\"are Heaps und Fibonacci-Heaps im Vergleich in der Praxis (Teil 2)}
+			\begin{figure}[tb!]
+				\centering
+				%clip l b r t
+				\includegraphics[scale=0.5, clip= true, trim=60 150 40 170]{Abbildungen/PDF/planar.pdf}
+				\caption{Das Messergebnis (nach \cite{lewis2023comparison},\cite{rhyd_lewis_2023_7759164})}
+				\label{fig:planar}
+			\end{figure}
+	\end{frame}
+	
+	\section{Zusammenfassung und Ausblick}
+		\begin{frame}
+			\frametitle{Zusammenfassung und Ausblick}
+			\begin{block}{Zusammenfassung}
+				\begin{itemize}
+					\item Heaps sind eine Implementierung von Priorit\"atswarteschlangen
+					\item  Priorit\"atswarteschlangen sind weit verbreitet
+					\item Fibonacci-Heaps gut f\"ur Theorie; u.a. Dijkstra wird amortisiert schneller
+					\item Praktisch kaum Anwendung aufgrund der Nachteile au\ss er zu Lehrzwecken kaum Anwendung.
+				\end{itemize}
+			\end{block}
+			\ifpauseswitch
+				\pause
+			\fi
+			\begin{block}{Ausblick}
+				\begin{itemize}
+					\item Weitere Datenstrukturen (\"uberraschenderweise auch von u.a. Tarjan)
+					\item Relaxierte Heaps (sogar auch ohne amortisierte Zeit)
+					\item Hollow-Heaps (wesentlich einfachere Struktur mit gleicher Laufzeit; siehe \cite{hansen2015hollow})
+				\end{itemize}
+				(Sie sind teilweise besser; aber verdr\"angen die \"ublichen Datenstrukturen nicht (siehe \cite{lewis2023comparison},\cite{rhyd_lewis_2023_7759164} sowie \cite{MICHAIL2021100869}))
+			\end{block}
+		\end{frame}	
+		
+\section{Literaturverzeichnis}
+	
+	\begin{frame}[allowframebreaks]{Literaturverzeichnis}
+		% Referenzen
+		\printbibliography
+	\end{frame}
+	
+\end{document}

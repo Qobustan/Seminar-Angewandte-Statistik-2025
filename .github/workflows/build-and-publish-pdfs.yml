@@ -33,24 +33,24 @@ jobs:
           make \
           ca-certificates
 
-    - name: Build first .tex found in skript/
+    - name: Build first .tex found in Ausarbeitung/
       working-directory: ${{ github.workspace }}
       run: |
         set -euo pipefail
-        TEXFILE=$(find skript -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
+        TEXFILE=$(find Ausarbeitung -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
         if [ -z "${TEXFILE}" ]; then
-          echo "No .tex files found in skript/"; exit 1
+          echo "No .tex files found in Ausarbeitung/"; exit 1
         fi
         echo "Building $TEXFILE"
         latexmk -pdf -xelatex -interaction=nonstopmode -halt-on-error "$TEXFILE"
 
-    - name: Build first .tex found in presentation/
+    - name: Build first .tex found in Vortrag/
       working-directory: ${{ github.workspace }}
       run: |
         set -euo pipefail
-        TEXFILE=$(find presentation -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
+        TEXFILE=$(find Vortrag -maxdepth 1 -type f -name "*.tex" | head -n 1 || true)
         if [ -z "${TEXFILE}" ]; then
-          echo "No .tex files found in presentation/"; exit 1
+          echo "No .tex files found in Vortrag/"; exit 1
         fi
         echo "Building $TEXFILE"
         latexmk -pdf -xelatex -interaction=nonstopmode -halt-on-error "$TEXFILE"

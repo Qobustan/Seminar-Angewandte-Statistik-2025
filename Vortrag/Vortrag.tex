@@ -34,6 +34,42 @@
 
 \section{Einleitung \& Motivation}
 
+\begin{frame}{Parametrische vs. Nichtparametrische Dichteschätzung (\"Ubersicht)}
+	\begin{columns}[T]
+		% Parametrisch
+		\begin{column}{0.45\textwidth}
+			\textbf{Parametrisch}
+			\begin{itemize}
+				\item Annahme: Verteilung ist bekannt!
+				\item Wenige Parameter ($\mu, \sigma^2$)
+				\item Schätzung durch Parametersch\"atzer wie bspw. Maximum-Likelihood
+			\end{itemize}
+		\end{column}
+		\ifpauseswitch
+			\pause
+		\fi
+		% Nichtparametrisch
+		\begin{column}{0.45\textwidth}
+			\textbf{Nichtparametrisch (KDE)}
+			\begin{itemize}
+				\item Keine feste Form; die Zufallsvariable $X$ muss aber stetig sein, die Dichte $f$ eine ''glatte'' Funktion
+				\item Schätzung: Kern (wie bspw. Epanechnikov) sowie Bandbreite $h$
+				\item Erfolgt mittels des Kerndichtesch\"atzers
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	
+	\vspace{1em}
+	
+	\centering
+	\begin{tikzpicture}[>=stealth, thick]
+		% Pfeile zwischen Konzepten
+		\draw[->] (-3,0) -- (3,0) node[midway,above]{\small Modellannahme vs. Datengetrieben};
+		\draw[->] (-3,-0.6) -- (3,-0.6) node[midway,above]{\small Einfachheit vs. Flexibilität};
+	\end{tikzpicture}
+	
+\end{frame}
+
 \begin{frame}
 	\frametitle{Einleitung \& Motivation}
 	
@@ -43,6 +79,7 @@
 		\item Bei unbekannter Verteilung bietet die nichtparametrische Schätzung oft bessere Einblicke in die Datenstruktur.
 	\end{itemize}
 \end{frame}
+
 
 \begin{frame}
 	\frametitle{Einleitung \& Motivation (Fortsetzung)}

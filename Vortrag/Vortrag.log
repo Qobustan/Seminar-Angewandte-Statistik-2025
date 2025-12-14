@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  14 DEC 2025 13:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  14 DEC 2025 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2037,9 +2037,21 @@ hex.enc}] [15
 ] (./Vortrag.toc) [25
 
 ]
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 22
+1.
 
-LaTeX Warning: Empty bibliography on input line 221.
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 
+LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 221.
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+21.
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 [26
 
 ]
@@ -2053,37 +2065,51 @@ LaTeX Warning: Empty bibliography on input line 221.
 \openout9 = `Vortrag.snm'.
 
  (./Vortrag.aux)
-Package rerunfilecheck Info: File `Vortrag.out' has not changed.
-(rerunfilecheck)             Checksum: 483648B951F3488EA3144FE43E8F0E48;1223.
+
+LaTeX Warning: There were undefined references.
+
+
+Package rerunfilecheck Warning: File `Vortrag.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Vortrag.out':
+(rerunfilecheck)             Before: 483648B951F3488EA3144FE43E8F0E48;1223
+(rerunfilecheck)             After:  CF084169A3F1FA5180EB87131D9AE28B;1311.
+
+Package biblatex Warning: Please rerun LaTeX.
+
 Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 \openout1 = `Vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44929 strings out of 476025
- 931667 string characters out of 5790017
+ 45249 strings out of 476025
+ 938962 string characters out of 5790017
  1867388 words of memory out of 5000000
- 64460 multiletter control sequences out of 15000+600000
- 552841 words of font info for 68 fonts, out of 8000000 for 9000
+ 64770 multiletter control sequences out of 15000+600000
+ 555955 words of font info for 70 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,15n,134p,1881b,2459s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
-mex10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pub
-lic/lm/lmmi10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/t
-ype1/public/lm/lmmi8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/
-fonts/type1/public/lm/lmss10.pfb></Volumes/Macintosh SSD/local/texlive/2023/tex
-mf-dist/fonts/type1/public/lm/lmss12.pfb></Volumes/Macintosh SSD/local/texlive/
-2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Volumes/Macintosh SSD/local/t
-exlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Macintosh S
-SD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></Volumes/Ma
-cintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></Vo
-lumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.
-pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm
-/lmsy8.pfb>
-Output written on Vortrag.pdf (26 pages, 220718 bytes).
+mcsc10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pu
+blic/lm/lmex10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/
+type1/public/lm/lmmi10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dis
+t/fonts/type1/public/lm/lmmi8.pfb></Volumes/Macintosh SSD/local/texlive/2023/te
+xmf-dist/fonts/type1/public/lm/lmss10.pfb></Volumes/Macintosh SSD/local/texlive
+/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></Volumes/Macintosh SSD/local
+/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Volumes/Macintosh SS
+D/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Ma
+cintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></V
+olumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8
+.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/l
+m/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/
+public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts
+/type1/public/lm/lmtt10.pfb>
+Output written on Vortrag.pdf (26 pages, 269897 bytes).
 PDF statistics:
- 900 PDF objects out of 1000 (max. 8388607)
- 824 compressed objects within 9 object streams
- 61 named destinations out of 1000 (max. 500000)
+ 915 PDF objects out of 1000 (max. 8388607)
+ 835 compressed objects within 9 object streams
+ 63 named destinations out of 1000 (max. 500000)
  155 words of extra memory for PDF output out of 10000 (max. 10000000)
 

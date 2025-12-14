@@ -1,0 +1,36 @@
+root = true
+
+# Standard für Quellcode-Dateien (Java, JS, CSS, SCSS, HTML)
+[*.{java,js,css,scss,html}]
+charset = utf-8
+indent_size = 2
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Für YAML/JSON-Konfigurationsdateien
+[*.{yml,yaml,json}]
+charset = utf-8
+indent_size = 2
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Für Mustache-Templates (falls genutzt)
+[*.mustache]
+charset = utf-8
+indent_size = 2
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Für Java spezifisch: oft 4 Spaces statt 2
+[*.java]
+indent_size = 4
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true

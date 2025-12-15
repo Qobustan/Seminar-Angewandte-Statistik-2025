@@ -35,7 +35,7 @@ jobs:
           fi
 
       - name: Upload report artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: spellcheck-report
           path: spellcheck-report.txt

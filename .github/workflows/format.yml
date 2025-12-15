@@ -9,12 +9,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Installiere latexindent
+      - name: Installiere Abhängigkeiten
         run: |
           sudo apt-get update
           sudo apt-get install -y perl
           sudo apt-get install -y texlive
           sudo apt-get install -y texlive-latex-extra
+          sudo apt-get install -y cpanminus  # Installiert cpanminus, um Perl-Module zu installieren
 
-      - name: Run latexindent
-        run: latexindent -w **/*.tex
+      - name: Installiere latexindent
+        run: |
+          sudo cpanm latexindent  # Installiert latexindent via cpanminus
+
+      - name: Führe latexindent aus
+        run: |
+          latexindent -w **/*.tex  # Führt latexindent auf allen .tex-Dateien aus

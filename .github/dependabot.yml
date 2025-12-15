@@ -1,11 +1,47 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-# TODO Write file
+# ============================================================
+# Dependabot configuration for this repository
+# ============================================================
+#
+# Purpose:
+#   Automatically keep GitHub Actions up to date.
+#
+# Why:
+#   - Security patches
+#   - Bug fixes
+#   - Reproducible CI builds
+#
+# File format:
+#   Dependabot configuration version 2
+#
+# Official documentation:
+#   https://docs.github.com/code-security/dependabot/
+#
+# ============================================================
+
 version: 2
+
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  # ----------------------------------------------------------
+  # GitHub Actions
+  # ----------------------------------------------------------
+  #
+  # This ecosystem covers all workflows located in:
+  #   .github/workflows/*.yml
+  #
+  - package-ecosystem: "github-actions"
+
+    # Root directory of the repository
+    directory: "/"
+
+    # Update schedule
     schedule:
+      # Dependabot checks for updates once per week
       interval: "weekly"
+
+    # Optional quality-of-life settings
+    open-pull-requests-limit: 5
+
+    # Labels added to Dependabot pull requests
+    labels:
+      - "dependencies"
+      - "ci"

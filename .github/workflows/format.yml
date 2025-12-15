@@ -15,11 +15,15 @@ jobs:
           sudo apt-get install -y perl
           sudo apt-get install -y texlive
           sudo apt-get install -y texlive-latex-extra
-          sudo apt-get install -y cpanminus  # Installiert cpanminus, um Perl-Module zu installieren
+          sudo apt-get install -y git  # Git installieren, falls es noch nicht vorhanden ist
 
-      - name: Installiere latexindent
+      - name: Lade latexindent herunter
         run: |
-          sudo cpanm latexindent  # Installiert latexindent via cpanminus
+          git clone https://github.com/cmhughes/latexindent.pl.git
+          cd latexindent.pl
+          sudo perl Makefile.PL
+          sudo make
+          sudo make install  # Installiert latexindent direkt aus dem GitHub-Repository
 
       - name: Führe latexindent aus
         run: |

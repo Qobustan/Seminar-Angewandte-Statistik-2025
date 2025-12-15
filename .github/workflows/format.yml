@@ -9,8 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install latexindent
-        run: sudo apt-get install -y latexindent
+      - name: Installiere latexindent
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y perl
+          sudo apt-get install -y texlive
+          sudo apt-get install -y texlive-latex-extra
 
       - name: Run latexindent
         run: latexindent -w **/*.tex

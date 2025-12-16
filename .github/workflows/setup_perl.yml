@@ -1,40 +1,58 @@
-- name: Setup Perl environment
-  uses: shogo82148/actions-setup-perl@v1.36.0
-  with:
-    # The GitHub token to use for verifying the Perl binary.
-    github-token: # optional, default is ${{ github.token }}
-    
-    # The Perl version to download (if necessary) and use. Example: 5.30.0
-    perl-version: # optional
-    
-    # File containing the Perl version. Example: .perl-version
-    perl-version-file: # optional
-    
-    # The distribution of Perl binary.
-    # "default" and "strawberry" are accepted.
-    # "default" is the custom binaries for actions-setup-perl. It is available on Linux, macOS, and Windows.
-    # "strawberry" is from http://strawberryperl.com/. It is available on Windows and falls back to default on other platforms.
-    distribution: # optional, default is default
-    
-    # Enables multi-threading options (-Duseithreads).
-    # "true" and "false" are accepted.
-    # On Linux and macOS, the default value is false (multi-threading is disabled).
-    # On Windows, this option is ignored, multi-threading is always enabled.
-    multi-thread: # optional
-    
-    # Install CPAN modules from your cpanfile with the specified installer.
-    # cpanm(App::cpanminus), cpm(App::cpm), and carton(Carton) are available.
-    # By default, any CPAN modules are not installed.
-    install-modules-with: # optional
-    
-    # Extra argument for CPAN module installer.
-    install-modules-args: # optional
-    
-    # List of one or more CPAN modules, separated by a newline \n character.
-    install-modules: # optional
-    
-    # Enable caching when installing CPAN modules.
-    enable-modules-cache: # optional, default is true
-    
-    # Working directory.
-    working-directory: # optional, default is .
+name: Setup Perl environment
+
+on: 
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+  pull_request:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  setup-perl:
+    runs-on: ubuntu-latest  # You can change this to windows-latest or macos-latest depending on your needs
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Perl environment
+        uses: shogo82148/actions-setup-perl@v1.36.0
+        with:
+          # The GitHub token to use for verifying the Perl binary.
+          github-token: ${{ github.token }}  # Optional, defaults to the GitHub token for authentication
+
+          # The Perl version to download (if necessary) and use. Example: 5.30.0
+          perl-version: 5.36.0  # Specify the Perl version you need (e.g., 5.30.0, 5.36.0, etc.)
+
+          # File containing the Perl version. Example: .perl-version
+          perl-version-file: .perl-version  # Optional, specify if you have a file like this in your repo
+
+          # The distribution of Perl binary.
+          # "default" and "strawberry" are accepted.
+          # "default" is the custom binaries for actions-setup-perl. It is available on Linux, macOS, and Windows.
+          # "strawberry" is from http://strawberryperl.com/. It is available on Windows and falls back to default on other platforms.
+          distribution: default  # Options: "default" (custom binaries), "strawberry" (Windows only)
+
+          # Enables multi-threading options (-Duseithreads).
+          # "true" and "false" are accepted.
+          # On Linux and macOS, the default value is false (multi-threading is disabled).
+          # On Windows, this option is ignored, multi-threading is always enabled.
+          multi-thread: true  # Use multi-threading if needed, true or false
+
+          # Install CPAN modules from your cpanfile with the specified installer.
+          # cpanm(App::cpanminus), cpm(App::cpm), and carton(Carton) are available.
+          # By default, any CPAN modules are not installed.
+          install-modules-with: cpanm  # Use cpanm (cpanminus) for installing modules
+
+          # Extra argument for CPAN module installer.
+          install-modules-args: "--no-test"  # Optional, you can add extra arguments like --no-test if desired
+
+          # List of one or more CPAN modules, separated by a newline \n character.
+          install-modules: "Moose\nDBI"  # Optional, list of CPAN modules to install
+
+          # Enable caching when installing CPAN modules.
+          enable-modules-cache: true  # Use caching for CPAN module installation
+
+          # Working directory.
+          working-directory: ./scripts  # Optional, specify the working directory if needed

@@ -21,8 +21,12 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 RUN echo "Checking if the repository is accessible..." && \
     git ls-remote https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git || echo "Repository not accessible. Will attempt clone when it becomes public."
 
-# If accessible, clone the repository (This part won't run unless the repo is accessible)
-RUN git clone https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git /app
+# Conditionally clone the repository (only if accessible)
+RUN if git ls-remote https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git; then \
+    git clone https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git /app; \
+    else \
+    echo "Repository is still private, skipping clone."; \
+    fi
 
 # Set the working directory to /app/scripts
 WORKDIR /app/scripts

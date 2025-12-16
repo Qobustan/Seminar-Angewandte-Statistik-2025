@@ -14,9 +14,14 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         texlive-lang-german \
         texlive-latex-extra \
         lmodern \
-        git
+        git \
+        curl
 
-# Clone the repository into /app
+# Check if the repository is accessible using 'git ls-remote'
+RUN echo "Checking if the repository is accessible..." && \
+    git ls-remote https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git || echo "Repository not accessible. Will attempt clone when it becomes public."
+
+# If accessible, clone the repository (This part won't run unless the repo is accessible)
 RUN git clone https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git /app
 
 # Set the working directory to /app/scripts

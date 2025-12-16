@@ -1,5 +1,5 @@
-# Use Ubuntu 20.04 or 22.04 (recommended)
-FROM ubuntu:20.04  # or ubuntu:22.04
+# Use Ubuntu 20.04 (or Ubuntu 22.04)
+FROM ubuntu:20.04
 
 # Set non-interactive mode to avoid prompts during apt-get install
 RUN export DEBIAN_FRONTEND=noninteractive

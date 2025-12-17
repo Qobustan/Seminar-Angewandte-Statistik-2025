@@ -54,5 +54,5 @@ To compile the LaTeX files in this folder, follow the steps below. Please note t
 
 ## Future Considerations
 
-If you need to work with the legacy code, consider migrating relevant content to the current LaTeX setup. It's recommended to update any outdated packages or LaTeX constructs to ensure continued compatibility. If the legacy code is not needed for immediate work, it may be helpful to archive it or remove deprecated files to prevent confusion in the future.
+If you need to work with the legacy code, consider migrating relevant content to the current LaTeX setup. It's recommended to update any outdated packages or LaTeX constructs to ensure continued compatibility. If the legacy code is not needed for immediate work, it may be helpful to archive it to prevent confusion in the future.
 

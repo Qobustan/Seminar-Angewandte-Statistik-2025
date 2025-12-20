@@ -1,0 +1,264 @@
+\documentclass{beamer}
+
+% Hier befinden sich alle Metadaten; Pakete, Einstellungen und die sonstigen Ressourcen
+\input{header.tex}
+\usepackage[utf8]{inputenc}
+
+\usepackage[ngerman]{babel}
+\usepackage[backend=bibtex, style=alphabetic]{biblatex}
+\addbibresource{Vortrag.bib}
+
+\usetheme{Madrid}
+
+% Den \pause - Befehl steuern
+% Vortragsversion -> true; Druckversion -> false
+\newif\ifpauseswitch
+\pauseswitchtrue % setze auf \pause aktivieren
+
+\begin{document}
+	
+	\maketitle
+	
+	% TikZ - Bibliothek
+	\usetikzlibrary{arrows.meta}
+	\usetikzlibrary{shapes,arrows.meta,positioning}
+	
+	% Zeige Inhaltsverzeichnis zu Beginn jeder Section
+	\AtBeginSection[] % Do nothing for \section*
+	{
+		\begin{frame}<beamer>
+			\frametitle{Outline}
+			\tableofcontents[currentsection]
+		\end{frame}
+	}
+
+\section{Einleitung \& Motivation}
+
+\begin{frame}{Parametrische vs. Nichtparametrische Dichteschätzung (\"Ubersicht)}
+	\begin{columns}[T]
+		% Parametrisch
+		\begin{column}{0.45\textwidth}
+			\textbf{Parametrisch (kennen wir schon $->$ Stochastik)}
+			\begin{itemize}
+				\item Annahme: Verteilung ist bekannt!
+				\item Wenige Parameter ($\mu, \sigma^2$)
+				\item Schätzung durch Parametersch\"atzer wie bspw. Maximum-Likelihood
+			\end{itemize}
+		\end{column}
+		
+		\ifpauseswitch
+			\pause
+		\fi
+		
+		% Nichtparametrisch
+		\begin{column}{0.45\textwidth}
+			\textbf{Nichtparametrisch (KDE)}
+			\begin{itemize}
+				\item Keine feste Form; die Zufallsvariable $X$ muss aber stetig sein, die Dichte $f$ eine ''glatte'' Funktion
+				\item Schätzung: Kern (wie bspw. Epanechnikov) sowie Bandbreite $h$
+				\item Erfolgt mittels des Kerndichtesch\"atzers
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	
+	\vspace{1em}
+	
+	\centering
+	\begin{tikzpicture}[>=stealth, thick]
+		% Pfeile zwischen Konzepten
+		\draw[<->] (-3,0) -- (3,0) node[midway,above]{\small Modellannahme vs. Datengetrieben};
+		\draw[<->] (-3,-0.6) -- (3,-0.6) node[midway,above]{\small Einfachheit vs. Flexibilität};
+	\end{tikzpicture}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Einleitung \& Motivation}
+	
+	\textbf{Warum nichtparametrisch? \cite{BüningTrenkler+1994}}
+	\begin{itemize}
+		\item Klassische parametrische Verfahren (z.\,B. unter Annahme einer Normalverteilung) sind oft zu starr.
+		\begin{itemize}
+			\item Starke Kopplung an unsicheren Annahmen!
+		\end{itemize}
+		\item Bei unbekannter Verteilung bietet die nichtparametrische Schätzung oft bessere Einblicke in die Datenstruktur.
+	\end{itemize}
+	
+	\ifpauseswitch
+		\pause
+	\fi
+	
+	\textbf{Zielsetzung:}
+	\begin{itemize}
+		\item Annäherung an den Wert $f(x)$ an einer Stelle $x$, ohne eine spezifische parametrische Familie vorauszusetzen.
+	\end{itemize}
+\end{frame}
+
+\section{Der Rosenblatt-Schätzer}
+
+\begin{frame}
+	\frametitle{Der Rosenblatt-Schätzer (Die theoretische Basis)}
+	
+	\begin{itemize}
+		\item \textbf{Idee:} Da $f(x) = F'(x)$, nutzt man den Differenzenquotienten der empirischen Verteilungsfunktion $F_n$.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Der Rosenblatt-Schätzer (Formel)}
+	
+	\begin{itemize}
+		\item \textbf{Der Schätzer:}
+		\begin{equation}
+			f_n(x) = \frac{F_n(x+h) - F_n(x-h)}{2h}
+		\end{equation}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Der Rosenblatt-Schätzer (Konsistenz)}
+	
+	\begin{itemize}
+		\item \textbf{Konsistenz:} Damit der Schätzer gegen die wahre Dichte konvergiert, muss für $n \to \infty$ gelten:
+		\begin{itemize}
+			\item Die Bandbreite $h \to 0$ (Bias reduzieren).
+			\item $nh \to \infty$ (Varianz reduzieren).
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\section{Das Histogramm}
+
+\begin{frame}
+	\frametitle{Das Histogramm (Der Klassiker)}
+	
+	\begin{itemize}
+		\item \textbf{Funktionsweise:} Zerlegung des Datenraums in Boxen (Bins) der Breite $h$. Die Höhe der Box entspricht der relativen Häufigkeit $\frac{n_k}{n}$ normiert durch $h$.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Das Histogramm (Probleme)}
+	\begin{itemize}
+		\item \textbf{Probleme:}
+		\begin{itemize} % statt enumerate
+			\item Unstetigkeit: Die geschätzte Dichte ist eine Treppenfunktion.
+			\item Subjektivität: Abhängig von $x_0$ und $h$.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Das Histogramm (Optimale Bandbreite)}
+	
+	\begin{itemize}
+		\item \textbf{Optimale Bandbreite ($h$):}
+		\begin{itemize}
+			\item Scott: $h \approx 3.49 s n^{-1/3}$
+			\item Freedman-Diaconis: $h^* = 2(x_{0.75} - x_{0.25})n^{-1/3}$
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\section{Kernschätzer (KDE)}
+
+\begin{frame}
+	\frametitle{Kernschätzer (KDE) - Einführung}
+	
+	\begin{itemize}
+		\item \textbf{Der Schätzer:}
+		\begin{equation}
+			\hat{f}_n(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}\right)
+		\end{equation}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Kernschätzer (KDE) - Wahl des Kerns}
+	
+	\begin{itemize}
+		\item \textbf{Kernwahl:} Der Kern muss zu 1 integrieren ($\int K(x) dx = 1$).
+		\item Gängige Kerne:
+		\begin{itemize}
+			\item Rechteck-Kern
+			\item Gauß-Kern
+			\item Epanechnikov-Kern
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Kernschätzer (KDE) - Bandbreitenwahl}
+	
+	\begin{itemize}
+		\item \textbf{Bandbreitenwahl (Silverman's Rule):}
+		\begin{equation}
+			h_{opt} \approx 1.06 \sigma n^{-1/5}
+		\end{equation}
+	\end{itemize}
+\end{frame}
+
+\section{Nichtparametrische Regression}
+
+\begin{frame}
+	\frametitle{Nichtparametrische Regression - Einführung}
+	
+	\textbf{Watson-Nadaraya Schätzer:}
+	\begin{equation}
+		\hat{m}_{WN}(x) = \frac{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
+	\end{equation}
+	\begin{itemize}
+		\item Schätzung von $m(x)$ als gewichteter Mittelwert der umliegenden $Y$-Werte.
+	\end{itemize}
+\end{frame}
+
+\section{Robuste Lineare Regression}
+
+\begin{frame}
+	\frametitle{Robuste Lineare Regression (Theil-Schätzer) - Einführung}
+	
+	\begin{itemize}
+		\item \textbf{Theil-Methode I:} Steigung zwischen Paaren $(i, i+n/2)$, Median als Schätzer.
+		\item \textbf{Theil-Sen-Schätzer (Methode II):} Median der Steigungen zwischen allen Paaren $i < j$:
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Robuste Lineare Regression (Theil-Schätzer) - Formel}
+	
+	\begin{equation}
+		H_{ij} = \frac{Y_j - Y_i}{X_j - X_i}
+	\end{equation}
+	\begin{itemize}
+		\item Der Schätzer für den Anstieg $\beta$ ist der Median dieser Steigungen.
+	\end{itemize}
+\end{frame}
+
+\section{Zusammenfassung}
+
+\begin{frame}
+	\frametitle{Fazit und Ausblick }
+	
+	\begin{itemize}
+		\item \textbf{Flexibilität:} Nichtparametrische Methoden passen sich den Daten an.
+		\item \textbf{Parameter $h$:} Kritischer Schritt, Balance zwischen Bias und Varianz.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fazit und Ausblick (Fortsetzung)}
+	
+	\begin{itemize}
+		\item \textbf{Robustheit:} Verfahren wie der Theil-Sen-Schätzer bieten robuste Alternativen zur klassischen Regression, besonders bei Ausreißern.
+	\end{itemize}
+\end{frame}
+
+\section{Literaturverzeichnis}
+	
+	\begin{frame}[allowframebreaks]{Literaturverzeichnis}
+		% Referenzen
+		\printbibliography
+	\end{frame}
+	
+\end{document}

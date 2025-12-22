@@ -34,7 +34,22 @@
     "graphicx",
     "amsmath",
     "amssymb",
-    "amsthm"
+    "amsthm",
+    "Daten",
+    "Kritischer",
+    "Schritt",
+    "zwischen",
+    "Varianz",
+    "Robustheit",
+    "Verfahren",
+    "bieten",
+    "robuste",
+    "Alternativen",
+    "klassischen",
+    "besonders",
+    "Ausreißern",
+    "Literaturverzeichnis",
+    "Referenzen"
   ],
   "ignorePaths": [
     "*.bib",

@@ -21,8 +21,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install cspell
-        run: npm install -g cspell
+      - name: Install cspell and dictionaries
+        run: |
+          npm install -g cspell
+          npm install -g @cspell/dict-de-de
+          npm install -g @cspell/dict-latex
+          cspell link add @cspell/dict-de-de
+          cspell link add @cspell/dict-latex
 
       - name: Run spellcheck and save report
         run: |

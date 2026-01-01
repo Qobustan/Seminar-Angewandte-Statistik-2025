@@ -107,7 +107,7 @@ do
     add_to_config 'var config_template_name = "'"$template_name"'";'"\n"
 
     # main tex file (contains '\documentclass'):
-    main_tex_file="$(grep -rl --fixed-strings --include='*.tex' '\documentclass' "$template_dir")"
+    main_tex_file="$(grep -rl --fixed-strings --include=*.tex '\documentclass' "$template_dir")"
     main_tex_file="$(strip_path "$main_tex_file")"
     debug "    Main tex file: '$main_tex_file'"
     add_to_config 'var config_main_tex_file = "'"$main_tex_file"'";'"\n"

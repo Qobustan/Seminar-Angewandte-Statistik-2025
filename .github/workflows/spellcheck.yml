@@ -9,17 +9,25 @@ on:
 jobs:
   spellcheck:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install cspell
-        run: npm install -g cspell
+      - name: Install cspell and dictionaries
+        run: |
+          npm install -g cspell
+          npm install -g @cspell/dict-de-de
+          npm install -g @cspell/dict-latex
+          cspell link add @cspell/dict-de-de
+          cspell link add @cspell/dict-latex
 
       - name: Run spellcheck and save report
         run: |
@@ -35,7 +43,7 @@ jobs:
           fi
 
       - name: Upload report artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v4
         with:
           name: spellcheck-report
           path: spellcheck-report.txt

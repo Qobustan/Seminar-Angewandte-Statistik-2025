@@ -39,7 +39,7 @@ EOF
 # Check if lacheck command is available
 sub check_command {
     my $cmd = shift;
-    system("which $cmd > /dev/null 2>&1") == 0
+    system("command", "-v", $cmd, ">", "/dev/null", "2>&1") == 0
         or die "Error: $cmd is not installed or not in PATH\n";
 }
 

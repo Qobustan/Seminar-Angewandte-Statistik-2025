@@ -73,3 +73,13 @@ Thumbs.db
 # *.txs-profile
 # *.txs-undo
 legacy/debug
+
+# -----------------------
+# Python
+# -----------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+

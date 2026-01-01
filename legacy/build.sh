@@ -8,19 +8,56 @@
 #   DESCRIPTION: This script is executed by the github workflow. It builds the
 #                web application and adds the latex templates.
 #
-#       OPTIONS: TARGET_DIR    temporary target directory
-#                REMOTE_REPO   remote repository name ('user/repository')
-#                DOMAIN        github pages custom domain (optional)
+# ==============================================================================
+# ⚠️  WARNING: THIS SCRIPT IS NOT COMPATIBLE WITH THIS REPOSITORY! ⚠️
+# ==============================================================================
 #
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: Yavuzâlp Dal
-#  ORGANIZATION: ---
-#       CREATED: ---
-#      REVISION: ---
+# This script was designed for the fhswf/LaTeX-Editor-source repository
+# and will NOT work correctly in this repository (Seminar-Angewandte-Statistik-2025).
+#
+# This script expects:
+#   - A 'templates/' directory with LaTeX templates
+#   - A 'web/' directory with website files
+#   - A 'swiftlatex/' directory with SwiftLaTeX modules
+#
+# These directories do NOT exist in this repository structure.
+#
+# If you need to build LaTeX documents in THIS repository, use:
+#   - scripts/generatePdf.sh for generating PDFs
+#
+# This file is kept in the legacy/ directory for historical reference only.
 #
 # ==============================================================================
+
+# Help function
+show_help() {
+    cat << EOF
+⚠️  WARNING: THIS SCRIPT IS NOT COMPATIBLE WITH THIS REPOSITORY! ⚠️
+
+This script (build.sh) was designed for a different repository
+(fhswf/LaTeX-Editor-source) and will NOT work in this repository.
+
+ORIGINAL USAGE (for reference only):
+    ./build.sh TARGET_DIR REMOTE_REPO [DOMAIN]
+
+ARGUMENTS (for reference only):
+    TARGET_DIR    temporary target directory
+    REMOTE_REPO   remote repository name ('user/repository')
+    DOMAIN        github pages custom domain (optional)
+
+FOR THIS REPOSITORY, USE INSTEAD:
+    scripts/generatePdf.sh    - Generate PDFs for Ausarbeitung and Vortrag
+
+This file is kept in legacy/ directory for historical reference only.
+
+EOF
+}
+
+# Check for help flag first
+if [[ "${1:-}" == "-h" ]] || [[ "${1:-}" == "--help" ]]; then
+    show_help
+    exit 0
+fi
 
 DEBUG=0 # debug output
 

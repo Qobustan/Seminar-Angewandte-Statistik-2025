@@ -194,6 +194,17 @@ Located in `task_skripts/`:
 
 Most scripts support a `--help` option for usage information.
 
+### Branch Management
+
+**`scripts/delete-obsolete-branches.sh`** / **`scripts/delete-obsolete-branches.py`**
+- Deletes obsolete branches from the repository
+- Removes old feature branches and merged PR branches
+- Keeps main branch and active PR branches
+- See `BRANCHES_TO_DELETE.md` for the list of branches to be removed
+- Usage (Bash): `./scripts/delete-obsolete-branches.sh`
+- Usage (Python): `python3 scripts/delete-obsolete-branches.py` (requires `GITHUB_TOKEN` environment variable)
+- Dry run: `python3 scripts/delete-obsolete-branches.py --dry-run`
+
 ---
 
 ## Contributing

@@ -6,14 +6,36 @@
 #   DESCRIPTION: Converts BibTeX data to HTML format
 #
 #       USAGE: bibtex2html.pl <bib_file> [output_dir]
+#              bibtex2html.pl --help
 #
 #       OPTIONS: bib_file    - Input BibTeX file (required)
 #                output_dir  - Output directory (default: current directory)
+#                --help      - Show this help message
 #
 # ==============================================================================
 
 use strict;
 use warnings;
+
+# Show help if requested
+if (@ARGV && ($ARGV[0] eq '-h' || $ARGV[0] eq '--help')) {
+    print << "EOF";
+Usage: $0 <bib_file> [output_dir]
+
+Description:
+    Converts BibTeX bibliography data to HTML format.
+
+Arguments:
+    bib_file      Input BibTeX file (required)
+    output_dir    Output directory (default: current directory)
+
+Example:
+    $0 references.bib
+    $0 references.bib ./html_output
+
+EOF
+    exit 0;
+}
 
 # Check if bibtex2html command is available
 sub check_command {
@@ -29,7 +51,7 @@ my $bib_file = $ARGV[0];
 my $output_dir = $ARGV[1] // '.';
 
 # Validate input file
-die "Usage: $0 <bib_file> [output_dir]\n" unless defined $bib_file;
+die "Usage: $0 <bib_file> [output_dir]\nRun '$0 --help' for more information.\n" unless defined $bib_file;
 die "Error: File '$bib_file' not found\n" unless -f $bib_file;
 die "Error: File '$bib_file' is not readable\n" unless -r $bib_file;
 

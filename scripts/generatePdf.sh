@@ -5,11 +5,43 @@
 #
 #   DESCRIPTION: Generates PDF from LaTeX source with proper compilation steps
 #
-#       USAGE: ./generatePdf.sh
+#       USAGE: ./generatePdf.sh [-h|--help]
+#
+#       OPTIONS: -h, --help    Show usage information
 #
 # ==============================================================================
 
 set -euo pipefail
+
+# Show help if requested
+if [[ "${1:-}" == "-h" ]] || [[ "${1:-}" == "--help" ]]; then
+    cat << EOF
+Usage: $0
+
+Description:
+    Generates PDF from LaTeX source with proper compilation steps.
+    Runs pdflatex, bibtex, makeindex, and pdflatex again (3 passes total).
+    Automatically cleans up temporary files after compilation.
+
+Requirements:
+    - ../src/Hauptdatei.tex must exist
+    - pdflatex, bibtex, and makeindex must be available
+
+Example:
+    $0
+
+EOF
+    exit 0
+fi
+
+# Check if required LaTeX commands are available
+for cmd in pdflatex bibtex makeindex; do
+    if ! command -v "$cmd" &> /dev/null; then
+        echo "Error: $cmd command not found" >&2
+        echo "Please install a LaTeX distribution that includes $cmd" >&2
+        exit 1
+    fi
+done
 
 # Check if source directory exists
 if [[ ! -d "../src" ]]; then
@@ -26,6 +58,7 @@ if [[ ! -f "Hauptdatei.tex" ]]; then
 fi
 
 echo "Starting PDF generation process..."
+echo "======================================"
 
 # 1. Generiert das Dokument mit Fragezeichen anstelle von Zitaten
 echo "Step 1/5: Running pdflatex (first pass)..."
@@ -66,6 +99,8 @@ pdflatex -interaction=nonstopmode Hauptdatei.tex || {
 }
 
 # Aufräumen...
+echo ""
+echo "======================================"
 echo "Cleaning up temporary files..."
 # Define patterns of files to remove
 temp_files=(
@@ -82,7 +117,9 @@ if [[ -d "latex_einstellungen" ]]; then
     find latex_einstellungen -maxdepth 1 -type f -name "*.aux" -delete 2>/dev/null || true
 fi
 
+echo "======================================"
 echo "PDF generation completed successfully!"
 if [[ -f "Hauptdatei.pdf" ]]; then
     echo "Output file: $(pwd)/Hauptdatei.pdf"
+    echo "File size: $(du -h Hauptdatei.pdf | cut -f1)"
 fi

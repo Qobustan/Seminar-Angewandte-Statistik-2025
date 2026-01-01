@@ -6,10 +6,31 @@
 #   DESCRIPTION: Removes temporary LaTeX build files
 #
 #       OPTIONS: SHOW_COMMENTS - set to true to show comment output
+#                -h, --help    - show usage information
 #
 # ==============================================================================
 
 set -euo pipefail
+
+# Show help if requested
+if [[ "${1:-}" == "-h" ]] || [[ "${1:-}" == "--help" ]]; then
+    cat << EOF
+Usage: $0
+
+Description:
+    Removes temporary LaTeX build files from the current directory
+    and the 'Ausarbeitung' subdirectory.
+
+Environment Variables:
+    SHOW_COMMENTS    Set to 'false' to suppress informational messages (default: true)
+
+Example:
+    $0
+    SHOW_COMMENTS=false $0
+
+EOF
+    exit 0
+fi
 
 # Kontrollvariable für die Ausgabe von Kommentaren
 SHOW_COMMENTS=${SHOW_COMMENTS:-true}
@@ -18,15 +39,20 @@ SHOW_COMMENTS=${SHOW_COMMENTS:-true}
 safe_remove() {
     local patterns=("$@")
     local found_files=()
+    local count=0
     
     for pattern in "${patterns[@]}"; do
         while IFS= read -r -d '' file; do
             found_files+=("$file")
+            ((count++))
         done < <(find . -maxdepth 1 -type f -name "$pattern" -print0 2>/dev/null)
     done
     
     if [[ ${#found_files[@]} -gt 0 ]]; then
         rm -f "${found_files[@]}"
+        [[ "$SHOW_COMMENTS" == "true" ]] && echo "  Removed $count file(s)"
+    else
+        [[ "$SHOW_COMMENTS" == "true" ]] && echo "  No files to remove"
     fi
 }
 

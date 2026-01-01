@@ -26,6 +26,27 @@ set -euo pipefail
 
 DEBUG=0 # debug output
 
+function show_usage
+{
+    cat << EOF
+Usage: $0 TARGET_DIR REMOTE_REPO [DOMAIN]
+
+Arguments:
+    TARGET_DIR    Temporary target directory for build output
+    REMOTE_REPO   Remote repository name (format: user/repository)
+    DOMAIN        GitHub Pages custom domain (optional)
+
+Description:
+    Builds the web application and adds LaTeX templates.
+    Executed by GitHub workflow for deployment.
+
+Example:
+    $0 ./build myuser/myrepo example.com
+
+EOF
+    exit 0
+}
+
 function fatal
 {
     printf "%s: error: %s\n" "$0" "$1" >&2
@@ -43,11 +64,21 @@ function debug
 #  arguments
 # ------------------------------------------------------------------------------
 
+# Show help if requested
+if [[ "${1:-}" == "-h" ]] || [[ "${1:-}" == "--help" ]]; then
+    show_usage
+fi
+
+# Validate argument count
+if [[ $# -lt 2 ]]; then
+    echo "Error: Too few arguments" >&2
+    echo "Run '$0 --help' for usage information" >&2
+    exit 1
+fi
+
 TARGET_DIR="$1"/ # temporary target directory
 REMOTE_REPO="$2" # remote repository name
-DOMAIN="$3"      # remote repository github pages custom domain (optional)
-
-[ $# -lt 2 ] && fatal "too few arguments"
+DOMAIN="${3:-}" # remote repository github pages custom domain (optional)
 
 # ------------------------------------------------------------------------------
 #  variables

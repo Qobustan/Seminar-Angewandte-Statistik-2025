@@ -11,7 +11,7 @@ pdflatex -interaction=nonstopmode Ausarbeitung.tex || exit /b 1
 pdflatex -interaction=nonstopmode Ausarbeitung.tex || exit /b 1
 
 echo Building Vortrag...
-cd ..\Vortrag || exit /b 1
+cd /d ..\Vortrag || exit /b 1
 pdflatex -interaction=nonstopmode Vortrag.tex || exit /b 1
 bibtex Vortrag 2>nul
 pdflatex -interaction=nonstopmode Vortrag.tex || exit /b 1

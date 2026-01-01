@@ -8,6 +8,7 @@ Requires: PyGithub (install with: pip install PyGithub)
 
 import os
 import sys
+import time
 from typing import List
 
 # Check if PyGithub is available
@@ -30,6 +31,8 @@ BRANCHES_TO_KEEP = [
 ]
 
 # Obsolete branches to delete
+# List verified as of: 2026-01-01
+# Note: This is a one-time cleanup script. Update this list if re-running later.
 OBSOLETE_BRANCHES = [
     # Historical feature branches
     "Einen-Fork-für-eine-potentielle-Vorlage-in-der-Zukunft-(soll-nicht-gemerged-werden)",
@@ -137,6 +140,8 @@ def delete_branches(token: str, dry_run: bool = False) -> None:
                 ref.delete()
                 print(f"  ✓ Deleted: {branch_name}")
                 success_count += 1
+                # Small delay to avoid hitting rate limits
+                time.sleep(0.5)
             except GithubException as e:
                 print(f"  ✗ Failed to delete {branch_name}: {e.data.get('message', str(e))}")
                 error_count += 1

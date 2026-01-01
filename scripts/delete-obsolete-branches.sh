@@ -2,8 +2,14 @@
 
 # Script to delete obsolete branches from the repository
 # This script will delete branches that are no longer needed
+# List verified as of: 2026-01-01
 
 set -e
+
+# Repository configuration
+REPO_OWNER="Qobustan"
+REPO_NAME="Seminar-Angewandte-Statistik-2025"
+REPO_FULL="${REPO_OWNER}/${REPO_NAME}"
 
 echo "=================================="
 echo "Obsolete Branch Cleanup Script"
@@ -20,7 +26,7 @@ echo ""
 delete_branch() {
     local branch_name="$1"
     echo "Deleting branch: $branch_name"
-    if gh api -X DELETE "/repos/Qobustan/Seminar-Angewandte-Statistik-2025/git/refs/heads/$branch_name" 2>/dev/null; then
+    if gh api -X DELETE "/repos/${REPO_FULL}/git/refs/heads/$branch_name" 2>/dev/null; then
         echo "  ✓ Successfully deleted: $branch_name"
     else
         echo "  ✗ Failed to delete: $branch_name (may not exist or insufficient permissions)"
@@ -73,4 +79,4 @@ echo "Branch cleanup completed!"
 echo "=================================="
 echo ""
 echo "To verify the cleanup, visit:"
-echo "https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/branches"
+echo "https://github.com/${REPO_FULL}/branches"

@@ -19,7 +19,7 @@ OPTIONS:
 
 DESCRIPTION:
     This script stages all changes, commits them with a message, and pushes
-    to the main branch. It will show the git status before committing and
+    to the current branch. It will show the git status before committing and
     ask for confirmation before pushing.
 
 REQUIREMENTS:
@@ -91,17 +91,18 @@ git commit -m "$COMMIT_MESSAGE"
 
 # Ask for confirmation before push
 echo ""
-read -p "Push changes to origin main? (y/N): " -n 1 -r
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+read -p "Push changes to origin $CURRENT_BRANCH? (y/N): " -n 1 -r
 echo ""
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo "Pushing to origin main..."
-    git push origin main
+    echo "Pushing to origin $CURRENT_BRANCH..."
+    git push origin "$CURRENT_BRANCH"
     echo ""
     echo "Changes pushed successfully!"
 else
     echo "Push cancelled. Changes have been committed locally."
-    echo "You can push manually later with: git push origin main"
+    echo "You can push manually later with: git push origin $CURRENT_BRANCH"
 fi
 
 echo ""

@@ -53,7 +53,7 @@ for ext in $EXTENSIONS; do
     if [ -n "$files_found" ]; then
         for file in $files_found; do
             rm -f "$file"
-            ((count++))
+            count=$((count + 1))
         done
     fi
 done
@@ -83,7 +83,7 @@ if [ -d "Ausarbeitung" ]; then
         if [ -n "$files_found" ]; then
             for file in $files_found; do
                 rm -f "$file"
-                ((ausarbeitung_count++))
+                ausarbeitung_count=$((ausarbeitung_count + 1))
             done
         fi
     done

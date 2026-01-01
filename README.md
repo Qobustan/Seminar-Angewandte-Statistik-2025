@@ -2,7 +2,7 @@
 
 A comprehensive LaTeX project repository for the Applied Statistics seminar, Wintersemester 2025/26.
 
-**Author:** Yavuzalp Dal  
+**Author:** Yavuzâlp Dal
 **Semester:** Wintersemester 2025/26
 
 📚 **[Visit our Wiki](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki)** for comprehensive documentation and guides.

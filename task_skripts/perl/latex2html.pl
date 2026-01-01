@@ -1,16 +1,16 @@
 #!/usr/bin/perl
 # latex2html - Ein Perl-Skript zum Konvertieren von LaTeX in HTML
 
-# Beispielaufruf:
-# latex2html mein_dokument.tex
-
 use strict;
 use warnings;
 
-my $tex_file = $ARGV[0] // die "Bitte LaTeX-Datei angeben";
+my $tool = "latex2html";
+my $check = `which $tool 2>/dev/null`;
+die "Error: $tool is not installed. Please install it first.\n" unless $check;
 
-# Einfaches Kommando, um latex2html auszuführen
-system("latex2html $tex_file") == 0
-    or die "Fehler beim Ausführen von latex2html: $!\n";
+my $tex_file = $ARGV[0] // die "Usage: $0 <tex_file>\n";
 
-print "LaTeX-Dokument erfolgreich in HTML konvertiert.\n";
+system("$tool $tex_file") == 0
+    or die "Error running $tool: $!\n";
+
+print "LaTeX document converted to HTML successfully.\n";

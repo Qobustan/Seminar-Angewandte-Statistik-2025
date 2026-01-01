@@ -1,18 +1,17 @@
 #!/usr/bin/perl
 # bibtex2html - Ein Perl-Skript zum Konvertieren von BibTeX-Daten in HTML
 
-# Beispielaufruf:
-# bibtex2html -o mein_bibliographie mein_dokument.bib
-
 use strict;
 use warnings;
 
-# Verweise auf die Bibliographie-Datei und Ausgabe-Verzeichnis
-my $bib_file = $ARGV[0];
+my $tool = "bibtex2html";
+my $check = `which $tool 2>/dev/null`;
+die "Error: $tool is not installed. Please install it first.\n" unless $check;
+
+my $bib_file = $ARGV[0] // die "Usage: $0 <bibfile> [output_dir]\n";
 my $output_dir = $ARGV[1] // '.';
 
-# Einfaches Kommando, um BibTeX-Daten in HTML umzuwandeln
-system("bibtex2html -o $output_dir $bib_file") == 0
-    or die "Fehler beim Ausführen von bibtex2html: $!\n";
+system("$tool -o $output_dir $bib_file") == 0
+    or die "Error running $tool: $!\n";
 
-print "Bibliographie in HTML erfolgreich erstellt.\n";
+print "Bibliography converted to HTML successfully.\n";

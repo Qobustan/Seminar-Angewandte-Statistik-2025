@@ -136,9 +136,9 @@ do
 
     # placeholders:
     # mask spaces before creating the array
-    placeholders=($(grep -E --only-matching "{{[^{}]+}}" "$template_dir"/"$main_tex_file" \
+    mapfile -t placeholders < <(grep -E --only-matching "{{[^{}]+}}" "$template_dir"/"$main_tex_file" \
         | sed 's/ /§/g' \
-        | sed 's/[{}]//g'))
+        | sed 's/[{}]//g')
     add_to_config 'var config_placeholders = ['
     debug "    Placeholders: "
 

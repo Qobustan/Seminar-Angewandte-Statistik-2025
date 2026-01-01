@@ -1,0 +1,32 @@
+# Label configuration for automatic PR labeling
+# See: https://github.com/actions/labeler
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '*.md'
+          - 'docs/**'
+
+latex:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.tex'
+          - '**/*.bib'
+          - '**/*.sty'
+
+workflows:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+
+docker:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Dockerfile'
+          - 'docker-compose*.yml'
+
+scripts:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.sh'
+          - 'scripts/**'

@@ -10,10 +10,12 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
       - name: Install chktex
         run: sudo apt-get install -y chktex
 
       - name: Run chktex
-        run: chktex -q -n1 -I0 -f%f:%l:%c:%d:%k:%n:%m\n **/*.tex || true
+        run: |
+          shopt -s globstar
+          chktex -q -n1 -I0 -f'%f:%l:%c:%d:%k:%n:%m\n' **/*.tex || true

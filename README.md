@@ -157,6 +157,11 @@ The repository includes comprehensive GitHub Actions workflows in `.github/workf
   - Uploads generated PDFs as artifacts
   - Artifacts are available for 90 days after each workflow run
 
+- **`publish-wiki.yml`** - Publishes wiki documentation to GitHub Wiki
+  - Triggers on push to `main/master` when wiki files change or manual dispatch
+  - Syncs markdown files from `wiki/` directory to the repository's GitHub Wiki
+  - Uses pinned commit SHA to avoid firewall issues
+
 - **`lint.yml`** - LaTeX linting with chktex
 - **`spellcheck.yml`** - Spell checking with cspell
 - **`format.yml`** - Code formatting checks
@@ -195,6 +200,17 @@ Located in `task_skripts/`:
 - `perl/` - Perl scripts for text processing
 
 Most scripts support a `--help` option for usage information.
+
+### Branch Management
+
+**`scripts/delete-obsolete-branches.sh`** / **`scripts/delete-obsolete-branches.py`**
+- Deletes obsolete branches from the repository
+- Removes old feature branches and merged PR branches
+- Keeps main branch and active PR branches
+- See `BRANCHES_TO_DELETE.md` for the list of branches to be removed
+- Usage (Bash): `./scripts/delete-obsolete-branches.sh`
+- Usage (Python): `python3 scripts/delete-obsolete-branches.py` (requires `GITHUB_TOKEN` environment variable)
+- Dry run: `python3 scripts/delete-obsolete-branches.py --dry-run`
 
 ---
 

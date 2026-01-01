@@ -60,7 +60,7 @@ If you need to work with the legacy code, consider migrating relevant content to
 
 ### build-seminar.sh
 
-A functional build script specifically designed for this repository. Unlike the original `build.sh` (which was copied from fhswf/LaTeX-Editor-source and doesn't work here), this script properly builds the Ausarbeitung and Vortrag documents.
+A functional build script specifically designed for this repository. Unlike the original `build.sh`, this script properly builds the Ausarbeitung and Vortrag documents.
 
 **Usage:**
 ```bash
@@ -70,10 +70,6 @@ A functional build script specifically designed for this repository. Unlike the 
 ./legacy/build-seminar.sh -p           # Build only Vortrag
 ./legacy/build-seminar.sh --help       # Show help
 ```
-
-### build.sh (Legacy - Does Not Work)
-
-This script was copied from `fhswf/LaTeX-Editor-source` and requires directories that don't exist in this repository (`templates/`, `web/`, `swiftlatex/`). It is preserved for reference only.
 
 ### debug.sh (Legacy)
 

@@ -1,6 +1,6 @@
 # Seminar: Angewandte Statistik 2025
 
-A comprehensive LaTeX project repository for the Applied Statistics seminar, Winter Semester 2025/26.
+A comprehensive LaTeX project repository for the Applied Statistics seminar, Wintersemester 2025/26.
 
 **Author:** Yavuzalp Dal  
 **Semester:** Wintersemester 2025/26

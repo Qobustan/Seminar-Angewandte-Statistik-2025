@@ -6,6 +6,7 @@ This repository uses GitHub Actions for continuous integration and deployment. T
 
 The project includes several automated workflows for:
 - 📦 Building and publishing PDFs
+- 📖 Publishing wiki documentation
 - ✅ Code quality checks (linting, formatting)
 - 🔤 Spell-checking
 - 📚 BibTeX validation
@@ -357,6 +358,36 @@ updates:
 - Installs Perl dependencies
 - Sets up Perl environment for scripts
 - Used by other workflows requiring Perl tools
+
+### 11. Publish Wiki
+
+**File**: `.github/workflows/publish-wiki.yml`
+
+#### Triggers
+
+- Push to `main` or `master` branch (when wiki files change)
+- Manual trigger (workflow_dispatch)
+
+#### What It Does
+
+1. **Checkout Repository**
+   - Checks out the repository with wiki content
+
+2. **Publish to GitHub Wiki**
+   - Syncs markdown files from `wiki/` directory to the repository's GitHub Wiki
+   - Uses `github-wiki-publish-action` pinned to a specific commit SHA
+   - Avoids firewall-blocked API calls by using commit SHA instead of version tags
+
+#### Why Commit SHA?
+
+This workflow uses a pinned commit SHA for the `github-wiki-publish-action` instead of a version tag (e.g., `@v1`). This approach:
+- Prevents firewall-blocked API calls to GitHub releases/tags endpoints
+- Ensures reproducible builds with a specific action version
+- Improves security by using an immutable reference
+
+#### Accessing the Wiki
+
+Visit the repository's [Wiki tab](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki) to view the published documentation.
 
 ## Workflow Status
 

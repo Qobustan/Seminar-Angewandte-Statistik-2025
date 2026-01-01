@@ -41,11 +41,13 @@ EOF
 # Check if detex command is available
 sub check_command {
     my $cmd = shift;
-    system("command", "-v", $cmd, ">", "/dev/null", "2>&1") == 0
-        or die "Error: $cmd is not installed or not in PATH\n";
+    my $output = `command -v $cmd 2>/dev/null`;
+    return $output ne '';
 }
 
-check_command("detex");
+unless (check_command("detex")) {
+    die "Error: detex is not installed or not in PATH\n";
+}
 
 # Parse command line arguments
 my $tex_file = $ARGV[0] or die "Usage: $0 <tex_file> [output_file]\nRun '$0 --help' for more information.\n";
@@ -57,7 +59,17 @@ die "Error: File '$tex_file' is not readable\n" unless -r $tex_file;
 
 # Extract plain text using detex
 print "Extracting plain text from '$tex_file' to '$output_file'...\n";
-my $exit_code = system("detex $tex_file > $output_file");
+
+# Open output file safely
+open(my $out_fh, '>', $output_file) or die "Error: Cannot open output file '$output_file': $!\n";
+
+# Use safe system call with list form
+open(my $detex_fh, '-|', 'detex', $tex_file) or die "Error: Cannot run detex: $!\n";
+print $out_fh $_ while <$detex_fh>;
+close($detex_fh);
+close($out_fh);
+
+my $exit_code = $? >> 8;
 
 if ($exit_code == 0) {
     my $size = -s $output_file;

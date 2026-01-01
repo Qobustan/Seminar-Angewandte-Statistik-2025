@@ -43,11 +43,13 @@ EOF
 # Check if makeglossaries command is available
 sub check_command {
     my $cmd = shift;
-    system("command", "-v", $cmd, ">", "/dev/null", "2>&1") == 0
-        or die "Error: $cmd is not installed or not in PATH\n";
+    my $output = `command -v $cmd 2>/dev/null`;
+    return $output ne '';
 }
 
-check_command("makeglossaries");
+unless (check_command("makeglossaries")) {
+    die "Error: makeglossaries is not installed or not in PATH\n";
+}
 
 # Parse command line arguments
 my $document = $ARGV[0] or die "Usage: $0 <document>\nRun '$0 --help' for more information.\n";

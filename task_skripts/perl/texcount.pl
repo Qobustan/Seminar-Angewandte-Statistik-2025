@@ -39,11 +39,13 @@ EOF
 # Check if texcount command is available
 sub check_command {
     my $cmd = shift;
-    system("command", "-v", $cmd, ">", "/dev/null", "2>&1") == 0
-        or die "Error: $cmd is not installed or not in PATH\n";
+    my $output = `command -v $cmd 2>/dev/null`;
+    return $output ne '';
 }
 
-check_command("texcount");
+unless (check_command("texcount")) {
+    die "Error: texcount is not installed or not in PATH\n";
+}
 
 # Parse command line arguments
 my $tex_file = $ARGV[0] or die "Usage: $0 <tex_file>\nRun '$0 --help' for more information.\n";

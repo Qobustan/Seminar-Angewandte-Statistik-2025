@@ -40,11 +40,13 @@ EOF
 # Check if bibtex2html command is available
 sub check_command {
     my $cmd = shift;
-    system("command", "-v", $cmd, ">", "/dev/null", "2>&1") == 0
-        or die "Error: $cmd is not installed or not in PATH\n";
+    my $output = `command -v $cmd 2>/dev/null`;
+    return $output ne '';
 }
 
-check_command("bibtex2html");
+unless (check_command("bibtex2html")) {
+    die "Error: bibtex2html is not installed or not in PATH\n";
+}
 
 # Parse command line arguments
 my $bib_file = $ARGV[0];

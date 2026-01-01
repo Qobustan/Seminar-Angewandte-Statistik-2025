@@ -25,17 +25,29 @@ Welcome to the repository for the **Angewandte Statistik** seminar (2025). This 
 
 ### Building Locally
 
-You can build the PDFs locally using the provided build script:
+Build individual documents with pdflatex (multiple passes needed for bibliography and references):
 
 ```bash
-./build.sh
+# Build Ausarbeitung (written paper)
+cd Ausarbeitung
+pdflatex Ausarbeitung.tex
+bibtex Ausarbeitung
+pdflatex Ausarbeitung.tex
+pdflatex Ausarbeitung.tex
+
+# Build Vortrag (presentation)
+cd Vortrag
+pdflatex Vortrag.tex
+bibtex Vortrag
+pdflatex Vortrag.tex
+pdflatex Vortrag.tex
 ```
 
-Or build individual documents:
+Alternatively, use `latexmk` for automatic compilation with all necessary passes:
 
 ```bash
-cd Ausarbeitung && pdflatex Ausarbeitung.tex
-cd Vortrag && pdflatex Vortrag.tex
+cd Ausarbeitung && latexmk -pdf Ausarbeitung.tex
+cd Vortrag && latexmk -pdf Vortrag.tex
 ```
 
 ## 🔄 Continuous Integration

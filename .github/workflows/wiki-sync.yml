@@ -21,6 +21,8 @@ jobs:
           fetch-depth: 0
 
       - name: Sync to GitHub Wiki
+        # Note: Using @v1 tag. For enhanced security, consider pinning to a specific commit SHA
+        # Example: uses: SwiftDocOrg/github-wiki-publish-action@abc123def456...
         uses: SwiftDocOrg/github-wiki-publish-action@v1
         with:
           path: wiki

@@ -46,8 +46,11 @@ pdflatex Vortrag.tex
 Alternatively, use `latexmk` for automatic compilation with all necessary passes:
 
 ```bash
-cd Ausarbeitung && latexmk -pdf Ausarbeitung.tex
-cd Vortrag && latexmk -pdf Vortrag.tex
+# Build Ausarbeitung
+(cd Ausarbeitung && latexmk -pdf Ausarbeitung.tex)
+
+# Build Vortrag
+(cd Vortrag && latexmk -pdf Vortrag.tex)
 ```
 
 ## 🔄 Continuous Integration
@@ -79,7 +82,7 @@ Both directories include a `header.tex` file for shared preamble configurations.
 
 ### Adding Dependencies
 
-If your LaTeX documents require additional packages, update the GitHub Actions workflow to include them. The workflow uses the [xu-cheng/latex-action](https://github.com/xu-cheng/latex-action) which includes a comprehensive TeX Live distribution.
+If your LaTeX documents require additional packages not included in the standard TeX Live distribution, you may need to update the GitHub Actions workflow. The workflow uses the [xu-cheng/latex-action](https://github.com/xu-cheng/latex-action) which provides a full TeX Live installation with most common packages.
 
 ## 📋 Additional Files
 

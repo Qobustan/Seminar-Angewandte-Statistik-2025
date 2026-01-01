@@ -2,7 +2,7 @@ name: Publish Wiki
 
 on:
   push:
-    branches: [main, master]
+    branches: [https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/blob/main/master]
     paths:
       - 'wiki/**'
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Publish to Wiki
-        uses: SwiftDocOrg/github-wiki-publish-action@8ba354c7a6ec10d21e1e1d2a0e1d3b40d7e74f49
+        uses: SwiftDocOrg/github-wiki-publish-action@v1
         with:
           path: wiki
         env:

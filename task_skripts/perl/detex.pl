@@ -1,17 +1,17 @@
 #!/usr/bin/perl
 # detex - Ein Perl-Skript zum Entfernen von LaTeX-Befehlen und Extrahieren von reinem Text
 
-# Beispielaufruf:
-# detex mein_dokument.tex > mein_dokument.txt
-
 use strict;
 use warnings;
 
-my $tex_file = $ARGV[0] // die "Bitte LaTeX-Datei angeben";
+my $tool = "detex";
+my $check = `which $tool 2>/dev/null`;
+die "Error: $tool is not installed. Please install it first.\n" unless $check;
+
+my $tex_file = $ARGV[0] // die "Usage: $0 <tex_file> [output_file]\n";
 my $output_file = $ARGV[1] // $tex_file . ".txt";
 
-# Einfaches Kommando, um detex auszuführen
-system("detex $tex_file > $output_file") == 0
-    or die "Fehler beim Ausführen von detex: $!\n";
+system("$tool $tex_file > $output_file") == 0
+    or die "Error running $tool: $!\n";
 
-print "Reiner Text aus LaTeX-Dokument in $output_file extrahiert.\n";
+print "Plain text extracted to $output_file.\n";

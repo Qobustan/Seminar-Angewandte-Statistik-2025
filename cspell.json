@@ -1,0 +1,26 @@
+{
+  "version": "0.2",
+  "language": "de,en",
+  "words": [
+    "Kerndichteschätzung",
+    "Rosenblatt",
+    "Nadaraya",
+    "Watson",
+    "Theil",
+    "Epanechnikov",
+    "Silverman",
+    "Freedman",
+    "Diaconis"
+  ],
+  "ignorePaths": [
+    "*.bib",
+    "*.aux",
+    "*.log",
+    "*.bbl",
+    "*.blg",
+    "*.toc",
+    "*.out",
+    "node_modules",
+    ".git"
+  ]
+}

@@ -10,10 +10,11 @@ jobs:
   bibcheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
       - name: Check .bib files for duplicates
         run: |
+          shopt -s globstar
           if grep -i "duplicate" **/*.bib; then
             echo "⚠️ Mögliche doppelte Einträge gefunden"
           else

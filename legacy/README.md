@@ -56,3 +56,21 @@ To compile the LaTeX files in this folder, follow the steps below. Please note t
 
 If you need to work with the legacy code, consider migrating relevant content to the current LaTeX setup. It's recommended to update any outdated packages or LaTeX constructs to ensure continued compatibility. If the legacy code is not needed for immediate work, it may be helpful to archive it to prevent confusion in the future.
 
+## Available Scripts
+
+### build-seminar.sh
+
+A functional build script specifically designed for this repository. Unlike the original `build.sh`, this script properly builds the Ausarbeitung and Vortrag documents.
+
+**Usage:**
+```bash
+./legacy/build-seminar.sh              # Build both documents
+./legacy/build-seminar.sh -v -c        # Verbose output with cleanup
+./legacy/build-seminar.sh -a           # Build only Ausarbeitung
+./legacy/build-seminar.sh -p           # Build only Vortrag
+./legacy/build-seminar.sh --help       # Show help
+```
+
+### debug.sh (Legacy)
+
+Debug script for the original web application build. Not used for LaTeX compilation.

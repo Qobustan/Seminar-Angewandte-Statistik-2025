@@ -26,12 +26,12 @@ This repository contains materials for the "Angewandte Statistik" seminar (2025)
 A GitHub Actions workflow is provided (`.github/workflows/build-and-publish-pdfs.yml`).
 On pushes to main (and when manually triggered) it:
 - installs a minimal TeX Live setup
-- builds PDFs from the first .tex file found in skript/ and presentation/ using latexmk with PDFLaTeX
+- builds PDFs from the LaTeX files in `Ausarbeitung/` and `Vortrag/` using latexmk with PDFLaTeX
 - collects the generated PDFs and publishes them to a dedicated branch named 'pdfs'
 
 ## Usage
 
-- Edit the LaTeX sources in skript/ and presentation/ and push to main.
+- Edit the LaTeX sources in `Ausarbeitung/` and `Vortrag/` and push to main.
 The workflow will automatically build and update the 'pdfs' branch with the generated PDFs.
 
 ## Branch Management

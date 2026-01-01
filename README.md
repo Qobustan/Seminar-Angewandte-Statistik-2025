@@ -1,5 +1,3 @@
-```markdown
-
 # Seminar: Angewandte Statistik 2025
 
 This repository contains materials for the "Angewandte Statistik" seminar (2025).

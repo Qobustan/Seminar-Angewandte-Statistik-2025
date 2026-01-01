@@ -5,14 +5,13 @@
 #
 #         USAGE: ./debug.sh
 #
-#   DESCRIPTION: This script builds the web application in a local directory
-#                named 'debug'.
+#   DESCRIPTION: Test build script by building PDFs to a debug directory
 #
 #       OPTIONS: ---
-#  REQUIREMENTS: ---
+#  REQUIREMENTS: pdflatex, bibtex
 #          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: Yavuzâlp Dal
+#         NOTES: This script has been adapted for Seminar-Angewandte-Statistik-2025
+#        AUTHOR: ---
 #  ORGANIZATION: ---
 #       CREATED: ---
 #      REVISION: ---
@@ -24,22 +23,25 @@ set -euo pipefail
 # Help function
 show_help() {
     cat << EOF
-⚠️  WARNING: THIS SCRIPT IS NOT COMPATIBLE WITH THIS REPOSITORY! ⚠️
+Usage: $(basename "$0") [OPTIONS]
 
-This script (debug.sh) was designed for a different repository
-(fhswf/LaTeX-Editor-source) and will NOT work in this repository.
+Test the build script by building PDFs to a debug directory.
 
-ORIGINAL USAGE (for reference only):
-    ./debug.sh
+OPTIONS:
+    -h, --help      Show this help message and exit
 
-DESCRIPTION (for reference only):
-    This script would build a web application in a local 'debug' directory
-    by calling build.sh with test parameters.
+DESCRIPTION:
+    This script tests the build process by calling build.sh and directing
+    output to a 'debug' directory in the legacy folder. The debug directory
+    will be cleaned and recreated each time this script runs.
 
-FOR THIS REPOSITORY, USE INSTEAD:
-    scripts/generatePdf.sh    - Generate PDFs for Ausarbeitung and Vortrag
+REQUIREMENTS:
+    - pdflatex (from a TeX distribution)
+    - bibtex (from a TeX distribution)
+    - build.sh must exist in the same directory
 
-This file is kept in legacy/ directory for historical reference only.
+EXAMPLE:
+    $(basename "$0")
 
 EOF
 }
@@ -52,31 +54,35 @@ fi
 
 echo "=== Debug Build Script ==="
 echo ""
-echo "⚠️  WARNING: This script is not compatible with this repository!"
-echo "   It was designed for fhswf/LaTeX-Editor-source"
-echo ""
-echo "Checking for build.sh..."
+
+# Get script directory
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Check if build.sh exists before calling it
-if [[ ! -f "./build.sh" ]]; then
-    echo "Error: build.sh not found in current directory"
-    echo ""
+if [[ ! -f "$SCRIPT_DIR/build.sh" ]]; then
+    echo "Error: build.sh not found in $SCRIPT_DIR"
     echo "This script requires build.sh to be present and executable."
     echo "Run './debug.sh --help' for more information."
     exit 1
 fi
 
-if [[ ! -x "./build.sh" ]]; then
-    echo "Warning: build.sh is not executable, attempting to make it executable..."
-    chmod +x ./build.sh
+if [[ ! -x "$SCRIPT_DIR/build.sh" ]]; then
+    echo "Making build.sh executable..."
+    chmod +x "$SCRIPT_DIR/build.sh"
 fi
 
 echo "Preparing debug directory..."
-TARGET_DIR=debug
-rm -rf "$TARGET_DIR" &>/dev/null && mkdir "$TARGET_DIR"
-
-echo "Calling build.sh..."
-./build.sh "$TARGET_DIR" gituser/example-repo latex.example.net
+TARGET_DIR="$SCRIPT_DIR/debug"
+rm -rf "$TARGET_DIR" &>/dev/null || true
+mkdir -p "$TARGET_DIR"
 
 echo ""
-echo "=== Build complete ==="
+echo "Calling build.sh with target: $TARGET_DIR"
+echo ""
+
+"$SCRIPT_DIR/build.sh" "$TARGET_DIR"
+
+echo ""
+echo "=== Debug build complete ==="
+echo "PDFs copied to: $TARGET_DIR"
+ls -lh "$TARGET_DIR"/*.pdf 2>/dev/null || echo "No PDFs found in target directory"

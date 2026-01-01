@@ -3,52 +3,52 @@
 #
 #          FILE: build.sh
 #
-#         USAGE: ./build.sh TARGET_DIR REMOTE_REPO [DOMAIN]
+#         USAGE: ./build.sh [TARGET_DIR]
 #
-#   DESCRIPTION: This script is executed by the github workflow. It builds the
-#                web application and adds the latex templates.
+#   DESCRIPTION: Build LaTeX documents (Ausarbeitung and Vortrag) for this
+#                repository and optionally copy them to a target directory.
 #
-# ==============================================================================
-# ⚠️  WARNING: THIS SCRIPT IS NOT COMPATIBLE WITH THIS REPOSITORY! ⚠️
-# ==============================================================================
+#       OPTIONS: TARGET_DIR    Optional target directory for output PDFs
+#                              If not specified, PDFs remain in their source dirs
 #
-# This script was designed for the fhswf/LaTeX-Editor-source repository
-# and will NOT work correctly in this repository (Seminar-Angewandte-Statistik-2025).
-#
-# This script expects:
-#   - A 'templates/' directory with LaTeX templates
-#   - A 'web/' directory with website files
-#   - A 'swiftlatex/' directory with SwiftLaTeX modules
-#
-# These directories do NOT exist in this repository structure.
-#
-# If you need to build LaTeX documents in THIS repository, use:
-#   - scripts/generatePdf.sh for generating PDFs
-#
-# This file is kept in the legacy/ directory for historical reference only.
+#  REQUIREMENTS: pdflatex, bibtex
+#          BUGS: ---
+#         NOTES: This script has been adapted for Seminar-Angewandte-Statistik-2025
+#        AUTHOR: ---
+#  ORGANIZATION: ---
+#       CREATED: ---
+#      REVISION: ---
 #
 # ==============================================================================
+
+set -euo pipefail
 
 # Help function
 show_help() {
     cat << EOF
-⚠️  WARNING: THIS SCRIPT IS NOT COMPATIBLE WITH THIS REPOSITORY! ⚠️
+Usage: $(basename "$0") [OPTIONS] [TARGET_DIR]
 
-This script (build.sh) was designed for a different repository
-(fhswf/LaTeX-Editor-source) and will NOT work in this repository.
+Build LaTeX documents (Ausarbeitung and Vortrag) for this repository.
 
-ORIGINAL USAGE (for reference only):
-    ./build.sh TARGET_DIR REMOTE_REPO [DOMAIN]
+ARGUMENTS:
+    TARGET_DIR      Optional target directory to copy generated PDFs to.
+                    If not specified, PDFs remain in their source directories.
 
-ARGUMENTS (for reference only):
-    TARGET_DIR    temporary target directory
-    REMOTE_REPO   remote repository name ('user/repository')
-    DOMAIN        github pages custom domain (optional)
+OPTIONS:
+    -h, --help      Show this help message and exit
 
-FOR THIS REPOSITORY, USE INSTEAD:
-    scripts/generatePdf.sh    - Generate PDFs for Ausarbeitung and Vortrag
+DESCRIPTION:
+    This script builds the Ausarbeitung and Vortrag LaTeX documents.
+    It runs pdflatex and bibtex as needed to generate the final PDFs.
 
-This file is kept in legacy/ directory for historical reference only.
+REQUIREMENTS:
+    - pdflatex (from a TeX distribution)
+    - bibtex (from a TeX distribution)
+
+EXAMPLES:
+    $(basename "$0")                    # Build PDFs in place
+    $(basename "$0") /tmp/output        # Build and copy to /tmp/output
+    $(basename "$0") --help             # Show this help
 
 EOF
 }
@@ -59,167 +59,79 @@ if [[ "${1:-}" == "-h" ]] || [[ "${1:-}" == "--help" ]]; then
     exit 0
 fi
 
-DEBUG=0 # debug output
-
-function fatal
-{
-    printf "$0: error: $1\n"
+# Check if required tools are installed
+if ! command -v pdflatex &> /dev/null; then
+    echo "Error: pdflatex is not installed or not in PATH"
+    echo "Please install a TeX distribution (e.g., TeX Live, MiKTeX)"
     exit 1
-}
-
-function debug
-{
-    ((DEBUG)) && printf "$1\n"
-    return
-}
-
-# ------------------------------------------------------------------------------
-#  arguments
-# ------------------------------------------------------------------------------
-
-TARGET_DIR="$1"/ # temporary target directory
-REMOTE_REPO="$2" # remote repository name
-DOMAIN="$3"      # remote repository github pages custom domain (optional)
-
-[ $# -lt 2 ] && fatal "too few arguments"
-
-# ------------------------------------------------------------------------------
-#  variables
-# ------------------------------------------------------------------------------
-
-DOCS="$TARGET_DIR"/docs/ # web document root
-TEMPLATES=templates/     # latex templates
-WEB=web/                 # website template
-SWIFT=swiftlatex/        # swiftlatex modules
-
-# for readme file:
-LATEXINSTALL=LaTeX-Install
-THIS_REPO=fhswf/LaTeX-Editor-source
-
-# ------------------------------------------------------------------------------
-#  build web application
-# ------------------------------------------------------------------------------
-
-# add text to the configuration file
-function add_to_config
-{
-    printf "$1" >> "$DOCS"/"$template_name"/config.js
-}
-
-# add text to the readme file
-function add_to_readme
-{
-    printf "$1" >> "$TARGET_DIR"/README.md
-}
-
-# remove the path from a filename
-function strip_path
-{
-    printf "${1##*/}"
-}
-
-# copy latex templates to html document root:
-mkdir "$DOCS"
-cp -r "$TEMPLATES"/* "$DOCS"/
-
-# create readme:
-add_to_readme "# LaTeX-Editor\n\n"
-add_to_readme "Edit and compile templates using the online editor:\n\n"
-URL="$(echo "$REMOTE_REPO" | sed 's/\//.github.io\//g')"
-
-# generate website for each latex template:
-for template_dir in "$TEMPLATES"/*/ # only directories
-do
-    debug "Directory: '$template_dir'"
-
-    # ---------- write configuration file ----------
-
-    # template name:
-    template_name="${template_dir%/}" # strip trailing slash
-    template_name="$(strip_path "$template_name")"
-    debug "    Template name: '$template_name'"
-    add_to_config 'var config_template_name = "'"$template_name"'";'"\n"
-
-    # main tex file (contains '\documentclass'):
-    main_tex_file="$(grep -rl --fixed-strings --include *.tex '\documentclass' "$template_dir")"
-    main_tex_file="$(strip_path "$main_tex_file")"
-    debug "    Main tex file: '$main_tex_file'"
-    add_to_config 'var config_main_tex_file = "'"$main_tex_file"'";'"\n"
-
-    # project files:
-    add_to_config 'var config_project_files = ['
-    debug "    Project files:"
-
-    for file in "$template_dir"*.* # only files
-    do
-        file_name="$(strip_path "$file")"
-
-        # do not include compiled pdfs:
-        main_pdf="${main_tex_file%.tex}".pdf
-        [[ "$file_name" == "$main_pdf" ]] && continue
-
-        # add to config:
-        debug "        '$file_name'"
-        add_to_config '"'"$file_name"'",'
-    done
-
-    add_to_config "];\n"
-
-    # placeholders:
-    # mask spaces before creating the array
-    placeholders=($(grep -E --only-matching "{{[^{}]+}}" "$template_dir"/"$main_tex_file" \
-        | sed 's/ /§/g' \
-        | sed 's/[{}]//g'))
-    add_to_config 'var config_placeholders = ['
-    debug "    Placeholders: "
-
-    for placeholder in "${placeholders[@]}"
-    do
-        # demask spaces, then mask backslashes:
-        placeholder="$(echo "$placeholder" | sed 's/§/ /g' | sed -E 's/\\/_/g')"
-        add_to_config '"'"$placeholder"'",'
-        debug "        '$placeholder'"
-    done
-
-    add_to_config "];\n"
-
-    # ---------- copy website files ----------
-
-    cp -r "$WEB"/* "$DOCS"/"$template_name"/
-    cp -r "$SWIFT"/* "$DOCS"/"$template_name"/
-
-    # ---------- add markdown link to readme ----------
-
-    TEMPLATE_URL="$(echo "$URL"/"$template_name")"
-    debug "    Link: $TEMPLATE_URL"
-    add_to_readme "* **${template_name}:** [${TEMPLATE_URL}](https://${TEMPLATE_URL})\n"
-done
-
-# ------------------------------------------------------------------------------
-#  create CNAME file
-# ------------------------------------------------------------------------------
-
-if [ -n "$DOMAIN" ]
-then
-    echo -n "$DOMAIN" > "$DOCS"/CNAME
 fi
 
-# ------------------------------------------------------------------------------
-#  copy latex templates to a seperate directory
-# ------------------------------------------------------------------------------
+if ! command -v bibtex &> /dev/null; then
+    echo "Error: bibtex is not installed or not in PATH"
+    echo "Please install a TeX distribution (e.g., TeX Live, MiKTeX)"
+    exit 1
+fi
 
-# Technically this is NOT necessary. It just makes it easier to download a template without having to use the web frontend.
+# Get target directory from argument (optional)
+TARGET_DIR="${1:-}"
 
-cp -r "$TEMPLATES" "$TARGET_DIR"/Vorlagen
+# Store original directory
+SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
-# remove placeholder syntax elements (curly braces):
-find "$TARGET_DIR"/Vorlagen -type f -name *.tex | xargs sed -i -E 's/\{\{([^{}]+)\}\}/\1/g'
+echo "=== Building LaTeX Documents ==="
+echo ""
 
-# ------------------------------------------------------------------------------
-#  add install instructions
-# ------------------------------------------------------------------------------
+# Build Ausarbeitung
+echo "[1/2] Building Ausarbeitung..."
+cd "$SCRIPT_DIR/Ausarbeitung"
+echo "  Running pdflatex (pass 1)..."
+pdflatex -interaction=nonstopmode Ausarbeitung.tex > /dev/null
+echo "  Running bibtex..."
+bibtex Ausarbeitung > /dev/null || true
+echo "  Running pdflatex (pass 2)..."
+pdflatex -interaction=nonstopmode Ausarbeitung.tex > /dev/null
+echo "  Running pdflatex (pass 3)..."
+pdflatex -interaction=nonstopmode Ausarbeitung.tex > /dev/null
 
-cp "$LATEXINSTALL"* "$TARGET_DIR"
-add_to_readme "\n"'See `'"${LATEXINSTALL}"'` for installing LaTeX locally on the PC.'"\n"
-add_to_readme "\n"'### About'"\n\n"
-add_to_readme 'The purpose of this repository is to host the web application and to make the LaTeX templates available. The source code and the templates are maintained in a separate repository: [github.com/'"$THIS_REPO"'](https://github.com/'"$THIS_REPO"')'
+if [[ -f "Ausarbeitung.pdf" ]]; then
+    AUSARBEITUNG_SIZE=$(du -h "Ausarbeitung.pdf" | cut -f1)
+    echo "  ✓ Ausarbeitung.pdf generated successfully (size: $AUSARBEITUNG_SIZE)"
+else
+    echo "  ✗ Error: Ausarbeitung.pdf was not generated"
+    exit 1
+fi
+
+# Build Vortrag
+echo ""
+echo "[2/2] Building Vortrag..."
+cd "$SCRIPT_DIR/Vortrag"
+echo "  Running pdflatex (pass 1)..."
+pdflatex -interaction=nonstopmode Vortrag.tex > /dev/null
+echo "  Running bibtex..."
+bibtex Vortrag > /dev/null || true
+echo "  Running pdflatex (pass 2)..."
+pdflatex -interaction=nonstopmode Vortrag.tex > /dev/null
+echo "  Running pdflatex (pass 3)..."
+pdflatex -interaction=nonstopmode Vortrag.tex > /dev/null
+
+if [[ -f "Vortrag.pdf" ]]; then
+    VORTRAG_SIZE=$(du -h "Vortrag.pdf" | cut -f1)
+    echo "  ✓ Vortrag.pdf generated successfully (size: $VORTRAG_SIZE)"
+else
+    echo "  ✗ Error: Vortrag.pdf was not generated"
+    exit 1
+fi
+
+# Copy to target directory if specified
+if [[ -n "$TARGET_DIR" ]]; then
+    echo ""
+    echo "Copying PDFs to target directory: $TARGET_DIR"
+    mkdir -p "$TARGET_DIR"
+    cp "$SCRIPT_DIR/Ausarbeitung/Ausarbeitung.pdf" "$TARGET_DIR/"
+    cp "$SCRIPT_DIR/Vortrag/Vortrag.pdf" "$TARGET_DIR/"
+    echo "  ✓ Copied Ausarbeitung.pdf"
+    echo "  ✓ Copied Vortrag.pdf"
+fi
+
+echo ""
+echo "=== Build complete ==="

@@ -31,4 +31,4 @@ WORKDIR /app
 RUN chmod +x /app/scripts/*.sh 2>/dev/null || true
 
 # Set the entry point
-ENTRYPOINT ["/app/scripts/generatePdf.sh"]
+ENTRYPOINT ["/bin/bash", "/app/scripts/generatePdf.sh"]

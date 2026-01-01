@@ -21,6 +21,13 @@
 #      REVISION: ---
 #
 # ==============================================================================
+# WARNING: This script was copied from fhswf/LaTeX-Editor-source and requires
+# the following directories which do not exist in this repository:
+#   - templates/
+#   - web/
+#   - swiftlatex/
+# This script will NOT work without these directories.
+# ==============================================================================
 
 DEBUG=0 # debug output
 

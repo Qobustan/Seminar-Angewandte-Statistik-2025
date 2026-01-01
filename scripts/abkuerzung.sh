@@ -1,4 +1,9 @@
 #!/bin/bash
-# runme if you want to update all your abbreviations
+# Script to update abbreviations/nomenclature
 
-makeindex ../src/Hauptdatei.nlo -s ../src/latex_einstellungen/abkuezungen/nomencl.ist -o ../src/Hauptdatei.nls
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(dirname "$SCRIPT_DIR")"
+
+echo "Note: This script is currently a placeholder."
+echo "The current project structure does not use nomenclature files."
+echo "If you need nomenclature support, update this script accordingly."

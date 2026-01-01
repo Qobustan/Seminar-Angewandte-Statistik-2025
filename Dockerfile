@@ -2,7 +2,7 @@
 FROM ubuntu:20.04
 
 # Set non-interactive mode to avoid prompts during apt-get install
-RUN export DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Set the timezone
 RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
@@ -35,4 +35,4 @@ WORKDIR /app/scripts
 VOLUME /app/src
 
 # Set the entry point to the script that generates the PDF
-ENTRYPOINT ["/app/scripts/generatePdf.sh"]
+ENTRYPOINT ["/bin/bash", "/app/scripts/generatePdf.sh"]

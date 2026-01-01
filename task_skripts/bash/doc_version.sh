@@ -1,24 +1,18 @@
-
-#### 4.3 **Versionskontrolle der Dokumentation**
-
-Wenn du mit Git arbeitest, kannst du ein Skript erstellen, um regelmäßig alle Änderungen an der Dokumentation zu committen und zu pushen. Ein solches Skript könnte auch automatisch die Änderungen an den LaTeX-Dateien und an den Bildern verfolgen.
-
-**Beispiel: Git-Push-Skript**
-
-```bash
 #!/bin/bash
+# Script for version control of documentation
+# Commits and pushes all changes in the LaTeX project
 
-# Skript zum Committen und Pushen der Änderungen im LaTeX-Projekt
+set -e
 
-echo "Führe Git-Commit aus..."
+echo "Committing documentation changes..."
 
-# Alle Änderungen zum Commit hinzufügen
+# Add all changes
 git add .
 
-# Commit mit einer Nachricht
-git commit -m "Aktualisierte Dokumentation und LaTeX-Dateien"
+# Commit with timestamp
+git commit -m "Updated documentation and LaTeX files - $(date '+%Y-%m-%d %H:%M:%S')"
 
-# Änderungen zum Git-Remote-Server pushen
+# Push to remote
 git push origin main
 
-echo "Änderungen wurden erfolgreich gepusht!"
+echo "Changes successfully pushed!"

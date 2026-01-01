@@ -1,16 +1,16 @@
 #!/usr/bin/perl
 # makeglossaries - Ein Perl-Skript zum Erstellen von Glossaren und Abkürzungsverzeichnissen
 
-# Beispielaufruf:
-# makeglossaries mein_dokument
-
 use strict;
 use warnings;
 
-my $document = $ARGV[0] // die "Bitte LaTeX-Dokument angeben";
+my $tool = "makeglossaries";
+my $check = `which $tool 2>/dev/null`;
+die "Error: $tool is not installed. Please install it first.\n" unless $check;
 
-# Einfaches Kommando, um makeglossaries auszuführen
-system("makeglossaries $document") == 0
-    or die "Fehler beim Erstellen von Glossaren: $!\n";
+my $document = $ARGV[0] // die "Usage: $0 <document>\n";
 
-print "Glossar für $document erfolgreich erstellt.\n";
+system("$tool $document") == 0
+    or die "Error creating glossaries: $!\n";
+
+print "Glossary for $document created successfully.\n";

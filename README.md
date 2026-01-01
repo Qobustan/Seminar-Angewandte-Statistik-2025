@@ -77,7 +77,7 @@ This repository uses GitHub Actions for automated PDF generation and quality ass
 
 On every push to `main` (or when manually triggered):
 1. Compiles `Ausarbeitung.tex` from the `Ausarbeitung/` directory
-2. Compiles `Vortrag.tex` from the `Vortrag/` directory  
+2. Compiles `Vortrag.tex` from the `Vortrag/` directory
 3. Uploads generated PDFs as build artifacts
 
 ### Quality Assurance Workflows
@@ -103,13 +103,17 @@ The repository includes several automated quality checks to maintain high standa
 - Uses `latexindent` to format LaTeX source files
 - Automatically formats all `.tex` files in the repository
 
-#### Bibliography Check
+#### Bibliography Validation
 **Workflow:** [bibcheck.yml](.github/workflows/bibcheck.yml)
-- Validates bibliography entries and citations
+- Runs automatically on all pushes and pull requests
+- Checks `.bib` bibliography files for duplicate entries
+- Helps catch common bibliography formatting issues
 
 #### Docker Image Build
 **Workflow:** [docker-image.yml](.github/workflows/docker-image.yml)
-- Builds Docker image for reproducible compilation environment
+- Runs on pushes to `main` and on pull requests
+- Builds Docker image to ensure it compiles successfully
+- Provides a reproducible LaTeX compilation environment
 
 ### Downloading PDFs
 

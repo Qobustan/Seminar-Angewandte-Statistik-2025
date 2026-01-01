@@ -85,4 +85,8 @@ echo ""
 echo ""
 echo "=== Debug build complete ==="
 echo "PDFs copied to: $TARGET_DIR"
-ls -lh "$TARGET_DIR"/*.pdf 2>/dev/null || echo "No PDFs found in target directory"
+if ls "$TARGET_DIR"/*.pdf >/dev/null 2>&1; then
+    ls -lh "$TARGET_DIR"/*.pdf
+else
+    echo "No PDFs found in target directory"
+fi

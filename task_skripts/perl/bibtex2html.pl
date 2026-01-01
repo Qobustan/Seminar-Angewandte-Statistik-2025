@@ -14,8 +14,6 @@
 
 use strict;
 use warnings;
-use File::Basename;
-use Cwd 'abs_path';
 
 # Check if bibtex2html command is available
 sub check_command {

@@ -14,7 +14,6 @@
 
 use strict;
 use warnings;
-use File::Basename;
 
 # Check if detex command is available
 sub check_command {

@@ -16,8 +16,12 @@ set "SHOW_COMMENTS=true"
 REM Function to check if directory exists and handle errors
 if "%SHOW_COMMENTS%"=="true" echo REM Removing temporary LaTeX files in current directory
 
-REM Define file patterns to remove
-set "PATTERNS=*.aux *.log *.lof *.gz *.toc *.bak~ *.bbl *.bcf *.blg *.lot *.out *.xml *.acn *.acr *.alg *.glg *.glo *.gls *.gug *.guo *.gus *.ist *.llg *.llo *.lls *.lug *.luo *.lus *.mog *.moo *.mos *.xdy *.mw *.synctex.gz *.fdb_latexmk *.fls *.idx *.ind *.ilg *.dvi *.ps"
+REM Define file patterns to remove (split for readability)
+set "PATTERNS=*.aux *.log *.lof *.gz *.toc *.bak~ *.bbl *.bcf *.blg *.lot *.out"
+set "PATTERNS=%PATTERNS% *.xml *.acn *.acr *.alg *.glg *.glo *.gls *.gug *.guo *.gus"
+set "PATTERNS=%PATTERNS% *.ist *.llg *.llo *.lls *.lug *.luo *.lus *.mog *.moo *.mos"
+set "PATTERNS=%PATTERNS% *.xdy *.mw *.synctex.gz *.fdb_latexmk *.fls *.idx *.ind *.ilg"
+set "PATTERNS=%PATTERNS% *.dvi *.ps"
 
 REM Remove files in current directory (suppress errors for non-existent files)
 for %%P in (%PATTERNS%) do (

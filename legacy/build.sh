@@ -3,186 +3,150 @@
 #
 #          FILE: build.sh
 #
-#         USAGE: ./build.sh TARGET_DIR REMOTE_REPO [DOMAIN]
+#         USAGE: ./build.sh [OPTIONS]
 #
-#   DESCRIPTION: This script is executed by the github workflow. It builds the
-#                web application and adds the latex templates.
+#   DESCRIPTION: Build script for Seminar LaTeX documents (Ausarbeitung and Vortrag)
+#                This script compiles the LaTeX documents into PDFs
 #
-#       OPTIONS: TARGET_DIR    temporary target directory
-#                REMOTE_REPO   remote repository name ('user/repository')
-#                DOMAIN        github pages custom domain (optional)
+#       OPTIONS: 
+#                -h, --help         Show this help message
+#                -v, --verbose      Enable verbose output
+#                -c, --clean        Clean auxiliary files after build
+#                -a, --ausarbeitung Build only Ausarbeitung
+#                -p, --presentation Build only Vortrag (presentation)
 #
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: Yavuzâlp Dal
-#  ORGANIZATION: ---
-#       CREATED: ---
-#      REVISION: ---
+#  REQUIREMENTS: pdflatex, bibtex (TeX Live or similar LaTeX distribution)
+#        AUTHOR: Yavuzalp Dal
+#       CREATED: 2026-01-01
 #
 # ==============================================================================
 
-DEBUG=0 # debug output
+set -e
 
-function fatal
-{
-    printf "$0: error: $1\n"
+VERBOSE=0
+CLEAN=0
+BUILD_AUSARBEITUNG=1
+BUILD_VORTRAG=1
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(dirname "$SCRIPT_DIR")"
+
+function show_help {
+    cat << EOF
+Usage: $0 [OPTIONS]
+
+Build script for Seminar LaTeX documents.
+
+OPTIONS:
+    -h, --help          Show this help message
+    -v, --verbose       Enable verbose output
+    -c, --clean         Clean auxiliary files after build
+    -a, --ausarbeitung  Build only Ausarbeitung (written report)
+    -p, --presentation  Build only Vortrag (presentation)
+
+EXAMPLES:
+    $0                  Build both Ausarbeitung and Vortrag
+    $0 -v -c            Build both with verbose output and cleanup
+    $0 -a               Build only Ausarbeitung
+    $0 -p -v            Build only Vortrag with verbose output
+
+EOF
+    exit 0
+}
+
+function log {
+    if [ $VERBOSE -eq 1 ]; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1"
+    fi
+}
+
+function error {
+    echo "[ERROR] $1" >&2
     exit 1
 }
 
-function debug
-{
-    ((DEBUG)) && printf "$1\n"
-    return
+function build_document {
+    local doc_dir="$1"
+    local doc_name="$2"
+    
+    echo "Building $doc_name..."
+    log "Entering directory: $doc_dir"
+    
+    cd "$doc_dir" || error "Failed to change to directory: $doc_dir"
+    
+    log "Running pdflatex (first pass)..."
+    pdflatex -interaction=nonstopmode "$doc_name.tex" > /dev/null 2>&1 || true
+    
+    log "Running bibtex..."
+    bibtex "$doc_name" > /dev/null 2>&1 || true
+    
+    log "Running pdflatex (second pass)..."
+    pdflatex -interaction=nonstopmode "$doc_name.tex" > /dev/null 2>&1 || true
+    
+    log "Running pdflatex (third pass)..."
+    pdflatex -interaction=nonstopmode "$doc_name.tex" > /dev/null 2>&1 || true
+    
+    if [ -f "$doc_name.pdf" ]; then
+        echo "✓ Successfully built: $doc_name.pdf"
+    else
+        error "Failed to build $doc_name.pdf"
+    fi
+    
+    if [ $CLEAN -eq 1 ]; then
+        log "Cleaning auxiliary files..."
+        rm -f *.aux *.log *.out *.toc *.bbl *.blg *.run.xml *.bcf *.nav *.snm *.synctex.gz 2>/dev/null || true
+        echo "✓ Cleaned auxiliary files"
+    fi
+    
+    cd "$REPO_ROOT" || error "Failed to return to repository root"
 }
 
-# ------------------------------------------------------------------------------
-#  arguments
-# ------------------------------------------------------------------------------
-
-TARGET_DIR="$1"/ # temporary target directory
-REMOTE_REPO="$2" # remote repository name
-DOMAIN="$3"      # remote repository github pages custom domain (optional)
-
-[ $# -lt 2 ] && fatal "too few arguments"
-
-# ------------------------------------------------------------------------------
-#  variables
-# ------------------------------------------------------------------------------
-
-DOCS="$TARGET_DIR"/docs/ # web document root
-TEMPLATES=templates/     # latex templates
-WEB=web/                 # website template
-SWIFT=swiftlatex/        # swiftlatex modules
-
-# for readme file:
-LATEXINSTALL=LaTeX-Install
-THIS_REPO=fhswf/LaTeX-Editor-source
-
-# ------------------------------------------------------------------------------
-#  build web application
-# ------------------------------------------------------------------------------
-
-# add text to the configuration file
-function add_to_config
-{
-    printf "$1" >> "$DOCS"/"$template_name"/config.js
-}
-
-# add text to the readme file
-function add_to_readme
-{
-    printf "$1" >> "$TARGET_DIR"/README.md
-}
-
-# remove the path from a filename
-function strip_path
-{
-    printf "${1##*/}"
-}
-
-# copy latex templates to html document root:
-mkdir "$DOCS"
-cp -r "$TEMPLATES"/* "$DOCS"/
-
-# create readme:
-add_to_readme "# LaTeX-Editor\n\n"
-add_to_readme "Edit and compile templates using the online editor:\n\n"
-URL="$(echo "$REMOTE_REPO" | sed 's/\//.github.io\//g')"
-
-# generate website for each latex template:
-for template_dir in "$TEMPLATES"/*/ # only directories
-do
-    debug "Directory: '$template_dir'"
-
-    # ---------- write configuration file ----------
-
-    # template name:
-    template_name="${template_dir%/}" # strip trailing slash
-    template_name="$(strip_path "$template_name")"
-    debug "    Template name: '$template_name'"
-    add_to_config 'var config_template_name = "'"$template_name"'";'"\n"
-
-    # main tex file (contains '\documentclass'):
-    main_tex_file="$(grep -rl --fixed-strings --include *.tex '\documentclass' "$template_dir")"
-    main_tex_file="$(strip_path "$main_tex_file")"
-    debug "    Main tex file: '$main_tex_file'"
-    add_to_config 'var config_main_tex_file = "'"$main_tex_file"'";'"\n"
-
-    # project files:
-    add_to_config 'var config_project_files = ['
-    debug "    Project files:"
-
-    for file in "$template_dir"*.* # only files
-    do
-        file_name="$(strip_path "$file")"
-
-        # do not include compiled pdfs:
-        main_pdf="${main_tex_file%.tex}".pdf
-        [[ "$file_name" == "$main_pdf" ]] && continue
-
-        # add to config:
-        debug "        '$file_name'"
-        add_to_config '"'"$file_name"'",'
-    done
-
-    add_to_config "];\n"
-
-    # placeholders:
-    # mask spaces before creating the array
-    placeholders=($(grep -E --only-matching "{{[^{}]+}}" "$template_dir"/"$main_tex_file" \
-        | sed 's/ /§/g' \
-        | sed 's/[{}]//g'))
-    add_to_config 'var config_placeholders = ['
-    debug "    Placeholders: "
-
-    for placeholder in "${placeholders[@]}"
-    do
-        # demask spaces, then mask backslashes:
-        placeholder="$(echo "$placeholder" | sed 's/§/ /g' | sed -E 's/\\/_/g')"
-        add_to_config '"'"$placeholder"'",'
-        debug "        '$placeholder'"
-    done
-
-    add_to_config "];\n"
-
-    # ---------- copy website files ----------
-
-    cp -r "$WEB"/* "$DOCS"/"$template_name"/
-    cp -r "$SWIFT"/* "$DOCS"/"$template_name"/
-
-    # ---------- add markdown link to readme ----------
-
-    TEMPLATE_URL="$(echo "$URL"/"$template_name")"
-    debug "    Link: $TEMPLATE_URL"
-    add_to_readme "* **${template_name}:** [${TEMPLATE_URL}](https://${TEMPLATE_URL})\n"
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -h|--help) show_help ;;
+        -v|--verbose) VERBOSE=1; shift ;;
+        -c|--clean) CLEAN=1; shift ;;
+        -a|--ausarbeitung) BUILD_VORTRAG=0; shift ;;
+        -p|--presentation) BUILD_AUSARBEITUNG=0; shift ;;
+        *) echo "Unknown option: $1"; echo "Use -h for help"; exit 1 ;;
+    esac
 done
 
-# ------------------------------------------------------------------------------
-#  create CNAME file
-# ------------------------------------------------------------------------------
+echo "======================================"
+echo "  Seminar LaTeX Build Script"
+echo "======================================"
+echo ""
 
-if [ -n "$DOMAIN" ]
-then
-    echo -n "$DOMAIN" > "$DOCS"/CNAME
+if ! command -v pdflatex &> /dev/null; then
+    error "pdflatex not found. Please install TeX Live."
 fi
 
-# ------------------------------------------------------------------------------
-#  copy latex templates to a seperate directory
-# ------------------------------------------------------------------------------
+if ! command -v bibtex &> /dev/null; then
+    error "bibtex not found. Please install TeX Live."
+fi
 
-# Technically this is NOT necessary. It just makes it easier to download a template without having to use the web frontend.
+log "Repository root: $REPO_ROOT"
 
-cp -r "$TEMPLATES" "$TARGET_DIR"/Vorlagen
+if [ $BUILD_AUSARBEITUNG -eq 1 ]; then
+    if [ -d "$REPO_ROOT/Ausarbeitung" ]; then
+        build_document "$REPO_ROOT/Ausarbeitung" "Ausarbeitung"
+        echo ""
+    else
+        echo "Warning: Ausarbeitung directory not found, skipping..."
+    fi
+fi
 
-# remove placeholder syntax elements (curly braces):
-find "$TARGET_DIR"/Vorlagen -type f -name *.tex | xargs sed -i -E 's/\{\{([^{}]+)\}\}/\1/g'
+if [ $BUILD_VORTRAG -eq 1 ]; then
+    if [ -d "$REPO_ROOT/Vortrag" ]; then
+        build_document "$REPO_ROOT/Vortrag" "Vortrag"
+        echo ""
+    else
+        echo "Warning: Vortrag directory not found, skipping..."
+    fi
+fi
 
-# ------------------------------------------------------------------------------
-#  add install instructions
-# ------------------------------------------------------------------------------
+echo "======================================"
+echo "  Build Complete!"
+echo "======================================"
 
-cp "$LATEXINSTALL"* "$TARGET_DIR"
-add_to_readme "\n"'See `'"${LATEXINSTALL}"'` for installing LaTeX locally on the PC.'"\n"
-add_to_readme "\n"'### About'"\n\n"
-add_to_readme 'The purpose of this repository is to host the web application and to make the LaTeX templates available. The source code and the templates are maintained in a separate repository: [github.com/'"$THIS_REPO"'](https://github.com/'"$THIS_REPO"')'
+exit 0

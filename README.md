@@ -5,6 +5,8 @@ A comprehensive LaTeX project repository for the Applied Statistics seminar, Win
 **Author:** Yavuzalp Dal  
 **Semester:** Wintersemester 2025/26
 
+📚 **[Visit our Wiki](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki)** for comprehensive documentation and guides.
+
 ---
 
 ## Table of Contents
@@ -272,13 +274,16 @@ For information about supported versions and reporting vulnerabilities, see [SEC
 
 ### Wiki Documentation
 
-The `wiki/` directory contains additional documentation:
-- Getting Started Guide
-- Building PDFs
-- CI/CD Workflows
-- Contributing Guidelines
-- FAQ
-- Troubleshooting
+The `wiki/` directory contains additional documentation that is automatically synced to the [GitHub Wiki](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki):
+- [Getting Started Guide](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki/Getting-Started)
+- [Building PDFs](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki/Building-PDFs)
+- [CI/CD Workflows](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki/CI-CD-Workflows)
+- [Contributing Guidelines](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki/Contributing)
+- [FAQ](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki/FAQ)
+- [Troubleshooting](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki/Troubleshooting)
+- [Project Structure](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki/Project-Structure)
+
+**Note:** Changes to files in the `wiki/` directory are automatically synced to the GitHub Wiki when pushed to the main branch.
 
 ---
 

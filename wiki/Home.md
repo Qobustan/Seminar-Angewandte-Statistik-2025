@@ -11,6 +11,7 @@ Welcome to the project wiki for the "Angewandte Statistik" seminar (2025).
 - **[Contributing](Contributing.md)** - Guidelines for contributing to the project
 - **[FAQ](FAQ.md)** - Frequently asked questions
 - **[Troubleshooting](Troubleshooting.md)** - Common issues and their solutions
+- **[Wiki Sync](Wiki-Sync.md)** - How the wiki synchronization works
 
 ## About This Project
 

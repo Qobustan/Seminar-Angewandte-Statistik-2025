@@ -1,8 +1,8 @@
-# Use Ubuntu 20.04 (or Ubuntu 22.04)
+# Use Ubuntu 20.04
 FROM ubuntu:20.04
 
-# Set non-interactive mode to avoid prompts during apt-get install
-RUN export DEBIAN_FRONTEND=noninteractive
+# Set non-interactive mode
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Set the timezone
 RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
@@ -13,26 +13,22 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         texlive-base \
         texlive-lang-german \
         texlive-latex-extra \
+        texlive-bibtex-extra \
+        biber \
         lmodern \
         git \
-        curl
+        curl \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Check if the repository is accessible using 'git ls-remote'
-RUN echo "Checking if the repository is accessible..." && \
-    git ls-remote https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git || echo "Repository not accessible. Will attempt clone when it becomes public."
+# Clone the repository
+RUN git clone https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git /app || echo "Repository not accessible"
 
-# Conditionally clone the repository (only if accessible)
-RUN if git ls-remote https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git; then \
-    git clone https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git /app; \
-    else \
-    echo "Repository is still private, skipping clone."; \
-    fi
+# Set the working directory
+WORKDIR /app
 
-# Set the working directory to /app/scripts
-WORKDIR /app/scripts
+# Make scripts executable
+RUN chmod +x /app/scripts/*.sh 2>/dev/null || true
 
-# Expose the src directory as a volume
-VOLUME /app/src
-
-# Set the entry point to the script that generates the PDF
+# Set the entry point
 ENTRYPOINT ["/app/scripts/generatePdf.sh"]

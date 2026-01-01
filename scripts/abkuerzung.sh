@@ -1,4 +1,5 @@
 #!/bin/bash
-# runme if you want to update all your abbreviations
+# Script to update abbreviations index
 
-makeindex ../src/Hauptdatei.nlo -s ../src/latex_einstellungen/abkuezungen/nomencl.ist -o ../src/Hauptdatei.nls
+echo "This script is currently not configured for this project structure."
+echo "Please update manually if needed."

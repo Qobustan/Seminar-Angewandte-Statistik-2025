@@ -1,16 +1,16 @@
 #!/usr/bin/perl
 # lacheck - Ein Perl-Skript zum Überprüfen eines LaTeX-Dokuments auf Fehler
 
-# Beispielaufruf:
-# lacheck mein_dokument.tex
-
 use strict;
 use warnings;
 
-my $tex_file = $ARGV[0] // die "Bitte LaTeX-Datei angeben";
+my $tool = "lacheck";
+my $check = `which $tool 2>/dev/null`;
+die "Error: $tool is not installed. Please install it first.\n" unless $check;
 
-# Einfaches Kommando, um lacheck auszuführen
-system("lacheck $tex_file") == 0
-    or die "Fehler beim Ausführen von lacheck: $!\n";
+my $tex_file = $ARGV[0] // die "Usage: $0 <tex_file>\n";
 
-print "LaTeX-Dokument auf Fehler überprüft.\n";
+system("$tool $tex_file") == 0
+    or die "Error running $tool: $!\n";
+
+print "LaTeX document checked for errors.\n";

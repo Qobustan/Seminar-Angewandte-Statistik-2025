@@ -6,13 +6,39 @@
 #   DESCRIPTION: Creates glossaries and abbreviation lists
 #
 #       USAGE: makeglossaries.pl <document>
+#              makeglossaries.pl --help
 #
 #       OPTIONS: document - LaTeX document base name (without .tex)
+#                --help   - Show this help message
 #
 # ==============================================================================
 
 use strict;
 use warnings;
+
+# Show help if requested
+if (@ARGV && ($ARGV[0] eq '-h' || $ARGV[0] eq '--help')) {
+    print << "EOF";
+Usage: $0 <document>
+
+Description:
+    Creates glossaries and abbreviation lists for a LaTeX document.
+    Processes glossary entries and generates the formatted output.
+
+Arguments:
+    document    LaTeX document base name (without .tex extension)
+
+Requirements:
+    - The document must have been compiled with pdflatex first
+    - The .aux file must exist
+
+Examples:
+    $0 Hauptdatei
+    $0 thesis
+
+EOF
+    exit 0;
+}
 
 # Check if makeglossaries command is available
 sub check_command {
@@ -24,7 +50,7 @@ sub check_command {
 check_command("makeglossaries");
 
 # Parse command line arguments
-my $document = $ARGV[0] or die "Usage: $0 <document>\n";
+my $document = $ARGV[0] or die "Usage: $0 <document>\nRun '$0 --help' for more information.\n";
 
 # Remove .tex extension if provided
 $document =~ s/\.tex$//;

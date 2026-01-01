@@ -6,13 +6,35 @@
 #   DESCRIPTION: Converts LaTeX to HTML
 #
 #       USAGE: latex2html.pl <tex_file>
+#              latex2html.pl --help
 #
 #       OPTIONS: tex_file - Input LaTeX file (required)
+#                --help   - Show this help message
 #
 # ==============================================================================
 
 use strict;
 use warnings;
+
+# Show help if requested
+if (@ARGV && ($ARGV[0] eq '-h' || $ARGV[0] eq '--help')) {
+    print << "EOF";
+Usage: $0 <tex_file>
+
+Description:
+    Converts a LaTeX document to HTML format.
+    Creates a directory with the converted HTML files and images.
+
+Arguments:
+    tex_file    Input LaTeX file (required)
+
+Example:
+    $0 document.tex
+    $0 Hauptdatei.tex
+
+EOF
+    exit 0;
+}
 
 # Check if latex2html command is available
 sub check_command {
@@ -24,7 +46,7 @@ sub check_command {
 check_command("latex2html");
 
 # Parse command line arguments
-my $tex_file = $ARGV[0] or die "Usage: $0 <tex_file>\n";
+my $tex_file = $ARGV[0] or die "Usage: $0 <tex_file>\nRun '$0 --help' for more information.\n";
 
 # Validate input file
 die "Error: File '$tex_file' not found\n" unless -f $tex_file;

@@ -155,6 +155,11 @@ The repository includes comprehensive GitHub Actions workflows in `.github/workf
   - Uploads generated PDFs as artifacts
   - Artifacts are available for 90 days after each workflow run
 
+- **`publish-wiki.yml`** - Publishes wiki documentation to GitHub Wiki
+  - Triggers on push to `main/master` when wiki files change or manual dispatch
+  - Syncs markdown files from `wiki/` directory to the repository's GitHub Wiki
+  - Uses pinned commit SHA to avoid firewall issues
+
 - **`lint.yml`** - LaTeX linting with chktex
 - **`spellcheck.yml`** - Spell checking with cspell
 - **`format.yml`** - Code formatting checks

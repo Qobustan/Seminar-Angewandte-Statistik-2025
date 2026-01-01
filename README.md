@@ -2,9 +2,9 @@
 
 [![Build all LaTeX projects](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/build-and-publish-pdfs.yml/badge.svg)](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/build-and-publish-pdfs.yml)
 
-Welcome to the repository for the **Angewandte Statistik** seminar (2025). This repository contains all materials for the seminar, including written elaborations and presentation slides.
+Welcome to the repository for the **Angewandte Statistik** seminar (2025). This repository contains all materials for the seminar, including written elaborations (Ausarbeitung), presentation slides (Vortrag), and discussion materials (Besprechung).
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 .
@@ -16,7 +16,7 @@ Welcome to the repository for the **Angewandte Statistik** seminar (2025). This 
 └── .github/workflows/ # CI/CD automation
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -53,9 +53,11 @@ Alternatively, use `latexmk` for automatic compilation with all necessary passes
 (cd Vortrag && latexmk -pdf Vortrag.tex)
 ```
 
-## 🔄 Continuous Integration
+## Continuous Integration and Automation
 
-This repository uses GitHub Actions for automated PDF generation. 
+This repository uses GitHub Actions for automated PDF generation and quality assurance.
+
+### Build Workflow
 
 **Workflow:** [build-and-publish-pdfs.yml](.github/workflows/build-and-publish-pdfs.yml)
 
@@ -64,6 +66,37 @@ On every push to `main` (or when manually triggered):
 2. Compiles `Vortrag.tex` from the `Vortrag/` directory  
 3. Uploads generated PDFs as build artifacts
 
+### Quality Assurance Workflows
+
+The repository includes several automated quality checks to maintain high standards:
+
+#### Spellcheck
+**Workflow:** [spellcheck.yml](.github/workflows/spellcheck.yml)
+- Runs automatically on all pushes and pull requests
+- Uses `cspell` with German and LaTeX dictionaries
+- Checks all `.tex`, `.md`, and `.txt` files
+- Posts spellcheck results as PR comments when issues are found
+
+#### LaTeX Linting
+**Workflow:** [lint.yml](.github/workflows/lint.yml)
+- Runs automatically on all pushes and pull requests
+- Uses `chktex` to detect common LaTeX errors and style issues
+- Helps maintain consistent LaTeX code quality
+
+#### LaTeX Formatting
+**Workflow:** [format.yml](.github/workflows/format.yml)
+- Available for manual trigger only
+- Uses `latexindent` to format LaTeX source files
+- Automatically formats all `.tex` files in the repository
+
+#### Bibliography Check
+**Workflow:** [bibcheck.yml](.github/workflows/bibcheck.yml)
+- Validates bibliography entries and citations
+
+#### Docker Image Build
+**Workflow:** [docker-image.yml](.github/workflows/docker-image.yml)
+- Builds Docker image for reproducible compilation environment
+
 ### Downloading PDFs
 
 After each successful build, the generated PDFs are available as artifacts:
@@ -71,7 +104,7 @@ After each successful build, the generated PDFs are available as artifacts:
 2. Click on the latest successful workflow run
 3. Download the `latex-pdfs` artifact
 
-## 🛠️ Development
+## Development
 
 ### Editing LaTeX Sources
 
@@ -80,37 +113,142 @@ After each successful build, the generated PDFs are available as artifacts:
 
 Both directories include a `header.tex` file for shared preamble configurations.
 
+### Code Quality Best Practices
+
+When working with LaTeX sources in this repository:
+
+1. **Run Local Checks:** Test your LaTeX code locally before pushing
+2. **Spellcheck:** Ensure text is spell-checked (especially German content)
+3. **Bibliography:** Verify all citations are properly referenced in `.bib` files
+4. **Formatting:** Consider running `latexindent` locally for consistent formatting
+5. **Compilation:** Ensure documents compile without errors using both `pdflatex` and `bibtex`
+
+### Local Development Tools
+
+**ChkTeX** - LaTeX linter:
+```bash
+chktex Ausarbeitung/Ausarbeitung.tex
+chktex Vortrag/Vortrag.tex
+```
+
+**Latexindent** - LaTeX formatter:
+```bash
+latexindent -w Ausarbeitung/Ausarbeitung.tex
+latexindent -w Vortrag/Vortrag.tex
+```
+
+**Cspell** - Spell checker:
+```bash
+npm install -g cspell
+cspell "**/*.tex" "**/*.md"
+```
+
 ### Adding Dependencies
 
 If your LaTeX documents require additional packages not included in the standard TeX Live distribution, you may need to update the GitHub Actions workflow. The workflow uses the [xu-cheng/latex-action](https://github.com/xu-cheng/latex-action) which provides a full TeX Live installation with most common packages.
 
-## 📋 Additional Files
+## Project Files and Resources
 
+### Configuration Files
+- **cspell.json:** Spellchecker configuration with custom dictionary entries
+- **.gitignore:** Specifies files to exclude from version control (LaTeX auxiliary files, build outputs)
+- **.gitattributes:** Git attributes for handling line endings and file types
+- **editorconfig.txt:** Editor configuration settings for consistent code style
+
+### Documentation
 - **DISCLAIMER.txt:** General disclaimer and warranty information
 - **SECURITY.md:** Security policy and vulnerability reporting
-- **Dockerfile:** Container definition for reproducible builds
-- **build.sh:** Build script for local compilation
-- **debug.sh:** Debugging utilities
+- **LaTeX-Install.md:** LaTeX installation guide (English)
+- **LaTeX-Install.de.md:** LaTeX installation guide (German)
 
-## 🤝 Contributing
+### Build and Development Tools
+- **Dockerfile:** Container definition for reproducible compilation environment
+- **build.sh:** Build script for web application deployment
+- **debug.sh:** Debugging utilities for troubleshooting LaTeX compilation issues
+- **cleanup/:** Scripts for cleaning temporary and auxiliary LaTeX files
 
+### Directory Organization
+- **Ausarbeitung/:** Main written elaboration with LaTeX sources and bibliography
+- **Vortrag/:** Presentation slides using Beamer class
+- **Besprechung/:** Discussion materials and meeting notes
+- **scripts/:** Build automation and utility scripts
+- **task_skripts/:** Task-specific helper scripts
+- **legacy/:** Archived or deprecated content for reference
+
+## Contributing
+
+We welcome contributions to improve the seminar materials. Please follow these guidelines:
+
+### Workflow
 1. Create a feature branch from `main`
-2. Make your changes
+2. Make your changes to LaTeX sources or documentation
 3. Test locally to ensure PDFs compile correctly
-4. Push your changes and create a pull request
-5. Wait for CI to verify your changes
+4. Run quality checks (spellcheck, linting) before committing
+5. Push your changes and create a pull request
+6. Wait for automated CI checks to complete
+7. Address any issues found by automated workflows
+8. Request review from project maintainers
 
-## ⚠️ Important Notes
+### Commit Message Guidelines
+- Use clear, descriptive commit messages
+- Reference issue numbers when applicable
+- Keep commits focused on a single logical change
 
+### Pull Request Process
+- Provide a clear description of changes
+- Ensure all CI workflows pass successfully
+- Respond to review comments promptly
+- Update documentation if you change functionality
+
+## Important Notes
+
+### Build Artifacts
 - The CI workflow automatically builds PDFs on push to `main`
 - Build artifacts are retained for 90 days by default
+- Download artifacts from the [Actions tab](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions)
+
+### LaTeX Compilation
 - Make sure your LaTeX sources compile without errors before pushing
-- See [DISCLAIMER.txt](DISCLAIMER.txt) for usage terms
+- Multiple compilation passes are required for proper bibliography and cross-references
+- Auxiliary files (.aux, .log, .bbl, etc.) are excluded from version control
 
-## 📞 Support
+### Quality Standards
+- All contributions are subject to automated quality checks
+- Spellcheck runs on every push and pull request
+- LaTeX linting helps catch common errors early
+- Fix any issues reported by automated workflows before merging
 
-For LaTeX installation help, refer to:
-- [LaTeX-Install.md](LaTeX-Install.md) (English)
-- [LaTeX-Install.de.md](LaTeX-Install.de.md) (German)
+### Working with Bibliographies
+- Bibliography files (.bib) are located in respective project directories
+- Use proper BibTeX format for all references
+- Run `bibtex` after `pdflatex` to process citations
+- Verify all citations resolve correctly in the final PDF
 
-For repository issues, please use the [GitHub Issues](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/issues) page.
+### Disclaimer
+See [DISCLAIMER.txt](DISCLAIMER.txt) for usage terms and warranty information.
+
+## Support and Resources
+
+### LaTeX Installation
+For detailed instructions on installing LaTeX locally:
+- [LaTeX-Install.md](LaTeX-Install.md) - English installation guide
+- [LaTeX-Install.de.md](LaTeX-Install.de.md) - German installation guide (Deutsche Installationsanleitung)
+
+Both guides cover installation procedures for:
+- TeX Live (Linux, macOS, Windows)
+- MiKTeX (Windows)
+- MacTeX (macOS)
+
+### Getting Help
+- **Repository Issues:** Use the [GitHub Issues](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/issues) page to report bugs or request features
+- **Pull Requests:** Submit contributions via [Pull Requests](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/pulls)
+- **Actions Status:** Monitor build status and download artifacts from the [Actions tab](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions)
+
+### LaTeX Resources
+- [LaTeX Project](https://www.latex-project.org/) - Official LaTeX documentation
+- [CTAN](https://ctan.org/) - Comprehensive TeX Archive Network for packages
+- [Beamer Documentation](https://ctan.org/pkg/beamer) - Guide for presentation slides
+- [BibTeX Documentation](http://www.bibtex.org/) - Bibliography management reference
+
+### Security
+For security-related concerns, please refer to our [SECURITY.md](SECURITY.md) policy.

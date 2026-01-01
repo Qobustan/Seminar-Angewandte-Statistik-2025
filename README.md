@@ -209,7 +209,7 @@ chktex Ausarbeitung/Ausarbeitung.tex
 chktex Vortrag/Vortrag.tex
 ```
 
-**Latexindent** - LaTeX formatter:
+**latexindent** - LaTeX formatter:
 ```bash
 latexindent -w Ausarbeitung/Ausarbeitung.tex
 latexindent -w Vortrag/Vortrag.tex

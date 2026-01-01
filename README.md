@@ -242,7 +242,7 @@ If your LaTeX documents require additional packages not included in the standard
 ### Build and Development Tools
 - **Dockerfile:** Container definition for reproducible compilation environment
 - **build.sh:** Build script for web application deployment
-- **debug.sh:** Debugging utilities for troubleshooting LaTeX compilation issues
+- **legacy/debug.sh:** Legacy debugging script for troubleshooting web application builds (not used for LaTeX compilation)
 - **cleanup/:** Scripts for cleaning temporary and auxiliary LaTeX files
 
 ### Directory Organization

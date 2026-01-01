@@ -83,7 +83,7 @@ Um die Glattheit zu garantieren, verallgemeinert man den Rosenblatt-Ansatz durch
 \begin{itemize}
 	\item \textbf{Der Schätzer:}
 	      \begin{equation}
-	      	\hat{f}n(x) = \frac{1}{nh} \sum{i=1}^{n} K\left(\frac{x - X_i}{h}\right)
+	      	\hat{f}_n(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}\right)
 	      \end{equation}
 	      Jeder Datenpunkt $X_i$ bekommt eine kleine ,,Glockenkurve`` (Kern $K$), und die Summe dieser Kurven ergibt die Gesamtdichte.
 	      		    
@@ -107,7 +107,7 @@ Hier verlassen wir die Dichteschätzung und betrachten den Zusammenhang zwischen
 \subsection{Watson-Nadaraya Schätzer (Allgemeine Regression)}
 Wenn wir keine Formel für $m(x)$ kennen, schätzen wir den Wert als gewichteten Mittelwert der umliegenden $Y$-Werte:
 \begin{equation}
-	\hat{m}{WN}(x) = \frac{\sum{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
+	\hat{m}_{WN}(x) = \frac{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
 \end{equation}
 Datenpunkte $X_i$, die nahe an $x$ liegen, erhalten durch den Kern $K$ ein hohes Gewicht.
 	

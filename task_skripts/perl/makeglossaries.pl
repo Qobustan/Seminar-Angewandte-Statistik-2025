@@ -58,6 +58,7 @@ $document =~ s/\.tex$//;
 # Prüfe ob .aux-Datei existiert (Voraussetzung für makeglossaries)
 my $aux_file = "$document.aux";
 die "Error: File '$aux_file' does not exist.\nPlease run pdflatex/latex first to generate the .aux file.\n" unless -e $aux_file;
+die "Error: File '$aux_file' is not a regular file.\n" unless -f $aux_file;
 die "Error: File '$aux_file' is not readable.\n" unless -r $aux_file;
 
 # Tool ausführen

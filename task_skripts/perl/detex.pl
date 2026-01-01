@@ -55,17 +55,22 @@ die "Error: File '$tex_file' is not readable.\n" unless -r $tex_file;
 die "Error: File '$tex_file' is not a regular file.\n" unless -f $tex_file;
 
 # Tool sicher ausführen (ohne Shell-Interpolation)
-open(my $output_fh, '>', $output_file) 
-    or die "Error: Cannot open output file '$output_file': $!\n";
 open(my $tool_fh, '-|', $tool, $tex_file)
     or die "Error: Cannot run $tool: $!\n";
+
+open(my $output_fh, '>', $output_file) 
+    or die "Error: Cannot open output file '$output_file': $!\n";
 
 # Ausgabe in Datei schreiben
 while (my $line = <$tool_fh>) {
     print $output_fh $line;
 }
 
-close($tool_fh) or die "Error running $tool: $!\n";
-close($output_fh) or die "Error closing output file: $!\n";
+# Prüfe Tool-Exit-Status und schließe Handles
+my $tool_success = close($tool_fh);
+my $file_success = close($output_fh);
+
+die "Error running $tool: $!\n" unless $tool_success;
+die "Error closing output file: $!\n" unless $file_success;
 
 print "Plain text extracted to $output_file.\n";

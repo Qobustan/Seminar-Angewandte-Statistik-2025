@@ -19,6 +19,17 @@
 #
 # ==============================================================================
 
+set -euo pipefail
+
 TARGET_DIR=debug
-rm -rf "$TARGET_DIR" &>/dev/null && mkdir "$TARGET_DIR"
+
+# Remove existing debug directory if it exists
+if [[ -d "$TARGET_DIR" ]]; then
+    rm -rf "$TARGET_DIR"
+fi
+
+# Create new debug directory
+mkdir -p "$TARGET_DIR"
+
+# Run build script
 ./build.sh "$TARGET_DIR" gituser/example-repo latex.example.net

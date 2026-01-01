@@ -22,18 +22,21 @@
 #
 # ==============================================================================
 
+set -euo pipefail
+
 DEBUG=0 # debug output
 
 function fatal
 {
-    printf "$0: error: $1\n"
+    printf "%s: error: %s\n" "$0" "$1" >&2
     exit 1
 }
 
 function debug
 {
-    ((DEBUG)) && printf "$1\n"
-    return
+    if ((DEBUG)); then
+        printf "%s\n" "$1"
+    fi
 }
 
 # ------------------------------------------------------------------------------
@@ -66,13 +69,13 @@ THIS_REPO=fhswf/LaTeX-Editor-source
 # add text to the configuration file
 function add_to_config
 {
-    printf "$1" >> "$DOCS"/"$template_name"/config.js
+    printf "%s" "$1" >> "$DOCS"/"$template_name"/config.js
 }
 
 # add text to the readme file
 function add_to_readme
 {
-    printf "$1" >> "$TARGET_DIR"/README.md
+    printf "%s" "$1" >> "$TARGET_DIR"/README.md
 }
 
 # remove the path from a filename
@@ -104,7 +107,7 @@ do
     add_to_config 'var config_template_name = "'"$template_name"'";'"\n"
 
     # main tex file (contains '\documentclass'):
-    main_tex_file="$(grep -rl --fixed-strings --include *.tex '\documentclass' "$template_dir")"
+    main_tex_file="$(grep -rl --fixed-strings --include='*.tex' '\documentclass' "$template_dir")"
     main_tex_file="$(strip_path "$main_tex_file")"
     debug "    Main tex file: '$main_tex_file'"
     add_to_config 'var config_main_tex_file = "'"$main_tex_file"'";'"\n"
@@ -115,6 +118,9 @@ do
 
     for file in "$template_dir"*.* # only files
     do
+        # skip if not a regular file
+        [[ ! -f "$file" ]] && continue
+        
         file_name="$(strip_path "$file")"
 
         # do not include compiled pdfs:
@@ -176,7 +182,7 @@ fi
 cp -r "$TEMPLATES" "$TARGET_DIR"/Vorlagen
 
 # remove placeholder syntax elements (curly braces):
-find "$TARGET_DIR"/Vorlagen -type f -name *.tex | xargs sed -i -E 's/\{\{([^{}]+)\}\}/\1/g'
+find "$TARGET_DIR"/Vorlagen -type f -name '*.tex' -exec sed -i -E 's/\{\{([^{}]+)\}\}/\1/g' {} +
 
 # ------------------------------------------------------------------------------
 #  add install instructions

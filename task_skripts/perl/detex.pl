@@ -1,17 +1,44 @@
 #!/usr/bin/perl
-# detex - Ein Perl-Skript zum Entfernen von LaTeX-Befehlen und Extrahieren von reinem Text
-
-# Beispielaufruf:
-# detex mein_dokument.tex > mein_dokument.txt
+# ==============================================================================
+#
+#          FILE: detex.pl
+#
+#   DESCRIPTION: Removes LaTeX commands and extracts plain text
+#
+#       USAGE: detex.pl <tex_file> [output_file]
+#
+#       OPTIONS: tex_file    - Input LaTeX file (required)
+#                output_file - Output text file (default: input_file.txt)
+#
+# ==============================================================================
 
 use strict;
 use warnings;
+use File::Basename;
 
-my $tex_file = $ARGV[0] // die "Bitte LaTeX-Datei angeben";
+# Check if detex command is available
+sub check_command {
+    my $cmd = shift;
+    system("which $cmd > /dev/null 2>&1") == 0
+        or die "Error: $cmd is not installed or not in PATH\n";
+}
+
+check_command("detex");
+
+# Parse command line arguments
+my $tex_file = $ARGV[0] or die "Usage: $0 <tex_file> [output_file]\n";
 my $output_file = $ARGV[1] // $tex_file . ".txt";
 
-# Einfaches Kommando, um detex auszuführen
-system("detex $tex_file > $output_file") == 0
-    or die "Fehler beim Ausführen von detex: $!\n";
+# Validate input file
+die "Error: File '$tex_file' not found\n" unless -f $tex_file;
+die "Error: File '$tex_file' is not readable\n" unless -r $tex_file;
 
-print "Reiner Text aus LaTeX-Dokument in $output_file extrahiert.\n";
+# Extract plain text using detex
+print "Extracting plain text from '$tex_file' to '$output_file'...\n";
+my $exit_code = system("detex $tex_file > $output_file");
+
+if ($exit_code == 0) {
+    print "Plain text extracted successfully to $output_file\n";
+} else {
+    die "Error: detex failed with exit code $exit_code\n";
+}

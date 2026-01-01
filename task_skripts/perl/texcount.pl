@@ -1,16 +1,41 @@
 #!/usr/bin/perl
-# texcount - Ein Perl-Skript zum Zählen der Wörter in einem LaTeX-Dokument
-
-# Beispielaufruf:
-# texcount mein_dokument.tex
+# ==============================================================================
+#
+#          FILE: texcount.pl
+#
+#   DESCRIPTION: Counts words in a LaTeX document
+#
+#       USAGE: texcount.pl <tex_file>
+#
+#       OPTIONS: tex_file - Input LaTeX file (required)
+#
+# ==============================================================================
 
 use strict;
 use warnings;
 
-my $tex_file = $ARGV[0] // die "Bitte LaTeX-Datei angeben";
+# Check if texcount command is available
+sub check_command {
+    my $cmd = shift;
+    system("which $cmd > /dev/null 2>&1") == 0
+        or die "Error: $cmd is not installed or not in PATH\n";
+}
 
-# Einfaches Kommando, um Texcount auszuführen
-system("texcount $tex_file") == 0
-    or die "Fehler beim Ausführen von texcount: $!\n";
+check_command("texcount");
 
-print "Wortzählung abgeschlossen.\n";
+# Parse command line arguments
+my $tex_file = $ARGV[0] or die "Usage: $0 <tex_file>\n";
+
+# Validate input file
+die "Error: File '$tex_file' not found\n" unless -f $tex_file;
+die "Error: File '$tex_file' is not readable\n" unless -r $tex_file;
+
+# Count words in LaTeX document
+print "Counting words in '$tex_file'...\n";
+my $exit_code = system("texcount", $tex_file);
+
+if ($exit_code == 0) {
+    print "Word count completed.\n";
+} else {
+    die "Error: texcount failed with exit code $exit_code\n";
+}

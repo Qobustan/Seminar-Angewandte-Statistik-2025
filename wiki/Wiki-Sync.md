@@ -8,17 +8,19 @@ This repository maintains its wiki documentation in the `wiki/` directory within
 
 ### Automated Synchronization
 
-The `.github/workflows/wiki-sync.yml` workflow automatically syncs the local `wiki/` directory to the GitHub Wiki whenever:
+The `.github/workflows/publish-wiki.yml` workflow automatically syncs the local `wiki/` directory to the GitHub Wiki whenever:
 
-1. **Automatic Trigger**: Changes to files in the `wiki/` directory are pushed to the `main` branch
+1. **Automatic Trigger**: Changes to files in the `wiki/` directory are pushed to the `main` or `master` branch
 2. **Manual Trigger**: The workflow is manually triggered via the GitHub Actions interface
 
 ### Workflow Process
 
 1. The workflow checks out the repository
-2. Uses the `SwiftDocOrg/github-wiki-publish-action` to publish wiki content
+2. Uses the `SwiftDocOrg/github-wiki-publish-action` (pinned to a specific commit SHA) to publish wiki content
 3. Copies all markdown files from the `wiki/` directory to the GitHub Wiki repository
 4. The GitHub Wiki is immediately updated and accessible online
+
+**Note**: The workflow uses a pinned commit SHA for the action to avoid firewall-blocked API calls and ensure security and reproducibility.
 
 ## Editing Wiki Content
 
@@ -109,7 +111,7 @@ If the wiki sync workflow fails:
 
 1. **Check workflow status:**
    - Go to the Actions tab in the GitHub repository
-   - Look for the "Sync Wiki" workflow
+   - Look for the "Publish Wiki" workflow
    - Check error logs if the workflow failed
 
 2. **Verify permissions:**
@@ -119,7 +121,7 @@ If the wiki sync workflow fails:
 
 3. **Manual sync:**
    - You can manually trigger the workflow from the Actions tab
-   - Click on "Sync Wiki" workflow
+   - Click on "Publish Wiki" workflow
    - Click "Run workflow" button
 
 ### Wiki Not Enabled

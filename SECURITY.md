@@ -47,8 +47,7 @@ This repository follows a continuous development model on the `main` branch. Sec
 
 **Mitigations:**
 - **Dependabot** is configured to automatically update GitHub Actions weekly
-- GitHub Actions are pinned to specific versions with SHA verification where possible
-- The `publish-wiki.yml` workflow uses pinned commit SHA (not just version tags)
+- GitHub Actions should be pinned to specific versions, preferably commit SHAs for enhanced security
 - Workflow artifacts are retained for 90 days with appropriate access controls
 - No secrets or credentials are stored in repository code
 - Limited use of third-party actions; prefer GitHub-maintained actions

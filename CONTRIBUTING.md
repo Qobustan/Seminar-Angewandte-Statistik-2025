@@ -95,7 +95,7 @@ Before submitting your changes, please:
    ```
 5. **Run LaTeX linter** (if you have chktex installed):
    ```bash
-   chktex -q -n1 -I0 **/*.tex
+   find . -name "*.tex" -exec chktex -q -n1 -I0 {} +
    ```
 
 ## LaTeX Conventions
@@ -256,8 +256,7 @@ If you experience or witness unacceptable behavior, please contact the repositor
 If you have questions about contributing:
 
 1. Check the [FAQ in the Wiki](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki/FAQ)
-2. Open a [GitHub Discussion](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/discussions)
-3. Create an issue with the `question` label
+2. Create an issue with the `question` label
 
 ## Additional Resources
 

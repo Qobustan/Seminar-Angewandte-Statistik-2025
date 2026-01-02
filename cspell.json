@@ -177,11 +177,5 @@
     "*.out",
     "node_modules",
     ".git"
-  ],
-  "ignoreRegExpList": [
-    "/\\\\[a-zA-Z]+\\{[^}]*\\}/g",
-    "/\\\\[a-zA-Z]+/g",
-    "/\\$[^$]+\\$/g",
-    "/\\b[a-z]+\\d{4}[a-z]*/gi"
   ]
 }

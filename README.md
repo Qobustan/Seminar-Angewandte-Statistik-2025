@@ -78,8 +78,8 @@ A comprehensive LaTeX project repository for the Applied Statistics seminar, Win
 - **cspell** - Spell checker (used in CI)
 
 For detailed installation instructions, see:
-- [LaTeX Installation Guide (English)](LaTeX-Install.md)
-- [LaTeX Installation Guide (German)](LaTeX-Install.de.md)
+- [LaTeX Installation Guide (English)](latex_install/LaTeX-Install.md)
+- [LaTeX Installation Guide (German)](latex_install/LaTeX-Install.de.md)
 
 ---
 
@@ -216,34 +216,17 @@ Most scripts support a `--help` option for usage information.
 
 ## Contributing
 
-Contributions are welcome! Please follow these guidelines:
+Contributions are welcome! Please see our [Contributing Guidelines](CONTRIBUTING.md) for detailed information.
 
-### Workflow
+### Quick Start
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/my-feature`)
-3. Make your changes
-4. Test locally by building the PDFs
-5. Commit your changes with clear, descriptive messages
-6. Push to your fork
-7. Open a Pull Request
+3. Make your changes and test locally by building the PDFs
+4. Commit your changes with clear, descriptive messages
+5. Push to your fork and open a Pull Request
 
-### LaTeX Conventions
-
-- Use consistent indentation (2 or 4 spaces)
-- Keep line length reasonable (< 120 characters where possible)
-- Comment complex LaTeX macros
-- Use semantic LaTeX commands (e.g., `\emph{}` instead of `\textit{}`)
-- Follow existing file structure and naming conventions
-
-### Quality Checks
-
-The repository uses automated quality checks:
-- **chktex** - LaTeX linting (checks for common LaTeX errors and style issues)
-- **cspell** - Spell checking (custom dictionary in `cspell.json`)
-- **Format checks** - Code formatting validation
-
-These checks run automatically on pull requests. Fix any issues before merging.
+For detailed guidelines on LaTeX conventions, quality checks, and the PR process, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
@@ -267,8 +250,9 @@ For information about supported versions and reporting vulnerabilities, see [SEC
 
 ## Additional Documentation
 
-- [LaTeX Installation Guide (English)](LaTeX-Install.md) - Comprehensive LaTeX setup instructions
-- [LaTeX Installation Guide (German)](LaTeX-Install.de.md) - Deutsche LaTeX-Installationsanleitung
+- [Contributing Guidelines](CONTRIBUTING.md) - How to contribute to this project
+- [LaTeX Installation Guide (English)](latex_install/LaTeX-Install.md) - Comprehensive LaTeX setup instructions
+- [LaTeX Installation Guide (German)](latex_install/LaTeX-Install.de.md) - Deutsche LaTeX-Installationsanleitung
 - [Branch Archive Documentation](archive/README.md) - Historical branch consolidation and analysis
 - [Security Policy](SECURITY.md) - Security guidelines and vulnerability reporting
 

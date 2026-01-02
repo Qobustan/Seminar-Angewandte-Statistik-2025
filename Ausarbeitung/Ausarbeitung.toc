@@ -1,0 +1,10 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Einleitung \& Motivation}{1}{section.1}%
+\contentsline {section}{\numberline {2}Der Rosenblatt-Schätzer (Die theoretische Basis)}{2}{section.2}%
+\contentsline {section}{\numberline {3}Das Histogramm (Der Klassiker)}{2}{section.3}%
+\contentsline {section}{\numberline {4}Kernschätzer (Kernel Density Estimation - KDE)}{2}{section.4}%
+\contentsline {section}{\numberline {5}Nichtparametrische Regression}{3}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Watson-Nadaraya Schätzer (Allgemeine Regression)}{3}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Robuste Lineare Regression (Theil-Schätzer)}{3}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Zusammenfassung für das Seminar}{4}{section.6}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

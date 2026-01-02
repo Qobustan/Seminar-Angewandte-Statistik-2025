@@ -1,6 +1,8 @@
 {
   "version": "0.2",
   "language": "de,en",
+  "allowCompoundWords": true,
+  "dictionaries": ["de-de", "en-us", "latex", "companies", "softwareTerms", "misc"],
   "words": [
     "Kerndichteschätzung",
     "Kerndichteschätzers",
@@ -154,7 +156,16 @@
     "somecommand",
     "textbold",
     "publickey",
-    "unmatch"
+    "unmatch",
+    "gemerged",
+    "Präsentationsversion",
+    "Yavuzâlp",
+    "chktex",
+    "cheng",
+    "textit",
+    "magna",
+    "jones",
+    "timeframe"
   ],
   "ignorePaths": [
     "*.bib",

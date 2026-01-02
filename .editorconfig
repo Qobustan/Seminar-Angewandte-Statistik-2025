@@ -1,0 +1,60 @@
+root = true
+
+# Standard für alle Dateien
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# LaTeX-Dateien
+[*.{tex,bib}]
+indent_size = 4
+indent_style = tab
+
+# Markdown-Dateien
+[*.md]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = false  # Markdown kann trailing spaces für Zeilenumbrüche nutzen
+
+# Shell-Skripte
+[*.sh]
+indent_size = 4
+indent_style = space
+
+# Batch-Dateien (Windows)
+[*.bat]
+indent_size = 4
+indent_style = space
+end_of_line = crlf
+
+# Für YAML/JSON-Konfigurationsdateien
+[*.{yml,yaml,json}]
+indent_size = 2
+indent_style = space
+
+# Python-Dateien
+[*.py]
+indent_size = 4
+indent_style = space
+
+# Perl-Dateien
+[*.pl]
+indent_size = 4
+indent_style = space
+
+# Standard für Quellcode-Dateien (Java, JS, CSS, SCSS, HTML)
+[*.{java,js,css,scss,html}]
+indent_size = 2
+indent_style = space
+
+# Für Java spezifisch: oft 4 Spaces statt 2
+[*.java]
+indent_size = 4
+indent_style = space
+
+# Dockerfile
+[Dockerfile]
+indent_size = 2
+indent_style = space

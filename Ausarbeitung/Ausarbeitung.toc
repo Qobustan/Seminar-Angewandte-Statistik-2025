@@ -1,14 +1,10 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {section}{\numberline {1}Einleitung und Motivation}{2}{section.1}%
-\contentsline {section}{\numberline {2}Der Schätzer von Rosenblatt (Die theoretische Basis)}{2}{section.2}%
-\contentsline {section}{\numberline {3}Das Histogramm (Der Klassiker)}{3}{section.3}%
-\contentsline {section}{\numberline {4}Kerndichteschätzung (Kernel Density Estimation -- KDE)}{3}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Definition und Funktionsweise}{3}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Anforderungen an den Kern}{4}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Wahl des Kerns}{4}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Statistische Eigenschaften und Bandbreitenwahl}{4}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Nichtparametrische Regression}{5}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Watson-Nadaraya-Schätzer (Allgemeine Regression)}{5}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Robuste Lineare Regression (Theil-Schätzer)}{5}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Zusammenfassung und Fazit}{6}{section.6}%
+\contentsline {section}{\numberline {1}Einleitung \& Motivation}{1}{section.1}%
+\contentsline {section}{\numberline {2}Der Rosenblatt-Schätzer (Die theoretische Basis)}{2}{section.2}%
+\contentsline {section}{\numberline {3}Das Histogramm (Der Klassiker)}{2}{section.3}%
+\contentsline {section}{\numberline {4}Kernschätzer (Kernel Density Estimation - KDE)}{2}{section.4}%
+\contentsline {section}{\numberline {5}Nichtparametrische Regression}{3}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Watson-Nadaraya Schätzer (Allgemeine Regression)}{3}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Robuste Lineare Regression (Theil-Schätzer)}{3}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Zusammenfassung für das Seminar}{4}{section.6}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

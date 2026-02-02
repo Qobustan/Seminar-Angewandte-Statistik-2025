@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  14 DEC 2025 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  2 FEB 2026 02:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2015,48 +2015,83 @@ enc}] [6
 
 ] [16
 
-{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
-hex.enc}] [17
+] [17
 
-]
+{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hex.enc}]
 [18
 
-] (./Vortrag.toc) [19
+] [19
 
 ] [20
 
-] (./Vortrag.toc) [21
+] [21
 
 ] [22
 
 ] [23
 
-] (./Vortrag.toc)
-[24
+] (./Vortrag.toc) [24
 
 ] [25
 
 ] [26
 
-] (./Vortrag.toc) [27
+] [27
+
+] [28
+
+] [29
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 26
-2.
+[30
+
+] [31
+
+] (./Vortrag.toc) [32
+
+] [33
+
+] [34
+
+] [35
+
+] [36
+
+] [37
+
+] [38
+
+] [39
+
+] [40
+
+]
+(./Vortrag.toc) [41
+
+] [42
+
+] [43
+
+] (./Vortrag.toc) [44
+
+]
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 56
+5.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 262.
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 565.
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-62.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
+65.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-[28
+[45
 
 ]
 \tf@nav=\write7
@@ -2076,10 +2111,10 @@ Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45295 strings out of 476025
- 939813 string characters out of 5790017
+ 45363 strings out of 476025
+ 940427 string characters out of 5790017
  1867388 words of memory out of 5000000
- 64812 multiletter control sequences out of 15000+600000
+ 64846 multiletter control sequences out of 15000+600000
  558725 words of font info for 71 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,15n,134p,1881b,2459s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2098,10 +2133,10 @@ olumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8
 m/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/
 public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts
 /type1/public/lm/lmtt10.pfb>
-Output written on Vortrag.pdf (28 pages, 276624 bytes).
+Output written on Vortrag.pdf (45 pages, 313214 bytes).
 PDF statistics:
- 972 PDF objects out of 1000 (max. 8388607)
- 890 compressed objects within 9 object streams
- 67 named destinations out of 1000 (max. 500000)
+ 1430 PDF objects out of 1440 (max. 8388607)
+ 1326 compressed objects within 14 object streams
+ 101 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -140,7 +140,7 @@ Die Kerndichteschätzung verallgemeinert den Rosenblatt-Ansatz und behebt die Un
         \fill[black] (\x,0) circle (2pt);
         \draw[dashed, gray] (\x,0) -- (\x, -0.2) node[below] {\small $X_i$};
         % Einzelne Kerne
-        \draw[gray, thin, dashed] plot[domain=\x-1.0:\x+1.0, samples=50] (\x, {1.0*exp(-2*(\x-\x)^2)});
+        \draw[gray, thin, dashed] plot[domain=\x-1.0:\x+1.0, samples=50, variable=\t] (\t, {1.0*exp(-2*(\t-\x)^2)});
     }
     % Summenkurve
     \draw[blue, thick] plot [smooth] coordinates {(0.5,0.1) (1.5, 1.1) (2.5, 0.9) (3.2, 0.5) (4.0, 1.1) (5.0, 0.1)};

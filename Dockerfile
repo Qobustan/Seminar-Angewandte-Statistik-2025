@@ -54,6 +54,10 @@ RUN apt-get update && \
 # -----------------------------------------------------------------------------
 FROM base AS app
 
+# Re-declare build arguments for use in this stage
+ARG USER_ID=1000
+ARG GROUP_ID=1000
+
 # Create non-root user for security
 RUN groupadd -g ${GROUP_ID} latex && \
     useradd -m -u ${USER_ID} -g latex -s /bin/bash latex && \

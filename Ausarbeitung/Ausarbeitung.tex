@@ -69,7 +69,10 @@ Historisch betrachtet bildet der Ansatz von Rosenblatt (1956) das Fundament mode
 	      \begin{equation}
 	      	f_n(x) = \frac{F_n(x+h) - F_n(x-h)}{2h}
 	      \end{equation}
+        
+        % TODO Zusammenführen????
 	      Intuitiv zählt dieser Schätzer die relative Häufigkeit der Stichprobenwerte, die in das Intervall $(x-h, x+h]$ fallen, und normiert diese durch die Breite $2h$. Intuitiv handelt es sich um ein ,,gleitendes Histogramm``. Er entspricht, wie wir später sehen werden, einem Spezialfall der Kernschätzung mit einem Rechteck-Kern.
+	      Dies entspricht der relativen Häufigkeit von Datenpunkten im Intervall $(x-h, x+h]$, geteilt durch die Länge $2h$. Intuitiv handelt es sich um ein ,,gleitendes Histogramm``.
 	      
 	\item \textbf{Konsistenz:} Damit der Schätzer gegen die wahre Dichte konvergiert (MSE $\to 0$), muss für den Stichprobenumfang $n \to \infty$ gelten:
 	      \begin{enumerate}
@@ -91,7 +94,7 @@ Das Histogramm ist die älteste und bekannteste Methode der Dichteschätzung, ha
 	      
 	\item \textbf{Probleme:} Trotz seiner Einfachheit weist das Histogramm gravierende Nachteile auf:
 	      \begin{enumerate}
-	      	\item \textbf{Unstetigkeit:} Die geschätzte Dichte ist eine Treppenfunktion, obwohl die wahre Natur oft glatt (stetig differenzierbar) ist.
+	      	\item \textbf{Unstetigkeit:} Die geschätzte Dichte ist eine Treppenfunktion, obwohl die wahre Dichte $f$ oft glatt (stetig differenzierbar) ist.
 	      	\item \textbf{Subjektivität:} Form und Aussage hängen stark vom Startpunkt $x_0$ (Gitterverschiebung) und der Klassenbreite $h$ ab.
 	      \end{enumerate}
 	      
@@ -109,7 +112,9 @@ Um diese Mängel zu beheben, wurden die Kernschätzer entwickelt, die eine glatt
 
 \subsection{Definition und Funktionsweise}
 
+%TODO Die beiden hier zusammenführen???
 Um die Glattheit zu garantieren, verallgemeinert die Kerndichteschätzung den Rosenblatt-Ansatz und behebt die Unstetigkeitsprobleme des Histogramms. Anstatt Beobachtungen nur in starren Boxen zu zählen, gewichtet man sie mittels einer glatten Funktion $K$, dem sogenannten Kern.
+Die Kerndichteschätzung verallgemeinert den Rosenblatt-Ansatz und behebt die Unstetigkeitsprobleme des Histogramms. Anstatt Beobachtungen nur in starren Boxen zu zählen, gewichtet man sie mittels einer glatten Funktion $K$, dem sogenannten Kern.
 
 \begin{itemize}
 	\item \textbf{Der Schätzer:}
@@ -193,7 +198,7 @@ Wenn wir keine Formel für $m(x)$ kennen, schätzen wir den Wert als gewichteten
 \begin{equation}
 	\hat{m}_{\text{WN}}(x) = \frac{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
 \end{equation}
-Datenpunkte $X_i$, die nahe an $x$ liegen, erhalten durch den Kern $K$ ein hohes Gewicht, wodurch deren $Y$-Werte stärker in die Schätzung eingehen.
+Datenpunkte $X_i$, die nahe an $x$ liegen, erhalten durch den Kern $K$ ein hohes Gewicht. Hierbei erhalten $Y$-Werte, deren $X$-Koordinaten nahe bei $x$ liegen, ein höheres Gewicht.
 
 \subsection{Robuste Lineare Regression (Theil-Schätzer)}
 

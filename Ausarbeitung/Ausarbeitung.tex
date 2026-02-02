@@ -7,19 +7,10 @@
 
 % Hier befinden sich alle Metadaten; Pakete, Einstellungen und die sonstigen Ressourcen
 \input{header.tex}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 
-\usepackage[ngerman]{babel}
+% Bibliographie-Konfiguration (zusätzlich zu header.tex)
 \usepackage[backend=bibtex, style=alphabetic]{biblatex}
 \addbibresource{Ausarbeitung.bib}
-
-% Mathematik-Pakete
-\usepackage{amsmath, amssymb, amsthm}
-
-% Grafik und Layout
-\usepackage{graphicx}
-\usepackage{booktabs}
 
 % Definiere eine Bedingung, die steuert, ob der Text angezeigt wird oder nicht
 \newif\ifshowtext
@@ -28,8 +19,8 @@
 
 \begin{document}
 	
-% TikZ - Bibliothek
-\usetikzlibrary{arrows.meta, shapes, positioning, calc}
+% TikZ - Bibliotheken (zusätzlich zu den in header.tex geladenen)
+\usetikzlibrary{arrows.meta, calc}
 
 \maketitle
 

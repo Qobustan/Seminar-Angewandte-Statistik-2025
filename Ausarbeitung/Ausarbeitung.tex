@@ -47,7 +47,7 @@ Die Analyse von Verteilungen ist ein zentraler Bestandteil der Statistik. In der
 
 Dieser Ansatz ist jedoch problematisch, wenn die wahre Verteilung unbekannt ist oder nicht den theoretischen Annahmen entspricht (z.\,B. bei Schiefe oder Multimodalität). Klassische parametrische Verfahren sind oft zu starr und führen zu fehlerhaften Interpretationen, wenn die Modellannahmen verletzt sind.
 
-Ferner können wir eine Verteilung normalerweise nicht beweisen – wir nehmen sie lediglich an. Folglich erzeugen wir hier eine extreme Kopplung zwischen (potentiell fehlerhaften) Interpretationen und den daraus resultierenden Schlussfolgerungen.
+Ferner können wir eine Verteilung normalerweise nicht beweisen – wir nehmen sie lediglich an. Folglich erzeugen wir hier eine extreme Kopplung zwischen (potentiell fehlerhaften) Interpretationen und unserer Schätzung. Offensichtlich ist es folglich für eine produktive Arbeit sinnvoll, diese Kopplung möglichst abzuschwächen; wobei wir im Nachfolgenden gesehen haben werden, dass sich bestimmte (schwache) Annahmen wie die Stetigkeit nicht zwingend vermeiden lassen, jedoch deren Einfluss i.d.R. nicht zu groß ist.
 
 Die \textit{nichtparametrische Dichteschätzung} verzichtet auf die Zugehörigkeit zu einer starren parametrischen Familie. Stattdessen wird lediglich angenommen, dass die Dichte $f$ gewisse Glattheitseigenschaften, wie etwa Stetigkeit oder Differenzierbarkeit, erfüllt.
 
@@ -69,7 +69,7 @@ Historisch betrachtet bildet der Ansatz von Rosenblatt (1956) das Fundament mode
 	      \begin{equation}
 	      	f_n(x) = \frac{F_n(x+h) - F_n(x-h)}{2h}
 	      \end{equation}
-	      Dies entspricht der relativen Häufigkeit von Datenpunkten im Intervall $(x-h, x+h]$, geteilt durch die Länge $2h$. Intuitiv handelt es sich um ein ,,gleitendes Histogramm``.
+	      Intuitiv zählt dieser Schätzer die relative Häufigkeit der Stichprobenwerte, die in das Intervall $(x-h, x+h]$ fallen, und normiert diese durch die Breite $2h$. Intuitiv handelt es sich um ein ,,gleitendes Histogramm``. Er entspricht, wie wir später sehen werden, einem Spezialfall der Kernschätzung mit einem Rechteck-Kern.
 	      
 	\item \textbf{Konsistenz:} Damit der Schätzer gegen die wahre Dichte konvergiert (MSE $\to 0$), muss für den Stichprobenumfang $n \to \infty$ gelten:
 	      \begin{enumerate}
@@ -134,10 +134,13 @@ Die Kerndichteschätzung verallgemeinert den Rosenblatt-Ansatz und behebt die Un
     \foreach \x in {1.5, 2.5, 4.0} {
         \fill[black] (\x,0) circle (2pt);
         \draw[dashed, gray] (\x,0) -- (\x, -0.2) node[below] {\small $X_i$};
+        % Einzelne Kerne
+        \draw[gray, thin, dashed] plot[domain=\x-1.0:\x+1.0, samples=50] (\x, {1.0*exp(-2*(\x-\x)^2)});
     }
     % Summenkurve
     \draw[blue, thick] plot [smooth] coordinates {(0.5,0.1) (1.5, 1.1) (2.5, 0.9) (3.2, 0.5) (4.0, 1.1) (5.0, 0.1)};
     \node[blue] at (5, 1.2) {$\hat{f}_n(x)$};
+    \node[gray] at (0.5, 0.5) [left] {\tiny Kern $K$};
 \end{tikzpicture}
 \end{center}
 
@@ -158,7 +161,7 @@ Gebräuchliche Kerne sind:
 \begin{itemize}
 	\item \textbf{Rechteck-Kern:} Entspricht dem naiven Rosenblatt-Schätzer.
 	\item \textbf{Gauß-Kern:} Basiert auf der Standardnormalverteilung (glatt und differenzierbar).
-	\item \textbf{Epanechnikov-Kern:} $K(x) = \frac{3}{4}(1-x^2)$ für $|x| \le 1$. Dieser Kern ist theoretisch optimal, da er den integrierten mittleren quadratischen Fehler (IMSE) minimiert.
+	\item \textbf{Epanechnikov-Kern:} $K(x) = \frac{3}{4}(1-x^2)$ für $|x| \le 1$. Parabolisch geformt; dieser Kern ist theoretisch optimal, da er den integrierten mittleren quadratischen Fehler (IMSE) minimiert.
 \end{itemize}
 
 \subsection{Statistische Eigenschaften und Bandbreitenwahl}

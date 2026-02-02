@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  2 FEB 2026 00:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  2 FEB 2026 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1391,6 +1391,10 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 159.
 ayer/tikz/libraries/tikzlibraryfit.code.tex
 File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/base/fontenc.st
+y
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblat
 ex.sty
 Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
@@ -1643,6 +1647,18 @@ Package biblatex Info: ... and expl3
 se-expl3.sty
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 ))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
+/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen334
+\pgfarrowlength=\dimen335
+\pgfarrowwidth=\dimen336
+\pgfarrowlinewidth=\dimen337
+)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
@@ -1652,44 +1668,44 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (./Ausarbeitung.aux)
 \openout1 = `Ausarbeitung.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 21.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 21
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 32.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 32
 .
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    ... okay on input line 32.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/context/base/mkii/sup
 p-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count501
-\scratchdimen=\dimen334
+\scratchdimen=\dimen338
 \scratchbox=\box105
 \nofMPsegments=\count502
 \nofMParguments=\count503
 \everyMPshowfont=\toks57
 \MPscratchCnt=\count504
-\MPscratchDim=\dimen335
+\MPscratchDim=\dimen339
 \MPnumerator=\count505
 \makeMPintoPDFobject=\count506
 \everyMPtoPDFconversion=\toks58
@@ -1712,8 +1728,8 @@ tim
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
-\caption@adjustwidth@hsize=\dimen336
-\caption@adjustwidth@linewidth=\dimen337
+\caption@adjustwidth@hsize=\dimen340
+\caption@adjustwidth@linewidth=\dimen341
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -1754,7 +1770,7 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count507
-Package hyperref Info: Link coloring ON on input line 21.
+Package hyperref Info: Link coloring ON on input line 32.
 (./Ausarbeitung.out) (./Ausarbeitung.out)
 \@outlinefile=\write5
 \openout5 = `Ausarbeitung.out'.
@@ -1766,7 +1782,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 21.
+(scrartcl)           before \begin{document} on input line 32.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/bookmark/bookma
 rk.sty
@@ -1808,78 +1824,69 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Ausarbeitung.bbl' found.
  (./Ausarbeitung.bbl)
-Package biblatex Info: Reference section=0 on input line 21.
-Package biblatex Info: Reference segment=0 on input line 21.
-
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
-/pgflibraryarrows.meta.code.tex
-File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen338
-\pgfarrowlength=\dimen339
-\pgfarrowwidth=\dimen340
-\pgfarrowlinewidth=\dimen341
-)
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-8.
+Package biblatex Info: Reference section=0 on input line 32.
+Package biblatex Info: Reference segment=0 on input line 32.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+5.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-8.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+5.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-28.
+35.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-28.
+35.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 28.
+(Font)              <14.4> on input line 35.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 28.
+(Font)              <10> on input line 35.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 28.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 28
+(Font)              <7> on input line 35.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 35
 .
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
 
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.f
 d
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
 
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.f
 d
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 2
-8.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 3
+5.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry
 .fd) (./Ausarbeitung.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 7.
+(Font)              <10.95> on input line 6.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 7.
+(Font)              <8> on input line 6.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 7.
+(Font)              <6> on input line 6.
 )
 \tf@toc=\write6
 \openout6 = `Ausarbeitung.toc'.
@@ -1889,16 +1896,19 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pd
 ftex.map}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/
-lm/lm-ec.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dv
-ips/lm/lm-mathit.enc}] [2{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/
+lm/lm-ec.enc}] [2{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/en
+c/dvips/lm/lm-mathit.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/
 fonts/enc/dvips/lm/lm-rm.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-d
-ist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Volumes/Macintosh SSD/local/texlive/2023
-/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-[3]
+ist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3{/Volumes/Macintosh SSD/local/texlive/
+2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 144.
 
-LaTeX Warning: Empty bibliography on input line 136.
+[4] [5]
 
-[4] (./Ausarbeitung.aux)
+LaTeX Warning: Empty bibliography on input line 233.
+
+[6] (./Ausarbeitung.aux)
 Package rerunfilecheck Info: File `Ausarbeitung.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'Ausarbeitung.run.xml'.
@@ -1906,32 +1916,35 @@ Package logreq Info: Writing requests to 'Ausarbeitung.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45031 strings out of 476025
- 910220 string characters out of 5790017
- 1863388 words of memory out of 5000000
- 64696 multiletter control sequences out of 15000+600000
- 571907 words of font info for 90 fonts, out of 8000000 for 9000
+ 45455 strings out of 476025
+ 919159 string characters out of 5790017
+ 1868388 words of memory out of 5000000
+ 65090 multiletter control sequences out of 15000+600000
+ 585186 words of font info for 100 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 108i,7n,134p,10607b,2461s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,8n,134p,10607b,2461s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
 mbx10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pub
 lic/lm/lmbx12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/t
 ype1/public/lm/lmex10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist
 /fonts/type1/public/lm/lmmi10.pfb></Volumes/Macintosh SSD/local/texlive/2023/te
 xmf-dist/fonts/type1/public/lm/lmmi6.pfb></Volumes/Macintosh SSD/local/texlive/
-2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></Volumes/Macintosh SSD/local/t
-exlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Volumes/Macintosh SSD/
-local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Volumes/Macinto
-sh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Volumes/M
-acintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmri10.pfb></V
-olumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx
-10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public
-/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type
-1/public/lm/lmsy8.pfb>
-Output written on Ausarbeitung.pdf (4 pages, 234153 bytes).
+2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Volumes/Macintosh SSD/local/t
+exlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></Volumes/Macintosh SSD/
+local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Volumes/Macinto
+sh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Volumes/
+Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Vo
+lumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pf
+b></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
+mri10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pub
+lic/lm/lmssbx10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts
+/type1/public/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-di
+st/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Ausarbeitung.pdf (6 pages, 276795 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 224 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

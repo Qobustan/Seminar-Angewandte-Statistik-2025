@@ -1,5 +1,5 @@
 % Vorlage für das Dokument laden:
-%   - scrartl  -> Artikel
+%   - scrartcl  -> Artikel
 %   - scrreprt -> Bericht
 %   - scrbook  -> Buch
 
@@ -8,10 +8,18 @@
 % Hier befinden sich alle Metadaten; Pakete, Einstellungen und die sonstigen Ressourcen
 \input{header.tex}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 \usepackage[ngerman]{babel}
 \usepackage[backend=bibtex, style=alphabetic]{biblatex}
 \addbibresource{Ausarbeitung.bib}
+
+% Mathematik-Pakete
+\usepackage{amsmath, amssymb, amsthm}
+
+% Grafik und Layout
+\usepackage{graphicx}
+\usepackage{booktabs}
 
 % Definiere eine Bedingung, die steuert, ob der Text angezeigt wird oder nicht
 \newif\ifshowtext
@@ -21,116 +29,197 @@
 \begin{document}
 	
 % TikZ - Bibliothek
-\usetikzlibrary{arrows.meta}
-\usetikzlibrary{shapes,arrows.meta,positioning}
+\usetikzlibrary{arrows.meta, shapes, positioning, calc}
 
 \maketitle
-
-\section{Einleitung \& Motivation}
 
 \ifshowtext
 % Inhaltsverzeichnis erzeugen
 \tableofcontents
+\newpage
 \fi
 
-		
+\section{Einleitung und Motivation}
+
+Die Analyse von Verteilungen ist ein zentraler Bestandteil der Statistik. In der klassischen \textit{parametrischen} Statistik wird häufig angenommen, dass die zugrundeliegende Verteilung einer bekannten Familie angehört, beispielsweise der Normalverteilung. Das Ziel beschränkt sich dort darauf, wenige Parameter wie den Erwartungswert $\mu$ oder die Varianz $\sigma^2$ zu schätzen.
+
 \subsection*{Warum nichtparametrisch?}
-	Klassische parametrische Verfahren (z.\,B. unter Annahme einer Normalverteilung) sind oft zu starr. Wenn die wahre Verteilung unbekannt ist, liefert die nichtparametrische Schätzung der Dichtefunktion $f$ oft bessere Einblicke in die Datenstruktur (z.\,B. Schiefe, Multimodalität) als die reine Verteilungsfunktion $F$.
-	\\
-	Ferner k\"onnen wir eine Verteilung normalerweise nicht beweisen. Wir nehmen sie lediglich an. Folglich erzeugen wir hier eine extreme Kopplung zwischen (potentiell fehlerhaften) Interpretationen und unserer Sch\"atzung. Offensichtlich ist es folglich f\"ur eine produktive Arbeit sinnvoll, diese Kopplung m\"oglichst abzuschw\"achen; wobei wir im Nachfolgenden gesehen haben werden, dass sich bestimmte (schwache) Annahmen wie die Stetigkeit nicht zwingend vermeiden lassen, jedoch deren Einfluss i.d.R. nicht zu gro\ss\ ist.
-		
+
+Dieser Ansatz ist jedoch problematisch, wenn die wahre Verteilung unbekannt ist oder nicht den theoretischen Annahmen entspricht (z.\,B. bei Schiefe oder Multimodalität). Klassische parametrische Verfahren sind oft zu starr und führen zu fehlerhaften Interpretationen, wenn die Modellannahmen verletzt sind.
+
+Ferner können wir eine Verteilung normalerweise nicht beweisen – wir nehmen sie lediglich an. Folglich erzeugen wir hier eine extreme Kopplung zwischen (potentiell fehlerhaften) Interpretationen und den daraus resultierenden Schlussfolgerungen.
+
+Die \textit{nichtparametrische Dichteschätzung} verzichtet auf die Zugehörigkeit zu einer starren parametrischen Familie. Stattdessen wird lediglich angenommen, dass die Dichte $f$ gewisse Glattheitseigenschaften, wie etwa Stetigkeit oder Differenzierbarkeit, erfüllt.
+
 \subsection*{Zielsetzung}
-Wir suchen eine Annäherung an den Wert $f(x)$ an einer Stelle $x$, ohne eine bestimmte parametrische Familie vorauszusetzen.
-	
-\section{Der Rosenblatt-Schätzer (Die theoretische Basis)}
-Der Ausgangspunkt für moderne Dichteschätzer ist der Ansatz von Rosenblatt (1956).
-	
+
+Ziel ist es, eine Annäherung an den Wert $f(x)$ an einer Stelle $x$ allein aus den Daten zu gewinnen, ohne eine bestimmte parametrische Familie vorauszusetzen (,,Let the data speak``).
+
+\section{Der Schätzer von Rosenblatt (Die theoretische Basis)}
+
+Historisch betrachtet bildet der Ansatz von Rosenblatt (1956) das Fundament moderner Dichteschätzer. Er motiviert sich aus dem fundamentalen Zusammenhang zwischen der Dichtefunktion $f$ und der Verteilungsfunktion $F$, wobei gilt: $F'(x) = f(x)$ (sofern $F$ differenzierbar ist).
+
 \begin{itemize}
-	\item \textbf{Idee:} Da $f(x) = F'(x)$, nutzt man den Differenzenquotienten der empirischen Verteilungsfunktion $F_n$.
-	\item \textbf{Der Schätzer:}
+	\item \textbf{Idee:} Da $f(x) = F'(x)$, nutzt man den Differenzenquotienten der empirischen Verteilungsfunktion $F_n$. Der Differentialquotient lässt sich approximieren durch:
+	      \begin{equation}
+	      	f(x) \approx \frac{F(x+h) - F(x-h)}{2h}
+	      \end{equation}
+	      
+	\item \textbf{Der Schätzer:} Ersetzt man die unbekannte Verteilungsfunktion $F$ durch die empirische Verteilungsfunktion $F_n$, erhält man den \textbf{Rosenblatt-Schätzer}:
 	      \begin{equation}
 	      	f_n(x) = \frac{F_n(x+h) - F_n(x-h)}{2h}
 	      \end{equation}
-	      Dies entspricht der relativen Häufigkeit von Datenpunkten im Intervall $(x-h, x+h]$, geteilt durch die Länge $2h$.
+	      Dies entspricht der relativen Häufigkeit von Datenpunkten im Intervall $(x-h, x+h]$, geteilt durch die Länge $2h$. Intuitiv handelt es sich um ein ,,gleitendes Histogramm``.
+	      
 	\item \textbf{Konsistenz:} Damit der Schätzer gegen die wahre Dichte konvergiert (MSE $\to 0$), muss für den Stichprobenumfang $n \to \infty$ gelten:
 	      \begin{enumerate}
 	      	\item Die Bandbreite $h \to 0$ (um den Bias zu reduzieren).
 	      	\item Das Produkt $nh \to \infty$ (um die Varianz zu reduzieren).
 	      \end{enumerate}
 \end{itemize}
-	
+
 \section{Das Histogramm (Der Klassiker)}
-Das Histogramm ist die älteste Methode, hat aber methodische Schwächen für präzise Analysen.
-	
+
+Das Histogramm ist die älteste und bekannteste Methode der Dichteschätzung. Der Datenraum wird hierbei in disjunkte Intervalle (Klassen/Bins) $B_k$ der Breite $h$ unterteilt.
+
 \begin{itemize}
-	\item \textbf{Funktionsweise:} Zerlegung des Datenraums in Boxen (Bins) der Breite $h$. Die Höhe der Box entspricht der relativen Häufigkeit $\frac{n_k}{n}$ normiert durch $h$.
-	\item \textbf{Probleme:}
+	\item \textbf{Funktionsweise:} Zerlegung des Datenraums in Boxen (Bins) der Breite $h$. Die Höhe der Box entspricht der relativen Häufigkeit $\frac{n_k}{n}$ normiert durch $h$. Der Histogrammschätzer ist definiert als:
+	      \begin{equation}
+	      	\hat{f}_H(x) = \frac{1}{nh} \sum_{k} n_k I_{B_k}(x),
+	      \end{equation}
+	      wobei $n_k$ die Anzahl der Beobachtungen im $k$-ten Intervall ist und $I_{B_k}$ die Indikatorfunktion darstellt.
+	      
+	\item \textbf{Probleme:} Trotz seiner Einfachheit weist das Histogramm gravierende Nachteile auf:
 	      \begin{enumerate}
-	      	\item \textbf{Unstetigkeit:} Die geschätzte Dichte ist eine Treppenfunktion, obwohl die wahre Natur oft glatt (stetig differenzierbar) ist.
-	      	\item \textbf{Subjektivität:} Form und Aussage hängen stark vom Startpunkt $x_0$ und der Klassenbreite $h$ ab.
+	      	\item \textbf{Unstetigkeit:} Die geschätzte Dichte ist eine Treppenfunktion, obwohl die wahre Dichte $f$ oft glatt (stetig differenzierbar) ist.
+	      	\item \textbf{Subjektivität:} Form und Aussage hängen stark vom Startpunkt $x_0$ (Gitterverschiebung) und der Klassenbreite $h$ ab.
 	      \end{enumerate}
+	      
 	\item \textbf{Optimale Bandbreite ($h$):} Die Wahl von $h$ ist ein Balanceakt (Bias-Varianz-Tradeoff). Ein zu kleines $h$ erzeugt eine ,,zackige`` Kurve (hohe Varianz), ein zu großes $h$ glättet wichtige Details weg (hoher Bias).
 	      \begin{itemize}
-	      	\item \textit{Faustregel (Scott):} $h \approx 3.49 s n^{-1/3}$ (basiert auf Normalverteilungsannahme).
+	      	\item \textit{Faustregel (Scott):} $h \approx 3.49 \, s \, n^{-1/3}$ (basiert auf Normalverteilungsannahme).
 	      	\item \textit{Robuste Regel (Freedman-Diaconis):} Nutzt den Interquartilsabstand, um Ausreißer weniger zu gewichten:
 	      	      \[ h^* = 2(x_{0.75} - x_{0.25})n^{-1/3} \]
 	      \end{itemize}
 \end{itemize}
-	
-\section{Kernschätzer (Kernel Density Estimation - KDE)}
-Um die Glattheit zu garantieren, verallgemeinert man den Rosenblatt-Ansatz durch sogenannte Kerne.
-		
+
+Um diese Mängel zu beheben, wurden die Kernschätzer entwickelt, die eine glattere und flexiblere Anpassung ermöglichen.
+
+\section{Kerndichteschätzung (Kernel Density Estimation -- KDE)}
+
+\subsection{Definition und Funktionsweise}
+
+Die Kerndichteschätzung verallgemeinert den Rosenblatt-Ansatz und behebt die Unstetigkeitsprobleme des Histogramms. Anstatt Beobachtungen nur in starren Boxen zu zählen, gewichtet man sie mittels einer glatten Funktion $K$, dem sogenannten Kern.
+
 \begin{itemize}
 	\item \textbf{Der Schätzer:}
 	      \begin{equation}
 	      	\hat{f}_n(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}\right)
 	      \end{equation}
-	      Jeder Datenpunkt $X_i$ bekommt eine kleine ,,Glockenkurve`` (Kern $K$), und die Summe dieser Kurven ergibt die Gesamtdichte.
-	      		    
-	\item \textbf{Wahl des Kerns ($K$):} Der Kern muss zu 1 integrieren ($\int K(x)dx = 1$). Gängige Kerne sind:
-	      \begin{itemize}
-	      	\item \textit{Rechteck-Kern:} Entspricht dem naiven Rosenblatt-Schätzer.
-	      	\item \textit{Gauß-Kern:} Standardnormalverteilung (glatt und differenzierbar).
-	      	\item \textit{Epanechnikov-Kern:} Parabolisch; dieser Kern ist theoretisch optimal, da er den integrierten mittleren quadratischen Fehler (IMSE) minimiert.
-	      \end{itemize}
-	      		    
-	\item \textbf{Bandbreitenwahl (Silverman's Rule):} Die Bandbreite $h$ ist viel entscheidender als die Kernform. Eine Standard-Faustformel (für Gauß-Kerne) ist:
-	      \begin{equation}
-	      	h_{opt} \approx 1.06 \sigma n^{-1/5}
-	      \end{equation}
-	      Oft wird $\sigma$ robust durch den Quartilsabstand geschätzt ($\hat{h}_{opt} \approx 0.79 Q n^{-1/5}$), um Oversmoothing zu vermeiden.
+	      Jeder Datenpunkt $X_i$ bekommt eine kleine ,,Glockenkurve`` (Kern $K$), und die Summe dieser Kurven ergibt die Gesamtdichte. Hierbei ist $h > 0$ der Glättungsparameter (Bandbreite) und $n$ der Stichprobenumfang.
+	      
+	\item \textbf{Intuitive Interpretation:} Das Vorgehen lässt sich anschaulich als ,,Summe von Hügeln`` beschreiben:
+	      \begin{enumerate}
+	      	\item Über jedem Datenpunkt $X_i$ wird eine Kernfunktion (z.\,B. eine Glockenkurve) platziert.
+	      	\item Die Breite dieser Kerne wird durch $h$ gesteuert.
+	      	\item An einer Stelle $x$ werden die Werte aller lokalen Kerne aufsummiert und durch $nh$ geteilt, damit die Gesamtfläche unter der Kurve genau 1 ergibt.
+	      \end{enumerate}
 \end{itemize}
-		
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    % Achse
+    \draw[->] (-0.5,0) -- (6,0) node[right] {$x$};
+    % Datenpunkte
+    \foreach \x in {1.5, 2.5, 4.0} {
+        \fill[black] (\x,0) circle (2pt);
+        \draw[dashed, gray] (\x,0) -- (\x, -0.2) node[below] {\small $X_i$};
+    }
+    % Summenkurve
+    \draw[blue, thick] plot [smooth] coordinates {(0.5,0.1) (1.5, 1.1) (2.5, 0.9) (3.2, 0.5) (4.0, 1.1) (5.0, 0.1)};
+    \node[blue] at (5, 1.2) {$\hat{f}_n(x)$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Anforderungen an den Kern}
+
+Damit $\hat{f}_n(x)$ eine gültige Wahrscheinlichkeitsdichte ist und gute Eigenschaften besitzt, muss die Kernfunktion $K$ bestimmte mathematische Bedingungen erfüllen:
+
+\begin{enumerate}
+	\item \textbf{Normierung:} $\int_{-\infty}^{\infty} K(x) \, dx = 1$ (garantiert, dass die geschätzte Dichte zu 1 integriert).
+	\item \textbf{Nicht-Negativität:} $K(x) \ge 0$ (damit keine negativen Wahrscheinlichkeiten entstehen).
+	\item \textbf{Symmetrie:} Üblicherweise gilt $K(x) = K(-x)$. Daraus folgt $\int x K(x) \, dx = 0$ (Erwartungswert 0).
+	\item \textbf{Endliche Varianz:} $\sigma_K^2 = \int x^2 K(x) \, dx < \infty$.
+\end{enumerate}
+
+\subsection{Wahl des Kerns}
+
+Gebräuchliche Kerne sind:
+\begin{itemize}
+	\item \textbf{Rechteck-Kern:} Entspricht dem naiven Rosenblatt-Schätzer.
+	\item \textbf{Gauß-Kern:} Basiert auf der Standardnormalverteilung (glatt und differenzierbar).
+	\item \textbf{Epanechnikov-Kern:} $K(x) = \frac{3}{4}(1-x^2)$ für $|x| \le 1$. Dieser Kern ist theoretisch optimal, da er den integrierten mittleren quadratischen Fehler (IMSE) minimiert.
+\end{itemize}
+
+\subsection{Statistische Eigenschaften und Bandbreitenwahl}
+
+Die Qualität des Schätzers wird maßgeblich durch die Bandbreite $h$ bestimmt. Die Bandbreite $h$ ist viel entscheidender als die Kernform. Wir betrachten dazu den \textbf{Mean Squared Error (MSE)} an der Stelle $x$:
+\begin{equation}
+	\text{MSE}(\hat{f}_n(x)) = \text{Varianz}(\hat{f}_n(x)) + [\text{Bias}(\hat{f}_n(x))]^2
+\end{equation}
+
+Es existiert ein fundamentaler Zielkonflikt (Bias-Variance-Tradeoff):
+\begin{itemize}
+	\item \textbf{Kleines $h$:} Führt zu kleiner Verzerrung (Bias), aber großer Varianz. Der Graph wird ,,zackig`` (Unterglättung).
+	\item \textbf{Großes $h$:} Führt zu kleiner Varianz, aber großem Bias. Wichtige Details der Verteilung werden ,,weggeglättet`` (Überglättung).
+\end{itemize}
+
+Eine gängige Faustregel zur Wahl der optimalen Bandbreite (unter Annahme einer Normalverteilung) ist die \textbf{Silverman-Regel} (für Gauß-Kerne):
+\begin{equation}
+	h_{\text{opt}} \approx 1.06 \, \sigma \, n^{-1/5}
+\end{equation}
+Oft wird $\sigma$ robust durch den Quartilsabstand geschätzt ($\hat{h}_{\text{opt}} \approx 0.79 \, Q \, n^{-1/5}$), um Oversmoothing zu vermeiden.
+
 \section{Nichtparametrische Regression}
-Hier verlassen wir die Dichteschätzung und betrachten den Zusammenhang zwischen zwei Variablen $X$ und $Y$: $Y = m(X) + \epsilon$.
-	
-\subsection{Watson-Nadaraya Schätzer (Allgemeine Regression)}
+
+Das Konzept der Kernschätzung lässt sich auf die Regressionsanalyse übertragen. Hier verlassen wir die Dichteschätzung und betrachten den Zusammenhang zwischen zwei Variablen $X$ und $Y$: $Y = m(X) + \epsilon$. Gegeben sind Beobachtungen $(X_i, Y_i)$ und gesucht ist die unbekannte Funktion $m(x) = \mathbb{E}(Y|X=x)$.
+
+\subsection{Watson-Nadaraya-Schätzer (Allgemeine Regression)}
+
 Wenn wir keine Formel für $m(x)$ kennen, schätzen wir den Wert als gewichteten Mittelwert der umliegenden $Y$-Werte:
 \begin{equation}
-	\hat{m}_{WN}(x) = \frac{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
+	\hat{m}_{\text{WN}}(x) = \frac{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
 \end{equation}
-Datenpunkte $X_i$, die nahe an $x$ liegen, erhalten durch den Kern $K$ ein hohes Gewicht.
-	
+Datenpunkte $X_i$, die nahe an $x$ liegen, erhalten durch den Kern $K$ ein hohes Gewicht. Hierbei erhalten $Y$-Werte, deren $X$-Koordinaten nahe bei $x$ liegen, ein höheres Gewicht.
+
 \subsection{Robuste Lineare Regression (Theil-Schätzer)}
-Selbst wenn wir einen linearen Trend ($Y = \alpha + \beta X$) vermuten, ist die klassische Methode der kleinsten Quadrate (OLS) anfällig für Ausreißer. Das Buch stellt robuste Alternativen vor:
-	
+
+Selbst wenn wir einen linearen Trend ($Y = \alpha + \beta X$) vermuten, ist die klassische Methode der kleinsten Quadrate (OLS) anfällig für Ausreißer. Falls ein linearer Zusammenhang angenommen wird, aber die Daten Ausreißer enthalten, bieten sich robuste Alternativen an:
+
 \begin{enumerate}
 	\item \textbf{Theil-Methode I:} Man teilt die Daten in zwei Hälften und berechnet Steigungen zwischen Paaren $(i, i+n/2)$. Der Schätzer ist der Median dieser Steigungen.
-	\item \textbf{Theil-Sen-Schätzer (Methode II):} Dies ist die präzisere Variante. Man berechnet die Steigung zwischen \textbf{allen} möglichen Paaren $i < j$:
+	
+	\item \textbf{Theil-Sen-Schätzer (Methode II):} Dies ist die präzisere und noch robustere Variante. Man berechnet die Steigung zwischen \textbf{allen} möglichen Paaren $i < j$:
 	      \begin{equation}
 	      	H_{ij} = \frac{Y_j - Y_i}{X_j - X_i}
 	      \end{equation}
-	      Der Schätzer für den Anstieg $\beta$ ist der \textbf{Median} all dieser Steigungen ($H_{ij}$). Das macht ihn extrem robust.
+	      Der Schätzer für den Anstieg $\beta$ ist der \textbf{Median} all dieser Steigungen ($H_{ij}$). Das macht ihn extrem robust und besonders widerstandsfähig gegen Ausreißer.
+	      
 	\item \textbf{Hypothesentests:} Zum Testen von $\beta$ wird auf rangbasierte Verfahren wie Kendalls $\tau$ (Tau) zurückgegriffen, da diese verteilungsfrei sind.
 \end{enumerate}
-	
-\section{Zusammenfassung für das Seminar}
+
+\section{Zusammenfassung und Fazit}
+
 \begin{itemize}
-	\item \textbf{Flexibilität:} Nichtparametrische Methoden (KDE, Kernel-Regression) passen sich den Daten an (,,let the data speak``) und zwingen ihnen keine Form auf.
-	\item \textbf{Parameter $h$:} Die Wahl der Bandbreite ist der kritischste Schritt. Es ist ein Kompromiss zwischen Rauschen (zu kleines $h$) und Informationsverlust (zu großes $h$).
-	\item \textbf{Robustheit:} Verfahren wie der Theil-Sen-Schätzer bieten mächtige Alternativen zur klassischen Regression, besonders wenn Daten Ausreißer enthalten oder nicht normalverteilt sind.
+	\item \textbf{Flexibilität:} Nichtparametrische Methoden (KDE, Kernel-Regression) passen sich den Daten an (,,let the data speak``) und zwingen ihnen keine Form auf. Sie erfordern weniger Annahmen über die Datenstruktur.
+	
+	\item \textbf{Parameter $h$:} Die Wahl der Bandbreite ist der kritischste Schritt. Es ist ein Kompromiss zwischen Rauschen (zu kleines $h$) und Informationsverlust (zu großes $h$). Der Glättungsparameter muss sorgfältig zwischen Bias und Varianz abgewogen werden.
+	
+	\item \textbf{Robustheit:} Verfahren wie der Theil-Sen-Schätzer bieten mächtige Alternativen zur klassischen Regression, besonders wenn Daten Ausreißer enthalten oder nicht normalverteilt sind. Sie ergänzen die nichtparametrischen Dichteschätzer, indem sie unempfindlich gegenüber Ausreißern sind.
 \end{itemize}
-			
+
+Nichtparametrische Methoden sind damit ein unverzichtbares Werkzeug der modernen explorativen Datenanalyse und robusten Statistik.
+
 \ifshowtext
 % Referenzen
 \printbibliography

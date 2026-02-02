@@ -1,0 +1,94 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+.github
+
+# LaTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.bbl
+*.blg
+*.bcf
+*.brf
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.ist
+*.acr
+*.alg
+*.nav
+*.snm
+*.synctex.gz
+*.fdb_latexmk
+*.run.xml
+*.auxlock
+
+# Output / build folders
+build/
+out/
+dist/
+
+# Editor / OS specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+*.swp
+
+# TeXstudio specific
+*.txs-profile
+*.txs-undo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Archive and legacy directories (not needed for builds)
+archive/
+legacy/
+review/
+
+# Documentation that's not needed for PDF builds
+*.md
+!README.md
+DISCLAIMER.txt
+LICENSE
+SECURITY.md
+CONTRIBUTING.md
+
+# Cleanup scripts (not needed for Docker build)
+cleanup/
+
+# Task scripts (not needed for PDF generation)
+task_skripts/
+
+# Branch management scripts
+branch_cleanup
+
+# Editor config files
+.editorconfig
+editorconfig
+editorconfig.txt
+cspell.json
+
+# Wiki files
+wiki/
+
+# Meeting notes
+Besprechung/

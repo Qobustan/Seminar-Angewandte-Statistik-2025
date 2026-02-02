@@ -34,7 +34,9 @@ RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime && \
 
 # Install TeX Live and required packages in a single layer
 # Optimized order: security updates first, then packages, cleanup last
-# Using comprehensive TeX Live packages to ensure all dependencies are met
+# Using texlive-full for completeness - ensures all LaTeX packages are available.
+# Note: This increases image size (~4GB) but prevents missing package errors.
+# The original Dockerfile had issues with missing packages (stmaryrd, tipa, pict2e, inconsolata).
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
@@ -81,7 +83,7 @@ USER latex
 
 # Add health check to verify container is working
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD [ -f "/app/scripts/generatePdf.sh" ] && echo "OK" || exit 1
+    CMD [ -f "/app/scripts/generatePdf.sh" ] && command -v pdflatex > /dev/null && echo "OK" || exit 1
 
 # Set the entrypoint and default command
 # ENTRYPOINT provides the base command, CMD provides default arguments

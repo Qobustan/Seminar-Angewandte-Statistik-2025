@@ -35,13 +35,12 @@ RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime && \
 # Install TeX Live and required packages in a single layer
 # Optimized order: security updates first, then packages, cleanup last
 # Using texlive-full for completeness - ensures all LaTeX packages are available.
-# This includes pdflatex, lualatex, xelatex, and all other LaTeX engines.
 # Note: This increases image size (~4GB) but prevents missing package errors.
 # The original Dockerfile had issues with missing packages (stmaryrd, tipa, pict2e, inconsolata).
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
-        # Complete TeX Live installation - ensures all packages and engines are available
+        # Complete TeX Live installation - ensures all packages are available
         texlive-full \
         # Utilities for scripts
         bash \
@@ -84,7 +83,7 @@ USER latex
 
 # Add health check to verify container is working
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD [ -f "/app/scripts/generatePdf.sh" ] && command -v pdflatex > /dev/null && command -v lualatex > /dev/null && echo "OK" || exit 1
+    CMD [ -f "/app/scripts/generatePdf.sh" ] && command -v pdflatex > /dev/null && echo "OK" || exit 1
 
 # Set the entrypoint and default command
 # ENTRYPOINT provides the base command, CMD provides default arguments
@@ -101,11 +100,8 @@ VOLUME ["/app/Ausarbeitung", "/app/Vortrag"]
 #   docker build -t latex-seminar:latest .
 #   docker build --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) -t latex-seminar:latest .
 #
-# Run (using current directory with default pdflatex):
+# Run (using current directory):
 #   docker run --rm -v $(pwd):/app latex-seminar:latest
-#
-# Run with LuaLaTeX:
-#   docker run --rm -e LATEX_ENGINE=lualatex -v $(pwd):/app latex-seminar:latest
 #
 # Run with custom user ID (avoids permission issues):
 #   docker run --rm --user $(id -u):$(id -g) -v $(pwd):/app latex-seminar:latest

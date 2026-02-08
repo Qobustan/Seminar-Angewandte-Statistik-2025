@@ -11,8 +11,7 @@ setlocal enabledelayedexpansion
 REM Determine which LaTeX engine to use (default: pdflatex)
 if not defined LATEX_ENGINE set LATEX_ENGINE=pdflatex
 
-REM Validate the engine (security: only allow known-safe values)
-REM This prevents command injection by restricting to approved engines only
+REM Validate the engine
 if /i "%LATEX_ENGINE%"=="pdflatex" goto :engine_ok
 if /i "%LATEX_ENGINE%"=="lualatex" goto :engine_ok
 

@@ -28,8 +28,7 @@ jobs:
           root_file: Ausarbeitung.tex
           working_directory: Ausarbeitung
           args: -pdf
-          # Use lualatex if manually dispatched with that option, otherwise use default pdflatex
-          latexmk_use_lualatex: ${{ github.event.inputs.latex_engine == 'lualatex' || false }}
+          latexmk_use_lualatex: ${{ github.event.inputs.latex_engine == 'lualatex' }}
 
       - name: Build Vortrag
         uses: xu-cheng/latex-action@v4
@@ -37,8 +36,7 @@ jobs:
           root_file: Vortrag.tex
           working_directory: Vortrag
           args: -pdf
-          # Use lualatex if manually dispatched with that option, otherwise use default pdflatex
-          latexmk_use_lualatex: ${{ github.event.inputs.latex_engine == 'lualatex' || false }}
+          latexmk_use_lualatex: ${{ github.event.inputs.latex_engine == 'lualatex' }}
 
       - name: List generated PDFs
         run: |

@@ -13,8 +13,13 @@ if not defined LATEX_ENGINE set LATEX_ENGINE=pdflatex
 
 REM Validate the engine (security: only allow known-safe values)
 REM This prevents command injection by restricting to approved engines only
-if /i "%LATEX_ENGINE%"=="pdflatex" goto :engine_ok
-if /i "%LATEX_ENGINE%"=="lualatex" goto :engine_ok
+REM Note: Normalizing to lowercase for consistency with bash script behavior
+if /i "%LATEX_ENGINE%"=="pdflatex" set LATEX_ENGINE=pdflatex
+if /i "%LATEX_ENGINE%"=="lualatex" set LATEX_ENGINE=lualatex
+
+REM Check if normalization succeeded (if not, it's an invalid engine)
+if "%LATEX_ENGINE%"=="pdflatex" goto :engine_ok
+if "%LATEX_ENGINE%"=="lualatex" goto :engine_ok
 
 echo Error: Invalid LATEX_ENGINE '%LATEX_ENGINE%'
 echo Supported engines: pdflatex, lualatex

@@ -48,7 +48,7 @@ fi
 LATEX_ENGINE="${LATEX_ENGINE:-pdflatex}"
 
 # Validate and normalize the engine name (case-insensitive to match generatePdf.bat behavior)
-LATEX_ENGINE_LOWER=$(echo "${LATEX_ENGINE}" | tr '[:upper:]' '[:lower:]')
+LATEX_ENGINE_LOWER="${LATEX_ENGINE,,}"
 case "${LATEX_ENGINE_LOWER}" in
     pdflatex|lualatex)
         # Valid engine - use normalized lowercase version

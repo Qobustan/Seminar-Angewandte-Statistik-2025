@@ -73,7 +73,6 @@ A comprehensive LaTeX project repository for the Applied Statistics seminar, Win
 ### Optional
 
 - **Docker** - For containerized builds
-- **LuaLaTeX** - Optional LaTeX engine (alternative to pdflatex)
 - **Perl** - Required for certain task scripts in `task_skripts/perl/`
 - **chktex** - LaTeX linter (used in CI)
 - **cspell** - Spell checker (used in CI)
@@ -106,50 +105,18 @@ pdflatex -interaction=nonstopmode Vortrag.tex
 pdflatex -interaction=nonstopmode Vortrag.tex
 ```
 
-#### Using LuaLaTeX (Optional)
-
-LuaLaTeX is available as an alternative to pdflatex. It provides better Unicode support, more advanced font handling, and can handle complex documents more efficiently:
-
-```bash
-# Build Ausarbeitung with LuaLaTeX
-cd Ausarbeitung
-lualatex -interaction=nonstopmode Ausarbeitung.tex
-bibtex Ausarbeitung
-lualatex -interaction=nonstopmode Ausarbeitung.tex
-lualatex -interaction=nonstopmode Ausarbeitung.tex
-
-# Build Vortrag with LuaLaTeX
-cd ../Vortrag
-lualatex -interaction=nonstopmode Vortrag.tex
-bibtex Vortrag
-lualatex -interaction=nonstopmode Vortrag.tex
-lualatex -interaction=nonstopmode Vortrag.tex
-```
-
 ### Using latexmk
 
 Automated building with dependency tracking (recommended):
 
 ```bash
-# Build Ausarbeitung with pdflatex (default)
+# Build Ausarbeitung
 cd Ausarbeitung
 latexmk -pdf Ausarbeitung.tex
 
-# Build Vortrag with pdflatex (default)
+# Build Vortrag
 cd ../Vortrag
 latexmk -pdf Vortrag.tex
-```
-
-#### Using latexmk with LuaLaTeX (Optional)
-
-```bash
-# Build Ausarbeitung with LuaLaTeX
-cd Ausarbeitung
-latexmk -lualatex Ausarbeitung.tex
-
-# Build Vortrag with LuaLaTeX
-cd ../Vortrag
-latexmk -lualatex Vortrag.tex
 ```
 
 ### Using Docker
@@ -160,31 +127,19 @@ Build PDFs in a containerized environment:
 # Build the Docker image
 docker build -t latex-seminar .
 
-# Run the container to generate PDFs (default: pdflatex)
+# Run the container to generate PDFs
 docker run --rm -v $(pwd):/app latex-seminar
-
-# Run with LuaLaTeX
-docker run --rm -e LATEX_ENGINE=lualatex -v $(pwd):/app latex-seminar
 ```
 
-The Dockerfile includes TeX Live with full LaTeX support (pdflatex, lualatex, xelatex), German language support, and all necessary dependencies.
+The Dockerfile includes TeX Live, German language support, and all necessary dependencies.
 
 ### Using GitHub Actions
 
-PDFs are automatically built on every push to the `main` branch using pdflatex by default:
+PDFs are automatically built on every push to the `main` branch:
 
 1. Push your changes to the `main` branch
 2. GitHub Actions automatically builds both PDFs
 3. Download generated PDFs from the workflow artifacts
-
-**Using LuaLaTeX in GitHub Actions:**
-
-1. Go to the Actions tab in the repository
-2. Select "Kompiliere die LateX-Ausarbeitung und den Beamer-Vortrag" workflow
-3. Click "Run workflow"
-4. Select "lualatex" from the dropdown menu
-5. Click "Run workflow" button
-6. Download the generated PDFs from the workflow artifacts
 
 See the [CI/CD Workflows](#cicd-workflows) section for details.
 
@@ -199,8 +154,6 @@ The repository includes comprehensive GitHub Actions workflows in `.github/workf
 - **`build-and-publish-pdfs.yml`** - Automatically compiles LaTeX documents
   - Triggers on push to `main` or manual dispatch
   - Uses `xu-cheng/latex-action@v4` for reliable PDF generation
-  - Default: pdflatex for backwards compatibility
-  - Manual dispatch: Choose between pdflatex or lualatex
   - Uploads generated PDFs as artifacts
   - Artifacts are available for 90 days after each workflow run
 
@@ -229,12 +182,8 @@ After a successful build:
 
 **`scripts/generatePdf.sh`** (Linux/macOS) / **`scripts/generatePdf.bat`** (Windows)
 - Builds both Ausarbeitung and Vortrag PDFs
-- Runs the LaTeX engine (pdflatex by default) and bibtex with proper multi-pass compilation
-- Supports optional LuaLaTeX via LATEX_ENGINE environment variable
-- Usage (default): `./scripts/generatePdf.sh`
-- Usage (LuaLaTeX): `LATEX_ENGINE=lualatex ./scripts/generatePdf.sh`
-- Windows (default): `scripts\generatePdf.bat`
-- Windows (LuaLaTeX): `set LATEX_ENGINE=lualatex && scripts\generatePdf.bat`
+- Runs pdflatex and bibtex with proper multi-pass compilation
+- Usage: `./scripts/generatePdf.sh`
 
 ### Cleanup Scripts
 

@@ -164,7 +164,7 @@ Damit $\hat{f}_n(x)$ eine gültige Wahrscheinlichkeitsdichte ist und gute Eigens
 
 \begin{enumerate}
 	\item \textbf{Normierung:} $\int_{-\infty}^{\infty} K(x) \, dx = 1$ (garantiert, dass die geschätzte Dichte zu 1 integriert). Diese Bedingung ist notwendig, damit $\hat{f}_n$ als Wahrscheinlichkeitsdichte interpretiert werden kann und die Gesamtwahrscheinlichkeit erhalten bleibt.
-	\item \textbf{Nicht-Negativität:} $K(x) \ge 0$ (damit keine negativen Wahrscheinlichkeiten entstehen). In der Praxis werden manchmal auch Kerne verwendet, die lokal negativ werden (wie der Epanechnikov-Kern höherer Ordnung), allerdings sind diese in der Standardanwendung nicht üblich.
+	\item \textbf{Nicht-Negativität:} $K(x) \ge 0$ (damit keine negativen Wahrscheinlichkeiten entstehen). In der Praxis werden manchmal auch sogenannte höhere-Ordnung-Kerne verwendet, die lokal negativ werden können (um den Bias weiter zu reduzieren), allerdings sind diese in der Standardanwendung nicht üblich.
 	\item \textbf{Symmetrie:} Üblicherweise gilt $K(x) = K(-x)$. Daraus folgt $\int x K(x) \, dx = 0$ (Erwartungswert 0). Die Symmetrie stellt sicher, dass der Kern in beide Richtungen gleich gewichtet und somit keine systematische Verschiebung der Schätzung auftritt. Asymmetrische Kerne können in speziellen Anwendungen sinnvoll sein, etwa zur Randkorrektur.
 	\item \textbf{Endliche Varianz:} $\sigma_K^2 = \int x^2 K(x) \, dx < \infty$. Diese Bedingung ist wichtig für die Analyse der asymptotischen Eigenschaften des Schätzers, insbesondere für die Herleitung der optimalen Bandbreite.
 	\item \textbf{Zusätzliche Glattheitseigenschaften:} In vielen theoretischen Untersuchungen wird zusätzlich gefordert, dass $K$ stetig oder sogar differenzierbar ist. Dies überträgt sich auf die Glattheit von $\hat{f}_n$ und erlaubt die Schätzung von Ableitungen der Dichte.
@@ -277,7 +277,7 @@ Selbst wenn wir einen linearen Trend ($Y = \alpha + \beta X$) vermuten, ist die 
 	      \begin{equation}
 	      	H_{ij} = \frac{Y_j - Y_i}{X_j - X_i}
 	      \end{equation}
-	      Der Schätzer für den Anstieg $\beta$ ist der \textbf{Median} all dieser Steigungen ($H_{ij}$). Das macht ihn extrem robust und besonders widerstandsfähig gegen Ausreißer. Konkret kann der Theil-Sen-Schätzer bis zu 29,3\,\% Ausreißer tolerieren, ohne zusammenzubrechen (sogenannter Breakdown Point).
+	      Der Schätzer für den Anstieg $\beta$ ist der \textbf{Median} all dieser Steigungen ($H_{ij}$). Das macht ihn extrem robust und besonders widerstandsfähig gegen Ausreißer. Der Theil-Sen-Schätzer kann bis zu etwa 29\,\% Ausreißer tolerieren, ohne zusammenzubrechen (sogenannter Breakdown Point), was ihn zu einem der robustesten verfügbaren Regressionsschätzer macht.
 	      
 	      \textbf{Eigenschaften:}
 	      \begin{itemize}

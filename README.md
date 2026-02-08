@@ -234,7 +234,7 @@ After a successful build:
 - Usage (default): `./scripts/generatePdf.sh`
 - Usage (LuaLaTeX): `LATEX_ENGINE=lualatex ./scripts/generatePdf.sh`
 - Windows (default): `scripts\generatePdf.bat`
-- Windows (LuaLaTeX): Use two commands: `set LATEX_ENGINE=lualatex` then `scripts\generatePdf.bat`
+- Windows (LuaLaTeX): `set LATEX_ENGINE=lualatex && scripts\generatePdf.bat`
 
 ### Cleanup Scripts
 

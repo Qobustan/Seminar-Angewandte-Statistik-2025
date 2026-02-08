@@ -4,6 +4,15 @@ on:
   push:
     branches: [main, master]
   workflow_dispatch:
+    inputs:
+      latex_engine:
+        description: 'LaTeX engine to use (pdflatex or lualatex)'
+        required: false
+        default: 'pdflatex'
+        type: choice
+        options:
+          - pdflatex
+          - lualatex
 
 jobs:
   build-latex:
@@ -19,6 +28,8 @@ jobs:
           root_file: Ausarbeitung.tex
           working_directory: Ausarbeitung
           args: -pdf
+          # Use lualatex if manually dispatched with that option, otherwise defaults to pdflatex
+          latexmk_use_lualatex: ${{ github.event.inputs.latex_engine == 'lualatex' || false }}
 
       - name: Build Vortrag
         uses: xu-cheng/latex-action@v4
@@ -26,6 +37,8 @@ jobs:
           root_file: Vortrag.tex
           working_directory: Vortrag
           args: -pdf
+          # Use lualatex if manually dispatched with that option, otherwise defaults to pdflatex
+          latexmk_use_lualatex: ${{ github.event.inputs.latex_engine == 'lualatex' || false }}
 
       - name: List generated PDFs
         run: |

@@ -365,16 +365,16 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\frametitle{KDE als Faltung}
 	
 	\[
-	\hat f_n(x) = \int K_h(x-y)\,dF_n(y),
+	\hat{f}_n(x) = \int K_h(x-y)\,dF_n(y),
 	\quad
-	K_h(t)=\frac1h K\left(\frac{t}{h}\right)
+	K_h(t)=\frac{1}{h} K\left(\frac{t}{h}\right)
 	\]
 	
 	\ifpauseswitch
 		\pause
 	\fi
 	\[
-	\mathbb E[\hat f_n(x)]=(K_h * f)(x)
+	\mathbb{E}[\hat{f}_n(x)] = (K_h * f)(x)
 	\]
 	
 	\alert{Bias = Glättungsfehler der Faltung}
@@ -384,7 +384,7 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\frametitle{KDE als Faltung}
 	
 	\[
-	\hat f_n(x) = \int K_h(x-y)\, dF_n(y),
+	\hat{f}_n(x) = \int K_h(x-y)\, dF_n(y),
 	\quad
 	K_h(t)=\frac{1}{h} K\left(\frac{t}{h}\right)
 	\]
@@ -394,7 +394,7 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\fi
 	
 	\[
-	\mathbb{E}[\hat f_n(x)] = (K_h * f)(x)
+	\mathbb{E}[\hat{f}_n(x)] = (K_h * f)(x)
 	\]
 	
 	\alert{Bias = Glättungsfehler der Faltung}

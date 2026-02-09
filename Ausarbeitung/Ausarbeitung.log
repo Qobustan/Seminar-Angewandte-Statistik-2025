@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  9 FEB 2026 04:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  9 FEB 2026 05:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1904,15 +1904,22 @@ Overfull \hbox (24.24998pt too wide) in paragraph at lines 60--61
 [2{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-m
 athit.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips
 /lm/lm-rm.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/d
-vips/lm/lm-mathsy.enc}] [3{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist
-/fonts/enc/dvips/lm/lm-mathex.enc}] [4]
+vips/lm/lm-mathsy.enc}]
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 9
+9.
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Ud
+srom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+) [3{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm
+-mathex.enc}] [4]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 161.
- [5] [6] [7] [8] [9]
+ [5] [6] [7] [8] [9] [10]
 
-LaTeX Warning: Empty bibliography on input line 336.
+LaTeX Warning: Empty bibliography on input line 365.
 
-[10] (./Ausarbeitung.aux)
+[11] (./Ausarbeitung.aux)
 Package rerunfilecheck Info: File `Ausarbeitung.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'Ausarbeitung.run.xml'.
@@ -1920,35 +1927,36 @@ Package logreq Info: Writing requests to 'Ausarbeitung.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45466 strings out of 476025
- 919256 string characters out of 5790017
+ 45490 strings out of 476025
+ 919704 string characters out of 5790017
  1868388 words of memory out of 5000000
- 65090 multiletter control sequences out of 15000+600000
- 585186 words of font info for 100 fonts, out of 8000000 for 9000
+ 65104 multiletter control sequences out of 15000+600000
+ 585762 words of font info for 106 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,10n,134p,10607b,2461s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
-mbx10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pub
-lic/lm/lmbx12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/t
-ype1/public/lm/lmex10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist
-/fonts/type1/public/lm/lmmi10.pfb></Volumes/Macintosh SSD/local/texlive/2023/te
-xmf-dist/fonts/type1/public/lm/lmmi6.pfb></Volumes/Macintosh SSD/local/texlive/
-2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Volumes/Macintosh SSD/local/t
-exlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></Volumes/Macintosh SSD/
-local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Volumes/Macinto
-sh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Volumes/
-Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Vo
-lumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pf
+</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/doub
+lestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/font
+s/type1/public/lm/lmbx10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
+ist/fonts/type1/public/lm/lmbx12.pfb></Volumes/Macintosh SSD/local/texlive/2023
+/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Volumes/Macintosh SSD/local/texl
+ive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Volumes/Macintosh SSD/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></Volumes/Macintosh
+ SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Volumes/Ma
+cintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></Vol
+umes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pf
 b></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
-mri10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pub
-lic/lm/lmssbx10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts
-/type1/public/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-di
-st/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/2023/t
-exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Ausarbeitung.pdf (10 pages, 302104 bytes).
+mr12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/publ
+ic/lm/lmr6.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type
+1/public/lm/lmr8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/font
+s/type1/public/lm/lmri10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
+ist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Macintosh SSD/local/texlive/20
+23/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/te
+xlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/l
+ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Ausarbeitung.pdf (11 pages, 307677 bytes).
 PDF statistics:
- 255 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 270 PDF objects out of 1000 (max. 8388607)
+ 217 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  9 FEB 2026 04:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  9 FEB 2026 05:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2054,7 +2054,7 @@ hex.enc}] [10
 
 ] [31
 
-] (./Vortrag.toc) [32
+] [32
 
 ] [33
 
@@ -2064,7 +2064,7 @@ hex.enc}] [10
 
 ] [36
 
-] [37
+] (./Vortrag.toc) [37
 
 ] [38
 
@@ -2073,7 +2073,7 @@ hex.enc}] [10
 ] [40
 
 ]
-(./Vortrag.toc) [41
+[41
 
 ] [42
 
@@ -2085,40 +2085,52 @@ hex.enc}] [10
 
 ] [46
 
-] [47
+] (./Vortrag.toc) [47
 
 ] [48
 
 ] [49
 
-] (./Vortrag.toc)
-[50
+] [50
 
 ] [51
 
 ] [52
 
-] [53
+]
+[53
 
-] (./Vortrag.toc) [54
+] [54
+
+] [55
+
+] (./Vortrag.toc) [56
+
+] [57
+
+] [58
+
+] [59
+
+] (./Vortrag.toc) [60
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 70
-2.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 79
+7.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 702.
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 797.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
-02.
+97.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-[55
+[61
 
 ]
 \tf@nav=\write7
@@ -2138,10 +2150,10 @@ Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45423 strings out of 476025
- 941431 string characters out of 5790017
+ 45445 strings out of 476025
+ 941635 string characters out of 5790017
  1867388 words of memory out of 5000000
- 64880 multiletter control sequences out of 15000+600000
+ 64890 multiletter control sequences out of 15000+600000
  559013 words of font info for 74 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,15n,134p,1881b,2459s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2162,10 +2174,10 @@ onts/type1/public/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texm
 f-dist/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/20
 23/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Volumes/Macintosh SSD/local/te
 xlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Vortrag.pdf (55 pages, 343227 bytes).
+Output written on Vortrag.pdf (61 pages, 358671 bytes).
 PDF statistics:
- 1709 PDF objects out of 1728 (max. 8388607)
- 1589 compressed objects within 16 object streams
- 121 named destinations out of 1000 (max. 500000)
+ 1870 PDF objects out of 2073 (max. 8388607)
+ 1742 compressed objects within 18 object streams
+ 133 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

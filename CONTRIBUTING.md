@@ -231,26 +231,6 @@ docs: update README with Docker build instructions
 fix: correct bibtex citation format in bibliography
 ```
 
-## Code of Conduct
-
-### Our Standards
-
-- Be respectful and inclusive
-- Provide constructive feedback
-- Focus on what is best for the project and community
-- Show empathy towards other contributors
-
-### Unacceptable Behavior
-
-- Harassment or discriminatory language
-- Personal attacks or insults
-- Publishing others' private information
-- Other conduct inappropriate in a professional setting
-
-### Reporting
-
-If you experience or witness unacceptable behavior, please contact the repository maintainers through GitHub.
-
 ## Questions?
 
 If you have questions about contributing:

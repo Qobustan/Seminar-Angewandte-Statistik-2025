@@ -292,7 +292,7 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\[
 	\hat f_n(x) = \int K_h(x-y)\,dF_n(y),
 	\quad
-	K_h(t)=\frac1h K\!\left(\frac{t}{h}\right)
+	K_h(t)=\frac1h K\left(\frac{t}{h}\right)
 	\]
 	
 	\ifpauseswitch
@@ -306,24 +306,47 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Bias–Varianz-Tradeoff}
+	\frametitle{KDE als Faltung}
 	
-	Unter Regularitätsannahmen:
 	\[
-	\text{Bias}(\hat f_n(x))=O(h^2),
+	\hat f_n(x) = \int K_h(x-y)\, dF_n(y),
 	\quad
-	\text{Var}(\hat f_n(x))=O\!\left(\frac1{nh}\right)
+	K_h(t)=\frac{1}{h} K\left(\frac{t}{h}\right)
 	\]
 	
 	\ifpauseswitch
-		\pause
+	\pause
 	\fi
+	
 	\[
-	\text{MSE}(x)=O(h^4)+O\!\left(\frac1{nh}\right)
+	\mathbb{E}[\hat f_n(x)] = (K_h * f)(x)
 	\]
 	
-	\alert{$h_{opt}\sim n^{-1/5}$}
+	\alert{Bias = Glättungsfehler der Faltung}
 \end{frame}
+
+
+\begin{frame}
+	\frametitle{Bias--Varianz-Tradeoff}
+	
+	Unter Regularitätsannahmen:
+	\[
+	\operatorname{Bias}(\hat f_n(x)) = O(h^2),
+	\quad
+	\operatorname{Var}(\hat f_n(x)) = O\left(\frac{1}{nh}\right)
+	\]
+	
+	\ifpauseswitch
+	\pause
+	\fi
+	
+	\[
+	\operatorname{MSE}(x) = O(h^4) + O\left(\frac{1}{nh}\right)
+	\]
+	
+	\alert{$h_{\text{opt}} \sim n^{-1/5}$}
+\end{frame}
+
 
 \begin{frame}
 	\frametitle{Bezug zum Rosenblatt-Schätzer}
@@ -340,6 +363,7 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 		\item Liefert stetige Schätzfunktionen
 	\end{itemize}
 \end{frame}
+
 
 \begin{frame}
 	\frametitle{Vorteile der Kerndichteschätzung}
@@ -360,20 +384,25 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 
 \section{Nichtparametrische Regression}
 
+
 \begin{frame}
-	\frametitle{Nichtparametrische Regression - Einführung}
+	\frametitle{Nichtparametrische Regression -- Einführung}
 	
-	\textbf{Watson-Nadaraya Schätzer:}
+	\textbf{Nadaraya--Watson-Schätzer:}
 	\begin{equation}
-		\hat{m}_{WN}(x) = \frac{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
+		\hat{m}_{NW}(x) =
+		\frac{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}
+		{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
 	\end{equation}
+	
 	\begin{itemize}
 		\item Schätzung von $m(x)$ als gewichteter Mittelwert der umliegenden $Y$-Werte.
 	\end{itemize}
 \end{frame}
 
+
 \begin{frame}
-	\frametitle{Nichtparametrische Regression – Zielsetzung}
+	\frametitle{Nichtparametrische Regression -- Zielsetzung}
 	
 	\textbf{Ziel:}
 	\begin{itemize}
@@ -390,8 +419,9 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\end{itemize}
 \end{frame}
 
+
 \begin{frame}
-	\frametitle{Nichtparametrische Regression – Lokale Glättung}
+	\frametitle{Nichtparametrische Regression -- Lokale Glättung}
 	
 	\textbf{Grundidee:}
 	\begin{itemize}
@@ -408,12 +438,13 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\end{itemize}
 \end{frame}
 
+
 \begin{frame}
-	\frametitle{Watson-Nadaraya-Schätzer – Interpretation}
+	\frametitle{Nadaraya--Watson-Schätzer -- Interpretation}
 	
 	\textbf{Interpretation des Schätzers:}
 	\begin{itemize}
-		\item $\hat{m}_{WN}(x)$ ist ein gewichteter Mittelwert der $Y_i$
+		\item $\hat{m}_{NW}(x)$ ist ein gewichteter Mittelwert der $Y_i$
 		\item Gewichte hängen vom Abstand zwischen $X_i$ und $x$ ab
 	\end{itemize}
 	
@@ -425,8 +456,9 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\end{itemize}
 \end{frame}
 
+
 \begin{frame}
-	\frametitle{Nichtparametrische Regression – Rolle der Bandbreite}
+	\frametitle{Nichtparametrische Regression -- Rolle der Bandbreite}
 	
 	\textbf{Einfluss der Bandbreite $h$:}
 	\begin{itemize}
@@ -442,8 +474,9 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\end{itemize}
 \end{frame}
 
+
 \begin{frame}
-	\frametitle{Nichtparametrische Regression – Vorteile und Grenzen}
+	\frametitle{Nichtparametrische Regression -- Vorteile und Grenzen}
 	
 	\textbf{Vorteile:}
 	\begin{itemize}
@@ -460,6 +493,7 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\end{itemize}
 \end{frame}
 
+
 \begin{frame}
 	\frametitle{Zusammenhang zur Kerndichteschätzung}
 	
@@ -474,23 +508,28 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\textbf{Unterschied:}
 	\begin{itemize}
 		\item Dichteschätzung: Schätzung von $f(x)$
-		\item Regression: Schätzung von $m(x) = E(Y|X=x)$
+		\item Regression: Schätzung von $m(x) = \mathbb{E}(Y|X=x)$
 	\end{itemize}
 \end{frame}
+
 
 \begin{frame}
 	\frametitle{Strukturelle Sicht}
 	
 	\[
-	m(x) = \frac{\int y\,f_{XY}(x,y)\,dy}{f_X(x)}
+		m(x) = \frac{\int y\, f_{XY}(x,y)\, dy}{f_X(x)}
 	\]
 	
 	\[
-	\hat m(x)=\frac{\hat r(x)}{\hat f_X(x)}, \quad \hat r(x)=\frac{1}{nh}\sum_{i=1}^n K\!\left(\frac{x-X_i}{h}\right)Y_i
+		\hat m(x) = \frac{\hat r(x)}{\hat f_X(x)},
+		\quad
+		\hat r(x) = \frac{1}{nh} \sum_{i=1}^n
+		K\left(\frac{x-X_i}{h}\right) Y_i
 	\]
 	
-	\alert{Quotient von Kerndichteschätzern}
+	\alert{Quotient von Kerndichtesch\"atzern}
 \end{frame}
+
 
 \section{Robuste Lineare Regression}
 

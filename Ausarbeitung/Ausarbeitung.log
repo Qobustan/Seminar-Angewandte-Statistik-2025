@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  4 FEB 2026 08:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  9 FEB 2026 04:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1896,19 +1896,23 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pd
 ftex.map}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/
-lm/lm-ec.enc}] [2{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/en
-c/dvips/lm/lm-mathit.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/
-fonts/enc/dvips/lm/lm-rm.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-d
-ist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3{/Volumes/Macintosh SSD/local/texlive/
-2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+lm/lm-ec.enc}]
+Overfull \hbox (24.24998pt too wide) in paragraph at lines 60--61
+[][][][][][][] 
+ []
+
+[2{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-m
+athit.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips
+/lm/lm-rm.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/d
+vips/lm/lm-mathsy.enc}] [3{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist
+/fonts/enc/dvips/lm/lm-mathex.enc}] [4]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 144.
+(Font)              <5> on input line 161.
+ [5] [6] [7] [8] [9]
 
-[4] [5]
+LaTeX Warning: Empty bibliography on input line 336.
 
-LaTeX Warning: Empty bibliography on input line 233.
-
-[6] (./Ausarbeitung.aux)
+[10] (./Ausarbeitung.aux)
 Package rerunfilecheck Info: File `Ausarbeitung.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'Ausarbeitung.run.xml'.
@@ -1916,13 +1920,13 @@ Package logreq Info: Writing requests to 'Ausarbeitung.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45455 strings out of 476025
- 919159 string characters out of 5790017
+ 45466 strings out of 476025
+ 919256 string characters out of 5790017
  1868388 words of memory out of 5000000
  65090 multiletter control sequences out of 15000+600000
  585186 words of font info for 100 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 108i,8n,134p,10607b,2461s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,10n,134p,10607b,2461s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
 mbx10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pub
 lic/lm/lmbx12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/t
@@ -1941,10 +1945,10 @@ lic/lm/lmssbx10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts
 /type1/public/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-di
 st/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/2023/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Ausarbeitung.pdf (6 pages, 276946 bytes).
+Output written on Ausarbeitung.pdf (10 pages, 302104 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 180 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
+ 255 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

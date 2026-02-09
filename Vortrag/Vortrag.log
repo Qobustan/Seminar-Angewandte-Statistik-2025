@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  2 FEB 2026 02:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  9 FEB 2026 04:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1923,103 +1923,109 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-73.
+51.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-3.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
+1.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-73.
+51.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-73.
+51.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 73.
+(Font)              <10.95> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 73.
+(Font)              <8> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 73.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
+(Font)              <6> on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.f
 d
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.f
 d
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 73
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 51
 .
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-3.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
+1.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry
 .fd)
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 73.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 51.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 73.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 51.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 73.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 51.
  [3
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
-hsy.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/l
-m/lm-mathit.enc}] [4
+hit.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/l
+m/lm-mathsy.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc
+/dvips/lm/lm-rm.enc}] [4
 
 ] [5
 
-{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.
-enc}] [6
+] [6
 
-] (./Vortrag.toc) [7
+] [7
 
-] [8
-
-] [9
-
-] [10
+] (./Vortrag.toc) [8
 
 ]
-(./Vortrag.toc) [11
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
+26.
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Ud
+srom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+) [9
+
+{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hex.enc}] [10
+
+] [11
 
 ] [12
 
-] [13
+] (./Vortrag.toc) [13
 
 ] [14
 
-] (./Vortrag.toc) [15
+] [15
 
 ] [16
 
-] [17
+]
+(./Vortrag.toc) [17
 
-{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
-hex.enc}]
-[18
+] [18
 
 ] [19
 
@@ -2031,7 +2037,7 @@ hex.enc}]
 
 ] [23
 
-] (./Vortrag.toc) [24
+] [24
 
 ] [25
 
@@ -2041,10 +2047,10 @@ hex.enc}]
 
 ] [28
 
-] [29
-
 ]
-[30
+[29
+
+] [30
 
 ] [31
 
@@ -2073,25 +2079,46 @@ hex.enc}]
 
 ] [43
 
-] (./Vortrag.toc) [44
+] [44
+
+] [45
+
+] [46
+
+] [47
+
+] [48
+
+] [49
+
+] (./Vortrag.toc)
+[50
+
+] [51
+
+] [52
+
+] [53
+
+] (./Vortrag.toc) [54
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 56
-5.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 70
+2.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 565.
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 702.
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-65.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
+02.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-[45
+[55
 
 ]
 \tf@nav=\write7
@@ -2111,32 +2138,34 @@ Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45363 strings out of 476025
- 940427 string characters out of 5790017
+ 45417 strings out of 476025
+ 941377 string characters out of 5790017
  1867388 words of memory out of 5000000
- 64846 multiletter control sequences out of 15000+600000
- 558725 words of font info for 71 fonts, out of 8000000 for 9000
+ 64874 multiletter control sequences out of 15000+600000
+ 559013 words of font info for 74 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,15n,134p,1881b,2459s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
-mcsc10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pu
-blic/lm/lmex10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/
-type1/public/lm/lmmi10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dis
-t/fonts/type1/public/lm/lmmi8.pfb></Volumes/Macintosh SSD/local/texlive/2023/te
-xmf-dist/fonts/type1/public/lm/lmss10.pfb></Volumes/Macintosh SSD/local/texlive
-/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></Volumes/Macintosh SSD/local
-/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Volumes/Macintosh SS
-D/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Ma
-cintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></V
-olumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8
-.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/l
-m/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/
-public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts
-/type1/public/lm/lmtt10.pfb>
-Output written on Vortrag.pdf (45 pages, 313214 bytes).
+</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/doub
+lestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/font
+s/type1/public/lm/lmcsc10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-
+dist/fonts/type1/public/lm/lmex10.pfb></Volumes/Macintosh SSD/local/texlive/202
+3/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Volumes/Macintosh SSD/local/tex
+live/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></Volumes/Macintosh SSD/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></Volumes/Macintos
+h SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></Volumes/
+Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></V
+olumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx
+10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public
+/lm/lmsso10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/typ
+e1/public/lm/lmsso8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/f
+onts/type1/public/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texm
+f-dist/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/20
+23/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Volumes/Macintosh SSD/local/te
+xlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Vortrag.pdf (55 pages, 343115 bytes).
 PDF statistics:
- 1430 PDF objects out of 1440 (max. 8388607)
- 1326 compressed objects within 14 object streams
- 101 named destinations out of 1000 (max. 500000)
+ 1709 PDF objects out of 1728 (max. 8388607)
+ 1589 compressed objects within 16 object streams
+ 121 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

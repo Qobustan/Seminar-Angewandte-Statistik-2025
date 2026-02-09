@@ -114,7 +114,7 @@ X_1,\dots,X_n \sim F
 
 \begin{frame}{Empirische Verteilungsfunktion}
 \[
-F_n(x)=\frac1n\sum_{i=1}^n \mathbf 1_{\{X_i\le x\}}
+F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 \]
 
 \begin{itemize}
@@ -165,7 +165,7 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathbf 1_{\{X_i\le x\}}
 		\item \textbf{Funktionsweise:} Zerlegung des Datenraums in Boxen (Bins) der Breite $h$. Die Höhe der Box entspricht der relativen Häufigkeit $\frac{n_k}{n}$ normiert durch $h$.
 		\item \textbf{Formal:}
 		\[
-		\hat f_H(x) = \sum_k \frac{n_k}{nh}\mathbf 1_{B_k}(x)
+		\hat f_H(x) = \sum_k \frac{n_k}{nh}\mathds{1}_{B_k}(x)
 		\]
 	\end{itemize}
 \end{frame}
@@ -482,10 +482,14 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathbf 1_{\{X_i\le x\}}
 	\frametitle{Strukturelle Sicht}
 	
 	\[
-	\hat m(x)=\frac{\widehat{f_{XY}}(x)}{\hat f_X(x)}
+	m(x) = \frac{\int y\,f_{XY}(x,y)\,dy}{f_X(x)}
 	\]
 	
-	\alert{Quotient zweier Kerndichteschätzer}
+	\[
+	\hat m(x)=\frac{\hat r(x)}{\hat f_X(x)}, \quad \hat r(x)=\frac{1}{nh}\sum_{i=1}^n K\!\left(\frac{x-X_i}{h}\right)Y_i
+	\]
+	
+	\alert{Quotient von Kerndichteschätzern}
 \end{frame}
 
 \section{Robuste Lineare Regression}

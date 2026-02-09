@@ -249,6 +249,35 @@ Oft wird $\sigma$ robust durch den Quartilsabstand geschätzt ($\hat{h}_{\text{o
 
 In der Praxis empfiehlt es sich oft, verschiedene Bandbreiten auszuprobieren und die Sensitivität der Ergebnisse zu überprüfen, insbesondere wenn wichtige Entscheidungen auf Basis der Dichteschätzung getroffen werden sollen.
 
+\subsection{KDE als Faltung}
+
+Die Kerndichteschätzung lässt sich elegant durch die mathematische Operation der Faltung (Konvolution) interpretieren. Diese Sichtweise liefert tiefere Einsichten in die theoretischen Eigenschaften des Schätzers, insbesondere bezüglich des Bias.
+
+Der Kerndichteschätzer kann als Faltung des skalierten Kerns $K_h$ mit dem empirischen Maß $F_n$ dargestellt werden:
+\begin{equation}
+	\hat{f}_n(x) = \int K_h(x-y)\,dF_n(y),
+	\quad\text{wobei}\quad
+	K_h(t) = \frac{1}{h} K\left(\frac{t}{h}\right)
+\end{equation}
+
+Hierbei ist $K_h$ die skalierte Version des Kerns, die die Bandbreite $h$ berücksichtigt. Die Integration über das empirische Maß $F_n$ entspricht der gewichteten Summation über die Datenpunkte, die wir bereits kennen.
+
+\textbf{Erwartungswert und Bias:} Bildet man den Erwartungswert des Schätzers, so erhält man:
+\begin{equation}
+	\mathbb{E}[\hat{f}_n(x)] = (K_h * f)(x) = \int K_h(x-y) f(y)\,dy
+\end{equation}
+
+Diese Darstellung zeigt, dass der Erwartungswert des Schätzers eine \textit{geglättete} Version der wahren Dichte $f$ ist. Der Bias entsteht also durch den \textbf{Glättungsfehler der Faltung}: Die Faltung mit dem Kern $K_h$ ,,verschmiert`` die wahre Dichte, wodurch feine Strukturen verloren gehen können.
+
+\textbf{Interpretation des Bias:} 
+\begin{itemize}
+	\item Je breiter der Kern (größeres $h$), desto stärker die Glättung und desto größer der Bias.
+	\item Die Faltung bewirkt, dass scharfe Spitzen der Dichte $f$ abgeflacht werden.
+	\item In der Fourier-Analysis entspricht die Faltung einer Multiplikation im Frequenzbereich, wobei hohe Frequenzen (feine Details) gedämpft werden.
+\end{itemize}
+
+Diese Faltungsperspektive ist nicht nur mathematisch elegant, sondern auch praktisch nützlich: Sie erklärt, warum die Wahl der Bandbreite $h$ so kritisch ist und wie der Bias asymptotisch von $h$ und den Glattheitseigenschaften von $f$ abhängt.
+
 \section{Nichtparametrische Regression}
 
 Das Konzept der Kernschätzung lässt sich auf die Regressionsanalyse übertragen. Hier verlassen wir die Dichteschätzung und betrachten den Zusammenhang zwischen zwei Variablen $X$ und $Y$: $Y = m(X) + \epsilon$. Gegeben sind Beobachtungen $(X_i, Y_i)$ für $i = 1, \ldots, n$, und gesucht ist die unbekannte Regressionsfunktion $m(x) = \mathbb{E}(Y|X=x)$.

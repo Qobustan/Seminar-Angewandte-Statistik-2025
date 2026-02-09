@@ -34,22 +34,6 @@
 
 \section{Einleitung \& Motivation}
 
-\begin{frame}{Ausgangssituation}
-Gegeben seien i.i.d.\ Zufallsvariablen
-\[
-X_1,\dots,X_n \sim F
-\quad\text{mit unbekannter Dichte } f.
-\]
-
-\vspace{0.4cm}
-\textbf{Zielsetzung:}
-\[
-\text{Schätze } f(x) \text{ oder } m(x)=\mathbb E(Y|X=x)
-\]
-
-\alert{ohne Annahme einer parametrischen Familie.}
-\end{frame}
-
 \begin{frame}{Parametrische vs. Nichtparametrische Dichteschätzung (\"Ubersicht)}
 	\begin{columns}[T]
 		% Parametrisch
@@ -108,6 +92,22 @@ X_1,\dots,X_n \sim F
 	\begin{itemize}
 		\item Annäherung an den Wert $f(x)$ an einer Stelle $x$, ohne eine spezifische parametrische Familie vorauszusetzen.
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Ausgangssituation}
+	Gegeben seien u.u.i.d.\ Zufallsvariablen
+	\[
+	X_1,\dots,X_n \sim F
+	\quad\text{mit unbekannter Dichte } f.
+	\]
+	
+	\vspace{0.4cm}
+	\textbf{Zielsetzung:}
+	\[
+	\text{Schätze } f(x) \text{ oder } m(x)=\mathbb E(Y|X=x)
+	\]
+	
+	\alert{ohne Annahme einer parametrischen Familie.}
 \end{frame}
 
 \section{Der Rosenblatt-Schätzer}

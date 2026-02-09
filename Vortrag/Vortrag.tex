@@ -246,9 +246,10 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\frametitle{Kernfunktion – Eigenschaften}
 	
 	\begin{itemize}
-		\item $K(x) \ge 0$
-		\item $\int K(x)\,dx = 1$
-		\item Symmetrisch um $0$
+		\item $K(x) \ge 0$ (Nicht-Negativität)
+		\item $\int K(x)\,dx = 1$ (Normierung)
+		\item Symmetrisch um $0$: $K(x) = K(-x)$
+		\item $\sigma_K^2 = \int x^2 K(x)\,dx < \infty$ (Endliche Varianz)
 	\end{itemize}
 	
 	\vspace{0.5em}
@@ -284,25 +285,6 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\begin{itemize}
 		\item Zentrale Stellgröße der Kerndichteschätzung
 	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{KDE als Faltung}
-	
-	\[
-	\hat f_n(x) = \int K_h(x-y)\,dF_n(y),
-	\quad
-	K_h(t)=\frac1h K\left(\frac{t}{h}\right)
-	\]
-	
-	\ifpauseswitch
-		\pause
-	\fi
-	\[
-	\mathbb E[\hat f_n(x)]=(K_h * f)(x)
-	\]
-	
-	\alert{Bias = Glättungsfehler der Faltung}
 \end{frame}
 
 \begin{frame}

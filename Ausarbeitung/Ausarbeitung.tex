@@ -96,9 +96,9 @@ Das Histogramm ist die älteste und bekannteste Methode der Dichteschätzung, ha
 \begin{itemize}
 	\item \textbf{Funktionsweise:} Zerlegung des Datenraums in Boxen (Bins) der Breite $h$. Die Höhe der Box entspricht der relativen Häufigkeit $\frac{n_k}{n}$ normiert durch $h$. Der Histogrammschätzer ist definiert als:
 	      \begin{equation}
-	      	\hat{f}_H(x) = \frac{1}{nh} \sum_{k} n_k I_{B_k}(x),
+	      	\hat{f}_H(x) = \frac{1}{nh} \sum_{k} n_k \mathds{1}_{B_k}(x),
 	      \end{equation}
-	      wobei $n_k$ die Anzahl der Beobachtungen im $k$-ten Intervall ist und $I_{B_k}$ die Indikatorfunktion darstellt. Die Normierung durch $nh$ stellt sicher, dass $\int \hat{f}_H(x) \, dx = 1$ gilt, womit der Schätzer eine gültige Wahrscheinlichkeitsdichte darstellt.
+	      wobei $n_k$ die Anzahl der Beobachtungen im $k$-ten Intervall ist und $\mathds{1}_{B_k}$ die Indikatorfunktion darstellt. Die Normierung durch $nh$ stellt sicher, dass $\int \hat{f}_H(x) \, dx = 1$ gilt, womit der Schätzer eine gültige Wahrscheinlichkeitsdichte darstellt.
 	      
 	\item \textbf{Probleme:} Trotz seiner Einfachheit weist das Histogramm gravierende Nachteile auf:
 	      \begin{enumerate}
@@ -255,11 +255,11 @@ Das Konzept der Kernschätzung lässt sich auf die Regressionsanalyse übertrage
 
 Während in der parametrischen Regression (z.\,B. lineare Regression) eine spezifische funktionale Form für $m(x)$ angenommen wird (etwa $m(x) = \alpha + \beta x$), verzichtet die nichtparametrische Regression auf solche Annahmen. Dies erlaubt es, komplexe, nichtlineare Zusammenhänge zu modellieren, ohne vorab eine funktionale Form festzulegen.
 
-\subsection{Watson-Nadaraya-Schätzer (Allgemeine Regression)}
+\subsection{Nadaraya-Watson-Schätzer (Allgemeine Regression)}
 
-Wenn wir keine Formel für $m(x)$ kennen, schätzen wir den Wert als gewichteten Mittelwert der umliegenden $Y$-Werte. Der \textbf{Watson-Nadaraya-Schätzer} (auch Nadaraya-Watson-Schätzer genannt) ist definiert als:
+Wenn wir keine Formel für $m(x)$ kennen, schätzen wir den Wert als gewichteten Mittelwert der umliegenden $Y$-Werte. Der \textbf{Nadaraya-Watson-Schätzer} ist definiert als:
 \begin{equation}
-	\hat{m}_{\text{WN}}(x) = \frac{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
+	\hat{m}_{\text{NW}}(x) = \frac{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
 \end{equation}
 Datenpunkte $X_i$, die nahe an $x$ liegen, erhalten durch den Kern $K$ ein hohes Gewicht. Hierbei erhalten $Y$-Werte, deren $X$-Koordinaten nahe bei $x$ liegen, ein höheres Gewicht. Die Gewichte sind proportional zu $K\left(\frac{x - X_i}{h}\right)$ und werden durch den Nenner normiert.
 
@@ -267,7 +267,7 @@ Datenpunkte $X_i$, die nahe an $x$ liegen, erhalten durch den Kern $K$ ein hohes
 
 \textbf{Eigenschaften und Probleme:}
 \begin{itemize}
-	\item \textbf{Bias an den Rändern:} Der Watson-Nadaraya-Schätzer kann an den Rändern des Datenbereichs zu starken Verzerrungen führen, da dort weniger Datenpunkte zur Mittelung zur Verfügung stehen.
+	\item \textbf{Bias an den Rändern:} Der Nadaraya-Watson-Schätzer kann an den Rändern des Datenbereichs zu starken Verzerrungen führen, da dort weniger Datenpunkte zur Mittelung zur Verfügung stehen.
 	\item \textbf{Design-Adaptation:} Der Schätzer passt sich automatisch an die Dichte der $X$-Werte an. In Bereichen mit vielen Beobachtungen wird die Schätzung präziser, in dünner besetzten Bereichen variabler.
 	\item \textbf{Bandbreitenwahl:} Wie bei der Kerndichteschätzung ist die Wahl von $h$ entscheidend. Zu kleine Werte führen zu überangepassten, ,,zackigen`` Schätzungen, zu große Werte glätten wichtige Strukturen weg.
 \end{itemize}

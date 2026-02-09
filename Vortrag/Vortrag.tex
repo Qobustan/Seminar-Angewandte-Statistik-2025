@@ -243,8 +243,51 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 \end{frame}
 
 \begin{frame}
+	\frametitle{Gängige Kernfunktionen – Formeln}
+	
+	\textbf{Rechteck-Kern (Uniform):}
+	\[
+	K(x) = \begin{cases}
+		\frac{1}{2} & \text{falls } |x| \le 1 \\
+		0 & \text{sonst}
+	\end{cases}
+	\]
+	
+	\ifpauseswitch
+		\pause
+	\fi
+	
+	\textbf{Gauß-Kern:}
+	\[
+	K(x) = \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{x^2}{2}\right)
+	\]
+\end{frame}
+
+\begin{frame}
+	\frametitle{Epanechnikov-Kern – Der Optimale}
+	
+	\textbf{Formel:}
+	\[
+	K(x) = \begin{cases}
+		\frac{3}{4}(1-x^2) & \text{falls } |x| \le 1 \\
+		0 & \text{sonst}
+	\end{cases}
+	\]
+	
+	\vspace{0.5em}
+	
+	\textbf{Besonderheit:}
+	\begin{itemize}
+		\item Theoretisch optimal (minimiert IMSE)
+		\item Parabolische Form
+		\item Kompakter Träger (effizienter zu berechnen)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
 	\frametitle{Kernfunktion – Eigenschaften}
 	
+	\textbf{Mathematische Anforderungen:}
 	\begin{itemize}
 		\item $K(x) \ge 0$ (Nicht-Negativität)
 		\item $\int K(x)\,dx = 1$ (Normierung)
@@ -257,6 +300,17 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\begin{itemize}
 		\item Bestimmt die Form der Glättung
 		\item Einfluss meist geringer als der der Bandbreite
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Kernfunktion – Warum diese Eigenschaften?}
+	
+	\begin{itemize}
+		\item \textbf{Nicht-Negativität:} Verhindert negative Wahrscheinlichkeiten
+		\item \textbf{Normierung:} Stellt sicher, dass $\hat{f}_n$ eine gültige Dichte ist
+		\item \textbf{Symmetrie:} Vermeidet systematische Verschiebung der Schätzung
+		\item \textbf{Endliche Varianz:} Notwendig für asymptotische Theorie und optimale Bandbreite
 	\end{itemize}
 \end{frame}
 
@@ -273,6 +327,26 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 \end{frame}
 
 \begin{frame}
+	\frametitle{Bandbreitenwahl – Weitere Methoden}
+	
+	\textbf{Datengetriebene Alternativen:}
+	\begin{itemize}
+		\item \textbf{Kreuzvalidierung (Cross-Validation):}
+		\begin{itemize}
+			\item Keine Normalverteilungsannahme nötig
+			\item Minimiert geschätzten integrierten MSE
+			\item Rechenintensiver
+		\end{itemize}
+		
+		\item \textbf{Plug-In-Methoden:}
+		\begin{itemize}
+			\item Schätzen unbekannte Größen aus Daten
+			\item Berechnen optimales $h$ aus asymptotischer MSE-Formel
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
 	\frametitle{Kerndichteschätzung – Rolle der Bandbreite}
 	
 	\begin{itemize}
@@ -285,6 +359,25 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\begin{itemize}
 		\item Zentrale Stellgröße der Kerndichteschätzung
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{KDE als Faltung}
+	
+	\[
+	\hat f_n(x) = \int K_h(x-y)\,dF_n(y),
+	\quad
+	K_h(t)=\frac1h K\left(\frac{t}{h}\right)
+	\]
+	
+	\ifpauseswitch
+		\pause
+	\fi
+	\[
+	\mathbb E[\hat f_n(x)]=(K_h * f)(x)
+	\]
+	
+	\alert{Bias = Glättungsfehler der Faltung}
 \end{frame}
 
 \begin{frame}
@@ -472,6 +565,26 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\begin{itemize}
 		\item Wahl der Bandbreite entscheidend
 		\item Randprobleme bei kleinen Stichproben
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Boundary Bias Problem}
+	
+	\textbf{Problem an den Rändern:}
+	\begin{itemize}
+		\item Nadaraya-Watson-Schätzer hat starken Bias an Datengrenzen
+		\item Weniger Datenpunkte in der Umgebung verfügbar
+		\item Asymmetrische Gewichtung führt zu Verzerrung
+	\end{itemize}
+	
+	\vspace{0.5em}
+	
+	\textbf{Lösungsansätze:}
+	\begin{itemize}
+		\item \textbf{Lokale Polynomschätzer:} Anpassung lokaler Polynome (linear, quadratisch)
+		\item Reduzieren Randbias erheblich
+		\item Verallgemeinerung des Nadaraya-Watson-Ansatzes
 	\end{itemize}
 \end{frame}
 

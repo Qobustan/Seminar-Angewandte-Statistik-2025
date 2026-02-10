@@ -47,17 +47,11 @@ Die Analyse von Verteilungen ist ein zentraler Bestandteil der Statistik. In der
 
 Dieser Ansatz ist jedoch problematisch, wenn die wahre Verteilung unbekannt ist oder nicht den theoretischen Annahmen entspricht (z.\,B. bei Schiefe oder Multimodalität). Klassische parametrische Verfahren sind oft zu starr und führen zu fehlerhaften Interpretationen, wenn die Modellannahmen verletzt sind. In der Praxis treten häufig Verteilungen auf, die sich nicht durch einfache parametrische Modelle beschreiben lassen – etwa bei bimodalen Verteilungen oder Daten mit schweren Rändern (Heavy Tails).
 
-Ferner können wir eine Verteilung normalerweise nicht beweisen – wir nehmen sie lediglich an. Folglich erzeugen wir hier eine extreme Kopplung zwischen (potentiell fehlerhaften) Interpretationen und unserer Schätzung. Diese Abhängigkeit kann zu systematischen Fehlern führen: Wird beispielsweise Normalität fälschlicherweise angenommen, können Konfidenzintervalle oder Hypothesentests irreführende Ergebnisse liefern. Offensichtlich ist es folglich für eine produktive Arbeit sinnvoll, diese Kopplung möglichst abzuschwächen; wobei wir im Nachfolgenden gesehen haben sehen werden, dass sich bestimmte (schwache) Annahmen wie beispielsweise die Stetigkeit nicht zwingend vermeiden lassen, jedoch deren Einfluss i.d.R. nicht zu groß ist.
+Ferner können wir eine Verteilung normalerweise nicht beweisen – wir nehmen sie lediglich an. Folglich erzeugen wir hier eine extreme Kopplung zwischen (potentiell fehlerhaften) Interpretationen und unserer Schätzung. Diese Abhängigkeit kann zu systematischen Fehlern führen: Wird beispielsweise Normalität fälschlicherweise angenommen, können Konfidenzintervalle oder Hypothesentests irreführende Ergebnisse liefern. Offensichtlich ist es folglich für eine produktive Arbeit sinnvoll, diese Kopplung möglichst abzuschwächen; wobei wir im Nachfolgenden sehen werden, dass sich bestimmte (schwache) Annahmen wie beispielsweise die Stetigkeit nicht zwingend vermeiden lassen, jedoch deren Einfluss i.d.R. nicht zu groß ist.
 
 Die \textit{nichtparametrische Dichteschätzung} verzichtet auf die Zugehörigkeit zu einer starren parametrischen Familie. Stattdessen wird lediglich angenommen, dass die Dichte $f$ gewisse Glattheitseigenschaften, wie etwa Stetigkeit oder Differenzierbarkeit, erfüllt. Diese Flexibilität ermöglicht es, komplexere Strukturen in den Daten zu erfassen, ohne vorab eine spezifische Verteilungsfamilie festlegen zu müssen.
 
-\colorbox{pink} {
-	\hbox to 
-	\textwidth {
-		Wir m\"ochten die Kopplung wirklich \textbf{\underline {nur}} absch\"achen; wir wollen sie \underline{gar \textbf{keinen} Fall} komplett aufl\"osen!
-	\hfill
-	}
-}
+\textbf{Wichtige Anmerkung:} Hierbei ist zu betonen, dass das Ziel nicht die vollständige Auflösung der Kopplung zwischen Annahmen und Schätzung ist – dies wäre auch gar nicht möglich. Vielmehr möchten wir diese Kopplung \textit{abschwächen}, indem wir nur minimale Annahmen (wie Stetigkeit oder Glattheit) treffen, statt eine spezifische parametrische Familie vorauszusetzen.
 
 \subsection*{Zielsetzung}
 
@@ -65,7 +59,7 @@ Ziel ist es, eine Annäherung an den Wert $f(x)$ an einer Stelle $x$ allein aus 
 
 \section{Der Schätzer von Rosenblatt (Die theoretische Basis)}
 
-Historisch betrachtet bildet der Ansatz von Rosenblatt (1956) das Fundament moderner Dichteschätzer. Er motiviert sich aus dem fundamentalen Zusammenhang zwischen der Dichtefunktion $f$ und der Verteilungsfunktion $F$, wobei gilt: $F'(x) = f(x)$ (sofern $F$ differenzierbar ist). Diese Beziehung legt nahe, die Ableitung durch einen Differenzenquotienten zu approximieren und die unbekannte Verteilungsfunktion durch ihre empirische Version zu ersetzen.
+Historisch betrachtet bildet der Ansatz von Rosenblatt \cite{Rosenblatt1956} (1956) das Fundament moderner Dichteschätzer. Er motiviert sich aus dem fundamentalen Zusammenhang zwischen der Dichtefunktion $f$ und der Verteilungsfunktion $F$, wobei gilt: $F'(x) = f(x)$ (sofern $F$ differenzierbar ist). Diese Beziehung legt nahe, die Ableitung durch einen Differenzenquotienten zu approximieren und die unbekannte Verteilungsfunktion durch ihre empirische Version zu ersetzen.
 
 \begin{itemize}
 	\item \textbf{Idee:} Da $f(x) = F'(x)$, nutzt man den Differenzenquotienten der empirischen Verteilungsfunktion $F_n$. Der Differentialquotient lässt sich approximieren durch:
@@ -109,8 +103,8 @@ Das Histogramm ist die älteste und bekannteste Methode der Dichteschätzung, ha
 	      
 	\item \textbf{Optimale Bandbreite ($h$):} Die Wahl von $h$ ist ein Balanceakt (Bias-Varianz-Tradeoff). Ein zu kleines $h$ erzeugt eine ,,zackige`` Kurve (hohe Varianz), ein zu großes $h$ glättet wichtige Details weg (hoher Bias). Im Extremfall $h \to 0$ würde jeder Datenpunkt in seinem eigenen Bin liegen, was zu einer stark verrauschten Schätzung führt. Umgekehrt würde $h \to \infty$ alle Daten in einem einzigen Bin zusammenfassen und keinerlei Information über die Verteilungsstruktur liefern.
 	      \begin{itemize}
-	      	\item \textit{Faustregel (Scott):} $h \approx 3.49 \, s \, n^{-1/3}$ (basiert auf Normalverteilungsannahme). Diese Regel ist einfach anzuwenden und liefert in vielen praktischen Situationen akzeptable Ergebnisse, insbesondere wenn die Daten nicht zu stark von der Normalverteilung abweichen.
-	      	\item \textit{Robuste Regel (Freedman-Diaconis):} Nutzt den Interquartilsabstand, um Ausreißer weniger zu gewichten:
+	      	\item \textit{Faustregel (Scott \cite{Scott1979}):} $h \approx 3.49 \, s \, n^{-1/3}$ (basiert auf Normalverteilungsannahme). Diese Regel ist einfach anzuwenden und liefert in vielen praktischen Situationen akzeptable Ergebnisse, insbesondere wenn die Daten nicht zu stark von der Normalverteilung abweichen.
+	      	\item \textit{Robuste Regel (Freedman-Diaconis \cite{FreedmanDiaconis1981}):} Nutzt den Interquartilsabstand, um Ausreißer weniger zu gewichten:
 	      	      \[ h^* = 2(x_{0.75} - x_{0.25})n^{-1/3} \]
 	      	      Diese Variante ist robuster gegenüber Ausreißern, da der Interquartilsabstand weniger empfindlich auf extreme Werte reagiert als die Standardabweichung.
 	      \end{itemize}
@@ -122,7 +116,7 @@ Um diese Mängel zu beheben, wurden die Kernschätzer entwickelt, die eine glatt
 
 \subsection{Definition und Funktionsweise}
 
-Um die Glattheit zu garantieren, verallgemeinert die Kerndichteschätzung den Rosenblatt-Ansatz und behebt die Unstetigkeitsprobleme des Histogramms. Anstatt Beobachtungen nur in starren Boxen zu zählen, gewichtet man sie mittels einer glatten Funktion $K$, dem sogenannten Kern. Diese Verallgemeinerung ermöglicht es, kontinuierliche und differenzierbare Dichteschätzungen zu erhalten, die besser die Glattheit der zugrunde liegenden Verteilung widerspiegeln.
+Um die Glattheit zu garantieren, verallgemeinert die Kerndichteschätzung (entwickelt unabhängig von Rosenblatt \cite{Rosenblatt1956} und Parzen \cite{Parzen1962}) den Rosenblatt-Ansatz und behebt die Unstetigkeitsprobleme des Histogramms. Anstatt Beobachtungen nur in starren Boxen zu zählen, gewichtet man sie mittels einer glatten Funktion $K$, dem sogenannten Kern. Diese Verallgemeinerung ermöglicht es, kontinuierliche und differenzierbare Dichteschätzungen zu erhalten, die besser die Glattheit der zugrunde liegenden Verteilung widerspiegeln.
 
 \begin{itemize}
 	\item \textbf{Der Schätzer:}
@@ -197,7 +191,7 @@ Gebräuchliche Kerne sind:
 	      \end{equation}
 	      Basiert auf der Standardnormalverteilung und ist glatt und beliebig oft differenzierbar. Der Gauß-Kern hat unbeschränkten Träger, d.h., er gewichtet alle Datenpunkte (wenn auch mit exponentiell abfallendem Gewicht). Dies führt zu sehr glatten Schätzungen, kann aber rechenintensiver sein als Kerne mit kompaktem Träger.
 	      
-	\item \textbf{Epanechnikov-Kern:} 
+	\item \textbf{Epanechnikov-Kern \cite{Epanechnikov1969}:} 
 	      \begin{equation}
 	      	K(x) = \begin{cases}
 	      		\frac{3}{4}(1-x^2) & \text{falls } |x| \le 1 \\
@@ -235,7 +229,7 @@ Es existiert ein fundamentaler Zielkonflikt (Bias-Variance-Tradeoff):
 
 Durch Minimierung des asymptotischen MSE bezüglich $h$ erhält man die optimale Bandbreite der Ordnung $h_{\text{opt}} \sim n^{-1/5}$, was zum minimalen MSE der Ordnung $n^{-4/5}$ führt. Dies ist die bestmögliche Konvergenzrate für die Schätzung einer glatten Dichte in einer Dimension.
 
-Eine gängige Faustregel zur Wahl der optimalen Bandbreite (unter Annahme einer Normalverteilung) ist die \textbf{Silverman-Regel} (für Gauß-Kerne):
+Eine gängige Faustregel zur Wahl der optimalen Bandbreite (unter Annahme einer Normalverteilung) ist die \textbf{Silverman-Regel} \cite{Silverman1986} (für Gauß-Kerne):
 \begin{equation}
 	h_{\text{opt}} \approx 1.06 \, \sigma \, n^{-1/5}
 \end{equation}
@@ -286,7 +280,7 @@ Während in der parametrischen Regression (z.\,B. lineare Regression) eine spezi
 
 \subsection{Nadaraya-Watson-Schätzer (Allgemeine Regression)}
 
-Wenn wir keine Formel für $m(x)$ kennen, schätzen wir den Wert als gewichteten Mittelwert der umliegenden $Y$-Werte. Der \textbf{Nadaraya-Watson-Schätzer} ist definiert als:
+Wenn wir keine Formel für $m(x)$ kennen, schätzen wir den Wert als gewichteten Mittelwert der umliegenden $Y$-Werte. Der \textbf{Nadaraya-Watson-Schätzer} \cite{NadarayaWatson1964, Watson1964} ist definiert als:
 \begin{equation}
 	\hat{m}_{\text{NW}}(x) = \frac{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
 \end{equation}
@@ -308,9 +302,9 @@ Datenpunkte $X_i$, die nahe an $x$ liegen, erhalten durch den Kern $K$ ein hohes
 Selbst wenn wir einen linearen Trend ($Y = \alpha + \beta X$) vermuten, ist die klassische Methode der kleinsten Quadrate (OLS) anfällig für Ausreißer. Falls ein linearer Zusammenhang angenommen wird, aber die Daten Ausreißer enthalten, bieten sich robuste Alternativen an. Ein einzelner extremer Datenpunkt kann die OLS-Schätzung erheblich verzerren, während robuste Verfahren solche Einflüsse abschwächen.
 
 \begin{enumerate}
-	\item \textbf{Theil-Methode I:} Man teilt die Daten in zwei Hälften und berechnet Steigungen zwischen Paaren $(i, i+n/2)$. Der Schätzer ist der Median dieser Steigungen. Diese Methode ist einfach zu implementieren, nutzt aber nicht die gesamte verfügbare Information aus den Daten.
+	\item \textbf{Theil-Methode I \cite{Theil1950}:} Man teilt die Daten in zwei Hälften und berechnet Steigungen zwischen Paaren $(i, i+n/2)$. Der Schätzer ist der Median dieser Steigungen. Diese Methode ist einfach zu implementieren, nutzt aber nicht die gesamte verfügbare Information aus den Daten.
 	
-	\item \textbf{Theil-Sen-Schätzer (Methode II):} Dies ist die präzisere und noch robustere Variante. Man berechnet die Steigung zwischen \textbf{allen} möglichen Paaren $i < j$:
+	\item \textbf{Theil-Sen-Schätzer (Methode II) \cite{Theil1950, Sen1968}:} Dies ist die präzisere und noch robustere Variante. Man berechnet die Steigung zwischen \textbf{allen} möglichen Paaren $i < j$:
 	      \begin{equation}
 	      	H_{ij} = \frac{Y_j - Y_i}{X_j - X_i}
 	      \end{equation}
@@ -324,17 +318,17 @@ Selbst wenn wir einen linearen Trend ($Y = \alpha + \beta X$) vermuten, ist die 
 	      	\item Für den Achsenabschnitt $\alpha$ wird häufig der Median der Residuen $Y_i - \hat{\beta} X_i$ verwendet.
 	      \end{itemize}
 	      
-	\item \textbf{Hypothesentests:} Zum Testen von $\beta$ wird auf rangbasierte Verfahren wie Kendalls $\tau$ (Tau) zurückgegriffen, da diese verteilungsfrei sind. Kendalls $\tau$ misst die Korrelation zwischen $X$ und $Y$ basierend auf der Anzahl konkordanter und diskordanter Paare und ist ebenfalls robust gegenüber Ausreißern.
+	\item \textbf{Hypothesentests:} Zum Testen von $\beta$ wird auf rangbasierte Verfahren wie Kendalls $\tau$ \cite{Kendall1938} (Tau) zurückgegriffen, da diese verteilungsfrei sind. Kendalls $\tau$ misst die Korrelation zwischen $X$ und $Y$ basierend auf der Anzahl konkordanter und diskordanter Paare und ist ebenfalls robust gegenüber Ausreißern.
 	
 	\item \textbf{Vergleich mit OLS:} Während OLS unter Normalverteilungsannahmen und Abwesenheit von Ausreißern optimal ist (im Sinne der Varianzminimierung unter allen erwartungstreuen Schätzern), bietet der Theil-Sen-Schätzer eine robuste Alternative, die bei Verletzung dieser Annahmen deutlich bessere Ergebnisse liefert. In Anwendungen mit realen Daten, die häufig Ausreißer oder Messfehlern unterliegen, ist der Theil-Sen-Schätzer oft die bessere Wahl.
 \end{enumerate}
 
 \section{Zusammenfassung und Fazit}
 
-Nichtparametrische Methoden spielen eine zentrale Rolle in der modernen Statistik und Datenanalyse. Sie ermöglichen es, komplexe Datenstrukturen zu analysieren, ohne restriktive Annahmen über die zugrunde liegende Verteilung oder funktionale Form treffen zu müssen.
+Nichtparametrische Methoden spielen eine zentrale Rolle in der modernen Statistik und Datenanalyse \cite{BüningTrenkler+1994, Wasserman2006}. Sie ermöglichen es, komplexe Datenstrukturen zu analysieren, ohne restriktive Annahmen über die zugrunde liegende Verteilung oder funktionale Form treffen zu müssen.
 
 \begin{itemize}
-	\item \textbf{Flexibilität:} Nichtparametrische Methoden (KDE, Kernel-Regression) passen sich den Daten an (,,let the data speak``) und zwingen ihnen keine Form auf. Sie erfordern weniger Annahmen über die Datenstruktur. Diese Flexibilität macht sie besonders wertvoll in der explorativen Datenanalyse, wo die Verteilungsform a priori unbekannt ist, sowie in Situationen, in denen parametrische Modelle zu restriktiv sind.
+	\item \textbf{Flexibilität:} Nichtparametrische Methoden (KDE, Kernel-Regression) passen sich den Daten an (,,let the data speak``) und zwingen ihnen keine Form auf. Sie erfordern weniger Annahmen über die Datenstruktur. Diese Flexibilität macht sie besonders wertvoll in der explorativen Datenanalyse, wo die Verteilungsform a priori unbekannt ist, sowie in Situationen, in denen parametrische Modelle zu restriktiv sind. Für eine vertiefte Behandlung der Theorie und Praxis siehe \cite{Silverman1986, Wand1995, Scott1992}.
 	
 	\item \textbf{Parameter $h$:} Die Wahl der Bandbreite ist der kritischste Schritt. Es ist ein Kompromiss zwischen Rauschen (zu kleines $h$) und Informationsverlust (zu großes $h$). Der Glättungsparameter muss sorgfältig zwischen Bias und Varianz abgewogen werden. Während theoretische Faustregeln (wie die Silverman-Regel) einen guten Ausgangspunkt bieten, empfiehlt sich in der Praxis eine Sensitivitätsanalyse, bei der verschiedene Bandbreiten ausprobiert und verglichen werden.
 	

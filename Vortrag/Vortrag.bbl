@@ -55,5 +55,241 @@
     }
     \field{year}{1994}
   \endentry
+
+  \entry{Epanechnikov1969}{article}{}
+    \name{author}{1}{}{%
+      {{hash=EVA}{%
+         family={Epanechnikov},
+         familyi={E\bibinitperiod},
+         given={V.\bibnamedelima A.},
+         giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EVA1}
+    \strng{fullhash}{EVA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Epa69}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{number}{1}
+    \field{pages}{153\bibrangedash 158}
+    \field{title}{Non-Parametric Estimation of a Multivariate Probability
+  Density}
+    \field{volume}{14}
+    \field{journaltitle}{Theory of Probability \& Its Applications}
+    \field{year}{1969}
+  \endentry
+
+  \entry{FreedmanDiaconis1981}{article}{}
+    \name{author}{2}{}{%
+      {{hash=FD}{%
+         family={Freedman},
+         familyi={F\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={Diaconis},
+         familyi={D\bibinitperiod},
+         given={Persi},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FDDP1}
+    \strng{fullhash}{FDDP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{FD81}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{4}
+    \field{pages}{453\bibrangedash 476}
+    \field{title}{On the Histogram as a Density Estimator: L2 Theory}
+    \field{volume}{57}
+    \field{journaltitle}{Zeitschrift für Wahrscheinlichkeitstheorie und
+  Verwandte Gebiete}
+    \field{year}{1981}
+  \endentry
+
+  \entry{NadarayaWatson1964}{article}{}
+    \name{author}{1}{}{%
+      {{hash=NEA}{%
+         family={Nadaraya},
+         familyi={N\bibinitperiod},
+         given={E.\bibnamedelima A.},
+         giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NEA1}
+    \strng{fullhash}{NEA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Nad64}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{number}{1}
+    \field{pages}{141\bibrangedash 142}
+    \field{title}{On Estimating Regression}
+    \field{volume}{9}
+    \field{journaltitle}{Theory of Probability \& Its Applications}
+    \field{year}{1964}
+  \endentry
+
+  \entry{Rosenblatt1956}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RM}{%
+         family={Rosenblatt},
+         familyi={R\bibinitperiod},
+         given={Murray},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Institute of Mathematical Statistics}%
+    }
+    \strng{namehash}{RM1}
+    \strng{fullhash}{RM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Ros56}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{number}{3}
+    \field{pages}{832\bibrangedash 837}
+    \field{title}{Remarks on Some Nonparametric Estimates of a Density
+  Function}
+    \field{volume}{27}
+    \field{journaltitle}{The Annals of Mathematical Statistics}
+    \field{year}{1956}
+  \endentry
+
+  \entry{Scott1979}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SDW}{%
+         family={Scott},
+         familyi={S\bibinitperiod},
+         given={David\bibnamedelima W.},
+         giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SDW1}
+    \strng{fullhash}{SDW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sco79}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{3}
+    \field{pages}{605\bibrangedash 610}
+    \field{title}{On Optimal and Data-Based Histograms}
+    \field{volume}{66}
+    \field{journaltitle}{Biometrika}
+    \field{year}{1979}
+  \endentry
+
+  \entry{Sen1968}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SPK}{%
+         family={Sen},
+         familyi={S\bibinitperiod},
+         given={Pranab\bibnamedelima Kumar},
+         giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SPK1}
+    \strng{fullhash}{SPK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sen68}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{324}
+    \field{pages}{1379\bibrangedash 1389}
+    \field{title}{Estimates of the Regression Coefficient Based on Kendall's
+  Tau}
+    \field{volume}{63}
+    \field{journaltitle}{Journal of the American Statistical Association}
+    \field{year}{1968}
+  \endentry
+
+  \entry{Silverman1986}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SBW}{%
+         family={Silverman},
+         familyi={S\bibinitperiod},
+         given={Bernard\bibnamedelima W.},
+         giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Chapman}%
+      {Hall}%
+    }
+    \strng{namehash}{SBW1}
+    \strng{fullhash}{SBW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sil86}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{isbn}{978-0412246203}
+    \field{series}{Monographs on Statistics and Applied Probability}
+    \field{title}{Density Estimation for Statistics and Data Analysis}
+    \list{location}{1}{%
+      {London}%
+    }
+    \field{year}{1986}
+  \endentry
+
+  \entry{Theil1950}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TH}{%
+         family={Theil},
+         familyi={T\bibinitperiod},
+         given={Henri},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TH1}
+    \strng{fullhash}{TH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{The50}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{pages}{386\bibrangedash 392, 521\bibrangedash 525, 1397\bibrangedash
+  1412}
+    \field{title}{A Rank-Invariant Method of Linear and Polynomial Regression
+  Analysis}
+    \field{volume}{53}
+    \field{journaltitle}{Proceedings of the Koninklijke Nederlandse Akademie
+  van Wetenschappen}
+    \field{year}{1950}
+  \endentry
+
+  \entry{Watson1964}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WGS}{%
+         family={Watson},
+         familyi={W\bibinitperiod},
+         given={Geoffrey\bibnamedelima S.},
+         giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WGS1}
+    \strng{fullhash}{WGS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Wat64}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{number}{4}
+    \field{pages}{359\bibrangedash 372}
+    \field{title}{Smooth Regression Analysis}
+    \field{volume}{26}
+    \field{journaltitle}{Sankhyā: The Indian Journal of Statistics, Series A}
+    \field{year}{1964}
+  \endentry
 \enddatalist
 \endinput

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  9 FEB 2026 05:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  11 FEB 2026 11:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1182,6 +1182,28 @@ de/babel-ngerman.tex
 Package babel Info: Importing font and identification data for ngerman
 (babel)             from babel-de.ini. Reported on input line 11.
 )
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquot
+es.sty
+Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
+\csq@reset=\count372
+\csq@gtype=\count373
+\csq@glevel=\count374
+\csq@qlevel=\count375
+\csq@maxlvl=\count376
+\csq@tshold=\count377
+\csq@ltx@everypar=\toks54
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquot
+es.def
+File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquot
+es.cfg
+File: csquotes.cfg 
+))
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/colortbl/colort
 bl.sty
 Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
@@ -1191,14 +1213,14 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen325
 \ar@mcellbox=\box109
 \extrarowheight=\dimen326
-\NC@list=\toks54
+\NC@list=\toks55
 \extratabsurround=\skip65
 \backup@length=\skip66
 \ar@cellbox=\box110
 )
-\everycr=\toks55
+\everycr=\toks56
 \minrowclearance=\skip67
-\rownum=\count372
+\rownum=\count378
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/mathtools/matht
 ools.sty
@@ -1206,22 +1228,22 @@ Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count373
-\calc@Bcount=\count374
+\calc@Acount=\count379
+\calc@Bcount=\count380
 \calc@Adimen=\dimen327
 \calc@Bdimen=\dimen328
 \calc@Askip=\skip68
 \calc@Bskip=\skip69
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count375
+\calc@Ccount=\count381
 \calc@Cskip=\skip70
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/mathtools/mhset
 up.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count376
+\g_MT_multlinerow_int=\count382
 \l_MT_multwidth_dim=\dimen329
 \origjot=\skip71
 \l_MT_shortvdotswithinadjustabove_dim=\dimen330
@@ -1235,24 +1257,24 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/listings/listin
 gs.sty
-\lst@mode=\count377
+\lst@mode=\count383
 \lst@gtempboxa=\box112
-\lst@token=\toks56
-\lst@length=\count378
+\lst@token=\toks57
+\lst@length=\count384
 \lst@currlwidth=\dimen337
-\lst@column=\count379
-\lst@pos=\count380
+\lst@column=\count385
+\lst@pos=\count386
 \lst@lostspace=\dimen338
 \lst@width=\dimen339
-\lst@newlines=\count381
-\lst@lineno=\count382
+\lst@newlines=\count387
+\lst@lineno=\count388
 \lst@maxwidth=\dimen340
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/listings/lstmis
 c.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count383
-\lst@skipnumbers=\count384
+\c@lstnumber=\count389
+\lst@skipnumbers=\count390
 \lst@framebox=\box113
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/listings/listin
@@ -1298,10 +1320,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count385
-\float@exts=\toks57
+\c@float@type=\count391
+\float@exts=\toks58
 \float@box=\box114
-\@float@everytoks=\toks58
+\@float@everytoks=\toks59
 \@floatcapt=\box115
 ) (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tipa/tipa.sty
 Package: tipa 2002/08/08 TIPA version 1.1
@@ -1338,17 +1360,17 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 otes.sty
 Package: todonotes 2023/01/31 v1.1.6 Todonotes source and documentation.
 Package: todonotes 2023/01/31
-\c@@todonotes@numberoftodonotes=\count386
+\c@@todonotes@numberoftodonotes=\count392
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumit
 em.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip75
 \enit@outerparindent=\dimen341
-\enit@toks=\toks59
+\enit@toks=\toks60
 \enit@inbox=\box116
-\enit@count@id=\count387
-\enitdp@description=\count388
+\enit@count@id=\count393
+\enitdp@description=\count394
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/booktabs/bookta
 bs.sty
@@ -1363,20 +1385,20 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen349
 \cmidrulekern=\dimen350
 \defaultaddspace=\dimen351
-\@cmidla=\count389
-\@cmidlb=\count390
+\@cmidla=\count395
+\@cmidlb=\count396
 \@aboverulesep=\dimen352
 \@belowrulesep=\dimen353
-\@thisruleclass=\count391
-\@lastruleclass=\count392
+\@thisruleclass=\count397
+\@lastruleclass=\count398
 \@thisrulewidth=\dimen354
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/algorithms/algo
 rithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
-\@float@every@algorithm=\toks60
-\c@algorithm=\count393
+\@float@every@algorithm=\toks61
+\c@algorithm=\count399
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/algorithmicx/al
 gpseudocode.sty
@@ -1387,21 +1409,21 @@ gorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count394
-\c@ALG@rem=\count395
-\c@ALG@nested=\count396
+\c@ALG@line=\count400
+\c@ALG@rem=\count401
+\c@ALG@nested=\count402
 \ALG@tlm=\skip76
 \ALG@thistlm=\skip77
-\c@ALG@Lnr=\count397
-\c@ALG@blocknr=\count398
-\c@ALG@storecount=\count399
-\c@ALG@tmpcounter=\count400
+\c@ALG@Lnr=\count403
+\c@ALG@blocknr=\count404
+\c@ALG@storecount=\count405
+\c@ALG@tmpcounter=\count406
 \ALG@tmplength=\skip78
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 155.
-\c@subsubsubsection=\count401
+Package hyperref Info: Option `colorlinks' set `true' on input line 150.
+\c@subsubsubsection=\count407
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
 ayer/tikz/libraries/tikzlibraryfit.code.tex
@@ -1414,55 +1436,55 @@ Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/logreq/logreq.s
 ty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count402
+\lrq@indent=\count408
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/logreq/logreq.d
 ef
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count403
-\c@listtotal=\count404
-\c@listcount=\count405
-\c@liststart=\count406
-\c@liststop=\count407
-\c@citecount=\count408
-\c@citetotal=\count409
-\c@multicitecount=\count410
-\c@multicitetotal=\count411
-\c@instcount=\count412
-\c@maxnames=\count413
-\c@minnames=\count414
-\c@maxitems=\count415
-\c@minitems=\count416
-\c@citecounter=\count417
-\c@maxcitecounter=\count418
-\c@savedcitecounter=\count419
-\c@uniquelist=\count420
-\c@uniquename=\count421
-\c@refsection=\count422
-\c@refsegment=\count423
-\c@maxextratitle=\count424
-\c@maxextratitleyear=\count425
-\c@maxextraname=\count426
-\c@maxextradate=\count427
-\c@maxextraalpha=\count428
-\c@abbrvpenalty=\count429
-\c@highnamepenalty=\count430
-\c@lownamepenalty=\count431
-\c@maxparens=\count432
-\c@parenlevel=\count433
-\blx@tempcnta=\count434
-\blx@tempcntb=\count435
-\blx@tempcntc=\count436
-\c@blx@maxsection=\count437
-\blx@maxsegment@0=\count438
-\blx@notetype=\count439
-\blx@parenlevel@text=\count440
-\blx@parenlevel@foot=\count441
-\blx@sectionciteorder@0=\count442
-\blx@sectionciteorderinternal@0=\count443
-\blx@entrysetcounter=\count444
-\blx@biblioinstance=\count445
+\c@tabx@nest=\count409
+\c@listtotal=\count410
+\c@listcount=\count411
+\c@liststart=\count412
+\c@liststop=\count413
+\c@citecount=\count414
+\c@citetotal=\count415
+\c@multicitecount=\count416
+\c@multicitetotal=\count417
+\c@instcount=\count418
+\c@maxnames=\count419
+\c@minnames=\count420
+\c@maxitems=\count421
+\c@minitems=\count422
+\c@citecounter=\count423
+\c@maxcitecounter=\count424
+\c@savedcitecounter=\count425
+\c@uniquelist=\count426
+\c@uniquename=\count427
+\c@refsection=\count428
+\c@refsegment=\count429
+\c@maxextratitle=\count430
+\c@maxextratitleyear=\count431
+\c@maxextraname=\count432
+\c@maxextradate=\count433
+\c@maxextraalpha=\count434
+\c@abbrvpenalty=\count435
+\c@highnamepenalty=\count436
+\c@lownamepenalty=\count437
+\c@maxparens=\count438
+\c@parenlevel=\count439
+\blx@tempcnta=\count440
+\blx@tempcntb=\count441
+\blx@tempcntc=\count442
+\c@blx@maxsection=\count443
+\blx@maxsegment@0=\count444
+\blx@notetype=\count445
+\blx@parenlevel@text=\count446
+\blx@parenlevel@foot=\count447
+\blx@sectionciteorder@0=\count448
+\blx@sectionciteorderinternal@0=\count449
+\blx@entrysetcounter=\count450
+\blx@biblioinstance=\count451
 \labelnumberwidth=\skip79
 \labelalphawidth=\skip80
 \biblabelsep=\skip81
@@ -1474,9 +1496,9 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@bcfin=\read5
 \blx@bcfout=\write5
 \blx@langwohyphens=\language88
-\c@mincomprange=\count446
-\c@maxcomprange=\count447
-\c@mincompwidth=\count448
+\c@mincomprange=\count452
+\c@maxcomprange=\count453
+\c@mincompwidth=\count454
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1488,74 +1510,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'alphabetic.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count449
-\c@savedafterword=\count450
-\c@annotator=\count451
-\c@savedannotator=\count452
-\c@author=\count453
-\c@savedauthor=\count454
-\c@bookauthor=\count455
-\c@savedbookauthor=\count456
-\c@commentator=\count457
-\c@savedcommentator=\count458
-\c@editor=\count459
-\c@savededitor=\count460
-\c@editora=\count461
-\c@savededitora=\count462
-\c@editorb=\count463
-\c@savededitorb=\count464
-\c@editorc=\count465
-\c@savededitorc=\count466
-\c@foreword=\count467
-\c@savedforeword=\count468
-\c@holder=\count469
-\c@savedholder=\count470
-\c@introduction=\count471
-\c@savedintroduction=\count472
-\c@namea=\count473
-\c@savednamea=\count474
-\c@nameb=\count475
-\c@savednameb=\count476
-\c@namec=\count477
-\c@savednamec=\count478
-\c@translator=\count479
-\c@savedtranslator=\count480
-\c@shortauthor=\count481
-\c@savedshortauthor=\count482
-\c@shorteditor=\count483
-\c@savedshorteditor=\count484
-\c@labelname=\count485
-\c@savedlabelname=\count486
-\c@institution=\count487
-\c@savedinstitution=\count488
-\c@lista=\count489
-\c@savedlista=\count490
-\c@listb=\count491
-\c@savedlistb=\count492
-\c@listc=\count493
-\c@savedlistc=\count494
-\c@listd=\count495
-\c@savedlistd=\count496
-\c@liste=\count497
-\c@savedliste=\count498
-\c@listf=\count499
-\c@savedlistf=\count500
-\c@location=\count501
-\c@savedlocation=\count502
-\c@organization=\count503
-\c@savedorganization=\count504
-\c@origlocation=\count505
-\c@savedoriglocation=\count506
-\c@origpublisher=\count507
-\c@savedorigpublisher=\count508
-\c@publisher=\count509
-\c@savedpublisher=\count510
-\c@language=\count511
-\c@savedlanguage=\count512
-\c@origlanguage=\count513
-\c@savedoriglanguage=\count514
-\c@pageref=\count515
-\c@savedpageref=\count516
+\c@afterword=\count455
+\c@savedafterword=\count456
+\c@annotator=\count457
+\c@savedannotator=\count458
+\c@author=\count459
+\c@savedauthor=\count460
+\c@bookauthor=\count461
+\c@savedbookauthor=\count462
+\c@commentator=\count463
+\c@savedcommentator=\count464
+\c@editor=\count465
+\c@savededitor=\count466
+\c@editora=\count467
+\c@savededitora=\count468
+\c@editorb=\count469
+\c@savededitorb=\count470
+\c@editorc=\count471
+\c@savededitorc=\count472
+\c@foreword=\count473
+\c@savedforeword=\count474
+\c@holder=\count475
+\c@savedholder=\count476
+\c@introduction=\count477
+\c@savedintroduction=\count478
+\c@namea=\count479
+\c@savednamea=\count480
+\c@nameb=\count481
+\c@savednameb=\count482
+\c@namec=\count483
+\c@savednamec=\count484
+\c@translator=\count485
+\c@savedtranslator=\count486
+\c@shortauthor=\count487
+\c@savedshortauthor=\count488
+\c@shorteditor=\count489
+\c@savedshorteditor=\count490
+\c@labelname=\count491
+\c@savedlabelname=\count492
+\c@institution=\count493
+\c@savedinstitution=\count494
+\c@lista=\count495
+\c@savedlista=\count496
+\c@listb=\count497
+\c@savedlistb=\count498
+\c@listc=\count499
+\c@savedlistc=\count500
+\c@listd=\count501
+\c@savedlistd=\count502
+\c@liste=\count503
+\c@savedliste=\count504
+\c@listf=\count505
+\c@savedlistf=\count506
+\c@location=\count507
+\c@savedlocation=\count508
+\c@organization=\count509
+\c@savedorganization=\count510
+\c@origlocation=\count511
+\c@savedoriglocation=\count512
+\c@origpublisher=\count513
+\c@savedorigpublisher=\count514
+\c@publisher=\count515
+\c@savedpublisher=\count516
+\c@language=\count517
+\c@savedlanguage=\count518
+\c@origlanguage=\count519
+\c@savedoriglanguage=\count520
+\c@pageref=\count521
+\c@savedpageref=\count522
 \shorthandwidth=\skip87
 \shortjournalwidth=\skip88
 \shortserieswidth=\skip89
@@ -1595,19 +1617,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblat
 ex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count517
-\c@textcitetotal=\count518
-\c@textcitemaxnames=\count519
-\c@biburlbigbreakpenalty=\count520
-\c@biburlbreakpenalty=\count521
-\c@biburlnumpenalty=\count522
-\c@biburlucpenalty=\count523
-\c@biburllcpenalty=\count524
+\c@textcitecount=\count523
+\c@textcitetotal=\count524
+\c@textcitemaxnames=\count525
+\c@biburlbigbreakpenalty=\count526
+\c@biburlbreakpenalty=\count527
+\c@biburlnumpenalty=\count528
+\c@biburlucpenalty=\count529
+\c@biburllcpenalty=\count530
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count525
+\c@smartand=\count531
 )
 Package biblatex Info: Trying to load bibliography style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.bbx' found.
@@ -1621,8 +1643,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/biblatex/bbx/st
 andard.bbx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count526
-\c@bbx:relatedtotal=\count527
+\c@bbx:relatedcount=\count532
+\c@bbx:relatedtotal=\count533
 ))
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
@@ -1658,7 +1680,7 @@ Package: expl3 2023-02-22 L3 programming layer (loader)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3bac
 kend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count528
+\l__color_backend_stack_int=\count534
 \l__pdf_internal_box=\box117
 ))
 Package biblatex Info: ... and expl3
@@ -1684,13 +1706,11 @@ lorthemeorchid.sty)
 nerthemerounded.sty)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerou
 terthemeinfolines.sty))
-
-Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
-(biblatex)                Loading 'csquotes' recommended.
-
-\@quotelevel=\count529
-\@quotereset=\count530
-(./Vortrag.aux)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
+ (./Vortrag.aux)
 \openout1 = `Vortrag.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -1758,17 +1778,17 @@ LaTeX Font Info:    ... okay on input line 18.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/context/base/mkii/sup
 p-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count531
+\scratchcounter=\count535
 \scratchdimen=\dimen355
 \scratchbox=\box118
-\nofMPsegments=\count532
-\nofMParguments=\count533
-\everyMPshowfont=\toks61
-\MPscratchCnt=\count534
+\nofMPsegments=\count536
+\nofMParguments=\count537
+\everyMPshowfont=\toks62
+\MPscratchCnt=\count538
 \MPscratchDim=\dimen356
-\MPnumerator=\count535
-\makeMPintoPDFobject=\count536
-\everyMPtoPDFconversion=\toks62
+\MPnumerator=\count539
+\makeMPintoPDFobject=\count540
+\everyMPtoPDFconversion=\toks63
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/ep
 stopdf-base.sty
@@ -1866,7 +1886,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count537
+\c@lstlisting=\count541
 
 
 Package todonotes Warning: The length marginparwidth is less than 2cm and will 
@@ -2062,9 +2082,9 @@ hex.enc}] [10
 
 ] [35
 
-] [36
+] (./Vortrag.toc) [36
 
-] (./Vortrag.toc) [37
+] [37
 
 ] [38
 
@@ -2083,9 +2103,9 @@ hex.enc}] [10
 
 ] [45
 
-] [46
+] (./Vortrag.toc) [46
 
-] (./Vortrag.toc) [47
+] [47
 
 ] [48
 
@@ -2102,35 +2122,39 @@ hex.enc}] [10
 
 ] [54
 
-] [55
+] (./Vortrag.toc) [55
 
-] (./Vortrag.toc) [56
+] [56
 
 ] [57
 
 ] [58
 
-] [59
-
-] (./Vortrag.toc) [60
+] (./Vortrag.toc) [59
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 79
-7.
+4.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 797.
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 794.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
-97.
+94.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-[61
+[60
+
+] [61
+
+
+] [62
+
 
 ]
 \tf@nav=\write7
@@ -2150,10 +2174,10 @@ Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45445 strings out of 476025
- 941635 string characters out of 5790017
+ 46064 strings out of 476025
+ 953364 string characters out of 5790017
  1867388 words of memory out of 5000000
- 64890 multiletter control sequences out of 15000+600000
+ 65490 multiletter control sequences out of 15000+600000
  559013 words of font info for 74 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,15n,134p,1881b,2459s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2174,10 +2198,10 @@ onts/type1/public/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texm
 f-dist/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/20
 23/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Volumes/Macintosh SSD/local/te
 xlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Vortrag.pdf (61 pages, 358671 bytes).
+Output written on Vortrag.pdf (62 pages, 367221 bytes).
 PDF statistics:
- 1870 PDF objects out of 2073 (max. 8388607)
- 1742 compressed objects within 18 object streams
- 133 named destinations out of 1000 (max. 500000)
+ 1916 PDF objects out of 2073 (max. 8388607)
+ 1787 compressed objects within 18 object streams
+ 144 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

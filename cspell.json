@@ -263,7 +263,43 @@
     "textit",
     "magna",
     "jones",
-    "timeframe"
+    "timeframe",
+    "SPDX",
+    "FileCopyrightText",
+    "dockerignore",
+    "editorconfig",
+    "CodeQL",
+    "codeql",
+    "CODEOWNERS",
+    "lualatex",
+    "xelatex",
+    "Github",
+    "github",
+    "CHANGELOG",
+    "changelog",
+    "mkdir",
+    "chmod",
+    "shellId",
+    "ifndef",
+    "endif",
+    "ifdef",
+    "elif",
+    "autoremove",
+    "repr",
+    "ValueError",
+    "TypeError",
+    "isinstance",
+    "stdout",
+    "stderr",
+    "stdin",
+    "sudo",
+    "pytest",
+    "setuptools",
+    "virtualenv",
+    "Dockerfile",
+    "buildx",
+    "Wintersemester",
+    "Seminararbeit"
   ],
   "ignorePaths": [
     "*.bib",
@@ -276,22 +312,49 @@
     "*.fls",
     "*.fdb_latexmk",
     "*.synctex.gz",
-    "node_modules",
-    ".git",
+    "*.nav",
+    "*.snm",
+    "*.vrb",
+    "*.bcf",
+    "*.run.xml",
+    "node_modules/**",
+    ".git/**",
     "**/pdfs/**",
     "**/build/**",
-    "**/dist/**"
+    "**/dist/**",
+    "**/.vscode/**",
+    "**/.idea/**",
+    "**/legacy/**",
+    "**/archive/**",
+    "**/__pycache__/**",
+    "*.pdf",
+    "*.pyc"
   ],
   "ignoreRegExpList": [
+    "\\\\[a-zA-Z@]+(?:\\[[^\\]]*\\])?(?:\\{[^}]*\\})*",
     "\\\\[a-zA-Z]+\\{[^}]*\\}",
     "\\\\[a-zA-Z]+\\[[^\\]]*\\]",
     "\\$[^$]+\\$",
     "\\$\\$[^$]+\\$\\$",
     "\\\\begin\\{[^}]+\\}",
     "\\\\end\\{[^}]+\\}",
-    "\\\\cite\\{[^}]+\\}",
+    "\\\\cite[a-z]*\\{[^}]+\\}",
     "\\\\ref\\{[^}]+\\}",
-    "\\\\label\\{[^}]+\\}"
+    "\\\\label\\{[^}]+\\}",
+    "\\\\(?:text|math)[a-z]*\\{[^}]+\\}",
+    "https?://[^\\s]+",
+    "(?:file|ftp)://[^\\s]+",
+    "\\b[0-9a-f]{7,40}\\b",
+    "\\b[A-Z][A-Z0-9_]+\\b",
+    "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+    "v?\\d+\\.\\d+\\.\\d+",
+    "\\{[a-zA-Z_][a-zA-Z0-9_]*\\}",
+    "\\b[a-z]+_[a-z]+(?:_[a-z]+)*\\b",
+    "\\b[A-Z][a-z]+(?:[A-Z][a-z]+)+\\b",
+    "/[^/\\s]+(?:/[^/\\s]+)*",
+    "@[a-zA-Z0-9_-]+",
+    "#[0-9]+",
+    "0x[0-9a-fA-F]+"
   ],
   "patterns": [
     {
@@ -305,21 +368,104 @@
     {
       "name": "latex-display-math",
       "pattern": "\\$\\$[\\s\\S]*?\\$\\$"
+    },
+    {
+      "name": "latex-environments",
+      "pattern": "\\\\begin\\{[^}]+\\}[\\s\\S]*?\\\\end\\{[^}]+\\}"
+    },
+    {
+      "name": "urls",
+      "pattern": "https?://[^\\s)>]+"
+    },
+    {
+      "name": "file-paths",
+      "pattern": "(?:^|\\s)(?:/|\\./|\\.\\./)(?:[^\\s/]+/)*[^\\s/]+"
+    },
+    {
+      "name": "git-hashes",
+      "pattern": "\\b[0-9a-f]{7,40}\\b"
+    },
+    {
+      "name": "version-numbers",
+      "pattern": "\\bv?\\d+\\.\\d+(?:\\.\\d+)?(?:-[a-zA-Z0-9.]+)?\\b"
+    },
+    {
+      "name": "email-addresses",
+      "pattern": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+    },
+    {
+      "name": "hex-colors",
+      "pattern": "#[0-9a-fA-F]{3,8}\\b"
     }
   ],
   "languageSettings": [
     {
       "languageId": "latex",
       "ignoreRegExpList": [
-        "\\\\[a-zA-Z]+",
-        "\\{[^}]*\\}"
+        "\\\\[a-zA-Z@]+(?:\\[[^\\]]*\\])?(?:\\{[^}]*\\})*",
+        "\\{[^}]*\\}",
+        "\\[[^\\]]*\\]"
       ]
     },
     {
       "languageId": "markdown",
       "ignoreRegExpList": [
         "`[^`]+`",
-        "```[\\s\\S]*?```"
+        "```[\\s\\S]*?```",
+        "\\[[^\\]]+\\]\\([^)]+\\)",
+        "!\\[[^\\]]*\\]\\([^)]+\\)"
+      ]
+    },
+    {
+      "languageId": "python",
+      "ignoreRegExpList": [
+        "\"\"\"[\\s\\S]*?\"\"\"",
+        "'''[\\s\\S]*?'''",
+        "f[\"'][^\"']*[\"']"
+      ]
+    },
+    {
+      "languageId": "shellscript",
+      "ignoreRegExpList": [
+        "\\$\\{[^}]+\\}",
+        "\\$[a-zA-Z_][a-zA-Z0-9_]*"
+      ]
+    }
+  ],
+  "minWordLength": 4,
+  "maxNumberOfProblems": 1000,
+  "numSuggestions": 3,
+  "suggestionsTimeout": 500,
+  "maxDuplicateProblems": 5,
+  "flagWords": [],
+  "enableFiletypes": [
+    "latex",
+    "markdown",
+    "tex",
+    "text",
+    "python",
+    "shellscript",
+    "yaml",
+    "json"
+  ],
+  "overrides": [
+    {
+      "filename": "**/*.{yml,yaml}",
+      "ignoreRegExpList": [
+        "\\b[a-z]+[-_][a-z]+(?:[-_][a-z]+)*\\b"
+      ]
+    },
+    {
+      "filename": "**/*.json",
+      "ignoreRegExpList": [
+        "\\b[a-zA-Z]+(?:[A-Z][a-z]+)*\\b"
+      ]
+    },
+    {
+      "filename": "**/CHANGELOG.md",
+      "ignoreRegExpList": [
+        "\\[.*?\\]",
+        "##.*"
       ]
     }
   ]

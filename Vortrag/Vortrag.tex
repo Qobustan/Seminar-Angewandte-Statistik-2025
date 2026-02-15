@@ -177,6 +177,44 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\end{itemize}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Histogramm vs. KDE: Visueller Vergleich}
+	
+	\centering
+	\begin{tikzpicture}[scale=0.75]
+		\begin{axis}[
+			width=11cm, height=6cm,
+			xlabel={$x$},
+			ylabel={Dichte},
+			domain=-3:3,
+			samples=100,
+			legend pos=north east,
+			legend style={font=\tiny},
+			ymin=0, ymax=0.55,
+			xmin=-3, xmax=3
+		]
+		% True density
+		\addplot[black, thick, dashed, smooth] {exp(-(x^2)/2)/sqrt(2*pi)};
+		\addlegendentry{Wahre Dichte}
+		
+		% Histogram (step function)
+		\addplot[red, thick, const plot mark right] coordinates {
+			(-3,0) (-2.5,0.05) (-2,0.08) (-1.5,0.15) (-1,0.25) 
+			(-0.5,0.35) (0,0.40) (0.5,0.35) (1,0.25) 
+			(1.5,0.15) (2,0.08) (2.5,0.05) (3,0)
+		};
+		\addlegendentry{Histogramm}
+		
+		% KDE (smooth)
+		\addplot[blue, very thick, smooth] {exp(-(x^2)/2.2)/sqrt(2*pi*1.1)};
+		\addlegendentry{KDE}
+		\end{axis}
+	\end{tikzpicture}
+	
+	\vspace{0.3cm}
+	\small \textbf{Vorteil KDE:} Stetige, glatte Schätzung ohne Sprünge
+\end{frame}
+
 
 \begin{frame}
 	\frametitle{Das Histogramm (Optimale Bandbreite)}
@@ -343,6 +381,45 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\begin{itemize}
 		\item Zentrale Stellgröße der Kerndichteschätzung
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Bandbreiten-Effekt: Visueller Vergleich}
+	
+	\centering
+	\begin{tikzpicture}[scale=0.75]
+		\begin{axis}[
+			width=11cm, height=6cm,
+			xlabel={$x$},
+			ylabel={$\hat{f}_n(x)$},
+			domain=-3:3,
+			samples=100,
+			legend pos=north east,
+			legend style={font=\tiny},
+			grid=major,
+			xmin=-3, xmax=3,
+			ymin=0, ymax=0.6
+		]
+		% True density (bimodal: mix of two normals)
+		\addplot[black, thick, dashed, smooth] {0.5*(exp(-((x+1)^2)/0.5)/sqrt(2*pi*0.5) + exp(-((x-1)^2)/0.5)/sqrt(2*pi*0.5))};
+		\addlegendentry{Wahre Dichte}
+		
+		% h too small (undersmoothing)
+		\addplot[red, thick, smooth] {0.5*(exp(-((x+1)^2)/0.15)/sqrt(2*pi*0.15) + exp(-((x-1)^2)/0.15)/sqrt(2*pi*0.15)) + 0.05*sin(deg(x*5))};
+		\addlegendentry{$h$ zu klein}
+		
+		% h optimal
+		\addplot[blue, very thick, smooth] {0.5*(exp(-((x+1)^2)/0.6)/sqrt(2*pi*0.6) + exp(-((x-1)^2)/0.6)/sqrt(2*pi*0.6))};
+		\addlegendentry{$h$ optimal}
+		
+		% h too large (oversmoothing)
+		\addplot[green!60!black, thick, smooth] {0.5*(exp(-((x)^2)/2)/sqrt(2*pi*2))};
+		\addlegendentry{$h$ zu groß}
+		\end{axis}
+	\end{tikzpicture}
+	
+	\vspace{0.3cm}
+	\small \textbf{Bimodale Verteilung:} $h$ zu klein $\Rightarrow$ überangepasst, $h$ optimal $\Rightarrow$ erfasst beide Modes, $h$ zu groß $\Rightarrow$ verschmiert Struktur
 \end{frame}
 
 \begin{frame}
@@ -577,6 +654,46 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 		\item Reduzieren Randbias erheblich
 		\item Verallgemeinerung des Nadaraya-Watson-Ansatzes
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Boundary Bias: Visualisierung}
+	
+	\centering
+	\begin{tikzpicture}[scale=0.75]
+		\begin{axis}[
+			width=11cm, height=6cm,
+			xlabel={$x$},
+			ylabel={$\hat{m}(x)$},
+			domain=0:1,
+			samples=100,
+			legend pos=north west,
+			legend style={font=\tiny},
+			ymin=0, ymax=1.2,
+			xmin=0, xmax=1
+		]
+		% True function (uniform on [0,1], value = 0.5)
+		\addplot[black, thick, dashed] {0.5};
+		\addlegendentry{Wahre Funktion}
+		
+		% NW estimator with boundary bias
+		\addplot[red, thick, smooth] {0.5 - 0.35*exp(-20*x) - 0.35*exp(-20*(1-x))};
+		\addlegendentry{Nadaraya-Watson}
+		
+		% Local polynomial (no boundary bias)
+		\addplot[blue, very thick, smooth] {0.5 + 0.02*sin(deg(x*10))};
+		\addlegendentry{Lokales Polynom}
+		
+		% Data points
+		\addplot[only marks, mark=*, mark size=1pt, black] coordinates {
+			(0.1,0.5) (0.2,0.48) (0.3,0.52) (0.4,0.49) (0.5,0.51)
+			(0.6,0.5) (0.7,0.49) (0.8,0.52) (0.9,0.48)
+		};
+		\end{axis}
+	\end{tikzpicture}
+	
+	\vspace{0.3cm}
+	\small \textbf{An Rändern:} NW-Schätzer verzerrt (nach unten), lokales Polynom korrigiert
 \end{frame}
 
 

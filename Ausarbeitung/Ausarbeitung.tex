@@ -138,18 +138,34 @@ Um die Glattheit zu garantieren, verallgemeinert die Kerndichteschätzung den Ro
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
     % Achse
-    \draw[->] (-0.5,0) -- (6,0) node[right] {$x$};
-    % Datenpunkte
-    \foreach \x in {1.5, 2.5, 4.0} {
-        \fill[black] (\x,0) circle (2pt);
-        \draw[dashed, gray] (\x,0) -- (\x, -0.2) node[below] {\small $X_i$};
-        % Einzelne Kerne
-        \draw[gray, thin, dashed] plot[domain=\x-1.0:\x+1.0, samples=50, variable=\t] (\t, {1.0*exp(-2*(\t-\x)^2)});
+    \draw[->] (-0.5,0) -- (7,0) node[right] {$x$};
+    \draw[->] (-0.5,0) -- (-0.5,2.5) node[above] {Dichte};
+    
+    % Mehr realistische Datenpunkte (7 statt 3)
+    \foreach \x in {1.0, 1.8, 2.2, 3.0, 4.5, 5.2, 5.8} {
+        \fill[black] (\x,0) circle (1.5pt);
+        \draw[gray!50, very thin] (\x,0) -- (\x, -0.15);
     }
-    % Summenkurve
-    \draw[blue, thick] plot [smooth] coordinates {(0.5,0.1) (1.5, 1.1) (2.5, 0.9) (3.2, 0.5) (4.0, 1.1) (5.0, 0.1)};
-    \node[blue] at (5, 1.2) {$\hat{f}_n(x)$};
-    \node[gray] at (0.5, 0.5) [left] {\tiny Kern $K$};
+    \node[below] at (3.5, -0.25) {\small Datenpunkte $X_1, \ldots, X_n$};
+    
+    % Einzelne Kernfunktionen (Gauß-Kerne)
+    \foreach \x in {1.0, 1.8, 2.2, 3.0, 4.5, 5.2, 5.8} {
+        \draw[gray, thin, dashed] plot[domain=\x-1.2:\x+1.2, samples=40, variable=\t] (\t, {0.8*exp(-3*(\t-\x)^2)});
+    }
+    
+    % Summenkurve (resultierende KDE) - realistischer berechnet
+    \draw[blue, very thick, smooth] plot[domain=0:7, samples=100, variable=\t] (\t, {
+        0.8*exp(-3*(\t-1.0)^2) + 0.8*exp(-3*(\t-1.8)^2) + 0.8*exp(-3*(\t-2.2)^2) + 
+        0.8*exp(-3*(\t-3.0)^2) + 0.8*exp(-3*(\t-4.5)^2) + 0.8*exp(-3*(\t-5.2)^2) + 
+        0.8*exp(-3*(\t-5.8)^2)
+    });
+    
+    \node[blue, above right] at (2.5, 2.2) {$\hat{f}_n(x)$};
+    \node[gray] at (1.0, 1.0) [above left] {\tiny Einzelne Kerne $K_h$};
+    
+    % Legende für Bandbreite
+    \draw[<->] (4.5, -0.5) -- (5.7, -0.5);
+    \node[below] at (5.1, -0.5) {\tiny $2h$};
 \end{tikzpicture}
 \end{center}
 
@@ -212,6 +228,42 @@ Es existiert ein fundamentaler Zielkonflikt (Bias-Variance-Tradeoff):
 	\item \textbf{Kleines $h$:} Führt zu kleiner Verzerrung (Bias), aber großer Varianz. Der Graph wird ,,zackig`` (Unterglättung). Im Extremfall würde $h \to 0$ dazu führen, dass der Schätzer nur noch von den unmittelbar benachbarten Datenpunkten beeinflusst wird, was zu einer stark verrauschten Schätzung führt.
 	\item \textbf{Großes $h$:} Führt zu kleiner Varianz, aber großem Bias. Wichtige Details der Verteilung werden ,,weggeglättet`` (Überglättung). Bei sehr großem $h$ nähert sich der Schätzer einer Gleichverteilung an und verliert jegliche Information über die Struktur der wahren Dichte.
 \end{itemize}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.8]
+	\begin{axis}[
+		width=12cm, height=7cm,
+		xlabel={$x$},
+		ylabel={$\hat{f}_n(x)$},
+		domain=-3:3,
+		samples=100,
+		legend pos=north east,
+		legend style={font=\small},
+		grid=major,
+		xmin=-3, xmax=3,
+		ymin=0, ymax=0.6
+	]
+	% True density (bimodal)
+	\addplot[black, very thick, dashed, smooth] {0.5*(exp(-((x+1)^2)/0.5)/sqrt(2*pi*0.5) + exp(-((x-1)^2)/0.5)/sqrt(2*pi*0.5))};
+	\addlegendentry{Wahre Dichte $f$}
+	
+	% h too small (undersmoothing) - wiggly
+	\addplot[red, thick, smooth] {0.5*(exp(-((x+1)^2)/0.15)/sqrt(2*pi*0.15) + exp(-((x-1)^2)/0.15)/sqrt(2*pi*0.15)) + 0.05*sin(deg(x*5))};
+	\addlegendentry{$h$ zu klein (hohe Varianz)}
+	
+	% h optimal
+	\addplot[blue, very thick, smooth] {0.5*(exp(-((x+1)^2)/0.6)/sqrt(2*pi*0.6) + exp(-((x-1)^2)/0.6)/sqrt(2*pi*0.6))};
+	\addlegendentry{$h_{\text{opt}}$ (ausgewogen)}
+	
+	% h too large (oversmoothing)
+	\addplot[green!60!black, thick, smooth] {0.5*(exp(-((x)^2)/2)/sqrt(2*pi*2))};
+	\addlegendentry{$h$ zu groß (hoher Bias)}
+	\end{axis}
+\end{tikzpicture}
+\caption{Einfluss der Bandbreite $h$ auf die Kerndichteschätzung bei einer bimodalen Verteilung. Zu kleines $h$ führt zu Unterglättung (überangepasst, hohe Varianz), zu großes $h$ zu Überglättung (beide Modes werden verschmiert, hoher Bias).}
+\label{fig:bandwidth_comparison}
+\end{figure}
 
 \textbf{Asymptotische Analyse:} Unter geeigneten Regularitätsbedingungen (insbesondere zweifache Differenzierbarkeit der Dichte $f$) lässt sich zeigen:
 \begin{itemize}

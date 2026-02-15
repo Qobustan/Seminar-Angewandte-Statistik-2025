@@ -1,10 +1,28 @@
-# Git files
+# =============================================================================
+# Docker Build Context Exclusions (.dockerignore)
+# =============================================================================
+# 
+# This file specifies which files and directories should be excluded from the
+# Docker build context. Excluding unnecessary files reduces build context size,
+# speeds up builds, and prevents sensitive files from being copied to the image.
+#
+# For more information: https://docs.docker.com/engine/reference/builder/#dockerignore-file
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Version Control and CI/CD
+# -----------------------------------------------------------------------------
+# Git repository and GitHub-specific files are not needed in the container
 .git
 .gitignore
 .gitattributes
 .github
 
-# LaTeX auxiliary files
+# -----------------------------------------------------------------------------
+# LaTeX Auxiliary Files
+# -----------------------------------------------------------------------------
+# Temporary files generated during LaTeX compilation
+# These will be regenerated in the container, no need to copy them
 *.aux
 *.lof
 *.log
@@ -35,59 +53,82 @@
 *.run.xml
 *.auxlock
 
-# Output / build folders
+# -----------------------------------------------------------------------------
+# Build Output Folders
+# -----------------------------------------------------------------------------
+# Generated build artifacts
 build/
 out/
 dist/
 
-# Editor / OS specific files
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-*.iml
-*.swp
+# -----------------------------------------------------------------------------
+# Editor and OS-specific Files
+# -----------------------------------------------------------------------------
+# These vary by development environment and are not needed for builds
+.DS_Store          # macOS Finder metadata
+Thumbs.db          # Windows thumbnail cache
+.vscode/           # VS Code settings
+.idea/             # JetBrains IDE settings
+*.iml              # IntelliJ module files
+*.swp              # Vim swap files
 
-# TeXstudio specific
+# TeXstudio editor-specific files
 *.txs-profile
 *.txs-undo
 
-# Python
+# -----------------------------------------------------------------------------
+# Python Build Artifacts
+# -----------------------------------------------------------------------------
+# Python bytecode and cache files from scripts
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
 
-# Archive and legacy directories (not needed for builds)
-archive/
-legacy/
-review/
+# -----------------------------------------------------------------------------
+# Archive and Documentation Directories
+# -----------------------------------------------------------------------------
+# Historical and reference materials not needed for PDF generation
+archive/           # Branch history and analysis
+legacy/            # Deprecated/archived code
+review/            # Code review materials
 
-# Documentation that's not needed for PDF builds
+# Documentation files (needed for repo but not for Docker builds)
 *.md
 DISCLAIMER.txt
 LICENSE
 SECURITY.md
 CONTRIBUTING.md
+CHANGELOG.md
 
-# Cleanup scripts (not needed for Docker build)
-cleanup/
+# -----------------------------------------------------------------------------
+# Utility Scripts and Configuration
+# -----------------------------------------------------------------------------
+# Scripts not required for the PDF generation process
+cleanup/           # LaTeX cleanup scripts (for local dev only)
+task_skripts/      # Task-specific helper scripts
+branch_cleanup     # Branch management utilities
 
-# Task scripts (not needed for PDF generation)
-task_skripts/
-
-# Branch management scripts
-branch_cleanup
-
-# Editor config files
+# -----------------------------------------------------------------------------
+# Configuration Files
+# -----------------------------------------------------------------------------
+# Editor and linting configurations
 .editorconfig
-editorconfig
-editorconfig.txt
 cspell.json
 
-# Wiki files
-wiki/
+# -----------------------------------------------------------------------------
+# Additional Content Directories
+# -----------------------------------------------------------------------------
+wiki/              # Wiki documentation (published separately)
+Besprechung/       # Meeting notes (not part of PDFs)
 
-# Meeting notes
-Besprechung/
+# -----------------------------------------------------------------------------
+# Note: Files Required for Docker Build
+# -----------------------------------------------------------------------------
+# The following are intentionally NOT excluded as they're needed:
+# - Ausarbeitung/ (LaTeX source for written work)
+# - Vortrag/ (LaTeX source for presentation)
+# - scripts/generatePdf.sh (PDF generation script)
+# - Dockerfile and related build files
+# =============================================================================

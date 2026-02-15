@@ -1,0 +1,44 @@
+# CODEOWNERS file for Seminar: Angewandte Statistik 2025
+# 
+# This file defines individuals or teams responsible for code in this repository.
+# When a pull request modifies code that has a designated owner, that owner will
+# automatically be requested for review.
+#
+# More info: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything in the repo
+* @Qobustan
+
+# LaTeX documents - main content
+/Ausarbeitung/ @Qobustan
+/Vortrag/ @Qobustan
+/Besprechung/ @Qobustan
+
+# Build and automation
+/scripts/ @Qobustan
+/cleanup/ @Qobustan
+/.github/workflows/ @Qobustan
+/Dockerfile @Qobustan
+/.dockerignore @Qobustan
+
+# Documentation
+/README.md @Qobustan
+/CONTRIBUTING.md @Qobustan
+/SECURITY.md @Qobustan
+/DISCLAIMER.txt @Qobustan
+/CHANGELOG.md @Qobustan
+/wiki/ @Qobustan
+/docs/ @Qobustan
+
+# Configuration files
+/.editorconfig @Qobustan
+/.gitignore @Qobustan
+/.gitattributes @Qobustan
+/cspell.json @Qobustan
+
+# Bibliography
+*.bib @Qobustan
+
+# Archive and legacy (historical reference only)
+/archive/ @Qobustan
+/legacy/ @Qobustan

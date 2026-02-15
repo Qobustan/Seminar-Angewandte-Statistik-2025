@@ -2,8 +2,9 @@
 
 A comprehensive LaTeX project repository for the Applied Statistics seminar, Wintersemester 2025/26.
 
-**Author:** Yavuzâlp Dal
-**Semester:** Wintersemester 2025/26
+**Author:** Yavuzâlp Dal  
+**Semester:** Wintersemester 2025/26  
+**Version:** 1.0.0 (See [VERSION](VERSION) file and [CHANGELOG.md](CHANGELOG.md))
 
 📚 **[Visit our Wiki](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki)** for comprehensive documentation and guides.
 
@@ -23,6 +24,7 @@ A comprehensive LaTeX project repository for the Applied Statistics seminar, Win
 - [Contributing](#contributing)
 - [Important Notices](#important-notices)
 - [Additional Documentation](#additional-documentation)
+- [Workflow Status Badges](#workflow-status-badges)
 
 ---
 
@@ -313,6 +315,8 @@ For information about supported versions and reporting vulnerabilities, see [SEC
 
 ## Additional Documentation
 
+- [Architecture Documentation](docs/ARCHITECTURE.md) - Comprehensive project architecture and design overview
+- [Changelog](CHANGELOG.md) - Version history and notable changes
 - [Contributing Guidelines](CONTRIBUTING.md) - How to contribute to this project
 - [LaTeX Installation Guide (English)](latex_install/LaTeX-Install.md) - Comprehensive LaTeX setup instructions
 - [LaTeX Installation Guide (German)](latex_install/LaTeX-Install.de.md) - Deutsche LaTeX-Installationsanleitung

@@ -1,4 +1,7 @@
 @echo off
+REM SPDX-License-Identifier: MIT
+REM SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+REM
 REM Script to generate PDFs for Ausarbeitung and Vortrag
 REM 
 REM By default, uses pdflatex for backwards compatibility.

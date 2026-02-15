@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+#
 # FILE: makeglossaries.pl
 # DESCRIPTION: Ein Perl-Skript zum Erstellen von Glossaren und Abkürzungsverzeichnissen
 # USAGE: makeglossaries.pl <document>

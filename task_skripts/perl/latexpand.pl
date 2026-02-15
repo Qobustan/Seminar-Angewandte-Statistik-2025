@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+#
 # FILE: latexpand.pl
 # DESCRIPTION: Ein Perl-Skript zum Expandieren von LaTeX-Makros
 # USAGE: latexpand.pl <tex_file> [output_file]

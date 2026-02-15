@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+#
 # FILE: latex2html.pl
 # DESCRIPTION: Ein Perl-Skript zum Konvertieren von LaTeX in HTML
 # USAGE: latex2html.pl <tex_file>

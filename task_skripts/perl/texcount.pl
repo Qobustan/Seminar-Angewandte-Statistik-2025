@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+#
 # FILE: texcount.pl
 # DESCRIPTION: Ein Perl-Skript zum Zählen der Wörter in einem LaTeX-Dokument
 # USAGE: texcount.pl <tex_file>

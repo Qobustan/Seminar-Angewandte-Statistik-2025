@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+#
 # FILE: detex.pl
 # DESCRIPTION: Ein Perl-Skript zum Entfernen von LaTeX-Befehlen und Extrahieren von reinem Text
 # USAGE: detex.pl <tex_file> [output_file]

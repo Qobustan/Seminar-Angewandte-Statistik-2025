@@ -41,21 +41,19 @@
 
 \section{Einleitung und Motivation}
 
-Die Analyse von Verteilungen ist ein zentraler Bestandteil der Statistik. In der klassischen \textit{parametrischen} Statistik wird häufig angenommen, dass die zugrundeliegende Verteilung einer bekannten Familie angehört, beispielsweise der Normalverteilung. Das Ziel beschränkt sich dort darauf, wenige Parameter wie den Erwartungswert $\mu$ oder die Varianz $\sigma^2$ zu schätzen. Diese Methodik bietet den Vorteil der mathematischen Einfachheit und der effizienten Parameterschätzung bei kleinen Stichprobenumfängen, sofern die Modellannahmen erfüllt sind.
+Die Analyse von Verteilungen ist ein zentraler Bestandteil der Statistik. In der klassischen \textit{parametrischen} Statistik wird angenommen, dass die zugrundeliegende Verteilung einer bekannten Familie angehört (z.\,B. Normalverteilung). Das Ziel beschränkt sich darauf, wenige Parameter wie $\mu$ oder $\sigma^2$ zu schätzen. Diese Methodik bietet mathematische Einfachheit und effiziente Schätzung bei kleinen Stichproben, sofern die Modellannahmen erfüllt sind.
 
 \subsection*{Warum nichtparametrisch?}
 
-Dieser Ansatz ist jedoch problematisch, wenn die wahre Verteilung unbekannt ist oder nicht den theoretischen Annahmen entspricht (z.\,B. bei Schiefe oder Multimodalität). Klassische parametrische Verfahren sind oft zu starr und führen zu fehlerhaften Interpretationen, wenn die Modellannahmen verletzt sind. In der Praxis treten häufig Verteilungen auf, die sich nicht durch einfache parametrische Modelle beschreiben lassen – etwa bei bimodalen Verteilungen oder Daten mit schweren Rändern (Heavy Tails).
+Parametrische Verfahren sind problematisch, wenn die wahre Verteilung unbekannt ist oder nicht den Annahmen entspricht (z.\,B. bei Schiefe, Multimodalität oder Heavy Tails). Wird beispielsweise Normalität fälschlicherweise angenommen, können Konfidenzintervalle oder Tests irreführende Ergebnisse liefern.
 
-Ferner können wir eine Verteilung normalerweise nicht beweisen – wir nehmen sie lediglich an. Folglich erzeugen wir hier eine extreme Kopplung zwischen (potentiell fehlerhaften) Interpretationen und unserer Schätzung. Diese Abhängigkeit kann zu systematischen Fehlern führen: Wird beispielsweise Normalität fälschlicherweise angenommen, können Konfidenzintervalle oder Hypothesentests irreführende Ergebnisse liefern. Offensichtlich ist es folglich für eine produktive Arbeit sinnvoll, diese Kopplung möglichst abzuschwächen; wobei wir im Nachfolgenden sehen werden, dass sich bestimmte (schwache) Annahmen wie beispielsweise die Stetigkeit nicht zwingend vermeiden lassen, jedoch deren Einfluss i.d.R. nicht zu groß ist.
+Die \textit{nichtparametrische Dichteschätzung} verzichtet auf die Zugehörigkeit zu einer starren parametrischen Familie. Stattdessen wird lediglich angenommen, dass die Dichte $f$ gewisse Glattheitseigenschaften (Stetigkeit, Differenzierbarkeit) erfüllt. Dies ermöglicht es, komplexe Strukturen in den Daten zu erfassen, ohne vorab eine spezifische Verteilungsfamilie festzulegen.
 
-Die \textit{nichtparametrische Dichteschätzung} verzichtet auf die Zugehörigkeit zu einer starren parametrischen Familie. Stattdessen wird lediglich angenommen, dass die Dichte $f$ gewisse Glattheitseigenschaften, wie etwa Stetigkeit oder Differenzierbarkeit, erfüllt. Diese Flexibilität ermöglicht es, komplexere Strukturen in den Daten zu erfassen, ohne vorab eine spezifische Verteilungsfamilie festlegen zu müssen.
-
-\textbf{Wichtige Anmerkung:} Hierbei ist zu betonen, dass das Ziel nicht die vollständige Auflösung der Kopplung zwischen Annahmen und Schätzung ist – dies wäre auch gar nicht möglich. Vielmehr möchten wir diese Kopplung \textit{abschwächen}, indem wir nur minimale Annahmen (wie Stetigkeit oder Glattheit) treffen, statt eine spezifische parametrische Familie vorauszusetzen.
+\textbf{Anmerkung:} Das Ziel ist nicht die vollständige Auflösung von Annahmen – dies wäre unmöglich. Vielmehr sollen nur minimale Annahmen (Glattheit) statt einer spezifischen parametrischen Familie getroffen werden.
 
 \subsection*{Zielsetzung}
 
-Ziel ist es, eine Annäherung an den Wert $f(x)$ an einer Stelle $x$ allein aus den Daten zu gewinnen, ohne eine bestimmte parametrische Familie vorauszusetzen (\glqq Let the data speak\grqq). Die nichtparametrische Dichteschätzung findet breite Anwendung in der explorativen Datenanalyse, der Mustererkennung und überall dort, wo die Verteilungsform a priori unbekannt ist oder nur schwach strukturierte Annahmen getroffen werden sollen.
+Ziel ist die Schätzung von $f(x)$ allein aus den Daten, ohne parametrische Familie (\glqq Let the data speak\grqq). Nichtparametrische Dichteschätzung findet Anwendung in explorativer Datenanalyse, Mustererkennung und überall, wo die Verteilungsform a priori unbekannt ist.
 
 \section{Der Schätzer von Rosenblatt (Die theoretische Basis)}
 
@@ -227,13 +225,30 @@ Es existiert ein fundamentaler Zielkonflikt (Bias-Variance-Tradeoff):
 	\item Der MSE ist damit asymptotisch von der Ordnung $MSE(x) \approx C_1 h^4 + \frac{C_2}{nh}$, wobei $C_1$ und $C_2$ von der Dichte $f$, ihrer zweiten Ableitung und dem Kern abhängen.
 \end{itemize}
 
-Durch Minimierung des asymptotischen MSE bezüglich $h$ erhält man die optimale Bandbreite der Ordnung $h_{\text{opt}} \sim n^{-1/5}$, was zum minimalen MSE der Ordnung $n^{-4/5}$ führt. Dies ist die bestmögliche Konvergenzrate für die Schätzung einer glatten Dichte in einer Dimension.
+Durch Minimierung des asymptotischen MSE bezüglich $h$ erhält man die optimale Bandbreite. Setzen wir
+\[
+\text{MSE}(x) \approx C_1 h^4 + \frac{C_2}{nh}
+\]
+und leiten nach $h$ ab:
+\begin{align*}
+	\frac{d}{dh}\left[C_1 h^4 + \frac{C_2}{nh}\right] &= 4C_1 h^3 - \frac{C_2}{nh^2} \stackrel{!}{=} 0 \\
+	\Rightarrow \quad 4C_1 h^3 &= \frac{C_2}{nh^2} \\
+	\Rightarrow \quad h^5 &= \frac{C_2}{4C_1 n} \\
+	\Rightarrow \quad h_{\text{opt}} &= \left(\frac{C_2}{4C_1 n}\right)^{1/5} \sim n^{-1/5}
+\end{align*}
+Dies führt zum minimalen MSE der Ordnung $\text{MSE}_{\text{opt}} \sim n^{-4/5}$, die bestmögliche Konvergenzrate für die Schätzung einer glatten Dichte in einer Dimension.
 
 Eine gängige Faustregel zur Wahl der optimalen Bandbreite (unter Annahme einer Normalverteilung) ist die \textbf{Silverman-Regel} \cite{Silverman1986} (für Gauß-Kerne):
 \begin{equation}
 	h_{\text{opt}} \approx 1.06 \, \sigma \, n^{-1/5}
 \end{equation}
 Oft wird $\sigma$ robust durch den Quartilsabstand geschätzt ($\hat{h}_{\text{opt}} \approx 0.79 \, Q \, n^{-1/5}$), um Oversmoothing bei Verteilungen mit Ausreißern zu vermeiden. Hier ist $Q = x_{0.75} - x_{0.25}$ der Interquartilsabstand.
+
+\textbf{Numerisches Beispiel:} Bei $n = 100$ Beobachtungen mit geschätzter Standardabweichung $\hat{\sigma} = 1$ ergibt sich:
+\[
+h_{\text{opt}} \approx 1.06 \cdot 1 \cdot 100^{-1/5} = 1.06 \cdot 100^{-0.2} \approx 1.06 \cdot 0.398 \approx 0.42
+\]
+Bei $n = 1000$ wäre $h_{\text{opt}} \approx 1.06 \cdot 1000^{-0.2} \approx 0.27$, was die langsame Konvergenzrate $n^{-1/5}$ verdeutlicht.
 
 \textbf{Weitere Methoden zur Bandbreitenwahl:}
 \begin{itemize}

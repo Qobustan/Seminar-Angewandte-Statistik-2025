@@ -41,19 +41,21 @@
 
 \section{Einleitung und Motivation}
 
-Die Analyse von Verteilungen ist ein zentraler Bestandteil der Statistik. In der klassischen \textit{parametrischen} Statistik wird angenommen, dass die zugrundeliegende Verteilung einer bekannten Familie angehört (z.\,B. Normalverteilung). Das Ziel beschränkt sich darauf, wenige Parameter wie $\mu$ oder $\sigma^2$ zu schätzen. Diese Methodik bietet mathematische Einfachheit und effiziente Schätzung bei kleinen Stichproben, sofern die Modellannahmen erfüllt sind.
+Die Analyse von Verteilungen ist ein zentraler Bestandteil der Statistik. In der klassischen \textit{parametrischen} Statistik wird häufig angenommen, dass die zugrundeliegende Verteilung einer bekannten Familie angehört, beispielsweise der Normalverteilung. Das Ziel beschränkt sich dort darauf, wenige Parameter wie den Erwartungswert $\mu$ oder die Varianz $\sigma^2$ zu schätzen. Diese Methodik bietet den Vorteil der mathematischen Einfachheit und der effizienten Parameterschätzung bei kleinen Stichprobenumfängen, sofern die Modellannahmen erfüllt sind.
 
 \subsection*{Warum nichtparametrisch?}
 
-Parametrische Verfahren sind problematisch, wenn die wahre Verteilung unbekannt ist oder nicht den Annahmen entspricht (z.\,B. bei Schiefe, Multimodalität oder \textit{Heavy Tails} (schwere Ränder)). Wird beispielsweise Normalität fälschlicherweise angenommen, können Konfidenzintervalle oder Tests irreführende Ergebnisse liefern.
+Dieser Ansatz ist jedoch problematisch, wenn die wahre Verteilung unbekannt ist oder nicht den theoretischen Annahmen entspricht (z.\,B. bei Schiefe, Multimodalität oder \textit{Heavy Tails} (schwere Ränder)). Klassische parametrische Verfahren sind oft zu starr und führen zu fehlerhaften Interpretationen, wenn die Modellannahmen verletzt sind.
 
-Die \textit{nichtparametrische Dichteschätzung} verzichtet auf die Zugehörigkeit zu einer starren parametrischen Familie. Stattdessen wird lediglich angenommen, dass die Dichte $f$ gewisse Glattheitseigenschaften (Stetigkeit, Differenzierbarkeit) erfüllt. Dies ermöglicht es, komplexe Strukturen in den Daten zu erfassen, ohne vorab eine spezifische Verteilungsfamilie festzulegen.
+Ferner können wir eine Verteilung normalerweise nicht beweisen – wir nehmen sie lediglich an. Folglich erzeugen wir hier eine extreme Kopplung zwischen (potentiell fehlerhaften) Interpretationen und unserer Schätzung. Diese Abhängigkeit kann zu systematischen Fehlern führen: Wird beispielsweise Normalität fälschlicherweise angenommen, können Konfidenzintervalle oder Hypothesentests irreführende Ergebnisse liefern. Offensichtlich ist es folglich für eine produktive Arbeit sinnvoll, diese Kopplung möglichst abzuschwächen; wobei wir im Nachfolgenden sehen werden, dass sich bestimmte (schwache) Annahmen wie beispielsweise die Stetigkeit nicht zwingend vermeiden lassen, jedoch deren Einfluss i.d.R. nicht zu groß ist.
 
-\textbf{Anmerkung:} Das Ziel ist nicht die vollständige Auflösung von Annahmen – dies wäre unmöglich. Vielmehr sollen nur minimale Annahmen (Glattheit) statt einer spezifischen parametrischen Familie getroffen werden.
+Die \textit{nichtparametrische Dichteschätzung} verzichtet auf die Zugehörigkeit zu einer starren parametrischen Familie. Stattdessen wird lediglich angenommen, dass die Dichte $f$ gewisse Glattheitseigenschaften, wie etwa Stetigkeit oder Differenzierbarkeit, erfüllt. Diese Flexibilität ermöglicht es, komplexere Strukturen in den Daten zu erfassen, ohne vorab eine spezifische Verteilungsfamilie festlegen zu müssen.
+
+\textbf{Wichtige Anmerkung:} Hierbei ist zu betonen, dass das Ziel nicht die vollständige Auflösung der Kopplung zwischen Annahmen und Schätzung ist – dies wäre auch gar nicht möglich. Vielmehr möchten wir diese Kopplung \textit{abschwächen}, indem wir nur minimale Annahmen (wie Stetigkeit oder Glattheit) treffen, statt eine spezifische parametrische Familie vorauszusetzen.
 
 \subsection*{Zielsetzung}
 
-Ziel ist die Schätzung von $f(x)$ allein aus den Daten, ohne parametrische Familie (\glqq Let the data speak\grqq). Nichtparametrische Dichteschätzung findet Anwendung in explorativer Datenanalyse, Mustererkennung und überall, wo die Verteilungsform a priori unbekannt ist.
+Ziel ist es, eine Annäherung an den Wert $f(x)$ an einer Stelle $x$ allein aus den Daten zu gewinnen, ohne eine bestimmte parametrische Familie vorauszusetzen (\glqq Let the data speak\grqq). Die nichtparametrische Dichteschätzung findet breite Anwendung in der explorativen Datenanalyse, der Mustererkennung und überall dort, wo die Verteilungsform a priori unbekannt ist oder nur schwach strukturierte Annahmen getroffen werden sollen.
 
 \section{Der Schätzer von Rosenblatt (Die theoretische Basis)}
 
@@ -121,11 +123,11 @@ Um die Glattheit zu garantieren, verallgemeinert die Kerndichteschätzung den Ro
 	      \begin{equation}
 	      	\hat{f}_n(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}\right)
 	      \end{equation}
-	      Hierbei ist $h > 0$ die Bandbreite, $n$ der Stichprobenumfang und $K$ die Kernfunktion. Die Bandbreite $h$ kontrolliert die Glättung: kleines $h$ führt zu geringer Glättung, großes $h$ zu starker Glättung.
+	      Hierbei ist $h > 0$ der Glättungsparameter (Bandbreite), $n$ der Stichprobenumfang und $K$ die Kernfunktion. Die Bandbreite $h$ kontrolliert, wie stark jeder Datenpunkt in seiner Umgebung ,,verschmiert`` wird: Ein kleines $h$ führt zu einer Schätzung, die eng an den beobachteten Datenpunkten haftet, während ein großes $h$ eine stärkere Glättung bewirkt.
 	      
-	\item \textbf{Interpretation:} An jeder Stelle $x$ wird ein gewichteter Mittelwert der Kernfunktionen $K$ gebildet, zentriert bei den Datenpunkten $X_i$. Die Normierung durch $nh$ stellt sicher, dass $\int \hat{f}_n(x) \, dx = 1$ gilt.
+	\item \textbf{Anschauliche Interpretation:} Das Vorgehen lässt sich als ,,Summe von Hügeln`` verstehen: Über jedem Datenpunkt $X_i$ wird eine Kernfunktion (z.\,B. eine Glockenkurve) platziert. Die Breite dieser ,,Hügel`` wird durch $h$ gesteuert. An einer Stelle $x$ werden die Werte aller lokalen Kerne aufsummiert und durch $nh$ geteilt, damit die Gesamtfläche unter der Kurve genau 1 ergibt – so entsteht eine gültige Wahrscheinlichkeitsdichte.
 	      
-	\item \textbf{Beziehung zum Rosenblatt-Schätzer:} Der Rosenblatt-Schätzer ist ein Spezialfall mit Rechteck-Kern:
+	\item \textbf{Beziehung zum Rosenblatt-Schätzer:} Der Rosenblatt-Schätzer lässt sich als Spezialfall der Kerndichteschätzung mit dem Rechteck-Kern auffassen:
 	      \begin{equation}
 	      	K_{\text{Rechteck}}(u) = \begin{cases}
 	      		\frac{1}{2} & \text{falls } |u| \le 1 \\

@@ -173,7 +173,6 @@ The standard LaTeX multi-pass compilation:
 - Automatic working directory detection
 - Multi-pass compilation with BibTeX
 - Error handling and validation
-- Colored output for readability
 
 #### `scripts/generatePdf.bat` (Windows)
 - Windows batch equivalent

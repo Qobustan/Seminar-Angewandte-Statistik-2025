@@ -69,6 +69,27 @@ This document summarizes the comprehensive improvements made to the **Seminar: A
 - `scripts/abkuerzung.sh` (44 lines) - Was a placeholder with error message
 - `scripts/abkuerzung.bat` (5 lines) - Non-functional placeholder
 
+#### Detailed Explanation of Deleted Scripts
+
+Both `abkuerzung.sh` and `abkuerzung.bat` were **non-functional placeholder scripts** that never implemented any real functionality:
+
+**`scripts/abkuerzung.sh` (44 lines):**
+- Purpose: Intended to update abbreviations index using makeindex
+- Actual functionality: Only printed error message and exited with failure
+- Error message: "This script is currently not configured for this project structure"
+- Included help text but no actual implementation
+- **Recommendation:** Safe to delete permanently. If abbreviation index functionality is needed in the future, can be recreated from scratch with actual implementation.
+
+**`scripts/abkuerzung.bat` (5 lines):**
+- Purpose: Windows equivalent of abkuerzung.sh
+- Actual functionality: Only printed "Please update manually if needed"
+- No error handling or implementation
+- **Recommendation:** Safe to delete permanently. No legacy value.
+
+**Recovery:** If needed, both files can be retrieved from git history:
+- `git show c84b958~1:scripts/abkuerzung.sh`
+- `git show c84b958~1:scripts/abkuerzung.bat`
+
 **Added SPDX license headers to 16 script files:**
 
 Shell Scripts (6 files):
@@ -142,6 +163,35 @@ Perl Scripts (8 files):
 **Removed 2 duplicate configuration files:**
 - `editorconfig` (36 lines) - Duplicate of .editorconfig
 - `editorconfig.txt` (36 lines) - Duplicate of .editorconfig
+
+#### Detailed Explanation of Deleted Configuration Files
+
+Both `editorconfig` and `editorconfig.txt` were **exact byte-for-byte duplicates** of each other, but were **less comprehensive** than the official `.editorconfig` file:
+
+**Comparison of deleted vs. kept files:**
+
+**Deleted files** (`editorconfig` and `editorconfig.txt` - identical, 36 lines each):
+- Only contained settings for: Java, JavaScript, CSS, SCSS, HTML, YAML, JSON, Mustache templates
+- Missing critical settings for LaTeX project files
+- Not recognized by editors (editors look for `.editorconfig`, not `editorconfig`)
+
+**Kept file** (`.editorconfig` - 61 lines):
+- Contains everything from deleted files PLUS:
+  - **LaTeX files** (`*.tex`, `*.bib`) - Tab indentation, size 4
+  - **Markdown files** (`*.md`) - Space indentation, size 2, preserves trailing spaces
+  - **Shell scripts** (`*.sh`) - Space indentation, size 4
+  - **Batch files** (`*.bat`) - Space indentation, size 4, CRLF line endings
+  - **Python files** (`*.py`) - Space indentation, size 4
+  - **Perl files** (`*.pl`) - Space indentation, size 4
+  - **Dockerfile** - Space indentation, size 2
+- This is the **official EditorConfig file** that editors actually read
+- Comprehensive coverage for all file types in the project
+
+**Recommendation:** Safe to delete permanently. The kept `.editorconfig` is superior in every way and serves as the single source of truth for editor configuration.
+
+**Recovery:** If needed, can be retrieved from git history:
+- `git show 67ae2a7~1:editorconfig`
+- `git show 67ae2a7~1:editorconfig.txt`
 
 **Enhanced .dockerignore with comprehensive documentation:**
 - Added 73 lines of detailed comments

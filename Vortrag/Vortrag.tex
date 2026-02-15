@@ -34,15 +34,21 @@
 
 \section{Einleitung \& Motivation}
 
-\begin{frame}{Parametrische vs. Nichtparametrische Dichteschätzung (\"Ubersicht)}
+\begin{frame}{Einleitung \& Motivation}
 	\begin{columns}[T]
 		% Parametrisch
 		\begin{column}{0.45\textwidth}
-			\textbf{Parametrisch (kennen wir schon $\rightarrow$ Stochastik)}
+			\textbf{Parametrisch}
 			\begin{itemize}
-				\item Annahme: Verteilung ist bekannt!
+				\item Annahme: Verteilung ist bekannt (z.\,B. Normalverteilung)
 				\item Wenige Parameter ($\mu, \sigma^2$)
-				\item Schätzung durch Parametersch\"atzer wie bspw. Maximum-Likelihood
+				\item Schätzung durch Maximum-Likelihood
+			\end{itemize}
+			\vspace{0.3cm}
+			\textbf{Problem:}
+			\begin{itemize}
+				\item Zu starr bei unbekannter Verteilung
+				\item Starke Kopplung an (oft falsche) Annahmen
 			\end{itemize}
 		\end{column}
 		
@@ -54,60 +60,45 @@
 		\begin{column}{0.45\textwidth}
 			\textbf{Nichtparametrisch (KDE)}
 			\begin{itemize}
-				\item Keine feste Form; die Zufallsvariable $X$ muss aber stetig sein, die Dichte $f$ eine ''glatte'' Funktion
-				\item Schätzung: Kern (wie bspw. Epanechnikov) sowie Bandbreite $h$
-				\item Erfolgt mittels des Kerndichtesch\"atzers
+				\item Keine parametrische Familie vorgegeben
+				\item Annahmen: $X$ stetig, $f$ glatt (mind. zweimal differenzierbar)
+				\item Schätzung über Kernfunktion $K$ und Bandbreite $h$
+			\end{itemize}
+			\vspace{0.3cm}
+			\textbf{Vorteil:}
+			\begin{itemize}
+				\item Flexibel, datengetrieben
+				\item Erfasst komplexe Strukturen
 			\end{itemize}
 		\end{column}
 	\end{columns}
 	
-	\vspace{1em}
+	\vspace{0.8em}
 	
 	\centering
 	\begin{tikzpicture}[>=stealth, thick]
-		% Pfeile zwischen Konzepten
 		\draw[<->] (-3,0) -- (3,0) node[midway,above]{\small Modellannahme vs. Datengetrieben};
 		\draw[<->] (-3,-0.6) -- (3,-0.6) node[midway,above]{\small Einfachheit vs. Flexibilität};
 	\end{tikzpicture}
-	
 \end{frame}
 
-\begin{frame}
-	\frametitle{Einleitung \& Motivation}
-	
-	\textbf{Warum nichtparametrisch? \cite{BüningTrenkler+1994}}
-	\begin{itemize}
-		\item Klassische parametrische Verfahren (z.\,B. unter Annahme einer Normalverteilung) sind oft zu starr.
-		\begin{itemize}
-			\item Starke Kopplung an unsicheren Annahmen!
-		\end{itemize}
-		\item Bei unbekannter Verteilung bietet die nichtparametrische Schätzung oft bessere Einblicke in die Datenstruktur.
-	\end{itemize}
-	
-	\ifpauseswitch
-		\pause
-	\fi
-	
-	\textbf{Zielsetzung:}
-	\begin{itemize}
-		\item Annäherung an den Wert $f(x)$ an einer Stelle $x$, ohne eine spezifische parametrische Familie vorauszusetzen.
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Ausgangssituation}
+\begin{frame}{Ausgangssituation und Zielsetzung}
 	Gegeben seien u.u.i.d.\ Zufallsvariablen
 	\[
 	X_1,\dots,X_n \sim F
 	\quad\text{mit unbekannter Dichte } f.
 	\]
 	
-	\vspace{0.4cm}
-	\textbf{Zielsetzung:}
+	\vspace{0.5cm}
+	\textbf{Zielsetzung \cite{BüningTrenkler+1994}:}
 	\[
 	\text{Schätze } f(x) \text{ oder } m(x)=\mathbb E(Y|X=x)
 	\]
 	
 	\alert{ohne Annahme einer parametrischen Familie.}
+	
+	\vspace{0.5cm}
+	\textbf{Grundprinzip:} ,,Let the data speak`` – Daten bestimmen die Form der Schätzung
 \end{frame}
 
 \section{Der Rosenblatt-Schätzer}
@@ -126,34 +117,39 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Der Rosenblatt-Schätzer (Die theoretische Basis)}
+	\frametitle{Der Rosenblatt-Schätzer – Grundidee}
 	
-	\begin{itemize}
-		\item \textbf{Idee:} Da $f(x) = F'(x)$, nutzt man den Differenzenquotienten der empirischen Verteilungsfunktion $F_n$ \cite{Rosenblatt1956}.
-	\end{itemize}
+	\textbf{Grundprinzip:} Da $f(x) = F'(x)$, approximiere die Ableitung durch symmetrischen Differenzenquotienten \cite{Rosenblatt1956}:
+	\[
+	f(x) \approx \frac{F(x+h) - F(x-h)}{2h}
+	\]
+	
+	\ifpauseswitch
+		\pause
+	\fi
+	
+	\textbf{Der Schätzer:} Ersetze $F$ durch empirische Verteilungsfunktion $F_n$:
+	\begin{equation}
+		\hat{f}_n(x) = \frac{F_n(x+h) - F_n(x-h)}{2h}
+	\end{equation}
+	
+	\textbf{Interpretation:} Relative Häufigkeit der Beobachtungen in $(x-h, x+h]$, normiert durch $2h$ – ein ,,gleitendes Histogramm``.
 \end{frame}
 
 \begin{frame}
-	\frametitle{Der Rosenblatt-Schätzer (Formel)}
+	\frametitle{Der Rosenblatt-Schätzer – Konsistenz}
 	
-	\begin{itemize}
-		\item \textbf{Der Schätzer:}
-		\begin{equation}
-			f_n(x) = \frac{F_n(x+h) - F_n(x-h)}{2h}
-		\end{equation}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Der Rosenblatt-Schätzer (Konsistenz)}
+	\textbf{Konsistenzbedingungen:} Für $n \to \infty$ muss gelten:
+	\begin{enumerate}
+		\item $h \to 0$ \quad (Bias reduzieren: Differenzenquotient approximiert Ableitung besser)
+		\item $nh \to \infty$ \quad (Varianz reduzieren: genügend Daten im Intervall)
+	\end{enumerate}
 	
-	\begin{itemize}
-		\item \textbf{Konsistenz:} Damit der Schätzer gegen die wahre Dichte konvergiert, muss für $n \to \infty$ gelten:
-		\begin{itemize}
-			\item Die Bandbreite $h \to 0$ (Bias reduzieren).
-			\item $nh \to \infty$ (Varianz reduzieren).
-		\end{itemize}
-	\end{itemize}
+	\vspace{0.5cm}
+	
+	\textbf{Spannungsverhältnis:} $h$ darf nicht zu schnell gegen Null konvergieren.
+	
+	\textbf{Typisch:} $h \sim n^{-\alpha}$ mit $0 < \alpha < 1$
 \end{frame}
 
 \section{Das Histogramm}
@@ -278,9 +274,10 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	
 	\textbf{Besonderheit:}
 	\begin{itemize}
-		\item Theoretisch optimal (minimiert IMSE)
-		\item Parabolische Form
-		\item Kompakter Träger (effizienter zu berechnen)
+		\item \textbf{Theoretisch optimal:} Minimiert den integrierten mittleren quadratischen Fehler (IMSE)
+		\item IMSE = $\int \operatorname{MSE}(x) f(x) \, dx$ – misst globale Schätzgüte
+		\item Parabolische Form, kompakter Träger (effizienter zu berechnen)
+		\item Praktisch kaum Unterschied zu Gauß-Kern (Bandbreite $h$ wichtiger!)
 	\end{itemize}
 \end{frame}
 
@@ -412,12 +409,22 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\pause
 	\fi
 	
+	\textbf{MSE-Zerlegung:}
 	\[
-	\operatorname{MSE}(x) = O(h^4) + O\left(\frac{1}{nh}\right)
+	\operatorname{MSE}(x) = \operatorname{Bias}^2 + \operatorname{Var} = O(h^4) + O\left(\frac{1}{nh}\right)
 	\]
 	
-	\alert{$h_{\text{opt}} \sim n^{-1/5}$}
-\end{frame}
+	\ifpauseswitch
+	\pause
+	\fi
+	
+	\textbf{Optimierung:} Minimiere MSE durch Ableiten nach $h$:
+	\[
+	\frac{d}{dh}\left[C_1 h^4 + \frac{C_2}{nh}\right] = 4C_1 h^3 - \frac{C_2}{nh^2} \stackrel{!}{=} 0
+	\]
+	
+	\alert{$\Rightarrow h_{\text{opt}} \sim n^{-1/5}$ und $\operatorname{MSE}_{\text{opt}} \sim n^{-4/5}$}
+\end{frame>
 
 
 \begin{frame}

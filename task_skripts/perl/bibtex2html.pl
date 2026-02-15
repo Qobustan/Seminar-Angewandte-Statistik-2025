@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+#
 # FILE: bibtex2html.pl
 # DESCRIPTION: Ein Perl-Skript zum Konvertieren von BibTeX-Daten in HTML
 # USAGE: bibtex2html.pl <bibfile> [output_dir]

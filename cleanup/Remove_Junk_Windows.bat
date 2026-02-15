@@ -1,4 +1,6 @@
 @echo off
+REM SPDX-License-Identifier: MIT
+REM SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
 REM ==============================================================================
 REM
 REM          FILE: Remove_Junk_Windows.bat

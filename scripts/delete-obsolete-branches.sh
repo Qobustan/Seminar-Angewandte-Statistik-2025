@@ -1,5 +1,7 @@
 #!/bin/bash
-
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+#
 # Script to delete obsolete branches from the repository
 # This script will delete branches that are no longer needed
 # List verified as of: 2026-01-01

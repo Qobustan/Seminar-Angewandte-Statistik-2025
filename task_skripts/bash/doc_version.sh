@@ -1,4 +1,7 @@
 #!/bin/bash
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+#
 # Script to commit and push documentation changes
 
 set -euo pipefail

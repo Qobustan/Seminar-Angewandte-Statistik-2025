@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+#
 # FILE: latexxmkrc.pl
 # DESCRIPTION: Konfigurationsdatei für latexmk - steuert das Build-Verhalten
 #              von LaTeX-Dokumenten

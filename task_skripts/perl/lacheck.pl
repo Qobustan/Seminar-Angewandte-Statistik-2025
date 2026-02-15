@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+#
 # FILE: lacheck.pl
 # DESCRIPTION: Ein Perl-Skript zum Überprüfen eines LaTeX-Dokuments auf Fehler
 # USAGE: lacheck.pl <tex_file>

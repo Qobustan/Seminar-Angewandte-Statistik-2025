@@ -1,4 +1,7 @@
 @echo off
+REM SPDX-License-Identifier: MIT
+REM SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
+REM
 REM Script to commit and push documentation changes
 
 setlocal

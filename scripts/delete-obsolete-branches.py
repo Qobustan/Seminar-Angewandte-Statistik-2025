@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
 """
 Script to delete obsolete branches from the Seminar-Angewandte-Statistik-2025 repository.
 

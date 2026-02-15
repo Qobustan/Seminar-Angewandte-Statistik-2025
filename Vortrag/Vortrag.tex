@@ -225,18 +225,19 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Kernschätzer (KDE) - Wahl des Kerns}
+	\frametitle{Kernschätzer (KDE) – Wahl des Kerns}
 	
+	\textbf{Gängige Kernfunktionen:}
 	\begin{itemize}
-		\item \textbf{Kernwahl:} Der Kern muss zu 1 integrieren ($\int K(x) dx = 1$).
-		\item Gängige Kerne:
-		\begin{itemize}
-			\item Rechteck-Kern
-			\item Gauß-Kern
-			\item Epanechnikov-Kern
-		\end{itemize}
+		\item \textbf{Rechteck-Kern} (Uniform) – einfachst, unstetig
+		\item \textbf{Gauß-Kern} – glatt, unbeschränkter Träger
+		\item \textbf{Epanechnikov-Kern} – optimal (minimiert IMSE)
 	\end{itemize}
-\end{frame}
+	
+	\vspace{0.5em}
+	
+	\textbf{Praktische Empfehlung:} Gauß-Kern meist ausreichend. Bandbreite $h$ ist entscheidender!
+\end{frame>
 
 \begin{frame}
 	\frametitle{Gängige Kernfunktionen – Formeln}
@@ -282,33 +283,19 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Kernfunktion – Eigenschaften}
+	\frametitle{Kernfunktion – Mathematische Anforderungen}
 	
-	\textbf{Mathematische Anforderungen:}
-	\begin{itemize}
-		\item $K(x) \ge 0$ (Nicht-Negativität)
-		\item $\int K(x)\,dx = 1$ (Normierung)
-		\item Symmetrisch um $0$: $K(x) = K(-x)$
-		\item $\sigma_K^2 = \int x^2 K(x)\,dx < \infty$ (Endliche Varianz)
-	\end{itemize}
+	\textbf{Ein Kern $K$ muss erfüllen:}
+	\begin{enumerate}
+		\item $K(x) \ge 0$ (Nicht-Negativität) – verhindert negative Wahrscheinlichkeiten
+		\item $\int K(x)\,dx = 1$ (Normierung) – stellt sicher, dass $\hat{f}_n$ gültige Dichte ist
+		\item $K(x) = K(-x)$ (Symmetrie) – vermeidet systematische Verschiebung
+		\item $\sigma_K^2 = \int x^2 K(x)\,dx < \infty$ (Endliche Varianz) – notwendig für Theorie
+	\end{enumerate}
 	
 	\vspace{0.5em}
 	
-	\begin{itemize}
-		\item Bestimmt die Form der Glättung
-		\item Einfluss meist geringer als der der Bandbreite
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Kernfunktion – Warum diese Eigenschaften?}
-	
-	\begin{itemize}
-		\item \textbf{Nicht-Negativität:} Verhindert negative Wahrscheinlichkeiten
-		\item \textbf{Normierung:} Stellt sicher, dass $\hat{f}_n$ eine gültige Dichte ist
-		\item \textbf{Symmetrie:} Vermeidet systematische Verschiebung der Schätzung
-		\item \textbf{Endliche Varianz:} Notwendig für asymptotische Theorie und optimale Bandbreite
-	\end{itemize}
+	\textbf{Wichtig:} Kernwahl hat meist \textit{geringeren} Einfluss als Bandbreite $h$!
 \end{frame}
 
 
@@ -633,7 +620,15 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 \section{Robuste Lineare Regression}
 
 \begin{frame}
-	\frametitle{Robuste Lineare Regression – Zielsetzung}
+	\frametitle{Robuste Lineare Regression – Motivation}
+	
+	\textbf{Verbindung zur nichtparametrischen Statistik:}
+	\begin{itemize}
+		\item Wie KDE verzichtet auch robuste Regression auf starke Verteilungsannahmen
+		\item Beide nutzen Median statt Mittelwert für Robustheit
+	\end{itemize}
+	
+	\vspace{0.5em}
 	
 	\textbf{Ziel:}
 	\begin{itemize}
@@ -643,10 +638,10 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	
 	\vspace{0.5em}
 	
-	\textbf{Motivation:}
+	\textbf{Problem der klassischen Regression:}
 	\begin{itemize}
-		\item Klassische lineare Regression basiert auf quadratischen Fehlern
-		\item Einzelne Ausreißer können die Schätzung stark verzerren
+		\item Basiert auf quadratischen Fehlern (OLS)
+		\item Einzelne Ausreißer können Schätzung stark verzerren
 	\end{itemize}
 \end{frame}
 

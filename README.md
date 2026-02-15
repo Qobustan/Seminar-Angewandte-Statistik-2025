@@ -209,7 +209,7 @@ The repository includes comprehensive GitHub Actions workflows in `.github/workf
 - **`publish-wiki.yml`** - Publishes wiki documentation to GitHub Wiki
   - Triggers on push to `main/master` when wiki files change or manual dispatch
   - Syncs markdown files from `wiki/` directory to the repository's GitHub Wiki
-  - Uses pinned commit SHA to avoid firewall issues
+  - Uses `SwiftDocOrg/github-wiki-publish-action@v1` to sync the wiki
 
 - **`docker-image.yml`** - Docker image validation
   - Triggers on push or pull request to `main` branch

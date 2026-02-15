@@ -431,7 +431,7 @@ Excludes from Docker build context:
 - GitHub Actions pinned to specific versions
 - Dependabot monitors for updates
 - Limited use of third-party actions
-- Docker images use official TeX Live base
+- Docker images are built FROM `ubuntu:20.04` and install `texlive-full` from Ubuntu package repositories
 
 ### Access Control
 - Branch protection on main branch
@@ -467,4 +467,4 @@ Potential areas for expansion:
 ---
 
 *Last Updated: February 2026*
-*Version: 1.0*
+*Version: 1.0.0*

@@ -45,7 +45,7 @@ Die Analyse von Verteilungen ist ein zentraler Bestandteil der Statistik. In der
 
 \subsection*{Warum nichtparametrisch?}
 
-Parametrische Verfahren sind problematisch, wenn die wahre Verteilung unbekannt ist oder nicht den Annahmen entspricht (z.\,B. bei Schiefe, Multimodalität oder Heavy Tails). Wird beispielsweise Normalität fälschlicherweise angenommen, können Konfidenzintervalle oder Tests irreführende Ergebnisse liefern.
+Parametrische Verfahren sind problematisch, wenn die wahre Verteilung unbekannt ist oder nicht den Annahmen entspricht (z.\,B. bei Schiefe, Multimodalität oder \textit{Heavy Tails} (schwere Ränder)). Wird beispielsweise Normalität fälschlicherweise angenommen, können Konfidenzintervalle oder Tests irreführende Ergebnisse liefern.
 
 Die \textit{nichtparametrische Dichteschätzung} verzichtet auf die Zugehörigkeit zu einer starren parametrischen Familie. Stattdessen wird lediglich angenommen, dass die Dichte $f$ gewisse Glattheitseigenschaften (Stetigkeit, Differenzierbarkeit) erfüllt. Dies ermöglicht es, komplexe Strukturen in den Daten zu erfassen, ohne vorab eine spezifische Verteilungsfamilie festzulegen.
 
@@ -114,23 +114,18 @@ Um diese Mängel zu beheben, wurden die Kernschätzer entwickelt, die eine glatt
 
 \subsection{Definition und Funktionsweise}
 
-Um die Glattheit zu garantieren, verallgemeinert die Kerndichteschätzung (entwickelt unabhängig von Rosenblatt \cite{Rosenblatt1956} und Parzen \cite{Parzen1962}) den Rosenblatt-Ansatz und behebt die Unstetigkeitsprobleme des Histogramms. Anstatt Beobachtungen nur in starren Boxen zu zählen, gewichtet man sie mittels einer glatten Funktion $K$, dem sogenannten Kern. Diese Verallgemeinerung ermöglicht es, kontinuierliche und differenzierbare Dichteschätzungen zu erhalten, die besser die Glattheit der zugrunde liegenden Verteilung widerspiegeln.
+Um die Glattheit zu garantieren, verallgemeinert die Kerndichteschätzung den Rosenblatt-Ansatz \cite{Rosenblatt1956, Parzen1962} und behebt die Unstetigkeitsprobleme des Histogramms. Anstatt Beobachtungen nur in starren Boxen zu zählen, gewichtet man sie mittels einer glatten Funktion $K$, dem sogenannten Kern. Diese Verallgemeinerung ermöglicht kontinuierliche und differenzierbare Dichteschätzungen.
 
 \begin{itemize}
 	\item \textbf{Der Schätzer:}
 	      \begin{equation}
 	      	\hat{f}_n(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}\right)
 	      \end{equation}
-	      Jeder Datenpunkt $X_i$ bekommt eine kleine ,,Glockenkurve`` (Kern $K$), und die Summe dieser Kurven ergibt die Gesamtdichte. Hierbei ist $h > 0$ der Glättungsparameter (Bandbreite) und $n$ der Stichprobenumfang. Die Bandbreite $h$ kontrolliert, wie stark jeder Datenpunkt in seiner Umgebung ,,verschmiert`` wird: Ein kleines $h$ führt zu einer Schätzung, die eng an den beobachteten Datenpunkten haftet, während ein großes $h$ eine stärkere Glättung bewirkt.
+	      Hierbei ist $h > 0$ die Bandbreite, $n$ der Stichprobenumfang und $K$ die Kernfunktion. Die Bandbreite $h$ kontrolliert die Glättung: kleines $h$ führt zu geringer Glättung, großes $h$ zu starker Glättung.
 	      
-	\item \textbf{Intuitive Interpretation:} Das Vorgehen lässt sich anschaulich als ,,Summe von Hügeln`` beschreiben:
-	      \begin{enumerate}
-	      	\item Über jedem Datenpunkt $X_i$ wird eine Kernfunktion (z.\,B. eine Glockenkurve) platziert. Diese repräsentiert die lokale ,,Wahrscheinlichkeitsmasse``, die dieser Datenpunkt zur Gesamtdichte beiträgt.
-	      	\item Die Breite dieser Kerne wird durch $h$ gesteuert. Größere Bandbreiten führen zu breiteren, flacheren Hügeln, während kleinere Bandbreiten zu schmalen, spitzen Hügeln führen.
-	      	\item An einer Stelle $x$ werden die Werte aller lokalen Kerne aufsummiert und durch $nh$ geteilt, damit die Gesamtfläche unter der Kurve genau 1 ergibt. Diese Normierung stellt sicher, dass $\hat{f}_n$ eine gültige Wahrscheinlichkeitsdichte ist.
-	      \end{enumerate}
+	\item \textbf{Interpretation:} An jeder Stelle $x$ wird ein gewichteter Mittelwert der Kernfunktionen $K$ gebildet, zentriert bei den Datenpunkten $X_i$. Die Normierung durch $nh$ stellt sicher, dass $\int \hat{f}_n(x) \, dx = 1$ gilt.
 	      
-	\item \textbf{Beziehung zum Rosenblatt-Schätzer:} Der Rosenblatt-Schätzer lässt sich als Spezialfall der Kerndichteschätzung mit dem Rechteck-Kern (oder uniformen Kern) auffassen:
+	\item \textbf{Beziehung zum Rosenblatt-Schätzer:} Der Rosenblatt-Schätzer ist ein Spezialfall mit Rechteck-Kern:
 	      \begin{equation}
 	      	K_{\text{Rechteck}}(u) = \begin{cases}
 	      		\frac{1}{2} & \text{falls } |u| \le 1 \\
@@ -323,7 +318,7 @@ Selbst wenn wir einen linearen Trend ($Y = \alpha + \beta X$) vermuten, ist die 
 	      \begin{equation}
 	      	H_{ij} = \frac{Y_j - Y_i}{X_j - X_i}
 	      \end{equation}
-	      Der Schätzer für den Anstieg $\beta$ ist der \textbf{Median} all dieser Steigungen ($H_{ij}$). Das macht ihn extrem robust und besonders widerstandsfähig gegen Ausreißer. Der Theil-Sen-Schätzer kann bis zu etwa 29\,\% Ausreißer tolerieren, ohne zusammenzubrechen (sogenannter Breakdown Point), was ihn zu einem der robustesten verfügbaren Regressionsschätzer macht.
+	      Der Schätzer für den Anstieg $\beta$ ist der \textbf{Median} all dieser Steigungen ($H_{ij}$). Das macht ihn extrem robust und besonders widerstandsfähig gegen Ausreißer. Der Theil-Sen-Schätzer hat einen \textit{Breakdown Point} von etwa 29,3\,\%, d.\,h. er kann bis zu diesem Anteil an Ausreißern tolerieren \cite{Sen1968}. Dies macht ihn zu einem der robustesten verfügbaren Regressionsschätzer.
 	      
 	      \textbf{Eigenschaften:}
 	      \begin{itemize}

@@ -209,6 +209,18 @@ The repository includes comprehensive GitHub Actions workflows in `.github/workf
   - Syncs markdown files from `wiki/` directory to the repository's GitHub Wiki
   - Uses pinned commit SHA to avoid firewall issues
 
+- **`docker-image.yml`** - Docker image validation
+  - Triggers on push or pull request to `main` branch
+  - Builds Docker image to verify Dockerfile integrity
+  - Does not push image to registry (validation only)
+  - Ensures containerized build environment remains functional
+
+- **`codeql-analysis.yml`** - Security code scanning with CodeQL
+  - Triggers on push/PR to `main` or weekly schedule (Mondays)
+  - Analyzes Python scripts for security vulnerabilities
+  - Results available in repository's Security tab
+  - Helps identify potential security issues early
+
 - **`lint.yml`** - LaTeX linting with chktex
 - **`spellcheck.yml`** - Spell checking with cspell
 - **`format.yml`** - Code formatting checks
@@ -322,4 +334,12 @@ The `wiki/` directory contains additional documentation that is automatically sy
 
 ---
 
-[![Build all LaTeX projects](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/build-and-publish-pdfs.yml/badge.svg)](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/build-and-publish-pdfs.yml)
+## Workflow Status Badges
+
+[![Build LaTeX PDFs](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/build-and-publish-pdfs.yml/badge.svg)](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/build-and-publish-pdfs.yml)
+[![LaTeX Lint](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/lint.yml/badge.svg)](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/lint.yml)
+[![Spellcheck](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/spellcheck.yml/badge.svg)](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/spellcheck.yml)
+[![Bibliography Check](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/bibcheck.yml/badge.svg)](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/bibcheck.yml)
+[![Docker Image CI](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/docker-image.yml)
+[![CodeQL Analysis](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/codeql-analysis.yml)
+[![Publish Wiki](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/publish-wiki.yml/badge.svg)](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions/workflows/publish-wiki.yml)

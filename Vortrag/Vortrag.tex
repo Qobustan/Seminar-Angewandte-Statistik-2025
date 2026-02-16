@@ -676,8 +676,8 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 		\addplot[black, thick, dashed] {0.5};
 		\addlegendentry{Wahre Funktion}
 		
-		% NW estimator with boundary bias
-		\addplot[red, thick, smooth] {0.5 - 0.35*exp(-20*x) - 0.35*exp(-20*(1-x))};
+		% NW estimator with boundary bias - adjusted to stay clearly positive
+		\addplot[red, thick, smooth] {0.5 - 0.3*exp(-20*x) - 0.3*exp(-20*(1-x))};
 		\addlegendentry{Nadaraya-Watson}
 		
 		% Local polynomial (no boundary bias)

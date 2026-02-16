@@ -150,16 +150,17 @@ Um die Glattheit zu garantieren, verallgemeinert die Kerndichteschätzung den Ro
     }
     \node[below] at (3.5, -0.25) {\small Datenpunkte $X_1, \ldots, X_n$};
     
-    % Einzelne Kernfunktionen (Gauß-Kerne)
+    % Einzelne Kernfunktionen (Gauß-Kerne) - mit korrekter Normalisierung 1/(nh)
+    % n=7, h≈0.41, Normalisierung: 1/(nh*sqrt(2*pi)) ≈ 0.14
     \foreach \x in {1.0, 1.8, 2.2, 3.0, 4.5, 5.2, 5.8} {
-        \draw[gray, thin, dashed] plot[domain=\x-1.2:\x+1.2, samples=40, variable=\t] (\t, {0.8*exp(-3*(\t-\x)^2)});
+        \draw[gray, thin, dashed] plot[domain=\x-1.2:\x+1.2, samples=40, variable=\t] (\t, {0.14*exp(-3*(\t-\x)^2)});
     }
     
-    % Summenkurve (resultierende KDE) - realistischer berechnet
+    % Summenkurve (resultierende KDE) - mit korrekter Normalisierung (1/n) * Summe der Kerne
     \draw[blue, very thick, smooth] plot[domain=0:7, samples=100, variable=\t] (\t, {
-        0.8*exp(-3*(\t-1.0)^2) + 0.8*exp(-3*(\t-1.8)^2) + 0.8*exp(-3*(\t-2.2)^2) + 
-        0.8*exp(-3*(\t-3.0)^2) + 0.8*exp(-3*(\t-4.5)^2) + 0.8*exp(-3*(\t-5.2)^2) + 
-        0.8*exp(-3*(\t-5.8)^2)
+        0.14*exp(-3*(\t-1.0)^2) + 0.14*exp(-3*(\t-1.8)^2) + 0.14*exp(-3*(\t-2.2)^2) + 
+        0.14*exp(-3*(\t-3.0)^2) + 0.14*exp(-3*(\t-4.5)^2) + 0.14*exp(-3*(\t-5.2)^2) + 
+        0.14*exp(-3*(\t-5.8)^2)
     });
     
     \node[blue, above right] at (2.5, 2.2) {$\hat{f}_n(x)$};

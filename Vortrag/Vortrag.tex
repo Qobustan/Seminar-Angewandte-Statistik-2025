@@ -1,7 +1,7 @@
 \documentclass{beamer}
 
 % Hier befinden sich alle Metadaten; Pakete, Einstellungen und die sonstigen Ressourcen
-%\input{header.tex}
+\input{header.tex}
 
 \usepackage[utf8]{inputenc}
 
@@ -345,16 +345,9 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 		\end{frame}
 		
 		
-		\begin{frame}
-			\frametitle{Kernschätzer (KDE) - Bandbreitenwahl}
-			
-			\begin{itemize}
-				\item \textbf{Bandbreitenwahl (Silverman's Rule \cite{Silverman1986}):}
-				\begin{equation}
-					h_{opt} \approx 1.06 \sigma n^{-1/5}
-				\end{equation}
-			\end{itemize}
-		\end{frame}
+		% NW estimator with boundary bias - adjusted to stay clearly positive
+		\addplot[red, thick, smooth] {0.5 - 0.3*exp(-20*x) - 0.3*exp(-20*(1-x))};
+		\addlegendentry{Nadaraya-Watson}
 		
 		\begin{frame}
 			\frametitle{Bandbreitenwahl – Weitere Methoden}

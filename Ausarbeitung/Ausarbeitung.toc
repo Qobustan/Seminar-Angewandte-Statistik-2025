@@ -6,10 +6,10 @@
 \contentsline {subsection}{\numberline {4.1}Definition und Funktionsweise}{4}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Anforderungen an den Kern}{5}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Wahl des Kerns}{6}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Statistische Eigenschaften und Bandbreitenwahl}{7}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.4}Statistische Eigenschaften und Bandbreitenwahl}{6}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}KDE als Faltung}{8}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Nichtparametrische Regression}{8}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Nadaraya-Watson-Schätzer (Allgemeine Regression)}{8}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Robuste Lineare Regression (Theil-Schätzer)}{9}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Zusammenfassung und Fazit}{10}{section.6}%
+\contentsline {section}{\numberline {5}Nichtparametrische Regression}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Nadaraya-Watson-Schätzer (Allgemeine Regression)}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Robuste Lineare Regression (Theil-Schätzer)}{10}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Zusammenfassung und Fazit}{11}{section.6}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

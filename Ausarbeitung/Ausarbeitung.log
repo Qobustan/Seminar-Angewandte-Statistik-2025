@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  9 FEB 2026 05:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  16 FEB 2026 04:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -562,6 +562,134 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/pgfplots/pgfplo
+ts.sty
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotscore.code.tex
+\t@pgfplots@toka=\toks32
+\t@pgfplots@tokb=\toks33
+\t@pgfplots@tokc=\toks34
+\pgfplots@tmpa=\dimen257
+\c@pgfplots@coordindex=\count283
+\c@pgfplots@scanlineindex=\count284
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/sys/
+pgfplotssysgeneric.code.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs
+/pgfplotslibrary.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/oldp
+gfcompatib/pgfplotsoldpgfsupp_loader.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
+/pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks35
+\t@pgf@tokb=\toks36
+\t@pgf@tokc=\toks37
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/oldp
+gfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotsutil.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/list
+structure/pgfplotsliststructure.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/list
+structure/pgfplotsliststructureext.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/list
+structure/pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count285
+)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/list
+structure/pgfplotsmatrix.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/numt
+able/pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count286
+\t@pgfplotstable@a=\toks38
+)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/list
+structure/pgfplotsdeque.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotsbinary.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotsbinary.data.code.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotsutil.verb.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs
+/pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count287
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/sys/
+pgflibrarypgfplots.surfshading.pgfsys-pdftex.def)))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotscolormap.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotscolor.code.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotsstackedplots.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotsplothandlers.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotsmeshplothandler.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotsmeshplotimage.code.tex)))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.scaling.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotscoordprocessing.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.errorbars.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.markers.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotsticks.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.paths.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibrarydecorations.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/p
+gfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen258
+\pgfdecoratedremainingdistance=\dimen259
+\pgfdecoratedinputsegmentcompleteddistance=\dimen260
+\pgfdecoratedinputsegmentremainingdistance=\dimen261
+\pgf@decorate@distancetomove=\dimen262
+\pgf@decorate@repeatstate=\count288
+\pgfdecorationsegmentamplitude=\dimen263
+\pgfdecorationsegmentlength=\dimen264
+)
+\tikz@lib@dec@box=\box64
+)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
+/decorations/pgflibrarydecorations.pathmorphing.code.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
+/decorations/pgflibrarydecorations.pathreplacing.code.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs
+/tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count289
+\pgfplots@xmin@reg=\dimen265
+\pgfplots@xmax@reg=\dimen266
+\pgfplots@ymin@reg=\dimen267
+\pgfplots@ymax@reg=\dimen268
+\pgfplots@zmin@reg=\dimen269
+\pgfplots@zmax@reg=\dimen270
+)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
+/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
 ayer/tikz/libraries/tikzlibrarychains.code.tex
 File: tikzlibrarychains.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -577,26 +705,26 @@ File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
 /shapes/pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box64
-\pgfnodeparttwobox=\box65
-\pgfnodepartthreebox=\box66
-\pgfnodepartfourbox=\box67
-\pgfnodeparttwentybox=\box68
-\pgfnodepartnineteenbox=\box69
-\pgfnodeparteighteenbox=\box70
-\pgfnodepartseventeenbox=\box71
-\pgfnodepartsixteenbox=\box72
-\pgfnodepartfifteenbox=\box73
-\pgfnodepartfourteenbox=\box74
-\pgfnodepartthirteenbox=\box75
-\pgfnodeparttwelvebox=\box76
-\pgfnodepartelevenbox=\box77
-\pgfnodeparttenbox=\box78
-\pgfnodepartninebox=\box79
-\pgfnodeparteightbox=\box80
-\pgfnodepartsevenbox=\box81
-\pgfnodepartsixbox=\box82
-\pgfnodepartfivebox=\box83
+\pgfnodepartlowerbox=\box65
+\pgfnodeparttwobox=\box66
+\pgfnodepartthreebox=\box67
+\pgfnodepartfourbox=\box68
+\pgfnodeparttwentybox=\box69
+\pgfnodepartnineteenbox=\box70
+\pgfnodeparteighteenbox=\box71
+\pgfnodepartseventeenbox=\box72
+\pgfnodepartsixteenbox=\box73
+\pgfnodepartfifteenbox=\box74
+\pgfnodepartfourteenbox=\box75
+\pgfnodepartthirteenbox=\box76
+\pgfnodeparttwelvebox=\box77
+\pgfnodepartelevenbox=\box78
+\pgfnodeparttenbox=\box79
+\pgfnodepartninebox=\box80
+\pgfnodeparteightbox=\box81
+\pgfnodepartsevenbox=\box82
+\pgfnodepartsixbox=\box83
+\pgfnodepartfivebox=\box84
 ))
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
 ayer/tikz/libraries/tikzlibraryshapes.code.tex
@@ -645,7 +773,7 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
 /pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen257
+\arrowsize=\dimen271
 ))
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/caption/subcapt
 ion.sty
@@ -658,14 +786,14 @@ Package: caption 2023/03/12 v3.6j Customizing captions (AR)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/caption/caption
 3.sty
 Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
-\caption@tempdima=\dimen258
-\captionmargin=\dimen259
-\caption@leftmargin=\dimen260
-\caption@rightmargin=\dimen261
-\caption@width=\dimen262
-\caption@indent=\dimen263
-\caption@parindent=\dimen264
-\caption@hangindent=\dimen265
+\caption@tempdima=\dimen272
+\captionmargin=\dimen273
+\caption@leftmargin=\dimen274
+\caption@rightmargin=\dimen275
+\caption@width=\dimen276
+\caption@indent=\dimen277
+\caption@parindent=\dimen278
+\caption@hangindent=\dimen279
 Package caption Info: KOMA-Script document class detected.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/caption/caption
@@ -673,16 +801,16 @@ Package caption Info: KOMA-Script document class detected.
 File: caption-koma.sto 2022/12/27 v2.0c Adaption of the caption package to the 
 KOMA-Script document classes (AR)
 ))
-\c@caption@flags=\count283
-\c@continuedfloat=\count284
+\c@caption@flags=\count290
+\c@continuedfloat=\count291
 Package caption Info: KOMA-Script scrextend package detected.
-\caption@addmargin@hsize=\dimen266
-\caption@addmargin@linewidth=\dimen267
+\caption@addmargin@hsize=\dimen280
+\caption@addmargin@linewidth=\dimen281
 )
 Package caption Info: New subtype `subfigure' on input line 239.
-\c@subfigure=\count285
+\c@subfigure=\count292
 Package caption Info: New subtype `subtable' on input line 239.
-\c@subtable=\count286
+\c@subtable=\count293
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/doublestroke/ds
 font.sty
@@ -695,7 +823,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfon
 ts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks32
+\@emptytoks=\toks39
 \symAMSa=\mathgroup5
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
@@ -717,24 +845,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 y
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count287
-\c@Blindtext=\count288
-\c@blind@countparstart=\count289
-\blind@countxx=\count290
-\blindtext@numBlindtext=\count291
-\blind@countyy=\count292
-\c@blindlist=\count293
-\c@blindlistlevel=\count294
-\c@blindlist@level=\count295
-\blind@listitem=\count296
-\c@blind@listcount=\count297
-\c@blind@levelcount=\count298
-\blind@mathformula=\count299
-\blind@Mathformula=\count300
-\c@blind@randomcount=\count301
-\c@blind@randommax=\count302
-\c@blind@pangramcount=\count303
-\c@blind@pangrammax=\count304
+\c@blindtext=\count294
+\c@Blindtext=\count295
+\c@blind@countparstart=\count296
+\blind@countxx=\count297
+\blindtext@numBlindtext=\count298
+\blind@countyy=\count299
+\c@blindlist=\count300
+\c@blindlistlevel=\count301
+\c@blindlist@level=\count302
+\blind@listitem=\count303
+\c@blind@listcount=\count304
+\c@blind@levelcount=\count305
+\blind@mathformula=\count306
+\blind@Mathformula=\count307
+\c@blind@randomcount=\count308
+\c@blind@randommax=\count309
+\c@blind@pangramcount=\count310
+\c@blind@pangrammax=\count311
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcolo
 rbox.sty
@@ -743,8 +871,8 @@ Package: tcolorbox 2023/02/12 version 6.0.1 text color boxes
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tools/verbatim.
 sty
 Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks33
-\verbatim@line=\toks34
+\every@verbatim=\toks40
+\verbatim@line=\toks41
 \verbatim@in@stream=\read3
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/environ/environ
@@ -755,30 +883,30 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 spaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
-\@envbody=\toks35
+\@envbody=\toks42
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolb
 ox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count305
+\etb@tempcnta=\count312
 )
-\tcb@titlebox=\box84
-\tcb@upperbox=\box85
-\tcb@lowerbox=\box86
-\tcb@phantombox=\box87
-\c@tcbbreakpart=\count306
-\c@tcblayer=\count307
-\c@tcolorbox@number=\count308
-\tcb@temp=\box88
+\tcb@titlebox=\box85
+\tcb@upperbox=\box86
+\tcb@lowerbox=\box87
+\tcb@phantombox=\box88
+\c@tcbbreakpart=\count313
+\c@tcblayer=\count314
+\c@tcolorbox@number=\count315
 \tcb@temp=\box89
 \tcb@temp=\box90
 \tcb@temp=\box91
+\tcb@temp=\box92
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/base/inputenc.s
 ty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks36
-\inpenc@posthook=\toks37
+\inpenc@prehook=\toks43
+\inpenc@posthook=\toks44
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/base/fontenc.st
 y
@@ -796,30 +924,30 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 ty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count309
-\Gm@cntv=\count310
-\c@Gm@tempcnt=\count311
-\Gm@bindingoffset=\dimen268
-\Gm@wd@mp=\dimen269
-\Gm@odd@mp=\dimen270
-\Gm@even@mp=\dimen271
-\Gm@layoutwidth=\dimen272
-\Gm@layoutheight=\dimen273
-\Gm@layouthoffset=\dimen274
-\Gm@layoutvoffset=\dimen275
-\Gm@dimlist=\toks38
+\Gm@cnth=\count316
+\Gm@cntv=\count317
+\c@Gm@tempcnt=\count318
+\Gm@bindingoffset=\dimen282
+\Gm@wd@mp=\dimen283
+\Gm@odd@mp=\dimen284
+\Gm@even@mp=\dimen285
+\Gm@layoutwidth=\dimen286
+\Gm@layoutheight=\dimen287
+\Gm@layouthoffset=\dimen288
+\Gm@layoutvoffset=\dimen289
+\Gm@dimlist=\toks45
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/babel/babel.s
 ty
 Package: babel 2023/02/13 3.86 The Babel package
-\babel@savecnt=\count312
-\U@D=\dimen276
+\babel@savecnt=\count319
+\U@D=\dimen290
 \l@unhyphenated=\language87
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/babel/txtbabe
 l.def)
 \bbl@readstream=\read4
-\bbl@dirlevel=\count313
+\bbl@dirlevel=\count320
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/babel-german/
 ngerman.ldf
@@ -837,29 +965,51 @@ de/babel-ngerman.tex
 Package babel Info: Importing font and identification data for ngerman
 (babel)             from babel-de.ini. Reported on input line 11.
 )
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquot
+es.sty
+Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
+\csq@reset=\count321
+\csq@gtype=\count322
+\csq@glevel=\count323
+\csq@qlevel=\count324
+\csq@maxlvl=\count325
+\csq@tshold=\count326
+\csq@ltx@everypar=\toks46
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquot
+es.def
+File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquot
+es.cfg
+File: csquotes.cfg 
+))
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/colortbl/colort
 bl.sty
 Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
 Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen277
-\ar@mcellbox=\box92
-\extrarowheight=\dimen278
-\NC@list=\toks39
+\col@sep=\dimen291
+\ar@mcellbox=\box93
+\extrarowheight=\dimen292
+\NC@list=\toks47
 \extratabsurround=\skip64
 \backup@length=\skip65
-\ar@cellbox=\box93
+\ar@cellbox=\box94
 )
-\everycr=\toks40
+\everycr=\toks48
 \minrowclearance=\skip66
-\rownum=\count314
+\rownum=\count327
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/changepage/chan
 gepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count315
-\cp@tempcnt=\count316
+\c@cp@cntr=\count328
+\cp@tempcnt=\count329
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/adjustbox/adjus
 tbox.sty
@@ -877,40 +1027,40 @@ Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/collectbox/coll
 ectbox.sty
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
-\collectedbox=\box94
+\collectedbox=\box95
 )
-\tc@llx=\dimen279
-\tc@lly=\dimen280
-\tc@urx=\dimen281
-\tc@ury=\dimen282
+\tc@llx=\dimen293
+\tc@lly=\dimen294
+\tc@urx=\dimen295
+\tc@ury=\dimen296
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/adjustbox/tc-pd
 ftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen283
-\adjbox@Height=\dimen284
-\adjbox@Depth=\dimen285
-\adjbox@Totalheight=\dimen286
-\adjbox@pwidth=\dimen287
-\adjbox@pheight=\dimen288
-\adjbox@pdepth=\dimen289
-\adjbox@ptotalheight=\dimen290
+\adjbox@Width=\dimen297
+\adjbox@Height=\dimen298
+\adjbox@Depth=\dimen299
+\adjbox@Totalheight=\dimen300
+\adjbox@pwidth=\dimen301
+\adjbox@pheight=\dimen302
+\adjbox@pdepth=\dimen303
+\adjbox@ptotalheight=\dimen304
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/ifoddpage/ifodd
 page.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count317
+\c@checkoddpage=\count330
 LaTeX Info: Redefining \checkoddpage on input line 45.
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/varwidth/varwid
 th.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box95
-\sift@deathcycles=\count318
-\@vwid@loff=\dimen291
-\@vwid@roff=\dimen292
+\@vwid@box=\box96
+\sift@deathcycles=\count331
+\@vwid@loff=\dimen305
+\@vwid@roff=\dimen306
 ))
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath
 .sty
@@ -926,78 +1076,78 @@ Package: amstext 2021/08/26 v2.01 AMS text
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.
 sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks41
-\ex@=\dimen293
+\@emptytoks=\toks49
+\ex@=\dimen307
 ))
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.
 sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen294
+\pmbraise@=\dimen308
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.
 sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count319
+\inf@bad=\count332
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count320
-\leftroot@=\count321
+\uproot@=\count333
+\leftroot@=\count334
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count322
-\DOTSCASE@=\count323
+\classnum@=\count335
+\DOTSCASE@=\count336
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box96
-\strutbox@=\box97
+\Mathstrutbox@=\box97
+\strutbox@=\box98
 LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen295
+\big@size=\dimen309
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count324
+\macc@depth=\count337
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count325
+\c@MaxMatrixCols=\count338
 \dotsspace@=\muskip16
-\c@parentequation=\count326
-\dspbrk@lvl=\count327
-\tag@help=\toks42
-\row@=\count328
-\column@=\count329
-\maxfields@=\count330
-\andhelp@=\toks43
-\eqnshift@=\dimen296
-\alignsep@=\dimen297
-\tagshift@=\dimen298
-\tagwidth@=\dimen299
-\totwidth@=\dimen300
-\lineht@=\dimen301
-\@envbody=\toks44
+\c@parentequation=\count339
+\dspbrk@lvl=\count340
+\tag@help=\toks50
+\row@=\count341
+\column@=\count342
+\maxfields@=\count343
+\andhelp@=\toks51
+\eqnshift@=\dimen310
+\alignsep@=\dimen311
+\tagshift@=\dimen312
+\tagwidth@=\dimen313
+\totwidth@=\dimen314
+\lineht@=\dimen315
+\@envbody=\toks52
 \multlinegap=\skip68
 \multlinetaggap=\skip69
-\mathdisplay@stack=\toks45
+\mathdisplay@stack=\toks53
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.s
 ty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks46
-\thm@bodyfont=\toks47
-\thm@headfont=\toks48
-\thm@notefont=\toks49
-\thm@headpunct=\toks50
+\thm@style=\toks54
+\thm@bodyfont=\toks55
+\thm@headfont=\toks56
+\thm@notefont=\toks57
+\thm@headpunct=\toks58
 \thm@preskip=\skip70
 \thm@postskip=\skip71
 \thm@headsep=\skip72
-\dth@everypar=\toks51
+\dth@everypar=\toks59
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/xpatch/xpatch.s
 ty
@@ -1008,8 +1158,8 @@ Package: expl3 2023-02-22 L3 programming layer (loader)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3bac
 kend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count331
-\l__pdf_internal_box=\box98
+\l__color_backend_stack_int=\count344
+\l__pdf_internal_box=\box99
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 
@@ -1025,54 +1175,54 @@ Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count332
-\calc@Bcount=\count333
-\calc@Adimen=\dimen302
-\calc@Bdimen=\dimen303
+\calc@Acount=\count345
+\calc@Bcount=\count346
+\calc@Adimen=\dimen316
+\calc@Bdimen=\dimen317
 \calc@Askip=\skip73
 \calc@Bskip=\skip74
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count334
+\calc@Ccount=\count347
 \calc@Cskip=\skip75
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/mathtools/mhset
 up.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count335
-\l_MT_multwidth_dim=\dimen304
+\g_MT_multlinerow_int=\count348
+\l_MT_multwidth_dim=\dimen318
 \origjot=\skip76
-\l_MT_shortvdotswithinadjustabove_dim=\dimen305
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen306
-\l_MT_above_intertext_sep=\dimen307
-\l_MT_below_intertext_sep=\dimen308
-\l_MT_above_shortintertext_sep=\dimen309
-\l_MT_below_shortintertext_sep=\dimen310
-\xmathstrut@box=\box99
-\xmathstrut@dim=\dimen311
+\l_MT_shortvdotswithinadjustabove_dim=\dimen319
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen320
+\l_MT_above_intertext_sep=\dimen321
+\l_MT_below_intertext_sep=\dimen322
+\l_MT_above_shortintertext_sep=\dimen323
+\l_MT_below_shortintertext_sep=\dimen324
+\xmathstrut@box=\box100
+\xmathstrut@dim=\dimen325
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/listings/listin
 gs.sty
-\lst@mode=\count336
-\lst@gtempboxa=\box100
-\lst@token=\toks52
-\lst@length=\count337
-\lst@currlwidth=\dimen312
-\lst@column=\count338
-\lst@pos=\count339
-\lst@lostspace=\dimen313
-\lst@width=\dimen314
-\lst@newlines=\count340
-\lst@lineno=\count341
-\lst@maxwidth=\dimen315
+\lst@mode=\count349
+\lst@gtempboxa=\box101
+\lst@token=\toks60
+\lst@length=\count350
+\lst@currlwidth=\dimen326
+\lst@column=\count351
+\lst@pos=\count352
+\lst@lostspace=\dimen327
+\lst@width=\dimen328
+\lst@newlines=\count353
+\lst@lineno=\count354
+\lst@maxwidth=\dimen329
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/listings/lstmis
 c.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count342
-\lst@skipnumbers=\count343
-\lst@framebox=\box101
+\c@lstnumber=\count355
+\lst@skipnumbers=\count356
+\lst@framebox=\box102
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/listings/listin
 gs.cfg
@@ -1141,11 +1291,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 ions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count344
+\c@section@level=\count357
 )
-\@linkdim=\dimen316
-\Hy@linkcounter=\count345
-\Hy@pagecounter=\count346
+\@linkdim=\dimen330
+\Hy@linkcounter=\count358
+\Hy@pagecounter=\count359
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc
 .def
@@ -1161,7 +1311,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 cmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count347
+\Hy@SavedSpaceFactor=\count360
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.
 def
@@ -1176,14 +1326,14 @@ Package hyperref Info: Plain pages OFF on input line 4192.
 Package hyperref Info: Backreferencing OFF on input line 4197.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4425.
-\c@Hy@tempcnt=\count348
+\c@Hy@tempcnt=\count361
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen317
+\XeTeXLinkMargin=\dimen331
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/bitset/bitset
 .sty
@@ -1194,9 +1344,9 @@ gintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count349
-\Field@Width=\dimen318
-\Fld@charsize=\dimen319
+\Fld@menulength=\count362
+\Field@Width=\dimen332
+\Fld@charsize=\dimen333
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -1210,9 +1360,9 @@ tx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count350
-\c@Item=\count351
-\c@Hfootnote=\count352
+\Hy@abspage=\count363
+\c@Item=\count364
+\c@Hfootnote=\count365
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -1226,8 +1376,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count353
-\c@bookmark@seq@number=\count354
+\Fld@listcount=\count366
+\c@bookmark@seq@number=\count367
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/
 rerunfilecheck.sty
@@ -1279,11 +1429,11 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count355
-\float@exts=\toks53
-\float@box=\box102
-\@float@everytoks=\toks54
-\@floatcapt=\box103
+\c@float@type=\count368
+\float@exts=\toks61
+\float@box=\box103
+\@float@everytoks=\toks62
+\@floatcapt=\box104
 ) (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tipa/tipa.sty
 Package: tipa 2002/08/08 TIPA version 1.1
 
@@ -1321,45 +1471,45 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 otes.sty
 Package: todonotes 2023/01/31 v1.1.6 Todonotes source and documentation.
 Package: todonotes 2023/01/31
-\c@@todonotes@numberoftodonotes=\count356
+\c@@todonotes@numberoftodonotes=\count369
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumit
 em.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip81
-\enit@outerparindent=\dimen320
-\enit@toks=\toks55
-\enit@inbox=\box104
-\enit@count@id=\count357
-\enitdp@description=\count358
+\enit@outerparindent=\dimen334
+\enit@toks=\toks63
+\enit@inbox=\box105
+\enit@count@id=\count370
+\enitdp@description=\count371
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/booktabs/bookta
 bs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen321
-\lightrulewidth=\dimen322
-\cmidrulewidth=\dimen323
-\belowrulesep=\dimen324
-\belowbottomsep=\dimen325
-\aboverulesep=\dimen326
-\abovetopsep=\dimen327
-\cmidrulesep=\dimen328
-\cmidrulekern=\dimen329
-\defaultaddspace=\dimen330
-\@cmidla=\count359
-\@cmidlb=\count360
-\@aboverulesep=\dimen331
-\@belowrulesep=\dimen332
-\@thisruleclass=\count361
-\@lastruleclass=\count362
-\@thisrulewidth=\dimen333
+\heavyrulewidth=\dimen335
+\lightrulewidth=\dimen336
+\cmidrulewidth=\dimen337
+\belowrulesep=\dimen338
+\belowbottomsep=\dimen339
+\aboverulesep=\dimen340
+\abovetopsep=\dimen341
+\cmidrulesep=\dimen342
+\cmidrulekern=\dimen343
+\defaultaddspace=\dimen344
+\@cmidla=\count372
+\@cmidlb=\count373
+\@aboverulesep=\dimen345
+\@belowrulesep=\dimen346
+\@thisruleclass=\count374
+\@lastruleclass=\count375
+\@thisrulewidth=\dimen347
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/algorithms/algo
 rithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
-\@float@every@algorithm=\toks56
-\c@algorithm=\count363
+\@float@every@algorithm=\toks64
+\c@algorithm=\count376
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/algorithmicx/al
 gpseudocode.sty
@@ -1370,22 +1520,22 @@ gorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count364
-\c@ALG@rem=\count365
-\c@ALG@nested=\count366
+\c@ALG@line=\count377
+\c@ALG@rem=\count378
+\c@ALG@nested=\count379
 \ALG@tlm=\skip82
 \ALG@thistlm=\skip83
-\c@ALG@Lnr=\count367
-\c@ALG@blocknr=\count368
-\c@ALG@storecount=\count369
-\c@ALG@tmpcounter=\count370
+\c@ALG@Lnr=\count380
+\c@ALG@blocknr=\count381
+\c@ALG@storecount=\count382
+\c@ALG@tmpcounter=\count383
 \ALG@tmplength=\skip84
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 159.
-\c@theorem=\count371
-\c@subsubsubsection=\count372
+Package hyperref Info: Option `colorlinks' set `true' on input line 153.
+\c@theorem=\count384
+\c@subsubsubsection=\count385
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
 ayer/tikz/libraries/tikzlibraryfit.code.tex
@@ -1402,55 +1552,55 @@ Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/logreq/logreq.s
 ty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count373
+\lrq@indent=\count386
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/logreq/logreq.d
 ef
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count374
-\c@listtotal=\count375
-\c@listcount=\count376
-\c@liststart=\count377
-\c@liststop=\count378
-\c@citecount=\count379
-\c@citetotal=\count380
-\c@multicitecount=\count381
-\c@multicitetotal=\count382
-\c@instcount=\count383
-\c@maxnames=\count384
-\c@minnames=\count385
-\c@maxitems=\count386
-\c@minitems=\count387
-\c@citecounter=\count388
-\c@maxcitecounter=\count389
-\c@savedcitecounter=\count390
-\c@uniquelist=\count391
-\c@uniquename=\count392
-\c@refsection=\count393
-\c@refsegment=\count394
-\c@maxextratitle=\count395
-\c@maxextratitleyear=\count396
-\c@maxextraname=\count397
-\c@maxextradate=\count398
-\c@maxextraalpha=\count399
-\c@abbrvpenalty=\count400
-\c@highnamepenalty=\count401
-\c@lownamepenalty=\count402
-\c@maxparens=\count403
-\c@parenlevel=\count404
-\blx@tempcnta=\count405
-\blx@tempcntb=\count406
-\blx@tempcntc=\count407
-\c@blx@maxsection=\count408
-\blx@maxsegment@0=\count409
-\blx@notetype=\count410
-\blx@parenlevel@text=\count411
-\blx@parenlevel@foot=\count412
-\blx@sectionciteorder@0=\count413
-\blx@sectionciteorderinternal@0=\count414
-\blx@entrysetcounter=\count415
-\blx@biblioinstance=\count416
+\c@tabx@nest=\count387
+\c@listtotal=\count388
+\c@listcount=\count389
+\c@liststart=\count390
+\c@liststop=\count391
+\c@citecount=\count392
+\c@citetotal=\count393
+\c@multicitecount=\count394
+\c@multicitetotal=\count395
+\c@instcount=\count396
+\c@maxnames=\count397
+\c@minnames=\count398
+\c@maxitems=\count399
+\c@minitems=\count400
+\c@citecounter=\count401
+\c@maxcitecounter=\count402
+\c@savedcitecounter=\count403
+\c@uniquelist=\count404
+\c@uniquename=\count405
+\c@refsection=\count406
+\c@refsegment=\count407
+\c@maxextratitle=\count408
+\c@maxextratitleyear=\count409
+\c@maxextraname=\count410
+\c@maxextradate=\count411
+\c@maxextraalpha=\count412
+\c@abbrvpenalty=\count413
+\c@highnamepenalty=\count414
+\c@lownamepenalty=\count415
+\c@maxparens=\count416
+\c@parenlevel=\count417
+\blx@tempcnta=\count418
+\blx@tempcntb=\count419
+\blx@tempcntc=\count420
+\c@blx@maxsection=\count421
+\blx@maxsegment@0=\count422
+\blx@notetype=\count423
+\blx@parenlevel@text=\count424
+\blx@parenlevel@foot=\count425
+\blx@sectionciteorder@0=\count426
+\blx@sectionciteorderinternal@0=\count427
+\blx@entrysetcounter=\count428
+\blx@biblioinstance=\count429
 \labelnumberwidth=\skip85
 \labelalphawidth=\skip86
 \biblabelsep=\skip87
@@ -1462,9 +1612,9 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@bcfin=\read5
 \blx@bcfout=\write4
 \blx@langwohyphens=\language88
-\c@mincomprange=\count417
-\c@maxcomprange=\count418
-\c@mincompwidth=\count419
+\c@mincomprange=\count430
+\c@maxcomprange=\count431
+\c@mincompwidth=\count432
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1476,74 +1626,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'alphabetic.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count420
-\c@savedafterword=\count421
-\c@annotator=\count422
-\c@savedannotator=\count423
-\c@author=\count424
-\c@savedauthor=\count425
-\c@bookauthor=\count426
-\c@savedbookauthor=\count427
-\c@commentator=\count428
-\c@savedcommentator=\count429
-\c@editor=\count430
-\c@savededitor=\count431
-\c@editora=\count432
-\c@savededitora=\count433
-\c@editorb=\count434
-\c@savededitorb=\count435
-\c@editorc=\count436
-\c@savededitorc=\count437
-\c@foreword=\count438
-\c@savedforeword=\count439
-\c@holder=\count440
-\c@savedholder=\count441
-\c@introduction=\count442
-\c@savedintroduction=\count443
-\c@namea=\count444
-\c@savednamea=\count445
-\c@nameb=\count446
-\c@savednameb=\count447
-\c@namec=\count448
-\c@savednamec=\count449
-\c@translator=\count450
-\c@savedtranslator=\count451
-\c@shortauthor=\count452
-\c@savedshortauthor=\count453
-\c@shorteditor=\count454
-\c@savedshorteditor=\count455
-\c@labelname=\count456
-\c@savedlabelname=\count457
-\c@institution=\count458
-\c@savedinstitution=\count459
-\c@lista=\count460
-\c@savedlista=\count461
-\c@listb=\count462
-\c@savedlistb=\count463
-\c@listc=\count464
-\c@savedlistc=\count465
-\c@listd=\count466
-\c@savedlistd=\count467
-\c@liste=\count468
-\c@savedliste=\count469
-\c@listf=\count470
-\c@savedlistf=\count471
-\c@location=\count472
-\c@savedlocation=\count473
-\c@organization=\count474
-\c@savedorganization=\count475
-\c@origlocation=\count476
-\c@savedoriglocation=\count477
-\c@origpublisher=\count478
-\c@savedorigpublisher=\count479
-\c@publisher=\count480
-\c@savedpublisher=\count481
-\c@language=\count482
-\c@savedlanguage=\count483
-\c@origlanguage=\count484
-\c@savedoriglanguage=\count485
-\c@pageref=\count486
-\c@savedpageref=\count487
+\c@afterword=\count433
+\c@savedafterword=\count434
+\c@annotator=\count435
+\c@savedannotator=\count436
+\c@author=\count437
+\c@savedauthor=\count438
+\c@bookauthor=\count439
+\c@savedbookauthor=\count440
+\c@commentator=\count441
+\c@savedcommentator=\count442
+\c@editor=\count443
+\c@savededitor=\count444
+\c@editora=\count445
+\c@savededitora=\count446
+\c@editorb=\count447
+\c@savededitorb=\count448
+\c@editorc=\count449
+\c@savededitorc=\count450
+\c@foreword=\count451
+\c@savedforeword=\count452
+\c@holder=\count453
+\c@savedholder=\count454
+\c@introduction=\count455
+\c@savedintroduction=\count456
+\c@namea=\count457
+\c@savednamea=\count458
+\c@nameb=\count459
+\c@savednameb=\count460
+\c@namec=\count461
+\c@savednamec=\count462
+\c@translator=\count463
+\c@savedtranslator=\count464
+\c@shortauthor=\count465
+\c@savedshortauthor=\count466
+\c@shorteditor=\count467
+\c@savedshorteditor=\count468
+\c@labelname=\count469
+\c@savedlabelname=\count470
+\c@institution=\count471
+\c@savedinstitution=\count472
+\c@lista=\count473
+\c@savedlista=\count474
+\c@listb=\count475
+\c@savedlistb=\count476
+\c@listc=\count477
+\c@savedlistc=\count478
+\c@listd=\count479
+\c@savedlistd=\count480
+\c@liste=\count481
+\c@savedliste=\count482
+\c@listf=\count483
+\c@savedlistf=\count484
+\c@location=\count485
+\c@savedlocation=\count486
+\c@organization=\count487
+\c@savedorganization=\count488
+\c@origlocation=\count489
+\c@savedoriglocation=\count490
+\c@origpublisher=\count491
+\c@savedorigpublisher=\count492
+\c@publisher=\count493
+\c@savedpublisher=\count494
+\c@language=\count495
+\c@savedlanguage=\count496
+\c@origlanguage=\count497
+\c@savedoriglanguage=\count498
+\c@pageref=\count499
+\c@savedpageref=\count500
 \shorthandwidth=\skip93
 \shortjournalwidth=\skip94
 \shortserieswidth=\skip95
@@ -1583,19 +1733,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblat
 ex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count488
-\c@textcitetotal=\count489
-\c@textcitemaxnames=\count490
-\c@biburlbigbreakpenalty=\count491
-\c@biburlbreakpenalty=\count492
-\c@biburlnumpenalty=\count493
-\c@biburlucpenalty=\count494
-\c@biburllcpenalty=\count495
+\c@textcitecount=\count501
+\c@textcitetotal=\count502
+\c@textcitemaxnames=\count503
+\c@biburlbigbreakpenalty=\count504
+\c@biburlbreakpenalty=\count505
+\c@biburlnumpenalty=\count506
+\c@biburlucpenalty=\count507
+\c@biburllcpenalty=\count508
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count496
+\c@smartand=\count509
 )
 Package biblatex Info: Trying to load bibliography style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.bbx' found.
@@ -1609,8 +1759,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/biblatex/bbx/st
 andard.bbx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count497
-\c@bbx:relatedtotal=\count498
+\c@bbx:relatedcount=\count510
+\c@bbx:relatedtotal=\count511
 ))
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
@@ -1650,22 +1800,20 @@ Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
 /pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen334
-\pgfarrowlength=\dimen335
-\pgfarrowwidth=\dimen336
-\pgfarrowlinewidth=\dimen337
+\pgfarrowinset=\dimen348
+\pgfarrowlength=\dimen349
+\pgfarrowwidth=\dimen350
+\pgfarrowlinewidth=\dimen351
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
 ayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-
-Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
-(biblatex)                Loading 'csquotes' recommended.
-
-\@quotelevel=\count499
-\@quotereset=\count500
-(./Ausarbeitung.aux)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
+ (./Ausarbeitung.aux)
 \openout1 = `Ausarbeitung.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
@@ -1698,17 +1846,17 @@ LaTeX Font Info:    ... okay on input line 32.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/context/base/mkii/sup
 p-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count501
-\scratchdimen=\dimen338
-\scratchbox=\box105
-\nofMPsegments=\count502
-\nofMParguments=\count503
-\everyMPshowfont=\toks57
-\MPscratchCnt=\count504
-\MPscratchDim=\dimen339
-\MPnumerator=\count505
-\makeMPintoPDFobject=\count506
-\everyMPtoPDFconversion=\toks58
+\scratchcounter=\count512
+\scratchdimen=\dimen352
+\scratchbox=\box106
+\nofMPsegments=\count513
+\nofMParguments=\count514
+\everyMPshowfont=\toks65
+\MPscratchCnt=\count515
+\MPscratchDim=\dimen353
+\MPnumerator=\count516
+\makeMPintoPDFobject=\count517
+\everyMPtoPDFconversion=\toks66
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/ep
 stopdf-base.sty
@@ -1726,15 +1874,17 @@ e
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
-\caption@adjustwidth@hsize=\dimen340
-\caption@adjustwidth@linewidth=\dimen341
+\caption@adjustwidth@hsize=\dimen354
+\caption@adjustwidth@linewidth=\dimen355
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1769,7 +1919,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count507
+\c@lstlisting=\count518
 Package hyperref Info: Link coloring ON on input line 32.
 (./Ausarbeitung.out) (./Ausarbeitung.out)
 \@outlinefile=\write5
@@ -1791,7 +1941,7 @@ Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pd
 ftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count508
+\BKM@id=\count519
 ))
 Package biblatex Info: Trying to load language 'ngerman'...
 Package biblatex Info: ... file 'ngerman.lbx' found.
@@ -1896,17 +2046,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pd
 ftex.map}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/
-lm/lm-ec.enc}]
-Overfull \hbox (24.24998pt too wide) in paragraph at lines 60--61
-[][][][][][][] 
- []
-
-[2{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-m
-athit.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips
-/lm/lm-rm.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/d
-vips/lm/lm-mathsy.enc}]
+lm/lm-ec.enc}] [2{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/en
+c/dvips/lm/lm-mathit.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/
+fonts/enc/dvips/lm/lm-rm.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-d
+ist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 9
-9.
+3.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Ud
 srom.fd
@@ -1914,12 +2059,15 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 ) [3{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm
 -mathex.enc}] [4]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 161.
- [5] [6] [7] [8] [9] [10]
+(Font)              <5> on input line 151.
+ [5] [6] [7] [8] [9] [10] [11]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
+23.
 
-LaTeX Warning: Empty bibliography on input line 365.
-
-[11] (./Ausarbeitung.aux)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+[12] [13] (./Ausarbeitung.aux)
 Package rerunfilecheck Info: File `Ausarbeitung.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'Ausarbeitung.run.xml'.
@@ -1927,36 +2075,41 @@ Package logreq Info: Writing requests to 'Ausarbeitung.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45490 strings out of 476025
- 919704 string characters out of 5790017
- 1868388 words of memory out of 5000000
- 65104 multiletter control sequences out of 15000+600000
- 585762 words of font info for 106 fonts, out of 8000000 for 9000
+ 57067 strings out of 476025
+ 1296266 string characters out of 5790017
+ 2220807 words of memory out of 5000000
+ 76513 multiletter control sequences out of 15000+600000
+ 594849 words of font info for 110 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 108i,10n,134p,10607b,2461s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,20n,134p,10607b,2461s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/doub
 lestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/font
 s/type1/public/lm/lmbx10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
 ist/fonts/type1/public/lm/lmbx12.pfb></Volumes/Macintosh SSD/local/texlive/2023
-/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Volumes/Macintosh SSD/local/texl
-ive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Volumes/Macintosh SSD/lo
-cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></Volumes/Macintosh
- SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Volumes/Ma
-cintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></Vol
-umes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pf
-b></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
-mr12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/publ
-ic/lm/lmr6.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type
-1/public/lm/lmr8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/font
-s/type1/public/lm/lmri10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
-ist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Macintosh SSD/local/texlive/20
-23/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/te
-xlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/l
-ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Ausarbeitung.pdf (11 pages, 307677 bytes).
+/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></Volumes/Macintosh SSD/local/tex
+live/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Volumes/Macintosh SSD/l
+ocal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Volumes/Macinto
+sh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></Volumes/
+Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></V
+olumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.
+pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm
+/lmmi8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pu
+blic/lm/lmr10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/t
+ype1/public/lm/lmr12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/
+fonts/type1/public/lm/lmr6.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf
+-dist/fonts/type1/public/lm/lmr7.pfb></Volumes/Macintosh SSD/local/texlive/2023
+/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Volumes/Macintosh SSD/local/texliv
+e/2023/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Volumes/Macintosh SSD/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Macintos
+h SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Volumes/
+Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></V
+olumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10
+.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/a
+msfonts/symbols/msbm10.pfb>
+Output written on Ausarbeitung.pdf (13 pages, 409153 bytes).
 PDF statistics:
- 270 PDF objects out of 1000 (max. 8388607)
- 217 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
+ 343 PDF objects out of 1000 (max. 8388607)
+ 279 compressed objects within 3 object streams
+ 75 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

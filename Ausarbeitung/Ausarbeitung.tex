@@ -151,6 +151,7 @@ Um die Glattheit zu garantieren, verallgemeinert die Kerndichteschätzung den Ro
     \node[below] at (3.5, -0.25) {\small Datenpunkte $X_1, \ldots, X_n$};
     
     % Einzelne Kernfunktionen (Gauß-Kerne) - mit korrekter Normierung 1/(nh)
+    % Aus exp(-3*(t-x)^2) = exp(-(t-x)^2/(2h^2)) folgt: 1/(2h^2)=3, somit h=1/sqrt(6)≈0.408≈0.41
     % n=7, h≈0.41, Normierung: 1/(7*0.41*sqrt(2*pi)) = 1/(2.87*2.507) ≈ 1/7.19 ≈ 0.139 ≈ 0.14
     \foreach \x in {1.0, 1.8, 2.2, 3.0, 4.5, 5.2, 5.8} {
         \draw[gray, thin, dashed] plot[domain=\x-1.2:\x+1.2, samples=40, variable=\t] (\t, {0.14*exp(-3*(\t-\x)^2)});

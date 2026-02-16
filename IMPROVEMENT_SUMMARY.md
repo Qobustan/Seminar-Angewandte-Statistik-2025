@@ -278,7 +278,7 @@ The work is now **academically sound, well-organized, professionally presented, 
 **1. Improved KDE Diagram** (line ~139)
 - 7 realistic data points instead of 3
 - Individual Gaussian kernels shown as dashed gray curves
-- Mathematically correct summation: blue curve is actual sum of all kernels
+- Visual summation: blue curve schematically shows the sum of all displayed kernels (qualitative illustration)
 - Y-axis added, bandwidth indicator (2h) shown
 - Professional appearance suitable for publication
 

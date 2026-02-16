@@ -98,7 +98,7 @@
 	\alert{ohne Annahme einer parametrischen Familie.}
 	
 	\vspace{0.5cm}
-	\textbf{Grundprinzip:} ,,Let the data speak`` – Daten bestimmen die Form der Schätzung
+	\textbf{Grundprinzip:} ,,Let the data speak'' – Daten bestimmen die Form der Schätzung
 \end{frame}
 
 \section{Der Rosenblatt-Schätzer}
@@ -401,19 +401,19 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 			ymin=0, ymax=0.6
 		]
 		% True density (bimodal: mix of two normals)
-		\addplot[black, thick, dashed, smooth] {0.5*(exp(-((x+1)^2)/0.5)/sqrt(2*pi*0.5) + exp(-((x-1)^2)/0.5)/sqrt(2*pi*0.5))};
+		\addplot[black, thick, dashed, smooth] {0.5*(exp(-((x+1)^2)/(2*0.5))/sqrt(2*pi*0.5) + exp(-((x-1)^2)/(2*0.5))/sqrt(2*pi*0.5))};
 		\addlegendentry{Wahre Dichte}
 		
 		% h too small (undersmoothing)
-		\addplot[red, thick, smooth] {0.5*(exp(-((x+1)^2)/0.15)/sqrt(2*pi*0.15) + exp(-((x-1)^2)/0.15)/sqrt(2*pi*0.15)) + 0.05*sin(deg(x*5))};
+		\addplot[red, thick, smooth] {0.5*(exp(-((x+1)^2)/(2*0.15))/sqrt(2*pi*0.15) + exp(-((x-1)^2)/(2*0.15))/sqrt(2*pi*0.15)) + 0.05*sin(deg(x*5))};
 		\addlegendentry{$h$ zu klein}
 		
 		% h optimal
-		\addplot[blue, very thick, smooth] {0.5*(exp(-((x+1)^2)/0.6)/sqrt(2*pi*0.6) + exp(-((x-1)^2)/0.6)/sqrt(2*pi*0.6))};
+		\addplot[blue, very thick, smooth] {0.5*(exp(-((x+1)^2)/(2*0.6))/sqrt(2*pi*0.6) + exp(-((x-1)^2)/(2*0.6))/sqrt(2*pi*0.6))};
 		\addlegendentry{$h$ optimal}
 		
 		% h too large (oversmoothing)
-		\addplot[green!60!black, thick, smooth] {0.5*(exp(-((x)^2)/2)/sqrt(2*pi*2))};
+		\addplot[green!60!black, thick, smooth] {0.5*(exp(-((x)^2)/(2*2))/sqrt(2*pi*2))};
 		\addlegendentry{$h$ zu groß}
 		\end{axis}
 	\end{tikzpicture}
@@ -742,7 +742,7 @@ F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 	\textbf{Verbindung zur nichtparametrischen Statistik:}
 	\begin{itemize}
 		\item Wie KDE verzichtet auch robuste Regression auf starke Verteilungsannahmen
-		\item Beide nutzen Median statt Mittelwert für Robustheit
+		\item Beide zielen auf Robustheit durch reduzierte Verteilungsannahmen und lokale Gewichtung von Datenpunkten
 	\end{itemize}
 	
 	\vspace{0.5em}

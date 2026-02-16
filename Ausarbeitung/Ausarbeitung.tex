@@ -157,7 +157,7 @@ Um die Glattheit zu garantieren, verallgemeinert die Kerndichteschätzung den Ro
         \draw[gray, thin, dashed] plot[domain=\x-1.2:\x+1.2, samples=40, variable=\t] (\t, {0.14*exp(-3*(\t-\x)^2)});
     }
     
-    % Summenkurve (resultierende KDE) - mit korrekter Normierung (1/n) * Summe der Kerne
+    % Summenkurve (resultierende KDE) - jeder Summand bereits mit Normierung 1/(nh√(2π)) ≈ 0.14
     \draw[blue, very thick, smooth] plot[domain=0:7, samples=100, variable=\t] (\t, {
         0.14*exp(-3*(\t-1.0)^2) + 0.14*exp(-3*(\t-1.8)^2) + 0.14*exp(-3*(\t-2.2)^2) + 
         0.14*exp(-3*(\t-3.0)^2) + 0.14*exp(-3*(\t-4.5)^2) + 0.14*exp(-3*(\t-5.2)^2) + 

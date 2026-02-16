@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  11 FEB 2026 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  16 FEB 2026 04:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -952,6 +952,134 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/pgfplots/pgfplo
+ts.sty
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotscore.code.tex
+\t@pgfplots@toka=\toks50
+\t@pgfplots@tokb=\toks51
+\t@pgfplots@tokc=\toks52
+\pgfplots@tmpa=\dimen315
+\c@pgfplots@coordindex=\count345
+\c@pgfplots@scanlineindex=\count346
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/sys/
+pgfplotssysgeneric.code.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs
+/pgfplotslibrary.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/oldp
+gfcompatib/pgfplotsoldpgfsupp_loader.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
+/pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks53
+\t@pgf@tokb=\toks54
+\t@pgf@tokc=\toks55
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/oldp
+gfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotsutil.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/list
+structure/pgfplotsliststructure.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/list
+structure/pgfplotsliststructureext.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/list
+structure/pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count347
+)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/list
+structure/pgfplotsmatrix.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/numt
+able/pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count348
+\t@pgfplotstable@a=\toks56
+)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/list
+structure/pgfplotsdeque.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotsbinary.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotsbinary.data.code.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotsutil.verb.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs
+/pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count349
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/sys/
+pgflibrarypgfplots.surfshading.pgfsys-pdftex.def)))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotscolormap.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util
+/pgfplotscolor.code.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotsstackedplots.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotsplothandlers.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotsmeshplothandler.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotsmeshplotimage.code.tex)))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.scaling.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotscoordprocessing.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.errorbars.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.markers.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lotsticks.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfp
+lots.paths.code.tex)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibrarydecorations.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/p
+gfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen316
+\pgfdecoratedremainingdistance=\dimen317
+\pgfdecoratedinputsegmentcompleteddistance=\dimen318
+\pgfdecoratedinputsegmentremainingdistance=\dimen319
+\pgf@decorate@distancetomove=\dimen320
+\pgf@decorate@repeatstate=\count350
+\pgfdecorationsegmentamplitude=\dimen321
+\pgfdecorationsegmentlength=\dimen322
+)
+\tikz@lib@dec@box=\box81
+)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
+/decorations/pgflibrarydecorations.pathmorphing.code.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
+/decorations/pgflibrarydecorations.pathreplacing.code.tex))
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs
+/tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count351
+\pgfplots@xmin@reg=\dimen323
+\pgfplots@xmax@reg=\dimen324
+\pgfplots@ymin@reg=\dimen325
+\pgfplots@ymax@reg=\dimen326
+\pgfplots@zmin@reg=\dimen327
+\pgfplots@zmax@reg=\dimen328
+)
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
+/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
 ayer/tikz/libraries/tikzlibrarychains.code.tex
 File: tikzlibrarychains.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -967,26 +1095,26 @@ File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
 /shapes/pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box81
-\pgfnodeparttwobox=\box82
-\pgfnodepartthreebox=\box83
-\pgfnodepartfourbox=\box84
-\pgfnodeparttwentybox=\box85
-\pgfnodepartnineteenbox=\box86
-\pgfnodeparteighteenbox=\box87
-\pgfnodepartseventeenbox=\box88
-\pgfnodepartsixteenbox=\box89
-\pgfnodepartfifteenbox=\box90
-\pgfnodepartfourteenbox=\box91
-\pgfnodepartthirteenbox=\box92
-\pgfnodeparttwelvebox=\box93
-\pgfnodepartelevenbox=\box94
-\pgfnodeparttenbox=\box95
-\pgfnodepartninebox=\box96
-\pgfnodeparteightbox=\box97
-\pgfnodepartsevenbox=\box98
-\pgfnodepartsixbox=\box99
-\pgfnodepartfivebox=\box100
+\pgfnodepartlowerbox=\box82
+\pgfnodeparttwobox=\box83
+\pgfnodepartthreebox=\box84
+\pgfnodepartfourbox=\box85
+\pgfnodeparttwentybox=\box86
+\pgfnodepartnineteenbox=\box87
+\pgfnodeparteighteenbox=\box88
+\pgfnodepartseventeenbox=\box89
+\pgfnodepartsixteenbox=\box90
+\pgfnodepartfifteenbox=\box91
+\pgfnodepartfourteenbox=\box92
+\pgfnodepartthirteenbox=\box93
+\pgfnodeparttwelvebox=\box94
+\pgfnodepartelevenbox=\box95
+\pgfnodeparttenbox=\box96
+\pgfnodepartninebox=\box97
+\pgfnodeparteightbox=\box98
+\pgfnodepartsevenbox=\box99
+\pgfnodepartsixbox=\box100
+\pgfnodepartfivebox=\box101
 ))
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
 ayer/tikz/libraries/tikzlibraryshapes.code.tex
@@ -1035,7 +1163,7 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
 /pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen315
+\arrowsize=\dimen329
 ))
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/caption/subcapt
 ion.sty
@@ -1048,14 +1176,14 @@ Package: caption 2023/03/12 v3.6j Customizing captions (AR)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/caption/caption
 3.sty
 Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
-\caption@tempdima=\dimen316
-\captionmargin=\dimen317
-\caption@leftmargin=\dimen318
-\caption@rightmargin=\dimen319
-\caption@width=\dimen320
-\caption@indent=\dimen321
-\caption@parindent=\dimen322
-\caption@hangindent=\dimen323
+\caption@tempdima=\dimen330
+\captionmargin=\dimen331
+\caption@leftmargin=\dimen332
+\caption@rightmargin=\dimen333
+\caption@width=\dimen334
+\caption@indent=\dimen335
+\caption@parindent=\dimen336
+\caption@hangindent=\dimen337
 Package caption Info: beamer document class detected.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/caption/caption
@@ -1063,16 +1191,16 @@ Package caption Info: beamer document class detected.
 File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to th
 e beamer document classes (AR)
 ))
-\c@caption@flags=\count345
-\c@continuedfloat=\count346
+\c@caption@flags=\count352
+\c@continuedfloat=\count353
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
 )
 Package caption Info: New subtype `subfigure' on input line 239.
-\c@subfigure=\count347
+\c@subfigure=\count354
 Package caption Info: New subtype `subtable' on input line 239.
-\c@subtable=\count348
+\c@subtable=\count355
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/doublestroke/ds
 font.sty
@@ -1093,24 +1221,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 y
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count349
-\c@Blindtext=\count350
-\c@blind@countparstart=\count351
-\blind@countxx=\count352
-\blindtext@numBlindtext=\count353
-\blind@countyy=\count354
-\c@blindlist=\count355
-\c@blindlistlevel=\count356
-\c@blindlist@level=\count357
-\blind@listitem=\count358
-\c@blind@listcount=\count359
-\c@blind@levelcount=\count360
-\blind@mathformula=\count361
-\blind@Mathformula=\count362
-\c@blind@randomcount=\count363
-\c@blind@randommax=\count364
-\c@blind@pangramcount=\count365
-\c@blind@pangrammax=\count366
+\c@blindtext=\count356
+\c@Blindtext=\count357
+\c@blind@countparstart=\count358
+\blind@countxx=\count359
+\blindtext@numBlindtext=\count360
+\blind@countyy=\count361
+\c@blindlist=\count362
+\c@blindlistlevel=\count363
+\c@blindlist@level=\count364
+\blind@listitem=\count365
+\c@blind@listcount=\count366
+\c@blind@levelcount=\count367
+\blind@mathformula=\count368
+\blind@Mathformula=\count369
+\c@blind@randomcount=\count370
+\c@blind@randommax=\count371
+\c@blind@pangramcount=\count372
+\c@blind@pangrammax=\count373
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcolo
 rbox.sty
@@ -1119,8 +1247,8 @@ Package: tcolorbox 2023/02/12 version 6.0.1 text color boxes
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tools/verbatim.
 sty
 Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks50
-\verbatim@line=\toks51
+\every@verbatim=\toks57
+\verbatim@line=\toks58
 \verbatim@in@stream=\read3
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/environ/environ
@@ -1131,23 +1259,23 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 spaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\tcb@titlebox=\box101
-\tcb@upperbox=\box102
-\tcb@lowerbox=\box103
-\tcb@phantombox=\box104
-\c@tcbbreakpart=\count367
-\c@tcblayer=\count368
-\c@tcolorbox@number=\count369
-\tcb@temp=\box105
+\tcb@titlebox=\box102
+\tcb@upperbox=\box103
+\tcb@lowerbox=\box104
+\tcb@phantombox=\box105
+\c@tcbbreakpart=\count374
+\c@tcblayer=\count375
+\c@tcolorbox@number=\count376
 \tcb@temp=\box106
 \tcb@temp=\box107
 \tcb@temp=\box108
+\tcb@temp=\box109
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/base/inputenc.s
 ty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks52
-\inpenc@posthook=\toks53
+\inpenc@prehook=\toks59
+\inpenc@posthook=\toks60
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/base/fontenc.st
 y
@@ -1156,15 +1284,15 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/babel/babel.s
 ty
 Package: babel 2023/02/13 3.86 The Babel package
-\babel@savecnt=\count370
-\U@D=\dimen324
+\babel@savecnt=\count377
+\U@D=\dimen338
 \l@unhyphenated=\language87
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/babel/txtbabe
 l.def)
 \bbl@readstream=\read4
 LaTeX Info: Redefining \textlatin on input line 4088.
-\bbl@dirlevel=\count371
+\bbl@dirlevel=\count378
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/babel-german/
 ngerman.ldf
@@ -1185,13 +1313,13 @@ Package babel Info: Importing font and identification data for ngerman
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquot
 es.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
-\csq@reset=\count372
-\csq@gtype=\count373
-\csq@glevel=\count374
-\csq@qlevel=\count375
-\csq@maxlvl=\count376
-\csq@tshold=\count377
-\csq@ltx@everypar=\toks54
+\csq@reset=\count379
+\csq@gtype=\count380
+\csq@glevel=\count381
+\csq@qlevel=\count382
+\csq@maxlvl=\count383
+\csq@tshold=\count384
+\csq@ltx@everypar=\toks61
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquot
 es.def
@@ -1210,17 +1338,17 @@ Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
 Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen325
-\ar@mcellbox=\box109
-\extrarowheight=\dimen326
-\NC@list=\toks55
+\col@sep=\dimen339
+\ar@mcellbox=\box110
+\extrarowheight=\dimen340
+\NC@list=\toks62
 \extratabsurround=\skip65
 \backup@length=\skip66
-\ar@cellbox=\box110
+\ar@cellbox=\box111
 )
-\everycr=\toks56
+\everycr=\toks63
 \minrowclearance=\skip67
-\rownum=\count378
+\rownum=\count385
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/mathtools/matht
 ools.sty
@@ -1228,54 +1356,54 @@ Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count379
-\calc@Bcount=\count380
-\calc@Adimen=\dimen327
-\calc@Bdimen=\dimen328
+\calc@Acount=\count386
+\calc@Bcount=\count387
+\calc@Adimen=\dimen341
+\calc@Bdimen=\dimen342
 \calc@Askip=\skip68
 \calc@Bskip=\skip69
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count381
+\calc@Ccount=\count388
 \calc@Cskip=\skip70
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/mathtools/mhset
 up.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count382
-\l_MT_multwidth_dim=\dimen329
+\g_MT_multlinerow_int=\count389
+\l_MT_multwidth_dim=\dimen343
 \origjot=\skip71
-\l_MT_shortvdotswithinadjustabove_dim=\dimen330
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen331
-\l_MT_above_intertext_sep=\dimen332
-\l_MT_below_intertext_sep=\dimen333
-\l_MT_above_shortintertext_sep=\dimen334
-\l_MT_below_shortintertext_sep=\dimen335
-\xmathstrut@box=\box111
-\xmathstrut@dim=\dimen336
+\l_MT_shortvdotswithinadjustabove_dim=\dimen344
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen345
+\l_MT_above_intertext_sep=\dimen346
+\l_MT_below_intertext_sep=\dimen347
+\l_MT_above_shortintertext_sep=\dimen348
+\l_MT_below_shortintertext_sep=\dimen349
+\xmathstrut@box=\box112
+\xmathstrut@dim=\dimen350
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/listings/listin
 gs.sty
-\lst@mode=\count383
-\lst@gtempboxa=\box112
-\lst@token=\toks57
-\lst@length=\count384
-\lst@currlwidth=\dimen337
-\lst@column=\count385
-\lst@pos=\count386
-\lst@lostspace=\dimen338
-\lst@width=\dimen339
-\lst@newlines=\count387
-\lst@lineno=\count388
-\lst@maxwidth=\dimen340
+\lst@mode=\count390
+\lst@gtempboxa=\box113
+\lst@token=\toks64
+\lst@length=\count391
+\lst@currlwidth=\dimen351
+\lst@column=\count392
+\lst@pos=\count393
+\lst@lostspace=\dimen352
+\lst@width=\dimen353
+\lst@newlines=\count394
+\lst@lineno=\count395
+\lst@maxwidth=\dimen354
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/listings/lstmis
 c.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count389
-\lst@skipnumbers=\count390
-\lst@framebox=\box113
+\c@lstnumber=\count396
+\lst@skipnumbers=\count397
+\lst@framebox=\box114
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/listings/listin
 gs.cfg
@@ -1320,11 +1448,11 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count391
-\float@exts=\toks58
-\float@box=\box114
-\@float@everytoks=\toks59
-\@floatcapt=\box115
+\c@float@type=\count398
+\float@exts=\toks65
+\float@box=\box115
+\@float@everytoks=\toks66
+\@floatcapt=\box116
 ) (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tipa/tipa.sty
 Package: tipa 2002/08/08 TIPA version 1.1
 
@@ -1360,45 +1488,45 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 otes.sty
 Package: todonotes 2023/01/31 v1.1.6 Todonotes source and documentation.
 Package: todonotes 2023/01/31
-\c@@todonotes@numberoftodonotes=\count392
+\c@@todonotes@numberoftodonotes=\count399
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumit
 em.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip75
-\enit@outerparindent=\dimen341
-\enit@toks=\toks60
-\enit@inbox=\box116
-\enit@count@id=\count393
-\enitdp@description=\count394
+\enit@outerparindent=\dimen355
+\enit@toks=\toks67
+\enit@inbox=\box117
+\enit@count@id=\count400
+\enitdp@description=\count401
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/booktabs/bookta
 bs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen342
-\lightrulewidth=\dimen343
-\cmidrulewidth=\dimen344
-\belowrulesep=\dimen345
-\belowbottomsep=\dimen346
-\aboverulesep=\dimen347
-\abovetopsep=\dimen348
-\cmidrulesep=\dimen349
-\cmidrulekern=\dimen350
-\defaultaddspace=\dimen351
-\@cmidla=\count395
-\@cmidlb=\count396
-\@aboverulesep=\dimen352
-\@belowrulesep=\dimen353
-\@thisruleclass=\count397
-\@lastruleclass=\count398
-\@thisrulewidth=\dimen354
+\heavyrulewidth=\dimen356
+\lightrulewidth=\dimen357
+\cmidrulewidth=\dimen358
+\belowrulesep=\dimen359
+\belowbottomsep=\dimen360
+\aboverulesep=\dimen361
+\abovetopsep=\dimen362
+\cmidrulesep=\dimen363
+\cmidrulekern=\dimen364
+\defaultaddspace=\dimen365
+\@cmidla=\count402
+\@cmidlb=\count403
+\@aboverulesep=\dimen366
+\@belowrulesep=\dimen367
+\@thisruleclass=\count404
+\@lastruleclass=\count405
+\@thisrulewidth=\dimen368
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/algorithms/algo
 rithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
-\@float@every@algorithm=\toks61
-\c@algorithm=\count399
+\@float@every@algorithm=\toks68
+\c@algorithm=\count406
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/algorithmicx/al
 gpseudocode.sty
@@ -1409,21 +1537,21 @@ gorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count400
-\c@ALG@rem=\count401
-\c@ALG@nested=\count402
+\c@ALG@line=\count407
+\c@ALG@rem=\count408
+\c@ALG@nested=\count409
 \ALG@tlm=\skip76
 \ALG@thistlm=\skip77
-\c@ALG@Lnr=\count403
-\c@ALG@blocknr=\count404
-\c@ALG@storecount=\count405
-\c@ALG@tmpcounter=\count406
+\c@ALG@Lnr=\count410
+\c@ALG@blocknr=\count411
+\c@ALG@storecount=\count412
+\c@ALG@tmpcounter=\count413
 \ALG@tmplength=\skip78
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 150.
-\c@subsubsubsection=\count407
+Package hyperref Info: Option `colorlinks' set `true' on input line 152.
+\c@subsubsubsection=\count414
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendl
 ayer/tikz/libraries/tikzlibraryfit.code.tex
@@ -1436,55 +1564,55 @@ Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/logreq/logreq.s
 ty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count408
+\lrq@indent=\count415
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/logreq/logreq.d
 ef
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count409
-\c@listtotal=\count410
-\c@listcount=\count411
-\c@liststart=\count412
-\c@liststop=\count413
-\c@citecount=\count414
-\c@citetotal=\count415
-\c@multicitecount=\count416
-\c@multicitetotal=\count417
-\c@instcount=\count418
-\c@maxnames=\count419
-\c@minnames=\count420
-\c@maxitems=\count421
-\c@minitems=\count422
-\c@citecounter=\count423
-\c@maxcitecounter=\count424
-\c@savedcitecounter=\count425
-\c@uniquelist=\count426
-\c@uniquename=\count427
-\c@refsection=\count428
-\c@refsegment=\count429
-\c@maxextratitle=\count430
-\c@maxextratitleyear=\count431
-\c@maxextraname=\count432
-\c@maxextradate=\count433
-\c@maxextraalpha=\count434
-\c@abbrvpenalty=\count435
-\c@highnamepenalty=\count436
-\c@lownamepenalty=\count437
-\c@maxparens=\count438
-\c@parenlevel=\count439
-\blx@tempcnta=\count440
-\blx@tempcntb=\count441
-\blx@tempcntc=\count442
-\c@blx@maxsection=\count443
-\blx@maxsegment@0=\count444
-\blx@notetype=\count445
-\blx@parenlevel@text=\count446
-\blx@parenlevel@foot=\count447
-\blx@sectionciteorder@0=\count448
-\blx@sectionciteorderinternal@0=\count449
-\blx@entrysetcounter=\count450
-\blx@biblioinstance=\count451
+\c@tabx@nest=\count416
+\c@listtotal=\count417
+\c@listcount=\count418
+\c@liststart=\count419
+\c@liststop=\count420
+\c@citecount=\count421
+\c@citetotal=\count422
+\c@multicitecount=\count423
+\c@multicitetotal=\count424
+\c@instcount=\count425
+\c@maxnames=\count426
+\c@minnames=\count427
+\c@maxitems=\count428
+\c@minitems=\count429
+\c@citecounter=\count430
+\c@maxcitecounter=\count431
+\c@savedcitecounter=\count432
+\c@uniquelist=\count433
+\c@uniquename=\count434
+\c@refsection=\count435
+\c@refsegment=\count436
+\c@maxextratitle=\count437
+\c@maxextratitleyear=\count438
+\c@maxextraname=\count439
+\c@maxextradate=\count440
+\c@maxextraalpha=\count441
+\c@abbrvpenalty=\count442
+\c@highnamepenalty=\count443
+\c@lownamepenalty=\count444
+\c@maxparens=\count445
+\c@parenlevel=\count446
+\blx@tempcnta=\count447
+\blx@tempcntb=\count448
+\blx@tempcntc=\count449
+\c@blx@maxsection=\count450
+\blx@maxsegment@0=\count451
+\blx@notetype=\count452
+\blx@parenlevel@text=\count453
+\blx@parenlevel@foot=\count454
+\blx@sectionciteorder@0=\count455
+\blx@sectionciteorderinternal@0=\count456
+\blx@entrysetcounter=\count457
+\blx@biblioinstance=\count458
 \labelnumberwidth=\skip79
 \labelalphawidth=\skip80
 \biblabelsep=\skip81
@@ -1496,9 +1624,9 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@bcfin=\read5
 \blx@bcfout=\write5
 \blx@langwohyphens=\language88
-\c@mincomprange=\count452
-\c@maxcomprange=\count453
-\c@mincompwidth=\count454
+\c@mincomprange=\count459
+\c@maxcomprange=\count460
+\c@mincompwidth=\count461
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1510,74 +1638,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'alphabetic.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count455
-\c@savedafterword=\count456
-\c@annotator=\count457
-\c@savedannotator=\count458
-\c@author=\count459
-\c@savedauthor=\count460
-\c@bookauthor=\count461
-\c@savedbookauthor=\count462
-\c@commentator=\count463
-\c@savedcommentator=\count464
-\c@editor=\count465
-\c@savededitor=\count466
-\c@editora=\count467
-\c@savededitora=\count468
-\c@editorb=\count469
-\c@savededitorb=\count470
-\c@editorc=\count471
-\c@savededitorc=\count472
-\c@foreword=\count473
-\c@savedforeword=\count474
-\c@holder=\count475
-\c@savedholder=\count476
-\c@introduction=\count477
-\c@savedintroduction=\count478
-\c@namea=\count479
-\c@savednamea=\count480
-\c@nameb=\count481
-\c@savednameb=\count482
-\c@namec=\count483
-\c@savednamec=\count484
-\c@translator=\count485
-\c@savedtranslator=\count486
-\c@shortauthor=\count487
-\c@savedshortauthor=\count488
-\c@shorteditor=\count489
-\c@savedshorteditor=\count490
-\c@labelname=\count491
-\c@savedlabelname=\count492
-\c@institution=\count493
-\c@savedinstitution=\count494
-\c@lista=\count495
-\c@savedlista=\count496
-\c@listb=\count497
-\c@savedlistb=\count498
-\c@listc=\count499
-\c@savedlistc=\count500
-\c@listd=\count501
-\c@savedlistd=\count502
-\c@liste=\count503
-\c@savedliste=\count504
-\c@listf=\count505
-\c@savedlistf=\count506
-\c@location=\count507
-\c@savedlocation=\count508
-\c@organization=\count509
-\c@savedorganization=\count510
-\c@origlocation=\count511
-\c@savedoriglocation=\count512
-\c@origpublisher=\count513
-\c@savedorigpublisher=\count514
-\c@publisher=\count515
-\c@savedpublisher=\count516
-\c@language=\count517
-\c@savedlanguage=\count518
-\c@origlanguage=\count519
-\c@savedoriglanguage=\count520
-\c@pageref=\count521
-\c@savedpageref=\count522
+\c@afterword=\count462
+\c@savedafterword=\count463
+\c@annotator=\count464
+\c@savedannotator=\count465
+\c@author=\count466
+\c@savedauthor=\count467
+\c@bookauthor=\count468
+\c@savedbookauthor=\count469
+\c@commentator=\count470
+\c@savedcommentator=\count471
+\c@editor=\count472
+\c@savededitor=\count473
+\c@editora=\count474
+\c@savededitora=\count475
+\c@editorb=\count476
+\c@savededitorb=\count477
+\c@editorc=\count478
+\c@savededitorc=\count479
+\c@foreword=\count480
+\c@savedforeword=\count481
+\c@holder=\count482
+\c@savedholder=\count483
+\c@introduction=\count484
+\c@savedintroduction=\count485
+\c@namea=\count486
+\c@savednamea=\count487
+\c@nameb=\count488
+\c@savednameb=\count489
+\c@namec=\count490
+\c@savednamec=\count491
+\c@translator=\count492
+\c@savedtranslator=\count493
+\c@shortauthor=\count494
+\c@savedshortauthor=\count495
+\c@shorteditor=\count496
+\c@savedshorteditor=\count497
+\c@labelname=\count498
+\c@savedlabelname=\count499
+\c@institution=\count500
+\c@savedinstitution=\count501
+\c@lista=\count502
+\c@savedlista=\count503
+\c@listb=\count504
+\c@savedlistb=\count505
+\c@listc=\count506
+\c@savedlistc=\count507
+\c@listd=\count508
+\c@savedlistd=\count509
+\c@liste=\count510
+\c@savedliste=\count511
+\c@listf=\count512
+\c@savedlistf=\count513
+\c@location=\count514
+\c@savedlocation=\count515
+\c@organization=\count516
+\c@savedorganization=\count517
+\c@origlocation=\count518
+\c@savedoriglocation=\count519
+\c@origpublisher=\count520
+\c@savedorigpublisher=\count521
+\c@publisher=\count522
+\c@savedpublisher=\count523
+\c@language=\count524
+\c@savedlanguage=\count525
+\c@origlanguage=\count526
+\c@savedoriglanguage=\count527
+\c@pageref=\count528
+\c@savedpageref=\count529
 \shorthandwidth=\skip87
 \shortjournalwidth=\skip88
 \shortserieswidth=\skip89
@@ -1617,19 +1745,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblat
 ex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count523
-\c@textcitetotal=\count524
-\c@textcitemaxnames=\count525
-\c@biburlbigbreakpenalty=\count526
-\c@biburlbreakpenalty=\count527
-\c@biburlnumpenalty=\count528
-\c@biburlucpenalty=\count529
-\c@biburllcpenalty=\count530
+\c@textcitecount=\count530
+\c@textcitetotal=\count531
+\c@textcitemaxnames=\count532
+\c@biburlbigbreakpenalty=\count533
+\c@biburlbreakpenalty=\count534
+\c@biburlnumpenalty=\count535
+\c@biburlucpenalty=\count536
+\c@biburllcpenalty=\count537
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count531
+\c@smartand=\count538
 )
 Package biblatex Info: Trying to load bibliography style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.bbx' found.
@@ -1643,8 +1771,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/biblatex/bbx/st
 andard.bbx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count532
-\c@bbx:relatedtotal=\count533
+\c@bbx:relatedcount=\count539
+\c@bbx:relatedtotal=\count540
 ))
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
@@ -1680,8 +1808,8 @@ Package: expl3 2023-02-22 L3 programming layer (loader)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3bac
 kend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count534
-\l__pdf_internal_box=\box117
+\l__color_backend_stack_int=\count541
+\l__pdf_internal_box=\box118
 ))
 Package biblatex Info: ... and expl3
 (biblatex)             2023-02-22 L3 programming layer (loader) 
@@ -1713,32 +1841,32 @@ Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
  (./Vortrag.aux)
 \openout1 = `Vortrag.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 18.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 18
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 26.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 26
 .
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    ... okay on input line 26.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1778,17 +1906,17 @@ LaTeX Font Info:    ... okay on input line 18.
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/context/base/mkii/sup
 p-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count535
-\scratchdimen=\dimen355
-\scratchbox=\box118
-\nofMPsegments=\count536
-\nofMParguments=\count537
-\everyMPshowfont=\toks62
-\MPscratchCnt=\count538
-\MPscratchDim=\dimen356
-\MPnumerator=\count539
-\makeMPintoPDFobject=\count540
-\everyMPtoPDFconversion=\toks63
+\scratchcounter=\count542
+\scratchdimen=\dimen369
+\scratchbox=\box119
+\nofMPsegments=\count543
+\nofMParguments=\count544
+\everyMPshowfont=\toks69
+\MPscratchCnt=\count545
+\MPscratchDim=\dimen370
+\MPnumerator=\count546
+\makeMPintoPDFobject=\count547
+\everyMPtoPDFconversion=\toks70
 )
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/ep
 stopdf-base.sty
@@ -1801,57 +1929,57 @@ topdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 18.
+Package hyperref Info: Link coloring ON on input line 26.
  (./Vortrag.out) (./Vortrag.out)
 \@outlinefile=\write6
 \openout6 = `Vortrag.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 18.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 26.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 18.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 26.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 18.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 26.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 18.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 26.
 \symnumbers=\mathgroup8
 \sympureletters=\mathgroup9
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 18.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 26.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 18.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 18.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 26.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 18.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 18.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 26.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 18.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 18.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 26.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 18.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 18.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 26.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 18.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 26.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 18.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 18.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 18.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 18.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 18.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 26.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 18.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 26.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/translator/tran
 slator-basic-dictionary-English.dict
@@ -1882,17 +2010,19 @@ Dictionary: translator-theorem-dictionary, Language: English
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count541
-
+\c@lstlisting=\count548
 
 Package todonotes Warning: The length marginparwidth is less than 2cm and will 
 most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
-loading the todonotes package. on input line 18.
+loading the todonotes package. on input line 26.
 
 Package biblatex Info: Trying to load language 'ngerman'...
 Package biblatex Info: ... file 'ngerman.lbx' found.
@@ -1925,8 +2055,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Vortrag.bbl' found.
  (./Vortrag.bbl)
-Package biblatex Info: Reference section=0 on input line 18.
-Package biblatex Info: Reference segment=0 on input line 18.
+Package biblatex Info: Reference section=0 on input line 26.
+Package biblatex Info: Reference segment=0 on input line 26.
  (./Vortrag.nav) [1
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pd
@@ -1935,74 +2065,74 @@ lm/lm-ec.enc}]
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries
 /pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen357
-\pgfarrowlength=\dimen358
-\pgfarrowwidth=\dimen359
-\pgfarrowlinewidth=\dimen360
+\pgfarrowinset=\dimen371
+\pgfarrowlength=\dimen372
+\pgfarrowwidth=\dimen373
+\pgfarrowlinewidth=\dimen374
 ) (./Vortrag.toc) [2
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-73.
+91.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-3.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
+1.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-73.
+91.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-73.
+91.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 73.
+(Font)              <10.95> on input line 91.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 73.
+(Font)              <8> on input line 91.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 73.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
+(Font)              <6> on input line 91.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 91.
 
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.f
 d
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 91.
 
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.f
 d
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 73
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 91
 .
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-3.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 9
+1.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry
 .fd)
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 73.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 91.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 73.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 91.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 73.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 91.
  [3
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
@@ -2012,196 +2142,38 @@ m/lm-mathit.enc}] [4
 ] [5
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.
-enc}] [6
-
-] [7
-
-] (./Vortrag.toc) [8
+enc}] (./Vortrag.toc) [6
 
 ]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
-26.
+25.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Ud
 srom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [9
+) [7
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
-hex.enc}] [10
+hex.enc}] [8
 
-] [11
-
-] [12
-
-] (./Vortrag.toc) [13
-
-] [14
-
-] [15
-
-] [16
+] [9
 
 ]
-(./Vortrag.toc) [17
+! TeX capacity exceeded, sorry [grouping levels=255].
+\labelenumi ->{
+               \labelenumi }
+l.161 \end{frame}
+                 
+If you really absolutely need more capacity,
+you can ask a wizard to enlarge me.
 
-] [18
-
-] [19
-
-] [20
-
-] [21
-
-] [22
-
-] [23
-
-] [24
-
-] [25
-
-] [26
-
-] [27
-
-] [28
-
-]
-[29
-
-] [30
-
-] [31
-
-] [32
-
-] [33
-
-] [34
-
-] [35
-
-] (./Vortrag.toc) [36
-
-] [37
-
-] [38
-
-] [39
-
-] [40
-
-]
-[41
-
-] [42
-
-] [43
-
-] [44
-
-] [45
-
-] (./Vortrag.toc) [46
-
-] [47
-
-] [48
-
-] [49
-
-] [50
-
-] [51
-
-] [52
-
-]
-[53
-
-] [54
-
-] (./Vortrag.toc) [55
-
-] [56
-
-] [57
-
-] [58
-
-] (./Vortrag.toc) [59
-
-]
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 79
-4.
-
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
-File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 794.
-
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
-94.
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-[60
-
-] [61
-
-
-] [62
-
-
-]
-\tf@nav=\write7
-\openout7 = `Vortrag.nav'.
-
-\tf@toc=\write8
-\openout8 = `Vortrag.toc'.
-
-\tf@snm=\write9
-\openout9 = `Vortrag.snm'.
-
- (./Vortrag.aux)
-Package rerunfilecheck Info: File `Vortrag.out' has not changed.
-(rerunfilecheck)             Checksum: CF084169A3F1FA5180EB87131D9AE28B;1311.
-Package logreq Info: Writing requests to 'Vortrag.run.xml'.
-\openout1 = `Vortrag.run.xml'.
-
- ) 
+ 
 Here is how much of TeX's memory you used:
- 46064 strings out of 476025
- 953364 string characters out of 5790017
- 1867388 words of memory out of 5000000
- 65490 multiletter control sequences out of 15000+600000
- 559013 words of font info for 74 fonts, out of 8000000 for 9000
+ 55767 strings out of 476025
+ 1288881 string characters out of 5790017
+ 2067579 words of memory out of 5000000
+ 75187 multiletter control sequences out of 15000+600000
+ 555899 words of font info for 72 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 128i,15n,134p,1881b,2459s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/doub
-lestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/font
-s/type1/public/lm/lmcsc10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-
-dist/fonts/type1/public/lm/lmex10.pfb></Volumes/Macintosh SSD/local/texlive/202
-3/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Volumes/Macintosh SSD/local/tex
-live/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></Volumes/Macintosh SSD/lo
-cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></Volumes/Macintos
-h SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></Volumes/
-Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></V
-olumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx
-10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public
-/lm/lmsso10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/typ
-e1/public/lm/lmsso8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/f
-onts/type1/public/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texm
-f-dist/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/20
-23/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Volumes/Macintosh SSD/local/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Vortrag.pdf (62 pages, 367221 bytes).
-PDF statistics:
- 1916 PDF objects out of 2073 (max. 8388607)
- 1787 compressed objects within 18 object streams
- 144 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 258i,15n,134p,1870b,2459s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

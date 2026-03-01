@@ -7,6 +7,7 @@ This repository uses GitHub Actions for continuous integration and deployment. T
 The project includes several automated workflows for:
 - 📦 Building and publishing PDFs
 - 📖 Publishing wiki documentation
+- 🔒 Security analysis (CodeQL)
 - ✅ Code quality checks (linting, formatting)
 - 🔤 Spell-checking
 - 📚 BibTeX validation
@@ -365,29 +366,61 @@ updates:
 
 #### Triggers
 
-- Push to `main` or `master` branch (when wiki files change)
+- Push to `main` or `master` branch (when `wiki/**` files change)
 - Manual trigger (workflow_dispatch)
 
 #### What It Does
 
-1. **Checkout Repository**
-   - Checks out the repository with wiki content
+1. **Checkout Repository** — checks out the current branch including the `wiki/` directory.
+2. **Publish to GitHub Wiki** — uses a native `git push` approach:
+   - Clones the repository's GitHub Wiki (`<repo>.wiki.git`) using `GITHUB_TOKEN`
+   - If the wiki has never been initialised, creates a fresh local git repository
+   - Copies all files from `wiki/` into the clone
+   - Commits and pushes only when there are actual changes
+   - Adds `[skip ci]` to the commit message to prevent re-triggering other workflows
 
-2. **Publish to GitHub Wiki**
-   - Syncs markdown files from `wiki/` directory to the repository's GitHub Wiki
-   - Uses `github-wiki-publish-action` pinned to a specific commit SHA
-   - Avoids firewall-blocked API calls by using commit SHA instead of version tags
+#### Authentication
 
-#### Why Commit SHA?
-
-This workflow uses a pinned commit SHA for the `github-wiki-publish-action` instead of a version tag (e.g., `@v1`). This approach:
-- Prevents firewall-blocked API calls to GitHub releases/tags endpoints
-- Ensures reproducible builds with a specific action version
-- Improves security by using an immutable reference
+This workflow uses the **built-in `GITHUB_TOKEN`** — no personal access tokens or additional secrets are required.
 
 #### Accessing the Wiki
 
 Visit the repository's [Wiki tab](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/wiki) to view the published documentation.
+
+---
+
+### 12. CodeQL Security Analysis
+
+**File**: `.github/workflows/codeql-analysis.yml`
+
+#### Triggers
+
+- Push to `main` or `master` branch
+- Pull requests targeting `main` or `master`
+- Weekly schedule (every Monday at 00:00 UTC)
+- Manual trigger (workflow_dispatch)
+
+#### What It Does
+
+1. **Initialize CodeQL** — sets up the CodeQL analysis engine for Python.
+2. **Autobuild** — automatically builds/indexes the codebase.
+3. **Perform CodeQL Analysis** — runs security queries against all Python scripts and saves results to a local SARIF file.
+4. **Upload SARIF as Artifact** — always uploads the SARIF report as a downloadable workflow artifact (30-day retention), regardless of whether GitHub Code Scanning / Advanced Security is enabled for the repository.
+5. **Report Outcome** — prints a workflow notice with instructions if the SARIF upload to Code Scanning failed.
+
+#### Graceful Handling of Missing Code Scanning
+
+On private repositories without GitHub Advanced Security (GHAS) the SARIF upload step (`codeql-action/analyze`) fails with *"Code scanning is not enabled"*. This workflow handles that gracefully:
+- The `Perform CodeQL Analysis` step has `continue-on-error: true` so the **job always succeeds**.
+- A warning annotation is added to the workflow summary if the upload failed.
+- The full SARIF file is always available as the **`codeql-sarif-python`** artifact.
+
+#### Accessing Results
+
+1. Go to the [Actions tab](https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025/actions)
+2. Select a CodeQL workflow run
+3. Download the `codeql-sarif-python` artifact under "Artifacts"
+4. Open the `.sarif` file with a SARIF viewer (e.g., the [VS Code SARIF extension](https://marketplace.visualstudio.com/items?itemName=MS-SarifVSCode.sarif-viewer))
 
 ## Workflow Status
 

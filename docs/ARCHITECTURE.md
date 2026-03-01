@@ -40,7 +40,8 @@ The repository is designed for:
 ├── Vortrag/               # Beamer presentation LaTeX sources
 │   ├── Vortrag.tex        # Main presentation file
 │   ├── header.tex         # Beamer theme and package configuration
-│   └── Vortrag.bib        # Bibliography
+│   ├── Vortrag.bib        # Bibliography
+│   └── img/               # Measurement images for slides
 │
 ├── Besprechung/           # Meeting notes and discussions
 │
@@ -115,8 +116,11 @@ The repository is designed for:
 - **Features:**
   - Professional academic theme
   - Mathematical formulas and visualizations
-  - Progressive disclosure of concepts
+  - Case study slide with real-world measurement data (Itter)
+  - Progressive disclosure of concepts (configurable `\pause` switches)
   - Bibliography integration
+- **Subdirectories:**
+  - `img/` — Images embedded in slides (e.g., spectrophotometric measurement plots)
 
 ### 2. Header Files
 
@@ -133,7 +137,7 @@ Both documents use modular `header.tex` files that define:
 - **Format:** BibTeX/BibLaTeX
 - **Backend:** BibTeX (configurable to Biber)
 - **Style:** Alphabetic citation style
-- **Content:** 15+ academic references covering foundational and modern works
+- **Content:** 3 references (`BüningTrenkler+1994`, `DalItter2026`, `DalItter2021`)
 - **Integration:** Citations throughout both documents
 
 ---
@@ -466,5 +470,5 @@ Potential areas for expansion:
 
 ---
 
-*Last Updated: February 2026*
-*Version: 1.0.0*
+*Last Updated: March 2026*
+*Version: 1.1.0*

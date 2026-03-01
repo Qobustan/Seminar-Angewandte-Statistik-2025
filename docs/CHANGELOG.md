@@ -8,11 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- New Beamer slide "Fallbeispiel: Gewässermessungen der Itter" in the "Einleitung & Motivation" section of `Vortrag/Vortrag.tex`, illustrating why a single distribution assumption is insufficient
+- `Vortrag/img/` directory with `README.md` placeholder for the measurement images (`messung_itter_1.png`, `messung_itter_2.png`)
+- Two new bibliography entries in `Vortrag/Vortrag.bib`: `DalItter2026` and `DalItter2021`
+- Pause (`\ifpauseswitch\pause\fi`) on the new Fallbeispiel slide before the concluding Fazit block
 - Comprehensive project documentation improvements
 - CHANGELOG.md for version tracking
 - Pull request template for consistent contributions
 - CODEOWNERS file for ownership tracking
 - Architecture documentation
+
+### Changed
+- `Vortrag/Vortrag.bib` trimmed to three entries only: `BüningTrenkler+1994`, `DalItter2026`, `DalItter2021`; removed `Silverman1986`, `Rosenblatt1956`, `Epanechnikov1969`, `NadarayaWatson1964`, `Watson1964`, `Sen1968`, `Wasserman2006`
 
 ## [1.0.0] - 2026-02-12
 

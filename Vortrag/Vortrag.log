@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 01:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 11:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1772,32 +1772,32 @@ Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
  (./Vortrag.aux)
 \openout1 = `Vortrag.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 22.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 22
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 21.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 21
 .
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    ... okay on input line 21.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1860,57 +1860,57 @@ topdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 22.
+Package hyperref Info: Link coloring ON on input line 21.
  (./Vortrag.out) (./Vortrag.out)
 \@outlinefile=\write6
 \openout6 = `Vortrag.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 22.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 22.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 22.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 22.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 21.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/lmr/m/n on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 22.
+(Font)                  OT1/lmss/m/n --> OT1/lmr/m/n on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 22.
+(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 22.
+(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/m/n on input line 22.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/m/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> OT1/lmss/m/n on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 22.
+(Font)                  OT1/lmss/bx/n --> OT1/lmss/m/n on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> OT1/lmss/m/it on input line 22.
+(Font)                  OT1/lmr/m/it --> OT1/lmss/m/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> OT1/lmss/m/it on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 22.
+(Font)                  OT1/lmr/bx/it --> OT1/lmss/m/it on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> OT1/zi4/m/n on input line 22.
+(Font)                  OT1/lmtt/m/n --> OT1/zi4/m/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/zi4/m/n on input line 22.
+(Font)                  OT1/lmtt/m/n --> OT1/zi4/m/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 22.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 22.
+(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> OT1/lmr/b/n on input line 22.
+(Font)                  OT1/lmss/b/n --> OT1/lmr/b/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmss/b/n --> OT1/lmss/b/n on input line 22.
+(Font)                  OT1/lmss/b/n --> OT1/lmss/b/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 22.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 22.
+(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/zi4/m/n --> OT1/zi4/b/n on input line 22.
+(Font)                  OT1/zi4/m/n --> OT1/zi4/b/n on input line 21.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/translator/tran
 slator-basic-dictionary-English.dict
@@ -1967,8 +1967,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Vortrag.bbl' found.
  (./Vortrag.bbl)
-Package biblatex Info: Reference section=0 on input line 22.
-Package biblatex Info: Reference segment=0 on input line 22.
+Package biblatex Info: Reference section=0 on input line 21.
+Package biblatex Info: Reference segment=0 on input line 21.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/upquote/upquote
 .sty
@@ -1987,37 +1987,37 @@ lm/lm-rm.enc}] (./Vortrag.toc) [2
 
 ]
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
-7.
+6.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-87.
+86.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-87.
+86.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 87.
+(Font)              <10.95> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 87.
+(Font)              <8> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 87.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
+(Font)              <6> on input line 86.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 86.
 
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.f
 d
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 86.
 
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.f
@@ -2025,16 +2025,16 @@ d
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 8
-7.
+6.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry
 .fd)
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 87.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 86.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 87.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 86.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 87.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 86.
  [3
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
@@ -2047,7 +2047,7 @@ m/lm-mathit.enc}] [4
 
 ]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
-21.
+23.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Ud
 srom.fd
@@ -2086,40 +2086,40 @@ hex.enc}] [8
 
 ] [22
 
-] [23
-
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-65.
+54.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-[24
+[23
+
+] [24
 
 ] [25
 
 ] [26
 
-] [27
-
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 454.
+(Font)              <5> on input line 440.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 454.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 440.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 454.
+(Font)              <10> on input line 440.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 454.
+(Font)              <7> on input line 440.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 454.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 440.
 
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 454.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 440.
 
- [28
+ [27
+
+] [28
 
 ] [29
 
@@ -2135,9 +2135,9 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
 
 ] [35
 
-] [36
+] (./Vortrag.toc) [36
 
-] (./Vortrag.toc) [37
+] [37
 
 ] [38
 
@@ -2157,10 +2157,10 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
 
 ] [46
 
-] [47
-
 ] (./Vortrag.toc)
-[48
+[47
+
+] [48
 
 ] [49
 
@@ -2174,43 +2174,34 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
 
 ] [54
 
-] [55
+] (./Vortrag.toc) [55
 
 ] [56
 
-] (./Vortrag.toc) [57
-
-] [58
-
-] [59
-
-]
-[60
-
-] (./Vortrag.toc) [61
+] [57
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 944.
+(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 927.
 
 LaTeX Font Info:    Trying to load font information for OT1+zi4 on input line 9
-44.
+27.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/inconsolata/ot1
 zi4.fd
 File: ot1zi4.fd 2018/01/14 OT1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 944.
- [62
+(Font)              scaled to size 10.95pt on input line 927.
+ [58
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rms
 c.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/inc
-onsolata/i4-ot1-0.enc}] [63
+onsolata/i4-ot1-0.enc}] [59
 
 
-] [64
+] [60
 
 
 ]
@@ -2224,43 +2215,53 @@ onsolata/i4-ot1-0.enc}] [63
 \openout9 = `Vortrag.snm'.
 
  (./Vortrag.aux)
-Package rerunfilecheck Info: File `Vortrag.out' has not changed.
-(rerunfilecheck)             Checksum: CF084169A3F1FA5180EB87131D9AE28B;1311.
+
+Package rerunfilecheck Warning: File `Vortrag.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Vortrag.out':
+(rerunfilecheck)             Before: CF084169A3F1FA5180EB87131D9AE28B;1311
+(rerunfilecheck)             After:  9F8C1263E39DA465031171569E4FA694;1256.
 Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 \openout1 = `Vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54635 strings out of 476025
- 1268227 string characters out of 5790017
- 2065192 words of memory out of 5000000
- 73953 multiletter control sequences out of 15000+600000
+ 54622 strings out of 476025
+ 1268003 string characters out of 5790017
+ 2062187 words of memory out of 5000000
+ 73949 multiletter control sequences out of 15000+600000
  586317 words of font info for 97 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,18n,122p,1853b,2459s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/inco
-nsolata/Inconsolata-zi4r.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
-ist/fonts/type1/public/doublestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/t
-exlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></Volumes/Macintosh SS
-D/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Volumes/Maci
-ntosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Volu
-mes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
-></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lm
-r10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/publi
-c/lm/lmss10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/typ
-e1/public/lm/lmss12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/f
-onts/type1/public/lm/lmss8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf
--dist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Macintosh SSD/local/texlive/
-2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></Volumes/Macintosh SSD/local
-/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></Volumes/Macintosh S
-SD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Volumes/Mac
-intosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></Volu
-mes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msbm10.pfb>
-Output written on Vortrag.pdf (64 pages, 412528 bytes).
+
+pdfTeX warning (dest): name{Navigation61} has been referenced but does not exis
+t, replaced by a fixed one
+
+</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/incons
+olata/Inconsolata-zi4r.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dis
+t/fonts/type1/public/doublestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/tex
+live/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></Volumes/Macintosh SSD/
+local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Volumes/Macint
+osh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Volume
+s/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><
+/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr1
+0.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/
+lm/lmss10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1
+/public/lm/lmss12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fon
+ts/type1/public/lm/lmss8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
+ist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Macintosh SSD/local/texlive/20
+23/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></Volumes/Macintosh SSD/local/t
+exlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></Volumes/Macintosh SSD
+/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Volumes/Macin
+tosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></Volume
+s/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb>
+Output written on Vortrag.pdf (60 pages, 344187 bytes).
 PDF statistics:
- 1970 PDF objects out of 2073 (max. 8388607)
- 1838 compressed objects within 19 object streams
- 148 named destinations out of 1000 (max. 500000)
+ 631 PDF objects out of 1000 (max. 8388607)
+ 516 compressed objects within 6 object streams
+ 141 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -11,8 +11,7 @@
 \addbibresource{Vortrag.bib}
 
 \usetheme{Madrid}
-
-
+\beamertemplatenavigationsymbolsempty
 
 % Den \pause - Befehl steuern
 % Vortragsversion -> true; Druckversion -> false
@@ -21,7 +20,9 @@
 
 \begin{document}
 	
-	\maketitle
+	\begin{frame}[plain,noframenumbering]
+		\titlepage
+	\end{frame}
 	
 	% TikZ - Bibliothek
 	\usetikzlibrary{arrows.meta}
@@ -31,7 +32,7 @@
 	\AtBeginSection[] % Do nothing for \section*
 	{
 		\begin{frame}<beamer>
-			\frametitle{Outline}
+			\frametitle{Inhalt}
 			\tableofcontents[currentsection]
 		\end{frame}
 	}
@@ -44,15 +45,14 @@
 			\begin{column}{0.45\textwidth}
 				\textbf{Parametrisch}
 				\begin{itemize}
-					\item Annahme: Verteilung ist bekannt (z.\,B. Normalverteilung)
+					\item Verteilung von $X$ ist bekannt (z.\,B. Normalverteilung)
 					\item Wenige Parameter ($\mu, \sigma^2$)
 					\item Schätzung durch Maximum-Likelihood
 				\end{itemize}
 				\vspace{0.3cm}
 				\textbf{Problem:}
 				\begin{itemize}
-					\item Oft zu starr bei unbekannter Verteilung
-					\item Starke Kopplung an unsicheren Annahmen!
+					\item Unsichere starke Annahmen
 				\end{itemize}
 			\end{column}
 			
@@ -62,22 +62,21 @@
 			
 			% Nichtparametrisch
 			\begin{column}{0.45\textwidth}
-				\textbf{Nichtparametrisch (KDE)}
+				\textbf{Nichtparametrisch}
 				\begin{itemize}
-					\item Keine parametrische Familie vorgegeben
-					\item Annahmen: $X$ stetig, $f$ glatt (mind. zweimal differenzierbar)
+					\item Keine parametrische Familie für $X$ vorgegeben
+					\item Annahmen: $X$ stetig, $f$ glatt (zweimal differenzierbar)
 					\item Schätzung über Kernfunktion $K$ und Bandbreite $h$
 				\end{itemize}
 				\vspace{0.3cm}
 				\textbf{Vorteil:}
 				\begin{itemize}
 					\item Flexibel, datengetrieben
-					\item Erfasst komplexe Strukturen
 				\end{itemize}
 			\end{column}
 		\end{columns}
 		
-		\vspace{0.8em}
+		\vspace{0.5em}
 		
 		\centering
 		\begin{tikzpicture}[>=stealth, thick]
@@ -87,105 +86,115 @@
 	\end{frame}
 	
 	\begin{frame}{Ausgangssituation und Zielsetzung}
-		Gegeben seien u.u.i.d.\ Zufallsvariablen
+		Gegeben seien unabhängige, identisch verteilte Zufallsvariablen
 		\[
 		X_1,\dots,X_n \sim F
 		\quad\text{mit unbekannter Dichte } f.
 		\]
 		
 		\vspace{0.5cm}
-		\textbf{Zielsetzung \cite{BüningTrenkler+1994}:}
+		\textbf{Zielsetzung:}
 		\[
-		\text{Schätze } f(x) \text{ oder } m(x)=\mathbb E(Y|X=x)
+		\text{Schätze } f(x) \quad\text{oder}\quad m(x)=\mathbb E(Y|X=x)
 		\]
 		
 		\alert{ohne Annahme einer parametrischen Familie.}
 		
 		\vspace{0.5cm}
-		\textbf{Grundprinzip:} ,,Let the data speak'' – Daten bestimmen die Form der Schätzung
+		\textbf{Grundprinzip:} ,,Lass die Daten sprechen'' – Daten bestimmen die Form der Schätzung.
 	\end{frame}
 	
-	\section{Der Rosenblatt-Schätzer}
+	\section{Rosenblatt-Schätzer}
 	
 	\begin{frame}{Empirische Verteilungsfunktion}
+		Die empirische Verteilungsfunktion ist gegeben durch:
 		\[
 		F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
 		\]
 		
 		\begin{itemize}
-			\item Konsistent für $F$
-			\item Aber: Treppenfunktion
+			\itemsep8pt
+			\item Die empirische Verteilungsfunktion ist ein konsistenter Schätzer für die Verteilungsfunktion $F$.
+			\item Sie ist jedoch eine Treppenfunktion.
 		\end{itemize}
 		
+		\vspace{0.5em}
 		\alert{Wie erhalten wir daraus eine Dichte?}
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Der Rosenblatt-Schätzer – Grundidee}
+		\frametitle{Rosenblatt-Schätzer – Grundidee}
 		
-		\textbf{Grundprinzip:} Da $f(x) = F'(x)$, approximiere die Ableitung durch symmetrischen Differenzenquotienten \cite{Rosenblatt1956}:
+		\textbf{Grundprinzip:} Da $f(x) = F'(x)$, approximiere die Ableitung durch den symmetrischen Differenzenquotienten:
 		\[
-		f(x) \approx \frac{F(x+h) - F(x-h)}{2h}
+		f(x) \approx \frac{F(x+h) - F(x-h)}{2h}.
 		\]
 		
 		\ifpauseswitch
 		\pause
 		\fi
 		
-		\textbf{Der Schätzer:} Ersetze $F$ durch empirische Verteilungsfunktion $F_n$:
-		\begin{equation}
-			\hat{f}_n(x) = \frac{F_n(x+h) - F_n(x-h)}{2h}
-		\end{equation}
+		\vspace{0.5em}
 		
-		\textbf{Interpretation:} Relative Häufigkeit der Beobachtungen in $(x-h, x+h]$, normiert durch $2h$ – ein ,,gleitendes Histogramm``.
+		\textbf{Der Schätzer:} Ersetze $F$ durch die empirische Verteilungsfunktion $F_n$:
+		\[
+		\hat{f}_n(x) = \frac{F_n(x+h) - F_n(x-h)}{2h}.
+		\]
+		
+		\vspace{0.5em}
+		
+		\textbf{Interpretation:} Die relative Häufigkeit der Beobachtungen in $(x-h, x+h]$, normiert durch $2h$, ergibt ein ,,gleitendes Histogramm''.
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Der Rosenblatt-Schätzer – Konsistenz}
+		\frametitle{Rosenblatt-Schätzer – Konsistenz}
 		
 		\textbf{Konsistenzbedingungen:} Für $n \to \infty$ muss gelten:
 		\begin{enumerate}
+			\itemsep8pt
 			\item $h \to 0$ \quad (Bias reduzieren: Differenzenquotient approximiert Ableitung besser)
 			\item $nh \to \infty$ \quad (Varianz reduzieren: genügend Daten im Intervall)
 		\end{enumerate}
 		
-		\vspace{0.5cm}
+		\vspace{0.5em}
 		
 		\textbf{Spannungsverhältnis:} $h$ darf nicht zu schnell gegen Null konvergieren.
 		
-		\textbf{Typisch:} $h \sim n^{-\alpha}$ mit $0 < \alpha < 1$
+		\vspace{0.5em}
+		
+		\textbf{Typische Wahl:} $h \approx n^{-\alpha}$ mit $0 < \alpha < 1$
 	\end{frame}
 	
-	\section{Das Histogramm}
+	\section{Histogramm}
 	
 	\begin{frame}
-		\frametitle{Das Histogramm (Der Klassiker)}
+		\frametitle{Funktionsweise eines Histogramms}
 		
 		\begin{itemize}
-			\item \textbf{Funktionsweise:} Zerlegung des Datenraums in Boxen (Bins) der Breite $h$. Die Höhe der Box entspricht der relativen Häufigkeit $\frac{n_k}{n}$ normiert durch $h$.
-			\item \textbf{Formal:}
+			\itemsep8pt
+			\item \textbf{Funktionsweise:} Zerlegung des Datenraums in Intervalle (Bins) $B_k$ der Breite $h$. Die Höhe entspricht der relativen Häufigkeit $\frac{n_k}{n}$ normiert durch $h$, wobei $n_k$ die Anzahl der Beobachtungen in $B_k$ bezeichnet.
+			\item \textbf{Formal ist ein Histogramm gegeben durch:}
 			\[
 			\hat f_H(x) = \sum_k \frac{n_k}{nh}\mathds{1}_{B_k}(x)
 			\]
+			\item Das Histogramm kann damit als Dichteschätzer verwendet werden.
 		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Das Histogramm (Probleme)}
+		\frametitle{Histogramm – Probleme}
 		\begin{itemize}
-			\item \textbf{Probleme:}
-			\begin{itemize} % statt enumerate
-				\item Unstetigkeit: Die geschätzte Dichte ist eine Treppenfunktion.
-				\item Subjektivität: Abhängig von $x_0$ und $h$.
-			\end{itemize}
+			\itemsep8pt
+			\item \textbf{Unstetigkeit:} Die geschätzte Dichte ist eine Treppenfunktion.
+			\item \textbf{Subjektivität:} Das Ergebnis hängt von der Wahl des Startpunkts $x_0$ und der Bandbreite $h$ ab.
 		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Histogramm vs. KDE: Visueller Vergleich}
+		\frametitle{Histogramm vs. Kerndichteschätzung: Visueller Vergleich}
 		
 		\centering
-		\begin{tikzpicture}[scale=0.75]
+		\begin{tikzpicture}[scale=0.8]
 			\begin{axis}[
 				width=11cm, height=6cm,
 				xlabel={$x$},
@@ -211,7 +220,7 @@
 				
 				% KDE (smooth)
 				\addplot[blue, very thick, smooth] {exp(-(x^2)/2.2)/sqrt(2*pi*1.1)};
-				\addlegendentry{KDE}
+				\addlegendentry{Kerndichteschätzung (KDE)}
 			\end{axis}
 		\end{tikzpicture}
 		
@@ -221,57 +230,49 @@
 	
 	
 	\begin{frame}
-		\frametitle{Das Histogramm (Optimale Bandbreite)}
+		\frametitle{Histogramm – Optimale Bandbreite}
 		
 		\begin{itemize}
+			\itemsep8pt
 			\item \textbf{Optimale Bandbreite ($h$):}
 			\begin{itemize}
-				\item Scott \cite{Scott1979}: $h \approx 3.49 s n^{-1/3}$
-				\item Freedman-Diaconis \cite{FreedmanDiaconis1981}: $h^* = 2(x_{0.75} - x_{0.25})n^{-1/3}$
+				\item Scott: $h \approx 3{,}49 \, s \, n^{-1/3}$
+				\item Freedman-Diaconis: $h^* = 2(x_{0.75} - x_{0.25})n^{-1/3}$
 			\end{itemize}
 		\end{itemize}
 	\end{frame}
 	
-	\section{Kernschätzer (KDE)}
+	\section{Kerndichteschätzer}
 	
 	\begin{frame}
 		\frametitle{Grundidee der Kerndichteschätzung}
 		
 		\begin{itemize}
-			\item Jede Beobachtung trägt zur Schätzung an der Stelle $x$ bei
-			\item Der Beitrag hängt vom Abstand zu $x$ ab
-		\end{itemize}
-		
-		\vspace{0.5em}
-		
-		\begin{itemize}
-			\item Einführung einer Gewichtungsfunktion (Kernfunktion)
-			\item Glättung statt harter Intervallabgrenzung
+			\itemsep10pt
+			\item Bei einer Kerndichteschätzung trägt jede Beobachtung zur Schätzung an der Stelle $x$ bei.
+			\item Der Beitrag hängt vom Abstand zur Stelle $x$ ab.
+			\item Es wird eine Gewichtungsfunktion (Kernfunktion) eingeführt.
+			\item Statt harter Intervallabgrenzung erfolgt eine stetige Glättung.
 		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Kernschätzer (KDE) - Einführung}
+		\frametitle{Kerndichteschätzer}
 		
-		\begin{itemize}
-			\item \textbf{Der Schätzer:}
-			\begin{equation}
-				\hat{f}_n(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}\right)
-			\end{equation}
-		\end{itemize}
-		
-		\begin{itemize}
-			\item $K$: Kernfunktion
-			\item $h > 0$: Bandbreite
-		\end{itemize}
+		Der Kerndichteschätzer ist gegeben durch:
+		\[
+			\hat{f}_n(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}\right),
+		\]
+		wobei $K$ eine Kernfunktion und $h > 0$ die Bandbreite ist.
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Kernschätzer (KDE) – Wahl des Kerns}
+		\frametitle{Kerndichteschätzer – Wahl des Kerns}
 		
 		\textbf{Gängige Kernfunktionen:}
 		\begin{itemize}
-			\item \textbf{Rechteck-Kern} (Uniform) – einfachst, unstetig
+			\itemsep8pt
+			\item \textbf{Rechteck-Kern} (Gleichverteilung) – einfachste Kernfunktion, unstetig
 			\item \textbf{Gauß-Kern} – glatt, unbeschränkter Träger
 			\item \textbf{Epanechnikov-Kern} – optimal (minimiert IMSE)
 		\end{itemize}
@@ -284,13 +285,15 @@
 	\begin{frame}
 		\frametitle{Gängige Kernfunktionen – Formeln}
 		
-		\textbf{Rechteck-Kern (Uniform):}
+		\textbf{Rechteck-Kern (Gleichverteilung auf $[-1,1]$):}
 		\[
 		K(x) = \begin{cases}
 			\frac{1}{2} & \text{falls } |x| \le 1 \\
 			0 & \text{sonst}
 		\end{cases}
 		\]
+		
+		\vspace{0.5em}
 		
 		\ifpauseswitch
 		\pause
@@ -303,9 +306,9 @@
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Epanechnikov-Kern – Der Optimale}
+		\frametitle{Epanechnikov-Kern}
 		
-		\textbf{Formel \cite{Epanechnikov1969}:}
+		\textbf{Epanechnikov-Kern:}
 		\[
 		K(x) = \begin{cases}
 			\frac{3}{4}(1-x^2) & \text{falls } |x| \le 1 \\
@@ -315,12 +318,12 @@
 		
 		\vspace{0.5em}
 		
-		\textbf{Besonderheit:}
+		\textbf{Besonderheit des Epanechnikov-Kerns:}
 		\begin{itemize}
-			\item \textbf{Theoretisch optimal:} Minimiert den integrierten mittleren quadratischen Fehler (IMSE)
-			\item IMSE = $\int \operatorname{MSE}(x) f(x) \, dx$ – misst globale Schätzgüte
-			\item Parabolische Form, kompakter Träger (effizienter zu berechnen)
-			\item Praktisch kaum Unterschied zu Gauß-Kern (Bandbreite $h$ wichtiger!)
+			\itemsep8pt
+			\item \textbf{Theoretisch optimal:} Minimiert den integrierten mittleren quadratischen Fehler (IMSE $= \int \operatorname{MSE}(x) f(x) \, dx$), der die globale Schätzgüte misst.
+			\item Parabolische Form, kompakter Träger (effizienter zu berechnen).
+			\item Praktisch kaum Unterschied zu Gauß-Kern (Bandbreite $h$ wichtiger!).
 		\end{itemize}
 	\end{frame}
 	
@@ -328,23 +331,9 @@
 		\frametitle{Kernfunktion – Mathematische Anforderungen}
 		
 		\textbf{Ein Kern $K$ muss erfüllen:}
-		\begin{enumerate}
-			\item $K(x) \ge 0$ (Nicht-Negativität) – verhindert negative Wahrscheinlichkeiten
-			\item $\int K(x)\,dx = 1$ (Normierung) – stellt sicher, dass $\hat{f}_n$ gültige Dichte ist
-			\item $K(x) = K(-x)$ (Symmetrie) – vermeidet systematische Verschiebung
-			\item $\sigma_K^2 = \int x^2 K(x)\,dx < \infty$ (Endliche Varianz) – notwendig für Theorie
-		\end{enumerate}
-		
-		\vspace{0.5em}
-		
-		\textbf{Wichtig:} Kernwahl hat meist \textit{geringeren} Einfluss als Bandbreite $h$!
-	\end{frame}
-	\begin{frame}
-		\frametitle{Kernfunktion - Mathematische Anforderungen}
-		
-		\textbf{Ein Kern $K$ muss erfüllen:}
 		
 		\begin{enumerate}
+			\itemsep8pt
 			\item $K(x) \ge 0$ \\
 			verhindert negative Wahrscheinlichkeiten
 			
@@ -384,17 +373,18 @@
 		
 		\textbf{Datengetriebene Alternativen:}
 		\begin{itemize}
+			\itemsep8pt
 			\item \textbf{Kreuzvalidierung (Cross-Validation):}
 			\begin{itemize}
-				\item Keine Normalverteilungsannahme nötig
-				\item Minimiert geschätzten integrierten MSE
-				\item Rechenintensiver
+				\item Keine Normalverteilungsannahme nötig.
+				\item Minimiert geschätzten integrierten MSE.
+				\item Rechenintensiver.
 			\end{itemize}
 			
 			\item \textbf{Plug-In-Methoden:}
 			\begin{itemize}
-				\item Schätzen unbekannte Größen aus Daten
-				\item Berechnen optimales $h$ aus asymptotischer MSE-Formel
+				\item Schätzen unbekannte Größen aus Daten.
+				\item Berechnen optimales $h$ aus asymptotischer MSE-Formel.
 			\end{itemize}
 		\end{itemize}
 	\end{frame}
@@ -403,14 +393,10 @@
 		\frametitle{Kerndichteschätzung – Rolle der Bandbreite}
 		
 		\begin{itemize}
-			\item Kleine Bandbreite: geringe Glättung, hohe Varianz
-			\item Große Bandbreite: starke Glättung, hoher Bias
-		\end{itemize}
-		
-		\vspace{0.5em}
-		
-		\begin{itemize}
-			\item Zentrale Stellgröße der Kerndichteschätzung
+			\itemsep10pt
+			\item Eine kleine Bandbreite führt zu geringer Glättung und hoher Varianz.
+			\item Eine große Bandbreite führt zu starker Glättung und hohem Bias.
+			\item Die Bandbreite ist die zentrale Stellgröße der Kerndichteschätzung.
 		\end{itemize}
 	\end{frame}
 	
@@ -456,17 +442,22 @@
 	\begin{frame}
 		\frametitle{KDE als Faltung}
 		
+		Der Kerndichteschätzer lässt sich als Faltung schreiben:
 		\[
 		\hat{f}_n(x) = \int K_h(x-y)\,dF_n(y),
 		\quad
-		K_h(t)=\frac{1}{h} K\left(\frac{t}{h}\right)
+		K_h(t)=\frac{1}{h} K\left(\frac{t}{h}\right).
 		\]
 		
 		\ifpauseswitch
 		\pause
 		\fi
+		
+		\vspace{0.5em}
+		
+		Der Erwartungswert ergibt sich als:
 		\[
-		\mathbb{E}[\hat{f}_n(x)] = (K_h * f)(x)
+		\mathbb{E}[\hat{f}_n(x)] = (K_h * f)(x).
 		\]
 		
 		\alert{Bias = Glättungsfehler der Faltung}
@@ -477,15 +468,11 @@
 		
 		\textbf{Was bedeutet die Faltung?}
 		\begin{itemize}
-			\item Der Erwartungswert ist eine \textit{geglättete} Version von $f$
-			\item Je breiter der Kern (größeres $h$), desto stärker die Glättung
-			\item Feine Strukturen werden ,,verschmiert``
-		\end{itemize}
-		
-		\vspace{0.5em}
-		
-		\begin{itemize}
-			\item Dies erklärt, warum die Wahl von $h$ so kritisch ist
+			\itemsep8pt
+			\item Der Erwartungswert ist eine \textit{geglättete} Version von $f$.
+			\item Je breiter der Kern (größeres $h$), desto stärker die Glättung.
+			\item Feine Strukturen werden ,,verschmiert''.
+			\item Dies erklärt, warum die Wahl von $h$ so kritisch ist.
 		\end{itemize}
 	\end{frame}
 	
@@ -526,15 +513,10 @@
 		\frametitle{Bezug zum Rosenblatt-Schätzer}
 		
 		\begin{itemize}
-			\item Rosenblatt-Schätzer als Spezialfall
-			\item Rechteckkern mit kompakter Unterstützung
-		\end{itemize}
-		
-		\vspace{0.5em}
-		
-		\begin{itemize}
-			\item Kerndichteschätzung verallgemeinert den Ansatz
-			\item Liefert stetige Schätzfunktionen
+			\itemsep8pt
+			\item Der Rosenblatt-Schätzer ist ein Spezialfall des Kerndichteschätzers mit Rechteck-Kern und kompaktem Träger.
+			\item Die Kerndichteschätzung verallgemeinert diesen Ansatz.
+			\item Sie liefert stetige Schätzfunktionen.
 		\end{itemize}
 	\end{frame}
 	
@@ -543,15 +525,11 @@
 		\frametitle{Vorteile der Kerndichteschätzung}
 		
 		\begin{itemize}
-			\item Stetige und glatte Schätzfunktion
-			\item Flexibel einsetzbar
-			\item Gute theoretische Eigenschaften
-		\end{itemize}
-		
-		\vspace{0.5em}
-		
-		\begin{itemize}
-			\item Grundlage für weiterführende nichtparametrische Verfahren
+			\itemsep8pt
+			\item Stetige und glatte Schätzfunktion.
+			\item Flexibel einsetzbar.
+			\item Gute theoretische Eigenschaften.
+			\item Grundlage für weiterführende nichtparametrische Verfahren.
 		\end{itemize}
 	\end{frame}
 	
@@ -562,16 +540,14 @@
 	\begin{frame}
 		\frametitle{Nichtparametrische Regression -- Einführung}
 		
-		\textbf{Nadaraya--Watson-Schätzer \cite{NadarayaWatson1964, Watson1964}:}
-		\begin{equation}
+		\textbf{Nadaraya--Watson-Schätzer:}
+		\[
 			\hat{m}_{NW}(x) =
 			\frac{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right) Y_i}
 			{\sum_{i=1}^n K\left(\frac{x - X_i}{h}\right)}
-		\end{equation}
+		\]
 		
-		\begin{itemize}
-			\item Schätzung von $m(x)$ als gewichteter Mittelwert der umliegenden $Y$-Werte.
-		\end{itemize}
+		Der Nadaraya-Watson-Schätzer schätzt $m(x)$ als gewichteten Mittelwert der umliegenden $Y$-Werte.
 	\end{frame}
 	
 	
@@ -580,16 +556,18 @@
 		
 		\textbf{Ziel:}
 		\begin{itemize}
-			\item Schätzung des funktionalen Zusammenhangs zwischen $X$ und $Y$
-			\item Ohne Annahme einer konkreten parametrischen Form für $m(x)$
+			\itemsep8pt
+			\item Schätzung des funktionalen Zusammenhangs zwischen $X$ und $Y$.
+			\item Ohne Annahme einer konkreten parametrischen Form für $m(x)$.
 		\end{itemize}
 		
 		\vspace{0.5em}
 		
 		\textbf{Unterschied zur linearen Regression:}
 		\begin{itemize}
-			\item Kein globales lineares Modell
-			\item Lokale Anpassung an die Datenstruktur
+			\itemsep8pt
+			\item Kein globales lineares Modell.
+			\item Lokale Anpassung an die Datenstruktur.
 		\end{itemize}
 	\end{frame}
 	
@@ -599,16 +577,18 @@
 		
 		\textbf{Grundidee:}
 		\begin{itemize}
-			\item Punkte mit ähnlichen $X$-Werten liefern ähnliche Informationen über $m(x)$
-			\item Beobachtungen in der Nähe von $x$ werden stärker gewichtet
+			\itemsep8pt
+			\item Punkte mit ähnlichen $X$-Werten liefern ähnliche Informationen über $m(x)$.
+			\item Beobachtungen in der Nähe von $x$ werden stärker gewichtet.
 		\end{itemize}
 		
 		\vspace{0.5em}
 		
 		\textbf{Umsetzung:}
 		\begin{itemize}
-			\item Gewichtung erfolgt über eine Kernfunktion $K$
-			\item Die Bandbreite $h$ bestimmt die Größe der lokalen Umgebung
+			\itemsep8pt
+			\item Die Gewichtung erfolgt über eine Kernfunktion $K$.
+			\item Die Bandbreite $h$ bestimmt die Größe der lokalen Umgebung.
 		\end{itemize}
 	\end{frame}
 	
@@ -618,15 +598,10 @@
 		
 		\textbf{Interpretation des Schätzers:}
 		\begin{itemize}
-			\item $\hat{m}_{NW}(x)$ ist ein gewichteter Mittelwert der $Y_i$
-			\item Gewichte hängen vom Abstand zwischen $X_i$ und $x$ ab
-		\end{itemize}
-		
-		\vspace{0.5em}
-		
-		\textbf{Eigenschaft:}
-		\begin{itemize}
-			\item Je näher $X_i$ an $x$ liegt, desto größer ist sein Einfluss
+			\itemsep8pt
+			\item $\hat{m}_{NW}(x)$ ist ein gewichteter Mittelwert der $Y_i$.
+			\item Die Gewichte hängen vom Abstand zwischen $X_i$ und $x$ ab.
+			\item Je näher $X_i$ an $x$ liegt, desto größer ist sein Einfluss.
 		\end{itemize}
 	\end{frame}
 	
@@ -636,15 +611,10 @@
 		
 		\textbf{Einfluss der Bandbreite $h$:}
 		\begin{itemize}
-			\item Kleines $h$: starke lokale Anpassung, hohe Varianz
-			\item Großes $h$: starke Glättung, höherer Bias
-		\end{itemize}
-		
-		\vspace{0.5em}
-		
-		\textbf{Analogie zur Dichteschätzung:}
-		\begin{itemize}
-			\item Gleicher Bias-Varianz-Tradeoff wie bei der KDE
+			\itemsep8pt
+			\item Ein kleines $h$ führt zu starker lokaler Anpassung und hoher Varianz.
+			\item Ein großes $h$ führt zu starker Glättung und höherem Bias.
+			\item Es gilt derselbe Bias-Varianz-Tradeoff wie bei der KDE.
 		\end{itemize}
 	\end{frame}
 	
@@ -654,16 +624,18 @@
 		
 		\textbf{Vorteile:}
 		\begin{itemize}
-			\item Hohe Flexibilität
-			\item Keine Modellfehlanpassung durch falsche Annahmen
+			\itemsep8pt
+			\item Hohe Flexibilität.
+			\item Keine Modellfehlanpassung durch falsche Annahmen.
 		\end{itemize}
 		
 		\vspace{0.5em}
 		
 		\textbf{Grenzen:}
 		\begin{itemize}
-			\item Wahl der Bandbreite entscheidend
-			\item Randprobleme bei kleinen Stichproben
+			\itemsep8pt
+			\item Die Wahl der Bandbreite ist entscheidend.
+			\item Randprobleme bei kleinen Stichproben.
 		\end{itemize}
 	\end{frame}
 	
@@ -672,9 +644,10 @@
 		
 		\textbf{Problem an den Rändern:}
 		\begin{itemize}
-			\item Nadaraya-Watson-Schätzer hat starken Bias an Datengrenzen
-			\item Weniger Datenpunkte in der Umgebung verfügbar
-			\item Asymmetrische Gewichtung führt zu Verzerrung
+			\itemsep8pt
+			\item Der Nadaraya-Watson-Schätzer hat starken Bias an Datengrenzen.
+			\item Weniger Datenpunkte in der Umgebung verfügbar.
+			\item Asymmetrische Gewichtung führt zu Verzerrung.
 		\end{itemize}
 		
 		\vspace{0.5em}
@@ -733,16 +706,18 @@
 		
 		\textbf{Gemeinsames Prinzip:}
 		\begin{itemize}
-			\item Verwendung von Kernfunktionen
-			\item Lokale Gewichtung von Beobachtungen
+			\itemsep8pt
+			\item Verwendung von Kernfunktionen.
+			\item Lokale Gewichtung von Beobachtungen.
 		\end{itemize}
 		
 		\vspace{0.5em}
 		
 		\textbf{Unterschied:}
 		\begin{itemize}
-			\item Dichteschätzung: Schätzung von $f(x)$
-			\item Regression: Schätzung von $m(x) = \mathbb{E}(Y|X=x)$
+			\itemsep8pt
+			\item Dichteschätzung: Schätzung von $f(x)$.
+			\item Regression: Schätzung von $m(x) = \mathbb{E}(Y|X=x)$.
 		\end{itemize}
 	\end{frame}
 	
@@ -750,18 +725,20 @@
 	\begin{frame}
 		\frametitle{Strukturelle Sicht}
 		
+		Der Regressionsfunktionswert lässt sich schreiben als:
 		\[
-		m(x) = \frac{\int y\, f_{XY}(x,y)\, dy}{f_X(x)}
+		m(x) = \frac{\int y\, f_{XY}(x,y)\, dy}{f_X(x)}.
 		\]
 		
+		\vspace{0.5em}
+		
+		Der Nadaraya-Watson-Schätzer ergibt sich daraus als Quotient von Kerndichteschätzern:
 		\[
 		\hat m(x) = \frac{\hat r(x)}{\hat f_X(x)},
 		\quad
 		\hat r(x) = \frac{1}{nh} \sum_{i=1}^n
-		K\left(\frac{x-X_i}{h}\right) Y_i
+		K\left(\frac{x-X_i}{h}\right) Y_i.
 		\]
-		
-		\alert{Quotient von Kerndichtesch\"atzern}
 	\end{frame}
 	
 	
@@ -772,24 +749,27 @@
 		
 		\textbf{Verbindung zur nichtparametrischen Statistik:}
 		\begin{itemize}
-			\item Wie KDE verzichtet auch robuste Regression auf starke Verteilungsannahmen
-			\item Beide zielen auf Robustheit durch reduzierte Verteilungsannahmen und lokale Gewichtung von Datenpunkten
+			\itemsep8pt
+			\item Wie die KDE verzichtet auch robuste Regression auf starke Verteilungsannahmen.
+			\item Beide zielen auf Robustheit durch reduzierte Verteilungsannahmen und lokale Gewichtung von Datenpunkten.
 		\end{itemize}
 		
 		\vspace{0.5em}
 		
 		\textbf{Ziel:}
 		\begin{itemize}
-			\item Schätzung eines linearen Zusammenhangs zwischen $X$ und $Y$
-			\item Geringe Empfindlichkeit gegenüber Ausreißern
+			\itemsep8pt
+			\item Schätzung eines linearen Zusammenhangs zwischen $X$ und $Y$.
+			\item Geringe Empfindlichkeit gegenüber Ausreißern.
 		\end{itemize}
 		
 		\vspace{0.5em}
 		
 		\textbf{Problem der klassischen Regression:}
 		\begin{itemize}
-			\item Basiert auf quadratischen Fehlern (OLS)
-			\item Einzelne Ausreißer können Schätzung stark verzerren
+			\itemsep8pt
+			\item Basiert auf quadratischen Fehlern (OLS).
+			\item Einzelne Ausreißer können die Schätzung stark verzerren.
 		\end{itemize}
 	\end{frame}
 	
@@ -798,16 +778,18 @@
 		
 		\textbf{Zentrale Idee:}
 		\begin{itemize}
-			\item Betrachtung von Steigungen zwischen Beobachtungspaaren
-			\item Verzicht auf Minimierung einer globalen Fehlerfunktion
+			\itemsep8pt
+			\item Betrachtung von Steigungen zwischen Beobachtungspaaren.
+			\item Verzicht auf Minimierung einer globalen Fehlerfunktion.
 		\end{itemize}
 		
 		\vspace{0.5em}
 		
 		\textbf{Konsequenz:}
 		\begin{itemize}
-			\item Schätzung basiert auf Lageparametern (Median)
-			\item Hohe Robustheit gegenüber extremen Werten
+			\itemsep8pt
+			\item Die Schätzung basiert auf Lageparametern (Median).
+			\item Hohe Robustheit gegenüber extremen Werten.
 		\end{itemize}
 	\end{frame}
 	
@@ -816,16 +798,18 @@
 		
 		\textbf{Warum der Median?}
 		\begin{itemize}
-			\item Unempfindlich gegenüber einzelnen Ausreißern
-			\item Repräsentiert die zentrale Tendenz der Steigungen
+			\itemsep8pt
+			\item Unempfindlich gegenüber einzelnen Ausreißern.
+			\item Repräsentiert die zentrale Tendenz der Steigungen.
 		\end{itemize}
 		
 		\vspace{0.5em}
 		
 		\textbf{Vergleich:}
 		\begin{itemize}
-			\item Mittelwert: stark ausreißerempfindlich
-			\item Median: robust gegenüber extremen Beobachtungen
+			\itemsep8pt
+			\item Mittelwert: stark ausreißerempfindlich.
+			\item Median: robust gegenüber extremen Beobachtungen.
 		\end{itemize}
 	\end{frame}
 	
@@ -834,16 +818,18 @@
 		
 		\textbf{Methode der kleinsten Quadrate:}
 		\begin{itemize}
-			\item Minimiert die Summe der quadrierten Residuen
-			\item Sehr empfindlich gegenüber Ausreißern
+			\itemsep8pt
+			\item Minimiert die Summe der quadrierten Residuen.
+			\item Sehr empfindlich gegenüber Ausreißern.
 		\end{itemize}
 		
 		\vspace{0.5em}
 		
 		\textbf{Theil- bzw. Theil–Sen-Schätzer:}
 		\begin{itemize}
-			\item Basieren auf Medianschätzung
-			\item Deutlich robuster gegenüber Ausreißern
+			\itemsep8pt
+			\item Basieren auf Medianschätzung.
+			\item Deutlich robuster gegenüber Ausreißern.
 		\end{itemize}
 	\end{frame}
 	
@@ -852,17 +838,19 @@
 		
 		\textbf{Wichtige Eigenschaften:}
 		\begin{itemize}
-			\item Hoher Breakdown-Point
-			\item Konsistent unter milden Voraussetzungen
-			\item Geeignet bei verrauschten Daten
+			\itemsep8pt
+			\item Hoher Breakdown-Point.
+			\item Konsistent unter milden Voraussetzungen.
+			\item Geeignet bei verrauschten Daten.
 		\end{itemize}
 		
 		\vspace{0.5em}
 		
 		\textbf{Einsatzgebiet:}
 		\begin{itemize}
-			\item Explorative Datenanalyse
-			\item Datensätze mit möglichen Ausreißern
+			\itemsep8pt
+			\item Explorative Datenanalyse.
+			\item Datensätze mit möglichen Ausreißern.
 		\end{itemize}
 	\end{frame}
 	
@@ -871,38 +859,38 @@
 		
 		\textbf{Einschränkungen:}
 		\begin{itemize}
-			\item Höherer Rechenaufwand bei großen Stichproben
-			\item Beschränkt auf lineare Zusammenhänge
+			\itemsep8pt
+			\item Höherer Rechenaufwand bei großen Stichproben.
+			\item Beschränkt auf lineare Zusammenhänge.
 		\end{itemize}
 		
 		\vspace{0.5em}
 		
 		\textbf{Abgrenzung:}
 		\begin{itemize}
-			\item Nichtparametrische Regression bietet höhere Flexibilität
-			\item Dafür geringere Interpretierbarkeit
+			\itemsep8pt
+			\item Nichtparametrische Regression bietet höhere Flexibilität.
+			\item Dafür geringere Interpretierbarkeit.
 		\end{itemize}
 	\end{frame}
 	
 	
 	\begin{frame}
-		\frametitle{Robuste Lineare Regression (Theil-Schätzer) - Einführung}
+		\frametitle{Theil-Schätzer – Einführung und Formel}
 		
 		\begin{itemize}
-			\item \textbf{Theil-Methode I \cite{Theil1950}:} Steigung zwischen Paaren $(i, i+n/2)$, Median als Schätzer.
-			\item \textbf{Theil-Sen-Schätzer (Methode II) \cite{Theil1950, Sen1968}:} Median der Steigungen zwischen allen Paaren $i < j$:
+			\itemsep10pt
+			\item \textbf{Theil-Methode I:} Steigung zwischen Paaren $(i, i+n/2)$, Median als Schätzer.
+			\item \textbf{Theil-Sen-Schätzer (Methode II):} Median der Steigungen $H_{ij}$ zwischen allen Paaren $i < j$:
 		\end{itemize}
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Robuste Lineare Regression (Theil-Schätzer) - Formel}
 		
-		\begin{equation}
-			H_{ij} = \frac{Y_j - Y_i}{X_j - X_i}
-		\end{equation}
-		\begin{itemize}
-			\item Der Schätzer für den Anstieg $\beta$ ist der Median dieser Steigungen.
-		\end{itemize}
+		\vspace{0.5em}
+		
+		\[
+		H_{ij} = \frac{Y_j - Y_i}{X_j - X_i}
+		\]
+		
+		Der Schätzer für den Anstieg $\beta$ ist der Median dieser Steigungen.
 	\end{frame}
 	
 	\section{Zusammenfassung}
@@ -911,32 +899,27 @@
 		\frametitle{Take-Home Messages}
 		
 		\begin{itemize}
-			\item Nichtparametrisch = lokal + datengetrieben
-			\item KDE = Faltung mit empirischem Maß
-			\item Bandbreite bestimmt Konvergenz
-			\item Regression folgt demselben Prinzip
-			\item Robustheit schützt vor Ausreißern
+			\itemsep10pt
+			\item Nichtparametrisch = lokal + datengetrieben.
+			\item KDE = Faltung mit empirischem Maß.
+			\item Bandbreite bestimmt Konvergenz.
+			\item Regression folgt demselben Prinzip.
+			\item Robustheit schützt vor Ausreißern.
 		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Fazit und Ausblick }
+		\frametitle{Fazit und Ausblick}
 		
 		\begin{itemize}
+			\itemsep10pt
 			\item \textbf{Flexibilität:} Nichtparametrische Methoden passen sich den Daten an.
 			\item \textbf{Parameter $h$:} Kritischer Schritt, Balance zwischen Bias und Varianz.
-		\end{itemize}
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Fazit und Ausblick (Fortsetzung)}
-		
-		\begin{itemize}
 			\item \textbf{Robustheit:} Verfahren wie der Theil-Sen-Schätzer bieten robuste Alternativen zur klassischen Regression, besonders bei Ausreißern.
 		\end{itemize}
 	\end{frame}
 	
-	\section{Literaturverzeichnis}
+	\section*{Literaturverzeichnis}
 	
 	\begin{frame}[allowframebreaks]{Literaturverzeichnis}
 		% Referenzen

@@ -34,6 +34,7 @@
 		\begin{frame}<beamer>
 			\frametitle{Inhalt}
 			\tableofcontents[currentsection]
+			% section 6 = Robuste Lineare Regression
 			\ifnum\value{section}=6
 				\vspace{1em}
 				\hfill\hyperlink{nachrobust}{\beamerskipbutton{Kapitel überspringen}}
@@ -225,7 +226,7 @@
 		\textbf{Faustregeln für die Bandbreitenwahl:}
 		\begin{itemize}
 			\itemsep8pt
-			\item \textbf{Scott-Regel:} $h \approx 3{,}49\,\hat{s}\,n^{-1/3}$ \quad ($\hat{s}$: Stichproben-Standardabweichung)
+			\item \textbf{Scott-Regel:} $h \approx 3{,}49\,\hat{\sigma}\,n^{-1/3}$ \quad ($\hat{\sigma}$: Stichproben-Standardabweichung)
 			\item \textbf{Freedman-Diaconis:} $h^* = 2\,(x_{0{,}75} - x_{0{,}25})\,n^{-1/3}$
 		\end{itemize}
 		
@@ -597,7 +598,7 @@
 		\pause
 		\fi
 		
-		\textbf{MSE-Zerlegung:} Mit $c_1, c_2 \in \mathbb{R}_{>0}$ gilt:
+		\textbf{MSE-Zerlegung:} Mit $c_1, c_2 > 0$ gilt:
 		\[
 		\operatorname{MSE}\bigl(\hat{f}_n(x)\bigr) = \operatorname{Bias}^2\!\bigl(\hat{f}_n(x)\bigr) + \operatorname{Var}\bigl(\hat{f}_n(x)\bigr) = c_1 h^4 + \frac{c_2}{nh}
 		\]

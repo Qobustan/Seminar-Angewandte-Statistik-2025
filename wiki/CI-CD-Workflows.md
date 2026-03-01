@@ -373,11 +373,11 @@ updates:
 
 1. **Checkout Repository** — checks out the current branch including the `wiki/` directory.
 2. **Publish to GitHub Wiki** — uses a native `git push` approach:
-   - Clones the repository's GitHub Wiki (`<repo>.wiki.git`) using `GITHUB_TOKEN`
-   - If the wiki has never been initialised, creates a fresh local git repository
-   - Copies all files from `wiki/` into the clone
-   - Commits and pushes only when there are actual changes
-   - Adds `[skip ci]` to the commit message to prevent re-triggering other workflows
+   - Clones the repository's GitHub Wiki (`<repo>.wiki.git`) using `GITHUB_TOKEN`.
+   - If the clone fails, it checks whether the wiki simply doesn't exist yet (using `git ls-remote`). If the wiki is not found, a fresh local repository is initialised. Any other failure (network, auth, permissions) causes the step to exit with an error so the problem remains visible.
+   - Synchronises the working tree by clearing all files except `.git` before copying, so deleted or renamed pages are removed from the wiki as well.
+   - Commits and pushes only when there are actual changes.
+   - The commit message includes the source branch name and `[skip ci]` to prevent re-triggering other workflows.
 
 #### Authentication
 
@@ -405,15 +405,19 @@ Visit the repository's [Wiki tab](https://github.com/Qobustan/Seminar-Angewandte
 1. **Initialize CodeQL** — sets up the CodeQL analysis engine for Python.
 2. **Autobuild** — automatically builds/indexes the codebase.
 3. **Perform CodeQL Analysis** — runs security queries against all Python scripts and saves results to a local SARIF file.
-4. **Upload SARIF as Artifact** — always uploads the SARIF report as a downloadable workflow artifact (30-day retention), regardless of whether GitHub Code Scanning / Advanced Security is enabled for the repository.
-5. **Report Outcome** — prints a workflow notice with instructions if the SARIF upload to Code Scanning failed.
+4. **Upload SARIF as Artifact** — uploads the SARIF report as a downloadable workflow artifact (30-day retention) when results are generated. Uses `if-no-files-found: warn` so the step does not fail if the analysis step itself failed before producing output.
+5. **Report Outcome** — checks whether a SARIF file was produced and prints an appropriate workflow annotation:
+   - If SARIF results exist but the upload to Code Scanning failed: emits a warning and a notice pointing to the artifact.
+   - If no SARIF results were produced at all: emits a warning and directs to the step logs.
 
 #### Graceful Handling of Missing Code Scanning
 
 On private repositories without GitHub Advanced Security (GHAS) the SARIF upload step (`codeql-action/analyze`) fails with *"Code scanning is not enabled"*. This workflow handles that gracefully:
 - The `Perform CodeQL Analysis` step has `continue-on-error: true` so the **job always succeeds**.
 - A warning annotation is added to the workflow summary if the upload failed.
-- The full SARIF file is always available as the **`codeql-sarif-python`** artifact.
+- When the analysis succeeds, the SARIF file is available as the **`codeql-sarif-python`** artifact.
+
+When GitHub Advanced Security is later enabled for this repository, the SARIF upload will succeed automatically with no further changes required.
 
 #### Accessing Results
 

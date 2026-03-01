@@ -21,16 +21,24 @@ jobs:
         run: |
           # Clone the wiki repository (initialize if not yet created)
           WIKI_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git"
-          if git clone "$WIKI_URL" /tmp/wiki 2>/dev/null; then
+          if git clone "$WIKI_URL" /tmp/wiki; then
             echo "Wiki cloned successfully."
           else
-            echo "Wiki does not exist yet – creating an empty local repo."
-            mkdir -p /tmp/wiki
-            git -C /tmp/wiki init
-            git -C /tmp/wiki remote add origin "$WIKI_URL"
+            echo "Failed to clone wiki repository, checking if it exists..."
+            # Distinguish between a non-existent wiki repo and other failures (auth/network/etc.).
+            if git ls-remote "$WIKI_URL" HEAD 2>&1 | grep -q "Repository not found"; then
+              echo "Wiki does not exist yet – creating an empty local repo."
+              mkdir -p /tmp/wiki
+              git -C /tmp/wiki init
+              git -C /tmp/wiki remote add origin "$WIKI_URL"
+            else
+              echo "Error: Unable to access wiki repository. See git error output above."
+              exit 1
+            fi
           fi
 
-          # Copy all markdown files from wiki/ into the local clone
+          # Sync wiki: clear existing working tree except .git, then copy from wiki/
+          find /tmp/wiki -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           cp -r wiki/. /tmp/wiki/
 
           cd /tmp/wiki
@@ -40,7 +48,8 @@ jobs:
           if git diff --quiet && git diff --staged --quiet; then
             echo "No changes to publish."
           else
-            git commit -m "docs: sync wiki from main branch [skip ci]"
+            BRANCH_NAME="${GITHUB_REF##*/}"
+            git commit -m "docs: sync wiki from ${BRANCH_NAME} branch [skip ci]"
             # GitHub always names the wiki branch 'master', regardless of the
             # repository's default branch.
             git push origin HEAD:master

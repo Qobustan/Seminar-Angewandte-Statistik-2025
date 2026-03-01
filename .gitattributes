@@ -4,7 +4,31 @@
 # Mark PDFs as binary
 *.pdf binary
 
-# Ensure LaTeX files are treated as text
-*.tex text
-*.sty text
-*.cls text
+# Ensure LaTeX files are treated as text and detected as TeX by GitHub Linguist
+*.tex text linguist-language=TeX
+*.sty text linguist-language=TeX
+*.cls text linguist-language=TeX
+*.bib text linguist-language=BibTeX
+
+# LaTeX auxiliary/generated files — exclude from language statistics
+*.aux linguist-generated=true
+*.bbl linguist-generated=true
+*.bcf linguist-generated=true
+*.blg linguist-generated=true
+*.fdb_latexmk linguist-generated=true
+*.fls linguist-generated=true
+*.log linguist-generated=true
+*.nav linguist-generated=true
+*.out linguist-generated=true
+*.run.xml linguist-generated=true
+*.snm linguist-generated=true
+*.synctex.gz linguist-generated=true
+*.toc linguist-generated=true
+*.vrb linguist-generated=true
+Vortrag-blx.bib linguist-generated=true
+Ausarbeitung-blx.bib linguist-generated=true
+
+# Documentation — exclude from language statistics
+wiki/** linguist-documentation=true
+docs/** linguist-documentation=true
+*.md linguist-documentation=true

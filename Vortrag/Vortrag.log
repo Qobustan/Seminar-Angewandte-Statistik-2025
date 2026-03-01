@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2043,13 +2043,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
 hsy.enc}]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[4
-
-]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 116.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -2062,12 +2055,12 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 116.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 116.
-<img/messung_itter_1.jpg, id=193, 753.81625pt x 543.02875pt>
+<img/messung_itter_1.jpg, id=168, 753.81625pt x 543.02875pt>
 File: img/messung_itter_1.jpg Graphic file (type jpg)
 <use img/messung_itter_1.jpg>
 Package pdftex.def Info: img/messung_itter_1.jpg  used on input line 116.
 (pdftex.def)             Requested size: 162.71146pt x 117.21527pt.
-<img/messung_itter_2.jpg, id=194, 753.81625pt x 543.02875pt>
+<img/messung_itter_2.jpg, id=169, 753.81625pt x 543.02875pt>
 File: img/messung_itter_2.jpg Graphic file (type jpg)
 <use img/messung_itter_2.jpg>
 Package pdftex.def Info: img/messung_itter_2.jpg  used on input line 116.
@@ -2077,7 +2070,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[5
+[4
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
 hit.enc} <./img/messung_itter_1.jpg> <./img/messung_itter_2.jpg>]
@@ -2085,14 +2078,14 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[6
+[5
 
 ]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[7
+[6
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.
 enc}] (./Vortrag.toc)
@@ -2100,7 +2093,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[8
+[7
 
 ]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
@@ -2114,7 +2107,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[9
+[8
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
 hex.enc}]
@@ -2122,9 +2115,16 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[10
+[9
 
 ]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[10
+
+] (./Vortrag.toc)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2138,7 +2138,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [12
 
-] (./Vortrag.toc)
+]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2159,7 +2159,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [15
 
-]
+] (./Vortrag.toc)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2173,7 +2173,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [17
 
-] (./Vortrag.toc)
+]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2195,6 +2195,12 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [20
 
 ]
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 46
+3.
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2223,12 +2229,11 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [24
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 46
-3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 627.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 627.
 
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
-File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2243,6 +2248,13 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [26
 
 ]
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10.95> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 681.
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <8> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 681.
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <6> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 681.
+
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2256,7 +2268,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [28
 
-]
+] (./Vortrag.toc)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2271,11 +2283,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [30
 
 ]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 627.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 627.
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2304,13 +2311,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [34
 
 ]
-LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 681.
-LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <8> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 681.
-LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <6> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 681.
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2324,7 +2324,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [36
 
-] (./Vortrag.toc)
+]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2338,7 +2338,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [38
 
-]
+] (./Vortrag.toc)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2380,7 +2380,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [44
 
-]
+] (./Vortrag.toc)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2402,125 +2402,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [47
 
 ]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[48
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[49
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[50
-
-] (./Vortrag.toc)
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[51
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[52
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[53
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[54
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[55
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[56
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[57
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[58
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[59
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[60
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[61
-
-] (./Vortrag.toc)
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[62
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[63
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[64
-
-]
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
 (Font)              Font shape `T1/lmr/m/sc' tried instead on input line 1080.
@@ -2539,7 +2420,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[65
+[48
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/inconsola
 ta/i4-t1-0.enc}]
@@ -2547,7 +2428,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[66
+[49
 
 
 ]
@@ -2568,39 +2449,55 @@ Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54038 strings out of 476025
- 1260346 string characters out of 5790017
+ 54007 strings out of 476025
+ 1260056 string characters out of 5790017
  2060943 words of memory out of 5000000
- 73354 multiletter control sequences out of 15000+600000
+ 73353 multiletter control sequences out of 15000+600000
  622247 words of font info for 114 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,21n,122p,1853b,2548s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/inco
-nsolata/Inconsolata-zi4r.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
-ist/fonts/type1/public/doublestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/t
-exlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></Volumes/Macintosh SS
-D/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Volumes/Maci
-ntosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Volu
-mes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
+
+pdfTeX warning (dest): name{Navigation50} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Navigation62} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Navigation51} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Navigation66} has been referenced but does not exis
+t, replaced by a fixed one
+
+</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/incons
+olata/Inconsolata-zi4r.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dis
+t/fonts/type1/public/doublestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/tex
+live/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></Volumes/Macintosh SSD/
+local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Volumes/Macint
+osh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Volume
+s/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><
+/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr1
+0.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/
+lm/lmss10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1
+/public/lm/lmss12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fon
+ts/type1/public/lm/lmss8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
+ist/fonts/type1/public/lm/lmss9.pfb></Volumes/Macintosh SSD/local/texlive/2023/
+texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Macintosh SSD/local/tex
+live/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></Volumes/Macintosh SSD/
+local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso12.pfb></Volumes/Macin
+tosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></Volum
+es/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 ></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lm
-r10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/publi
-c/lm/lmss10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/typ
-e1/public/lm/lmss12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/f
-onts/type1/public/lm/lmss8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf
--dist/fonts/type1/public/lm/lmss9.pfb></Volumes/Macintosh SSD/local/texlive/202
-3/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Macintosh SSD/local/t
-exlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></Volumes/Macintosh SS
-D/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso12.pfb></Volumes/Mac
-intosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></Vol
-umes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.p
-fb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/
-lmsy6.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pub
-lic/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/ty
-pe1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Vortrag.pdf (66 pages, 751738 bytes).
+sy6.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/publi
+c/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Vortrag.pdf (49 pages, 710631 bytes).
 PDF statistics:
- 2026 PDF objects out of 2073 (max. 8388607)
- 1882 compressed objects within 19 object streams
- 148 named destinations out of 1000 (max. 500000)
+ 1575 PDF objects out of 1728 (max. 8388607)
+ 1452 compressed objects within 15 object streams
+ 118 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

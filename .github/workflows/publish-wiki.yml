@@ -18,8 +18,33 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Publish to Wiki
-        uses: SwiftDocOrg/github-wiki-publish-action@v1
-        with:
-          path: wiki
+        run: |
+          # Clone the wiki repository (initialize if not yet created)
+          WIKI_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git"
+          if git clone "$WIKI_URL" /tmp/wiki 2>/dev/null; then
+            echo "Wiki cloned successfully."
+          else
+            echo "Wiki does not exist yet – creating an empty local repo."
+            mkdir -p /tmp/wiki
+            git -C /tmp/wiki init
+            git -C /tmp/wiki remote add origin "$WIKI_URL"
+          fi
+
+          # Copy all markdown files from wiki/ into the local clone
+          cp -r wiki/. /tmp/wiki/
+
+          cd /tmp/wiki
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to publish."
+          else
+            git commit -m "docs: sync wiki from main branch [skip ci]"
+            # GitHub always names the wiki branch 'master', regardless of the
+            # repository's default branch.
+            git push origin HEAD:master
+            echo "Wiki published successfully."
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

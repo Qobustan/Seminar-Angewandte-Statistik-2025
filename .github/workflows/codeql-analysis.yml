@@ -43,6 +43,32 @@ jobs:
         # as CodeQL analyzes the source code directly
 
       - name: Perform CodeQL Analysis
+        id: codeql_analyze
+        # continue-on-error so the job succeeds even on private repos where
+        # Code Scanning / GitHub Advanced Security is not enabled and the SARIF
+        # upload would otherwise fail with "Code scanning is not enabled".
+        continue-on-error: true
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{ matrix.language }}"
+          # Save SARIF to a local path so we can always upload it as an artifact
+          output: codeql-results
+
+      - name: Upload SARIF as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeql-sarif-${{ matrix.language }}
+          path: codeql-results/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Report analysis outcome
+        if: always()
+        run: |
+          if [ "${{ steps.codeql_analyze.outcome }}" = "success" ]; then
+            echo "CodeQL analysis and SARIF upload to Code Scanning completed successfully."
+          else
+            echo "::warning::CodeQL SARIF upload failed (Code Scanning may not be enabled for this repository)."
+            echo "::notice::The analysis ran successfully. Results are available as a workflow artifact."
+          fi

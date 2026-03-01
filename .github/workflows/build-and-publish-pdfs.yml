@@ -1,5 +1,12 @@
 name: Kompiliere die LateX-Ausarbeitung und den Beamer-Vortrag
 
+# Trigger policy
+# --------------
+# push to main/master : Runs both build-latex (pdflatex) and
+#                       build-latex-lualatex (LuaLaTeX) automatically on
+#                       every commit so that both engines are always verified.
+# workflow_dispatch   : Allows manually selecting the engine via GitHub UI for
+#                       ad-hoc rebuilds or debugging.
 on:
   push:
     branches: [main, master]
@@ -14,10 +21,30 @@ on:
           - pdflatex
           - lualatex
 
+# Minimal permissions (principle of least privilege)
+# ---------------------------------------------------
+# contents: read  – the workflow only needs to check out the repository.
+# No write, packages, or id-token permissions are granted.
+# This satisfies the GitHub Actions "missing permissions" CodeQL alert and
+# limits the blast radius of any supply-chain compromise.
 permissions:
   contents: read
 
 jobs:
+  # ---------------------------------------------------------------------------
+  # Job 1: build-latex (pdflatex)
+  #
+  # Compiles both documents with pdflatex (the traditional LaTeX engine).
+  # When triggered via workflow_dispatch with latex_engine=lualatex, this job
+  # switches to LuaLaTeX for that run only; all automatic push-triggered runs
+  # always use pdflatex.
+  #
+  # The "Build Lua 5.5.0 from local source" step compiles the standalone Lua
+  # interpreter from the lua-5.5.0/ directory already present in the
+  # repository.  This avoids any external Lua download and makes the locally-
+  # built lua/luac binaries available to any runner-side scripting that may
+  # be added in the future.
+  # ---------------------------------------------------------------------------
   build-latex:
     runs-on: ubuntu-latest
 
@@ -25,6 +52,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Compile and install Lua 5.5.0 from the repository's local source tree.
+      #
+      # Why compile from source instead of `apt-get install lua`?
+      #   - lua-5.5.0/ is already checked into the repository; using it avoids
+      #     relying on an external package mirror for the Lua runtime.
+      #   - The Ubuntu apt repositories only provide Lua 5.4 or earlier, so
+      #     compiling from source is also the only way to get Lua 5.5.
+      #
+      # Why apt-get update before install?
+      #   - GitHub-hosted runners do not guarantee a fresh apt index; running
+      #     update first prevents "package not found" failures.
+      #
+      # Why build-essential + libreadline-dev?
+      #   - build-essential: gcc/make toolchain required by Lua's Makefile.
+      #   - libreadline-dev: optional line-editing support for the Lua REPL.
+      #
+      # `lua -v` at the end serves as a smoke-test that the installation
+      # succeeded before the LaTeX steps run.
       - name: Build Lua 5.5.0 from local source
         run: |
           sudo apt-get update
@@ -67,6 +112,21 @@ jobs:
             Ausarbeitung/*.pdf
             Vortrag/*.pdf
 
+  # ---------------------------------------------------------------------------
+  # Job 2: build-latex-lualatex (LuaLaTeX)
+  #
+  # Compiles both documents with LuaLaTeX on every push to main/master.
+  # Running this as a separate, always-on job (rather than a matrix variant)
+  # means:
+  #   - The pdflatex and LuaLaTeX builds produce independent status checks,
+  #     so a LuaLaTeX failure is immediately visible without masking the
+  #     pdflatex result.
+  #   - Both jobs run in parallel, keeping total wall-clock CI time low.
+  #
+  # LuaLaTeX ships its own embedded Lua interpreter (luatex); the standalone
+  # lua/luac binaries compiled here are for general-purpose runner scripting
+  # and are not used by LuaLaTeX itself.
+  # ---------------------------------------------------------------------------
   build-latex-lualatex:
     runs-on: ubuntu-latest
 
@@ -74,6 +134,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Same rationale as in build-latex; see that job for full commentary.
       - name: Build Lua 5.5.0 from local source
         run: |
           sudo apt-get update

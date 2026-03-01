@@ -6,26 +6,25 @@ on:
 jobs:
   format:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Installiere Abhängigkeiten
+      - name: Install latexindent
         run: |
           sudo apt-get update
-          sudo apt-get install -y perl
-          sudo apt-get install -y texlive
-          sudo apt-get install -y texlive-latex-extra
-          sudo apt-get install -y git  # Git installieren, falls es noch nicht vorhanden ist
+          sudo apt-get install -y texlive-extra-utils
 
-      - name: Lade latexindent herunter
-        run: |
-          git clone https://github.com/cmhughes/latexindent.pl.git
-          cd latexindent.pl
-          sudo perl Makefile.PL
-          sudo make
-          sudo make install  # Installiert latexindent direkt aus dem GitHub-Repository
-
-      - name: Führe latexindent aus
+      - name: Run latexindent
         run: |
           shopt -s globstar
-          latexindent -w **/*.tex  # Führt latexindent auf allen .tex-Dateien aus
+          latexindent -w **/*.tex
+
+      - name: Commit formatted files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet || git commit -am "style: latexindent auto-formatting"
+          git push

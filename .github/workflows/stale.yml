@@ -21,7 +21,7 @@ jobs:
     - uses: actions/stale@v9
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        stale-issue-message: 'Stale issue message'
-        stale-pr-message: 'Stale pull request message'
+        stale-issue-message: 'Dieser Issue wurde als veraltet markiert, da er seit 30 Tagen keine Aktivität mehr hatte. Er wird in 7 Tagen geschlossen, wenn keine weiteren Kommentare folgen.'
+        stale-pr-message: 'Dieser Pull Request wurde als veraltet markiert, da er seit 30 Tagen keine Aktivität mehr hatte. Er wird in 7 Tagen geschlossen, wenn keine weiteren Kommentare folgen.'
         stale-issue-label: 'no-issue-activity'
         stale-pr-label: 'no-pr-activity'

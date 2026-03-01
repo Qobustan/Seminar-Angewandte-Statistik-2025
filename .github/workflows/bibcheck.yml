@@ -9,14 +9,31 @@ on:
 jobs:
   bibcheck:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check .bib files for duplicates
+      - name: Check .bib files for duplicate keys
         run: |
           shopt -s globstar
-          if grep -i "duplicate" **/*.bib; then
-            echo "⚠️ Mögliche doppelte Einträge gefunden"
-          else
+          found_dups=false
+          for bibfile in **/*.bib; do
+            # Skip generated biblatex auxiliary files
+            [[ "$bibfile" == *-blx.bib ]] && continue
+            dups=$(grep -i "^@" "$bibfile" 2>/dev/null \
+              | grep -iv "^@comment" \
+              | sed 's/^@[^{]*{\([^,]*\),.*/\1/' \
+              | tr '[:upper:]' '[:lower:]' \
+              | sort | uniq -d)
+            if [ -n "$dups" ]; then
+              echo "⚠️ Doppelte Einträge in $bibfile:"
+              echo "$dups"
+              found_dups=true
+            fi
+          done
+          if [ "$found_dups" = false ]; then
             echo "✅ Keine doppelten Einträge"
+          else
+            exit 1
           fi

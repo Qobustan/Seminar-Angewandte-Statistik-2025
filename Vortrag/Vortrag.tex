@@ -1,7 +1,12 @@
 \documentclass{beamer}
 
 % Nur diese drei Pakete gehören ins Hauptdokument!
-\usepackage[utf8]{inputenc}
+\usepackage{iftex}
+\ifluatex
+  % LuaLaTeX handles UTF-8 natively; no inputenc needed
+\else
+  \usepackage[utf8]{inputenc}
+\fi
 \usepackage[ngerman]{babel}
 \usepackage[backend=bibtex, style=alphabetic]{biblatex}
 

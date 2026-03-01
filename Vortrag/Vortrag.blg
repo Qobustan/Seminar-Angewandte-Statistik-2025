@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Vortrag.aux
 The style file: biblatex.bst
@@ -22,44 +22,44 @@ Database file #2: Vortrag.bib
 Biblatex version: 3.19
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 6 entries,
+You've used 7 entries,
             6399 wiz_defined-function locations,
-            1240 strings with 9901 characters,
-and the built_in function-call counts, 29722 in all, are:
-= -- 1955
-> -- 624
-< -- 208
-+ -- 729
-- -- 224
-* -- 1981
-:= -- 3148
+            1249 strings with 10139 characters,
+and the built_in function-call counts, 40313 in all, are:
+= -- 2623
+> -- 1329
+< -- 360
++ -- 1387
+- -- 714
+* -- 2367
+:= -- 4208
 add.period$ -- 0
-call.type$ -- 6
-change.case$ -- 91
-chr.to.int$ -- 56
-cite$ -- 10
-duplicate$ -- 3244
-empty$ -- 2703
-format.name$ -- 310
-if$ -- 6202
+call.type$ -- 7
+change.case$ -- 194
+chr.to.int$ -- 104
+cite$ -- 12
+duplicate$ -- 4213
+empty$ -- 3430
+format.name$ -- 363
+if$ -- 8176
 int.to.chr$ -- 0
-int.to.str$ -- 17
+int.to.str$ -- 21
 missing$ -- 0
-newline$ -- 170
-num.names$ -- 272
-pop$ -- 1769
+newline$ -- 203
+num.names$ -- 412
+pop$ -- 2105
 preamble$ -- 1
-purify$ -- 107
+purify$ -- 212
 quote$ -- 0
-skip$ -- 1045
+skip$ -- 1520
 stack$ -- 0
-substring$ -- 3083
-swap$ -- 763
-text.length$ -- 189
-text.prefix$ -- 8
+substring$ -- 4089
+swap$ -- 1049
+text.length$ -- 240
+text.prefix$ -- 10
 top$ -- 1
-type$ -- 192
+type$ -- 221
 warning$ -- 0
-while$ -- 449
+while$ -- 545
 width$ -- 0
-write$ -- 165
+write$ -- 197

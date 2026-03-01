@@ -132,6 +132,40 @@
     \field{year}{2026}
   \endentry
 
+  \entry{lang2004civ}{report}{}
+    \name{author}{1}{}{%
+      {{hash=LS}{%
+         family={Lang},
+         familyi={L\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LS1}
+    \strng{fullhash}{LS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Lan04}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Skript zur Vorlesung: Computerintensive Verfahren in der
+  Statistik}
+    \verb{url}
+    \verb mailto:lang@stat.uni-muenchen.de
+    \endverb
+    \list{location}{1}{%
+      {Ludwigstraße 33, München}%
+    }
+    \list{institution}{1}{%
+      {Institut für Statistik, Ludwig-Maximilians-Universität München}%
+    }
+    \field{type}{Lecture Notes}
+    \field{day}{15}
+    \field{month}{01}
+    \field{year}{2004}
+    \warn{\item Can't use 'date' + 'year'}
+  \endentry
+
   \entry{SMI21}{article}{}
     \name{author}{2}{}{%
       {{hash=SD}{%

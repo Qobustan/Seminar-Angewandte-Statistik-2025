@@ -34,6 +34,10 @@
 		\begin{frame}<beamer>
 			\frametitle{Inhalt}
 			\tableofcontents[currentsection]
+			\ifnum\value{section}=6
+				\vspace{1em}
+				\hfill\hyperlink{nachrobust}{\beamerskipbutton{Kapitel überspringen}}
+			\fi
 		\end{frame}
 	}
 	
@@ -949,6 +953,7 @@
 	
 	\begin{frame}
 		\frametitle{Take-Home Messages}
+		\hypertarget{nachrobust}{}
 		
 		\begin{itemize}
 			\itemsep10pt

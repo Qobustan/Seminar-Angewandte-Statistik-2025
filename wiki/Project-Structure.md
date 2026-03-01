@@ -20,7 +20,8 @@ Seminar-Angewandte-Statistik-2025/
 ├── Vortrag/                   # Presentation slides
 │   ├── Vortrag.tex            # Main presentation document
 │   ├── header.tex             # Beamer configuration
-│   └── Vortrag.bib            # Bibliography file
+│   ├── Vortrag.bib            # Bibliography file
+│   └── img/                   # Images embedded in slides
 │
 ├── Besprechung/               # Meeting notes and discussions
 │   └── Material/              # Historical meeting materials
@@ -91,6 +92,7 @@ Contains LaTeX Beamer sources for presentation slides:
 - **Main file**: `Vortrag.tex`
 - **Build output**: `Vortrag.pdf`
 - **Structure**: Beamer presentation with frames
+- **`img/`**: Images embedded in slides (e.g., spectrophotometric measurement plots for the Itter case study)
 
 #### `Besprechung/` - Meeting Notes
 

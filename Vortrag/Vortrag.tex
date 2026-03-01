@@ -505,7 +505,7 @@
 				ytick={0,0.25,0.5,0.75},
 				]
 				% Rechteck-Kern
-				\addplot[red, thick] coordinates {
+				\addplot[red, thick, dashed] coordinates {
 					(-1.8,0)(-1,0)(-1,0.5)(1,0.5)(1,0)(1.8,0)
 				};
 				\addlegendentry{Rechteck}
@@ -514,10 +514,10 @@
 					{exp(-(x^2)/2)/sqrt(2*pi)};
 				\addlegendentry{Gauß}
 				% Epanechnikov-Kern (piecewise)
-				\addplot[green!60!black, thick, domain=-1:1, samples=60]
+				\addplot[green!60!black, thick, densely dotted, domain=-1:1, samples=60]
 					{0.75*(1-x^2)};
-				\addplot[green!60!black, thick] coordinates {(-1.8,0)(-1,0)};
-				\addplot[green!60!black, thick] coordinates {(1,0)(1.8,0)};
+				\addplot[green!60!black, thick, densely dotted] coordinates {(-1.8,0)(-1,0)};
+				\addplot[green!60!black, thick, densely dotted] coordinates {(1,0)(1.8,0)};
 				\addlegendentry{Epanechnikov}
 			\end{axis}
 		\end{tikzpicture}
@@ -918,12 +918,12 @@
 							coordinates {(3.0,2.8)};
 						% query line
 						\draw[red, dashed, thick] (axis cs:3,0)--(axis cs:3,5);
-						\node[red, font=\scriptsize] at (axis cs:3,-0.3) {$x$};
+						\node[red, font=\scriptsize, anchor=north] at (axis cs:3,0) {$x$};
 						% estimated value marker
 						\addplot[only marks, mark=diamond*, red, mark size=4pt]
 							coordinates {(3,2.75)};
 						\node[red, font=\tiny, anchor=west] at (axis cs:3.1,2.75)
-							{$\hat{m}(x)$};
+							{$\hat{m}_{NW}(x)$};
 					\end{axis}
 				\end{tikzpicture}
 				{\tiny Punktgröße $\propto$ Kerngewicht $K\!\left(\tfrac{x-X_i}{h}\right)$}

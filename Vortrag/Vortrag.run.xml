@@ -44,8 +44,7 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Vortrag.aux</file>
-      <file>Vortrag-blx.bib</file>
+      <file>Vortrag.bcf</file>
     </provides>
     <requires type="dynamic">
       <file>Vortrag.bbl</file>
@@ -53,7 +52,6 @@
     <requires type="static">
       <file>blx-dm.def</file>
       <file>blx-compat.def</file>
-      <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
       <file>standard.bbx</file>
       <file>alphabetic.bbx</file>
@@ -64,14 +62,13 @@
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">
-    <generic>bibtex</generic>
+    <generic>biber</generic>
     <cmdline>
-      <binary>bibtex</binary>
-      <option>-min-crossrefs 2</option>
+      <binary>biber</binary>
       <infile>Vortrag</infile>
     </cmdline>
     <input>
-      <file>Vortrag.aux</file>
+      <file>Vortrag.bcf</file>
     </input>
     <output>
       <file>Vortrag.bbl</file>
@@ -80,14 +77,10 @@
       <file>Vortrag.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Vortrag.aux</file>
-      <file>Vortrag-blx.bib</file>
+      <file>Vortrag.bcf</file>
     </requires>
     <requires type="editable">
       <file>Vortrag.bib</file>
-    </requires>
-    <requires type="static">
-      <file>biblatex.bst</file>
     </requires>
   </external>
 </requests>

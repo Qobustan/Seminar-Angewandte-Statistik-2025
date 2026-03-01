@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 15:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 15:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1024,18 +1024,6 @@ Package biblatex Info: ... file 'blx-compat.def' found.
 mpat.def
 File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
 )
-Package biblatex Info: Trying to load BibTeX backend compatibility...
-Package biblatex Info: ... file 'blx-bibtex.def' found.
-
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/biblatex/blx-bi
-btex.def
-File: blx-bibtex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-
-
-Package biblatex Warning: Using fall-back bibtex backend:
-(biblatex)                functionality may be reduced/unavailable.
-
-)
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 
@@ -1123,6 +1111,10 @@ Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 )) (./header-beamer.tex
 Package hyperref Info: Option `colorlinks' set `true' on input line 12.
 
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/base/fontenc.st
+y
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -1646,26 +1638,7 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip100
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tipa/tipa.sty
-Package: tipa 2002/08/08 TIPA version 1.1
-
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/base/fontenc.st
-y
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tipa/t3enc.def
-File: t3enc.def 2001/12/31 T3 encoding
-Now handling font encoding T3 ...
-... no UTF-8 mapping file for font encoding T3
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 356.
-
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-357.
-
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmss.fd
-File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))))
+)
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/blindtext/blind
 text.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
@@ -1769,7 +1742,13 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
- (./Vortrag.aux)
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
+5.
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+(./Vortrag.aux)
 \openout1 = `Vortrag.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -1790,14 +1769,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 25.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 25
-.
-
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/tipa/t3cmr.fd
-File: t3cmr.fd 2001/12/31 TIPA font definitions
-)
-LaTeX Font Info:    ... okay on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1807,14 +1778,14 @@ LaTeX Font Info:    ... okay on input line 25.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(10.95pt, 342.29536pt, 10.95pt)
+* h-part:(L,W,R)=(10.88002pt, 342.43532pt, 10.88002pt)
 * v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
 * \paperwidth=364.19536pt
 * \paperheight=273.14662pt
-* \textwidth=342.29536pt
+* \textwidth=342.43532pt
 * \textheight=244.6939pt
-* \oddsidemargin=-61.31999pt
-* \evensidemargin=-61.31999pt
+* \oddsidemargin=-61.38997pt
+* \evensidemargin=-61.38997pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
@@ -1876,41 +1847,41 @@ LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/lmr/m/n on input line 25.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 25.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 25.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 25.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 25.
 LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/m/n on input line 25.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> OT1/lmss/m/n on input line 25.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 25.
 LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> OT1/lmss/m/it on input line 25.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> OT1/lmss/m/it on input line 25.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 25.
 LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> OT1/zi4/m/n on input line 25.
+(Font)                  OT1/lmtt/m/n --> T1/zi4/m/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/zi4/m/n on input line 25.
+(Font)                  OT1/lmtt/m/n --> T1/zi4/m/n on input line 25.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 25.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 25.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 25.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> OT1/lmr/b/n on input line 25.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmss/b/n --> OT1/lmss/b/n on input line 25.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 25.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 25.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/zi4/m/n --> OT1/zi4/b/n on input line 25.
+(Font)                  T1/zi4/m/n --> T1/zi4/b/n on input line 25.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/translator/tran
 slator-basic-dictionary-English.dict
@@ -1959,10 +1930,7 @@ File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Data encoding 'utf8' specified.
-(biblatex)             No need to reencode data.
-\openout5 = `Vortrag-blx.bib'.
+\openout5 = `Vortrag.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Vortrag.bbl' found.
@@ -1988,7 +1956,7 @@ Overfull \hbox (28.13187pt too wide) in paragraph at lines 25--25
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pd
 ftex.map}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/
-lm/lm-rm.enc}] (./Vortrag.toc)
+lm/lm-ec.enc}] (./Vortrag.toc)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -1996,6 +1964,12 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [2
 
 ]
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+94.
+
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
 4.
 
@@ -2039,12 +2013,12 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 9
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry
 .fd)
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 94.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 94.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 94.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 94.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 94.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 94.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
@@ -2068,7 +2042,8 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [5
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
-hit.enc}] (./Vortrag.toc)
+hit.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/l
+m/lm-rm.enc}] (./Vortrag.toc)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2154,54 +2129,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [16
 
 ]
-
-LaTeX Warning: Command \! invalid in math mode on input line 339.
-
-LaTeX Font Info:    Trying to load font information for T3+lmss on input line 3
-39.
-LaTeX Font Info:    No file T3lmss.fd. on input line 339.
-
-LaTeX Font Warning: Font shape `T3/lmss/m/n' undefined
-(Font)              using `T3/cmr/m/n' instead on input line 339.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 339.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.339 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.339 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.339 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2244,11 +2171,11 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [22
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-24.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 42
+4.
 
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
@@ -2273,19 +2200,16 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 503.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 503.
-
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 503.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 503.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 503.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 503.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 503.
-
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 503.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 503.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
@@ -2294,47 +2218,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [26
 
 ]
-
-LaTeX Warning: Command \! invalid in math mode on input line 533.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 533.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.533 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.533 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.533 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2342,47 +2225,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [27
 
 ]
-
-LaTeX Warning: Command \! invalid in math mode on input line 533.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 533.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.533 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.533 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.533 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2392,9 +2234,8 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 588.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 588.
-
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 588.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
@@ -2403,205 +2244,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [29
 
 ]
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.620 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.620 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-! Argument of \bBigg@ has an extra }.
-<inserted text> 
-                \par 
-l.620 	\end{frame}
-                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \bBigg@ was complete.
-<to be read again> 
-                   \par 
-l.620 	\end{frame}
-                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Missing { inserted.
-<to be read again> 
-                   \tex_par:D 
-l.620 	\end{frame}
-                  
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.620 	\end{frame}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.620 	\end{frame}
-                  
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Extra }, or forgotten \endgroup.
-<recently read> }
-                 
-l.620 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! Package amsmath Error: \hat allowed only in math mode.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.620 	\end{frame}
-                  
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.620 	\end{frame}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.620 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.620 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2609,205 +2251,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [30
 
 ]
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.620 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.620 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-! Argument of \bBigg@ has an extra }.
-<inserted text> 
-                \par 
-l.620 	\end{frame}
-                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \bBigg@ was complete.
-<to be read again> 
-                   \par 
-l.620 	\end{frame}
-                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Missing { inserted.
-<to be read again> 
-                   \tex_par:D 
-l.620 	\end{frame}
-                  
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.620 	\end{frame}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.620 	\end{frame}
-                  
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Extra }, or forgotten \endgroup.
-<recently read> }
-                 
-l.620 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! Package amsmath Error: \hat allowed only in math mode.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.620 	\end{frame}
-                  
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.620 	\end{frame}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.620 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.620 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2815,205 +2258,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [31
 
 ]
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.620 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.620 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-! Argument of \bBigg@ has an extra }.
-<inserted text> 
-                \par 
-l.620 	\end{frame}
-                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \bBigg@ was complete.
-<to be read again> 
-                   \par 
-l.620 	\end{frame}
-                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Missing { inserted.
-<to be read again> 
-                   \tex_par:D 
-l.620 	\end{frame}
-                  
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.620 	\end{frame}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.620 	\end{frame}
-                  
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Extra }, or forgotten \endgroup.
-<recently read> }
-                 
-l.620 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! Package amsmath Error: \hat allowed only in math mode.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.620 	\end{frame}
-                  
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.620 	\end{frame}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 620.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.620 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.620 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.620 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -3021,144 +2265,12 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [32
 
 ]
-LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 642.
-
-LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <8> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 642.
-
-LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <6> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 642.
-
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 642.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 642.
-
-! Argument of \bBigg@ has an extra }.
-<inserted text> 
-                \par 
-l.642 	\end{frame}
-                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \bBigg@ was complete.
-<to be read again> 
-                   \par 
-l.642 	\end{frame}
-                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Missing { inserted.
-<to be read again> 
-                   \tex_par:D 
-l.642 	\end{frame}
-                  
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.642 	\end{frame}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.642 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.642 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra }, or forgotten \endgroup.
-<recently read> }
-                 
-l.642 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.642 	\end{frame}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.642 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.642 	\end{frame}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
-                                                 
-l.642 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.642 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10.95> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 642.
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <8> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 642.
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <6> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 642.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
@@ -3202,87 +2314,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [38
 
 ]
-
-LaTeX Warning: Command \! invalid in math mode on input line 730.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 730.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.730 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.730 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.730 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 730.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 730.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.730 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.730 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.730 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -3346,47 +2377,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [47
 
 ]
-
-LaTeX Warning: Command \! invalid in math mode on input line 877.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 877.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.877 	\end{frame}
-                  
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.877 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.877 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -3493,43 +2483,14 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 ]
 
-LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 1038.
+LaTeX Warning: Empty bibliography on input line 1038.
 
-
-LaTeX Font Info:    Trying to load font information for OT1+zi4 on input line 1
-038.
-
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/inconsolata/ot1
-zi4.fd
-File: ot1zi4.fd 2018/01/14 OT1/zi4 (Inconsolata)
-)
-LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1038.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
 [63
-
-{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rms
-c.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/inc
-onsolata/i4-ot1-0.enc}]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[64
-
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
-[65
-
 
 ]
 \tf@nav=\write7
@@ -3542,48 +2503,42 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 \openout9 = `Vortrag.snm'.
 
  (./Vortrag.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
 Package rerunfilecheck Info: File `Vortrag.out' has not changed.
-(rerunfilecheck)             Checksum: 9F8C1263E39DA465031171569E4FA694;1256.
+(rerunfilecheck)             Checksum: E1F6DA6F779D1B652122665EDC9C3F48;1168.
 Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 \openout1 = `Vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54709 strings out of 476025
- 1269603 string characters out of 5790017
- 2064113 words of memory out of 5000000
- 74019 multiletter control sequences out of 15000+600000
- 599284 words of font info for 108 fonts, out of 8000000 for 9000
+ 53630 strings out of 476025
+ 1251243 string characters out of 5790017
+ 2107679 words of memory out of 5000000
+ 72973 multiletter control sequences out of 15000+600000
+ 616367 words of font info for 111 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 128i,21n,122p,1853b,2548s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/inco
-nsolata/Inconsolata-zi4r.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
-ist/fonts/type1/public/doublestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/t
-exlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></Volumes/Macintosh SS
-D/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Volumes/Maci
-ntosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Volu
-mes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
-></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lm
-r10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/publi
-c/lm/lmss10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/typ
-e1/public/lm/lmss12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/f
-onts/type1/public/lm/lmss8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf
--dist/fonts/type1/public/lm/lmssbx10.pfb></Volumes/Macintosh SSD/local/texlive/
-2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></Volumes/Macintosh SSD/local
-/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso12.pfb></Volumes/Macintosh 
-SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></Volumes/Ma
-cintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Vo
-lumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.p
-fb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/
-lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pub
-lic/amsfonts/symbols/msbm10.pfb>
-Output written on Vortrag.pdf (65 pages, 385106 bytes).
+ 128i,21n,122p,754b,2548s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/doub
+lestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/font
+s/type1/public/lm/lmex10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
+ist/fonts/type1/public/lm/lmmi10.pfb></Volumes/Macintosh SSD/local/texlive/2023
+/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></Volumes/Macintosh SSD/local/texli
+ve/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Volumes/Macintosh SSD/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></Volumes/Macintosh 
+SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></Volumes/Ma
+cintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Vol
+umes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10
+.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/l
+m/lmsso10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1
+/public/lm/lmsso12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fo
+nts/type1/public/lm/lmsso8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf
+-dist/fonts/type1/public/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/20
+23/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></Volumes/Macintosh SSD/local/tex
+live/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Vortrag.pdf (63 pages, 341091 bytes).
 PDF statistics:
- 669 PDF objects out of 1000 (max. 8388607)
- 545 compressed objects within 6 object streams
- 151 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 632 PDF objects out of 1000 (max. 8388607)
+ 512 compressed objects within 6 object streams
+ 136 named destinations out of 1000 (max. 500000)
+ 155 words of extra memory for PDF output out of 10000 (max. 10000000)
 

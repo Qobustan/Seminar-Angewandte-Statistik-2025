@@ -4,6 +4,26 @@
 # =============================================================================
 
 # -----------------------------------------------------------------------------
+# Stage 0: Build Lua 5.5.0 from the local source tree
+# -----------------------------------------------------------------------------
+FROM ubuntu:20.04 AS lua-builder
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Install only the tools needed to compile Lua (kept in a throw-away stage)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        libreadline-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy the locally-checked-in Lua source and build it
+COPY lua-5.5.0/ /lua-src/
+RUN cd /lua-src && \
+    make linux && \
+    make install INSTALL_TOP=/opt/lua
+
+# -----------------------------------------------------------------------------
 # Stage 1: Base image with TeX Live installation
 # -----------------------------------------------------------------------------
 FROM ubuntu:20.04 AS base
@@ -76,6 +96,12 @@ COPY --chown=latex:latex Ausarbeitung/ ./Ausarbeitung/
 COPY --chown=latex:latex Vortrag/ ./Vortrag/
 COPY --chown=latex:latex scripts/*.sh ./scripts/
 
+# Install the Lua binaries compiled from the local source (lua-builder stage)
+# Runs as root before switching to the latex user
+USER root
+COPY --from=lua-builder /opt/lua/bin/lua  /usr/local/bin/lua
+COPY --from=lua-builder /opt/lua/bin/luac /usr/local/bin/luac
+
 # Make scripts executable
 RUN chmod +x ./scripts/*.sh
 
@@ -84,7 +110,7 @@ USER latex
 
 # Add health check to verify container is working
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD [ -f "/app/scripts/generatePdf.sh" ] && command -v pdflatex > /dev/null && command -v lualatex > /dev/null && echo "OK" || exit 1
+    CMD [ -f "/app/scripts/generatePdf.sh" ] && command -v pdflatex > /dev/null && command -v lualatex > /dev/null && command -v lua > /dev/null && echo "OK" || exit 1
 
 # Set the entrypoint and default command
 # ENTRYPOINT provides the base command, CMD provides default arguments

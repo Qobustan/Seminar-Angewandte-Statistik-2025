@@ -25,6 +25,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Build Lua 5.5.0 from local source
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends build-essential libreadline-dev
+          cd lua-5.5.0
+          make linux
+          sudo make install
+          lua -v
+
       - name: Build Ausarbeitung
         uses: xu-cheng/latex-action@v4
         with:
@@ -64,6 +73,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Build Lua 5.5.0 from local source
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends build-essential libreadline-dev
+          cd lua-5.5.0
+          make linux
+          sudo make install
+          lua -v
 
       - name: Build Ausarbeitung with LuaLaTeX
         uses: xu-cheng/latex-action@v4

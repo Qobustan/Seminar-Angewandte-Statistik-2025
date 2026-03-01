@@ -1,0 +1,161 @@
+% =================================================
+% Farben
+% =================================================
+\definecolor{codeblue}{HTML}{4178f2}
+\definecolor{lieblingsfarbe}{cmyk}{79,0.11,1,0.25}
+
+% Hyperref-Optionen (Beamer lädt hyperref selbst)
+\hypersetup{
+	hidelinks,
+	colorlinks=true,
+	allcolors=codeblue
+}
+
+% =================================================
+% Schrift & Kodierung
+% =================================================
+\usepackage{lmodern}
+\usepackage{inconsolata}
+
+% Entfernt: \newunicodechar{̈}{\"} (führt zu Endlosschleife!)
+
+% =================================================
+% Mathematik
+% =================================================
+\usepackage{amsmath}      % von Beamer unterstützt
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[centerdots]{mathtools}
+\usepackage{dsfont}
+\usepackage{stmaryrd}
+\usepackage{nicefrac}
+
+% =================================================
+% Grafiken & TikZ
+% =================================================
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usetikzlibrary{
+	chains,
+	shapes.multipart,
+	shapes,
+	arrows,
+	arrows.meta,
+	positioning,
+	fit,
+	shapes.geometric
+}
+
+% TikZ-Stile
+\tikzset{
+	heapnode/.style={draw, circle, inner sep=0pt, minimum size=6mm},
+	heaparrow/.style={-latex, thick},
+	long node/.style={draw, rounded corners, minimum width=7.5cm, minimum height=1cm},
+	short node/.style={draw, rounded corners, minimum width=2.5cm, minimum height=1cm},
+	square node/.style={draw, rounded corners, minimum width=2.5cm, minimum height=2.5cm},
+	label node/.style={font=\small, align=center}
+}
+
+% =================================================
+% Tabellen & Layout
+% =================================================
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{colortbl}
+
+% =================================================
+% Aufzählungen
+% =================================================
+\usepackage{enumitem}
+\setlist[itemize]{label=$\bullet$, leftmargin=*, nosep}
+\setlist[enumerate]{label=\arabic*., leftmargin=*, nosep}
+
+% =================================================
+% Listings / Code
+% =================================================
+\usepackage{listings}
+
+\lstdefinelanguage{pseudocode}{
+	keywords={struct,null,function,error,nil,if,then,else,for,while,do,in,True,False,Array,set,repeat,break,continue,Eingabe,Ausgabe,return,print,exit},
+	sensitive=false,
+	delim=[l][keywordstyle]{:},
+	comment=[l][commentstyle]{\#}
+}
+
+\lstset{
+	frame=single,
+	framesep=0mm,
+	framexleftmargin=7mm,
+	xleftmargin=8mm,
+	framerule=1.5pt,
+	rulecolor=\color{black},
+	backgroundcolor=\color{white},
+	basicstyle=\ttfamily,
+	keywordstyle=\bfseries\color{codeblue},
+	commentstyle=\color{gray},
+	numbers=left,
+	stepnumber=1,
+	numbersep=1mm,
+	numberstyle=\sffamily\color{gray!80!black}\footnotesize,
+	numberblanklines=true,
+	escapeinside={\%*}{*)},
+	inputencoding=utf8
+}
+
+% =================================================
+% Algorithmen
+% =================================================
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% =================================================
+% Sonstiges
+% =================================================
+\usepackage{textcomp}
+\usepackage{tipa}
+\usepackage{blindtext}
+\usepackage{tcolorbox}
+\usepackage{csquotes}
+
+% =================================================
+% Beamer-Theoremumgebungen
+% =================================================
+\newtheorem{satz}{Satz}
+\newtheorem{fundamentalsatz}{Fundamentalsatz}
+\newtheorem{intuition}{Intuition}
+\newtheorem{intuitionUndBeispiel}{Intuition und Beispiel}
+\newtheorem{beispiel}{Beispiel}
+\newtheorem{korollar}{Korollar}
+\newtheorem{bemerkung}{Bemerkung}
+\newtheorem{vorbemerkung}{Vorbemerkung}
+
+% Beweisumgebung
+\newenvironment{beweis}[1][\textbf{Beweis}]{%
+	\begin{proof}[#1]
+	}{%
+	\end{proof}
+}
+
+% =================================================
+% Trennfolie
+% =================================================
+\newcommand{\trennfolie}[1]{
+	\begin{frame}[plain]
+		\centering
+		\vfill
+		\Huge \textbf{#1}
+		\vfill
+	\end{frame}
+}
+
+% =================================================
+% Metadaten
+% =================================================
+\author{Yavuzâlp Dal}
+\title{Einf\"uhrung in die Kerndichtesch\"atzung}
+\institute{Angewandte Statistik}
+\date{\today}

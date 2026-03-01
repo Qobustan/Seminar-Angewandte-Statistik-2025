@@ -1,0 +1,239 @@
+% Article-spezifische Konfiguration
+% Article-specific configuration
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Article-spezifische Pakete die NICHT mit Beamer kompatibel sind
+
+% Erweiterung: Umgebungen für Definitionen etc
+\usepackage{amsthm}
+
+% Optimierung von Grafiken (nicht kompatibel mit Beamer)
+\usepackage{changepage}
+\usepackage{adjustbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Einstellungen für das Dokument
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Eine neue Farbe für keywords im Code und für links
+\definecolor{codeblue}{HTML}{4178f2}
+
+%Farbe für Textblocktitel
+\definecolor{lieblingsfarbe}{cmyk}{79,0.11,1,0.25}
+
+% Entfernt den roten Rahmen um klickbare Links und macht Links blau
+\hypersetup{hidelinks, colorlinks=true, allcolors=codeblue}
+
+% Stildefinition für Aufzählungspunkte
+\setlist[itemize]{label=$\bullet$, leftmargin=*, nosep}
+
+% Vordefinierte Umgebungen für Theoreme/Lemmas/Definitionen
+\theoremstyle{plain} % Alle newtheorems die hier nach kommen bekommen den 'plain' Stil
+\newtheorem{theorem}{Theorem}
+\newtheorem{satz}[theorem]{Satz}
+\newtheorem{fundamentalsatz}[theorem]{Fundamentalsatz}
+\newtheorem{intuition}[theorem]{Intuition}
+\newtheorem{intuitionUndBeispiel}[theorem]{Intuition und Beispiel}
+\newtheorem{intuitionUndDefinition}[theorem]{Intuition und Definition}
+\newtheorem{intuitionDefinitionUndSatz}[theorem]{Intuition, Definition und Satz}
+\newtheorem{beispiel}[theorem]{Beispiel}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{korollar}[theorem]{Korollar}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{bemerkung}[theorem]{Bemerkung}
+\newtheorem{vorbemerkung}[theorem]{Vorbemerkung}
+\newtheorem{amortisierteAnalyse}[theorem]{Amortisierte Analyse}
+
+% Beweisumgebung im gleichen Stil wie die anderen Umgebungen
+\newenvironment{beweis}[1][\textbf{Beweis}]{%
+	\begin{proof}[#1]
+	}{%
+	\end{proof}
+}
+
+%%%%%%%%%%%%%%%%%%%%%
+%(¡Diese beiden Funktionen sind experimentell!)
+
+% Befehlsdefinition für dynamische Größenanpassung des Bildes
+\newcommand{\dynamicscale}[1]{%
+	\includegraphics[width=\minof{\textwidth}{\widthof{\includegraphics{#1}}-\parindent}]{#1}%
+}
+
+% Befehlsdefinition für dynamische Größenanpassung der TiKZ-Grafik
+\newcommand{\dynamictikz}[1]{%
+	\begin{tikzpicture}[scale=1]
+		\draw (0,0) rectangle (\minof{\textwidth}{\widthof{#1}}-\parindent, \heightof{#1});
+		#1
+	\end{tikzpicture}%
+}
+
+% Stil für TikZ - Grafiken
+\tikzset{
+	heapnode/.style={draw, circle, inner sep=0pt,
+		minimum size=6mm},
+	heaparrow/.style={-latex, thick},
+}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+% Stelle Theorem/Lemma/Definitionsnummerierung die Abschnittsnummer voran
+\numberwithin{theorem}{section}
+
+% Ersetze U+202F durch ein normales Leerzeichen
+\newunicodechar{ }{ }
+
+% Ersetze U+0308 durch das LaTeX-Äquivalent für das Diaeresis (z.B., \"{o} für ö)
+\newunicodechar{̈}{\"}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Definiere Sprache 'pseudocode' für Codelistings
+\lstdefinelanguage{pseudocode}{
+	keywords={
+		struct,
+		null,
+		function,
+		error,
+		nil,
+		if,
+		then,
+		else,
+		for,
+		while,
+		do,
+		in,
+		True,
+		False,
+		Array,
+		set,
+		repeat,
+		break,
+		continue,
+		Eingabe,
+		Ausgabe,
+		return,
+		print,
+		exit
+	},
+	sensitive=false,
+	delim=[l][keywordstyle]{:},
+	comment=[l][commentstyle]{\#}
+}
+
+% Generelle Einstellungen für Listings
+\lstset{%
+	frame=single,
+	framesep=0mm,
+	framexleftmargin=7mm,
+	xleftmargin=8mm,
+	framerule=1.5pt,
+	rulecolor=\color{black},
+	backgroundcolor=\color{white},
+	basicstyle=\ttfamily,
+	keywordstyle=\bfseries\color{codeblue},
+	commentstyle=\color{gray},
+	numbers=left,
+	stepnumber=1,
+	numbersep=1mm,
+	numberstyle=\sffamily\color{gray!80!black}\footnotesize,
+	numberblanklines=true,
+	escapeinside={\%*}{*)},
+	inputencoding=utf8
+}
+
+% Eine weitere Stufe für Unterkapitel
+
+% Definiere das Gliederungselement Subsubsubsection
+\makeatletter
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+	{-3.25ex \@plus -1ex \@minus -.2ex}%
+	{1.5ex \@plus .2ex}%
+	{\normalfont\normalsize\bfseries}}
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\@arabic\c@subsubsubsection}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+
+% Füge das Gliederungselement dem Inhaltsverzeichnis hinzu
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% Dieser von Stackoverflow stammende Block sorgt dafür, dass Umlaute in Code-Listings funktionieren.
+% Quelle:  https://tex.stackexchange.com/questions/24528/having-problems-with-listings-and-utf-8-can-it-be-fixed
+\lstset{
+	inputencoding = utf8,  % Input encoding
+	extendedchars = true,  % Extended ASCII
+	literate      =        % Support additional characters
+	{á}{{\'a}}1  {é}{{\'e}}1  {í}{{\'i}}1 {ó}{{\'o}}1  {ú}{{\'u}}1
+	{Á}{{\'A}}1  {É}{{\'E}}1  {Í}{{\'I}}1 {Ó}{{\'O}}1  {Ú}{{\'U}}1
+	{à}{{\`a}}1  {è}{{\`e}}1  {ì}{{\`i}}1 {ò}{{\`o}}1  {ù}{{\`u}}1
+	{À}{{\`A}}1  {È}{{\`E}}1  {Ì}{{\`I}}1 {Ò}{{\`O}}1  {Ù}{{\`U}}1
+	{ä}{{\"a}}1  {ë}{{\"e}}1  {ï}{{\"i}}1 {ö}{{\"o}}1  {ü}{{\"u}}1
+	{Ä}{{\"A}}1  {Ë}{{\"E}}1  {Ï}{{\"I}}1 {Ö}{{\"O}}1  {Ü}{{\"U}}1
+	{â}{{\^a}}1  {ê}{{\^e}}1  {î}{{\^i}}1 {ô}{{\^o}}1  {û}{{\^u}}1
+	{Â}{{\^A}}1  {Ê}{{\^E}}1  {Î}{{\^I}}1 {Ô}{{\^O}}1  {Û}{{\^U}}1
+	{œ}{{\oe}}1  {Œ}{{\OE}}1  {æ}{{\ae}}1 {Æ}{{\AE}}1  {ß}{{\ss}}1
+	{ẞ}{{\SS}}1  {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 {ø}{{\o}}1  {Ø}{{\O}}1
+	{å}{{\aa}}1  {Å}{{\AA}}1  {ã}{{\~a}}1  {õ}{{\~o}}1 {Ã}{{\~A}}1
+	{Õ}{{\~O}}1  {ñ}{{\~n}}1  {Ñ}{{\~N}}1  {¿}{{?`}}1  {¡}{{!`}}1
+	{°}{{\textdegree}}1 {º}{{\textordmasculine}}1 {ª}{{\textordfeminine}}1
+	{£}{{\pounds}}1  {©}{{\copyright}}1  {®}{{\textregistered}}1
+	{«}{{\guillemotleft}}1  {»}{{\guillemotright}}1  {Ð}{{\DH}}1  {ð}{{\dh}}1
+	{Ý}{{\'Y}}1    {ý}{{\'y}}1    {Þ}{{\TH}}1    {þ}{{\th}}1    {Ă}{{\u{A}}}1
+	{ă}{{\u{a}}}1  {Ą}{{\k{A}}}1  {ą}{{\k{a}}}1  {Ć}{{\'C}}1    {ć}{{\'c}}1
+	{Č}{{\v{C}}}1  {č}{{\v{c}}}1  {Ď}{{\v{D}}}1  {ď}{{\v{d}}}1  {Đ}{{\DJ}}1
+	{đ}{{\dj}}1    {Ė}{{\.{E}}}1  {ė}{{\.{e}}}1  {Ę}{{\k{E}}}1  {ę}{{\k{e}}}1
+	{Ě}{{\v{E}}}1  {ě}{{\v{e}}}1  {Ğ}{{\u{G}}}1  {ğ}{{\u{g}}}1  {Ĩ}{{\~I}}1
+	{ĩ}{{\~\i}}1   {Į}{{\k{I}}}1  {į}{{\k{i}}}1  {İ}{{\.{I}}}1  {ı}{{\i}}1
+	{Ĺ}{{\'L}}1    {ĺ}{{\'l}}1    {Ľ}{{\v{L}}}1  {ľ}{{\v{l}}}1  {Ł}{{\L{}}}1
+	{ł}{{\l{}}}1   {Ń}{{\'N}}1    {ń}{{\'n}}1    {Ň}{{\v{N}}}1  {ň}{{\v{n}}}1
+	{Ő}{{\H{O}}}1  {ő}{{\H{o}}}1  {Ŕ}{{\'{R}}}1  {ŕ}{{\'{r}}}1  {Ř}{{\v{R}}}1
+	{ř}{{\v{r}}}1  {Ś}{{\'S}}1    {ś}{{\'s}}1    {Ş}{{\c{S}}}1  {ş}{{\c{s}}}1
+	{Š}{{\v{S}}}1  {š}{{\v{s}}}1  {Ť}{{\v{T}}}1  {ť}{{\v{t}}}1  {Ũ}{{\~U}}1
+	{ũ}{{\~u}}1    {Ū}{{\={U}}}1  {ū}{{\={u}}}1  {Ů}{{\r{U}}}1  {ů}{{\r{u}}}1
+	{Ű}{{\H{U}}}1  {ű}{{\H{u}}}1  {Ų}{{\k{U}}}1  {ų}{{\k{u}}}1  {Ź}{{\'Z}}1
+	{ź}{{\'z}}1    {Ż}{{\.Z}}1    {ż}{{\.z}}1    {Ž}{{\v{Z}}}1
+	% ¿ and ¡ are not correctly displayed if inconsolata font is used
+	% together with the lstlisting environment. Consider typing code in
+	% external files and using \lstinputlisting to display them instead.      
+}
+
+% Definiere einige Stile für TikZ - Knoten
+\tikzset{
+	long node/.style={draw, rounded corners, minimum width=7.5cm, minimum height=1cm},
+	short node/.style={draw, rounded corners, minimum width=2.5cm, minimum height=1cm},
+	square node/.style={draw, rounded corners, minimum width=2.5cm, minimum height=2.5cm},
+	label node/.style={font=\small, align=center}
+}
+
+% Abkürzungen ("Makros") können mit \newcommand definiert werden
+% Symbole für die gängigen Mengen
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Zp}{\Z_{\geq 0}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Qp}{\Q_{\geq 0}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rp}{\R_{\geq 0}}
+\newcommand{\Rmn}{\R^{m\times n}}
+
+% Hübscheres Epsilon
+\newcommand{\eps}{\varepsilon}
+
+% Einführung von TikZ - Bibliotheken
+\usetikzlibrary{positioning,fit,shapes.geometric}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Metadaten: Autor, Titel, etc.
+\author{Yavuzâlp Dal}
+\title{Einf\"uhrung in die Kerndichtesch\"atzung}
+\subject{Schriftliche Ausarbeitung zum Seminarvortrag}
+\def \vorlesung {Seminar: Angewandte Analysis}
+\def \semester {Wintersemester 2025/26}
+\def \dozent {Prof. Dr. Holger Schwender}
+\date{Stand: \today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

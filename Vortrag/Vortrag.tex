@@ -154,19 +154,50 @@
 	\section{Rosenblatt-Schätzer}
 	
 	\begin{frame}{Empirische Verteilungsfunktion}
-		Die empirische Verteilungsfunktion ist gegeben durch:
-		\[
-		F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
-		\]
-		
-		\begin{itemize}
-			\itemsep8pt
-			\item Die empirische Verteilungsfunktion ist ein konsistenter Schätzer für die Verteilungsfunktion $F$.
-			\item Sie ist jedoch eine Treppenfunktion.
-		\end{itemize}
-		
-		\vspace{0.5em}
-		\alert{Wie erhalten wir daraus eine Dichte?}
+		\begin{columns}[T]
+			\begin{column}{0.52\textwidth}
+				Die empirische Verteilungsfunktion:
+				\[
+				F_n(x)=\frac1n\sum_{i=1}^n \mathds{1}_{\{X_i\le x\}}
+				\]
+				\begin{itemize}
+					\itemsep6pt
+					\item Konsistenter Schätzer für $F$.
+					\item Jedoch eine Treppenfunktion.
+				\end{itemize}
+				\vspace{0.5em}
+				\alert{Wie erhalten wir daraus eine Dichte?}
+			\end{column}
+			\begin{column}{0.44\textwidth}
+				\centering
+				\begin{tikzpicture}
+					\begin{axis}[
+						width=5cm, height=4cm,
+						xlabel={$x$},
+						ylabel={$F_n(x)$},
+						xmin=0, xmax=6,
+						ymin=-0.05, ymax=1.15,
+						ytick={0.2,0.4,0.6,0.8,1.0},
+						yticklabels={$\tfrac{1}{5}$,$\tfrac{2}{5}$,$\tfrac{3}{5}$,$\tfrac{4}{5}$,$1$},
+						xtick={1,2,3,4,5},
+						xticklabels={$X_{(1)}$,$X_{(2)}$,$X_{(3)}$,$X_{(4)}$,$X_{(5)}$},
+						tick label style={font=\tiny},
+						axis lines=left,
+						]
+						\addplot[blue, thick, const plot mark right] coordinates {
+							(0,0)(1,0.2)(2,0.4)(3,0.6)(4,0.8)(5,1.0)(6,1.0)
+						};
+						\addplot[only marks, mark=*, blue, mark size=2pt] coordinates {
+							(1,0.2)(2,0.4)(3,0.6)(4,0.8)(5,1.0)
+						};
+						\addplot[only marks, mark=o, blue, mark size=2pt] coordinates {
+							(1,0)(2,0.2)(3,0.4)(4,0.6)(5,0.8)
+						};
+					\end{axis}
+				\end{tikzpicture}
+				{\tiny $n=5$ geordnete Beobachtungen}
+			\end{column}
+		\end{columns}
 	\end{frame}
 	
 	\begin{frame}
@@ -190,7 +221,33 @@
 		
 		\vspace{0.5em}
 		
-		\textbf{Interpretation:} Die relative Häufigkeit der Beobachtungen in $(x-h, x+h]$, normiert durch $2h$, ergibt ein ,,gleitendes Histogramm''.
+		\textbf{Interpretation:}
+		\begin{columns}[T]
+			\begin{column}{0.55\textwidth}
+				Die relative Häufigkeit der Beobachtungen in $(x-h, x+h]$, normiert durch $2h$, ergibt ein ,,gleitendes Histogramm''.
+			\end{column}
+			\begin{column}{0.40\textwidth}
+				\centering
+				\begin{tikzpicture}
+					\draw[->] (-1.8,0) -- (1.8,0) node[right]{\tiny $X$};
+					\fill[blue!20] (-0.9,-0.08) rectangle (0.9,0.08);
+					\draw[blue, thick] (-0.9,0.18) -- (-0.9,-0.18);
+					\draw[blue, thick] (0.9,0.18) -- (0.9,-0.18);
+					\draw[blue, thick, <->] (-0.9,-0.28) -- (0.9,-0.28)
+						node[midway, below]{\tiny $2h$};
+					\draw[red, thick] (0,0.22) -- (0,-0.22)
+						node[below]{\tiny $x$};
+					\foreach \pos in {-0.6, -0.2, 0.3, 0.7} {
+						\fill[black] (\pos,0) circle (2pt);
+					}
+					\foreach \pos in {-1.5, 1.3} {
+						\fill[gray!60] (\pos,0) circle (1.5pt);
+					}
+					\node[blue, font=\tiny] at (-0.9, 0.32) {$x{-}h$};
+					\node[blue, font=\tiny] at (0.9, 0.32) {$x{+}h$};
+				\end{tikzpicture}
+			\end{column}
+		\end{columns}
 	\end{frame}
 	
 	\begin{frame}
@@ -431,6 +488,45 @@
 	\end{frame}
 	
 	\begin{frame}
+		\frametitle{Gängige Kernfunktionen – Visualisierung}
+		
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				width=10cm, height=5.5cm,
+				xlabel={$u$},
+				ylabel={$K(u)$},
+				xmin=-1.8, xmax=1.8,
+				ymin=0, ymax=0.85,
+				legend pos=north east,
+				legend style={font=\small},
+				axis lines=left,
+				xtick={-1,0,1},
+				ytick={0,0.25,0.5,0.75},
+				]
+				% Rechteck-Kern
+				\addplot[red, thick] coordinates {
+					(-1.8,0)(-1,0)(-1,0.5)(1,0.5)(1,0)(1.8,0)
+				};
+				\addlegendentry{Rechteck}
+				% Gauß-Kern: K(x) = (1/sqrt(2*pi)) * exp(-x^2/2)  (standard normal density; 1/sqrt(2*pi) ≈ 0.399 is the normalization constant)
+				\addplot[blue, thick, domain=-1.8:1.8, samples=80]
+					{exp(-(x^2)/2)/sqrt(2*pi)};
+				\addlegendentry{Gauß}
+				% Epanechnikov-Kern (piecewise)
+				\addplot[green!60!black, thick, domain=-1:1, samples=60]
+					{0.75*(1-x^2)};
+				\addplot[green!60!black, thick] coordinates {(-1.8,0)(-1,0)};
+				\addplot[green!60!black, thick] coordinates {(1,0)(1.8,0)};
+				\addlegendentry{Epanechnikov}
+			\end{axis}
+		\end{tikzpicture}
+		
+		\vspace{0.2em}
+		{\small Alle Kerne: $\int K(u)\,du = 1$, symmetrisch, nicht-negativ.}
+	\end{frame}
+	
+	\begin{frame}
 		\frametitle{Besonderheit des Epanechnikov-Kerns}
 		
 		\begin{itemize}
@@ -659,7 +755,42 @@
 	\end{frame}
 	
 	
-
+	\begin{frame}
+		\frametitle{Bias--Varianz-Tradeoff – Visualisierung}
+		
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				width=10cm, height=5.5cm,
+				xlabel={Bandbreite $h$},
+				ylabel={Fehler},
+				domain=0.1:1.0,
+				samples=100,
+				legend pos=north east,
+				legend style={font=\small},
+				xmin=0, xmax=1.1,
+				ymin=0, ymax=0.07,
+				axis lines=left,
+				xtick=\empty, ytick=\empty,
+				]
+				% Bias^2 ~ c1*h^4; c1=0.04 chosen for visual clarity (standard: c1 = sigma_K^4 * (f''(x))^2/4)
+				\addplot[red, thick, smooth] {0.04*x^4};
+				\addlegendentry{$\operatorname{Bias}^2 \sim h^4$}
+				% Var ~ c2/(n*h); c2/(n)=0.00565 chosen for visual clarity (standard: c2/n = f(x)/(2*sqrt(pi)*n) for Gauss-kernel)
+				% h_opt = (c2/(n*4*c1))^(1/5) = (0.00565/0.16)^0.2 ≈ 0.512
+				\addplot[blue, thick, smooth] {0.00565/x};
+				\addlegendentry{$\operatorname{Var} \sim \tfrac{1}{nh}$}
+				% MSE = Bias^2 + Variance
+				\addplot[black, very thick, smooth] {0.04*x^4 + 0.00565/x};
+				\addlegendentry{$\operatorname{MSE} = \operatorname{Bias}^2 + \operatorname{Var}$}
+				% Optimal h at argmin MSE: h_opt = (c2/(n*4*c1))^(1/5) ≈ 0.512
+				\draw[dashed, gray, thick] (axis cs:0.512,0) -- (axis cs:0.512,0.065)
+					node[above, font=\tiny, gray]{$h_{\text{opt}} \sim n^{-1/5}$};
+			\end{axis}
+		\end{tikzpicture}
+		
+		{\small Kleines $h$: Varianz dominiert \quad|\quad Großes $h$: Bias dominiert}
+	\end{frame}
 	
 	
 	\begin{frame}
@@ -750,22 +881,54 @@
 	\begin{frame}
 		\frametitle{Nadaraya--Watson-Schätzer}
 		
-		Der \textbf{Nadaraya--Watson-Schätzer} schätzt $m(x)$ als gewichteten Mittelwert der $Y_i$:
-		\[
-			\hat{m}_{NW}(x) =
-			\frac{\displaystyle\sum_{i=1}^n K\!\left(\frac{x - X_i}{h}\right) Y_i}
-			{\displaystyle\sum_{i=1}^n K\!\left(\frac{x - X_i}{h}\right)}.
-		\]
-		
-		\vspace{0.5em}
-		
-		\textbf{Interpretation:}
-		\begin{itemize}
-			\itemsep6pt
-			\item $\hat{m}_{NW}(x)$ ist ein gewichteter Mittelwert der $Y_1, \ldots, Y_n$.
-			\item Das Gewicht von $Y_i$ hängt vom Abstand von $X_i$ zu $x$ ab.
-			\item Je näher $X_i$ an $x$ liegt, desto größer ist sein Einfluss.
-		\end{itemize}
+		\begin{columns}[T]
+			\begin{column}{0.52\textwidth}
+				Der \textbf{Nadaraya--Watson-Schätzer} schätzt $m(x)$ als gewichteten Mittelwert der $Y_i$:
+				\[
+					\hat{m}_{NW}(x) =
+					\frac{\displaystyle\sum_{i=1}^n K\!\left(\frac{x - X_i}{h}\right) Y_i}
+					{\displaystyle\sum_{i=1}^n K\!\left(\frac{x - X_i}{h}\right)}.
+				\]
+				\textbf{Interpretation:}
+				\begin{itemize}
+					\itemsep4pt
+					\item Gewichteter Mittelwert der $Y_i$.
+					\item Nähere $X_i$ erhalten größeres Gewicht.
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.44\textwidth}
+				\centering
+				\begin{tikzpicture}
+					\begin{axis}[
+						width=5cm, height=4.5cm,
+						xlabel={$x$}, ylabel={$y$},
+						xmin=0, xmax=6, ymin=0, ymax=5,
+						axis lines=left,
+						xtick=\empty, ytick=\empty,
+						]
+						% data points (mark size ~ kernel weight K((x0-Xi)/h))
+						% query point x0=3
+						\addplot[only marks, mark=*, blue, mark size=1.5pt]
+							coordinates {(0.5,0.8)(5.5,4.2)};
+						\addplot[only marks, mark=*, blue, mark size=2.5pt]
+							coordinates {(1.5,1.5)(4.5,3.5)};
+						\addplot[only marks, mark=*, blue, mark size=4pt]
+							coordinates {(2.2,2.3)(3.8,3.0)};
+						\addplot[only marks, mark=*, blue, mark size=6pt]
+							coordinates {(3.0,2.8)};
+						% query line
+						\draw[red, dashed, thick] (axis cs:3,0)--(axis cs:3,5);
+						\node[red, font=\scriptsize] at (axis cs:3,-0.3) {$x$};
+						% estimated value marker
+						\addplot[only marks, mark=diamond*, red, mark size=4pt]
+							coordinates {(3,2.75)};
+						\node[red, font=\tiny, anchor=west] at (axis cs:3.1,2.75)
+							{$\hat{m}(x)$};
+					\end{axis}
+				\end{tikzpicture}
+				{\tiny Punktgröße $\propto$ Kerngewicht $K\!\left(\tfrac{x-X_i}{h}\right)$}
+			\end{column}
+		\end{columns}
 	\end{frame}
 	
 	
@@ -988,23 +1151,56 @@
 	\begin{frame}
 		\frametitle{Theil-Schätzer – Einführung und Formel}
 		
-		Der \textbf{Theil-Sen-Schätzer} schätzt die Steigung $\beta$ eines linearen Modells $Y = \alpha + \beta X$ durch den Median der paarweisen Steigungen $H_{ij}$ zwischen allen Beobachtungspaaren $i < j$:
-		\[
-		H_{ij} = \frac{Y_j - Y_i}{X_j - X_i}, \qquad i < j.
-		\]
-		
-		\vspace{0.5em}
-		
-		\ifpauseswitch
-		\pause
-		\fi
-		
-		Der Schätzer für den Anstieg ist dann:
-		\[
-		\hat{\beta} = \operatorname{Median}(H_{ij}).
-		\]
-		
-		\textbf{Theil-Methode I:} Berechnet Steigungen nur zwischen Paaren $(i,\, i+n/2)$, wobei $n$ gerade ist und $i = 1,\dots, n/2$.
+		\begin{columns}[T]
+			\begin{column}{0.50\textwidth}
+				Der \textbf{Theil-Sen-Schätzer} schätzt $\beta$ als Median der paarweisen Steigungen $H_{ij}$:
+				\[
+				H_{ij} = \frac{Y_j - Y_i}{X_j - X_i}, \quad i < j.
+				\]
+				
+				\ifpauseswitch
+				\pause
+				\fi
+				
+				Der Schätzer:
+				\[
+				\hat{\beta} = \operatorname{Median}(H_{ij}).
+				\]
+				
+				{\small\textbf{Theil-Methode I:} Steigungen nur zwischen Paaren $(i,\, i{+}n/2)$.}
+			\end{column}
+			\begin{column}{0.46\textwidth}
+				\centering
+				\begin{tikzpicture}
+					\begin{axis}[
+						width=5cm, height=4.5cm,
+						xlabel={$X$}, ylabel={$Y$},
+						xmin=0.5, xmax=5.5,
+						ymin=0.5, ymax=5,
+						axis lines=left,
+						xtick=\empty, ytick=\empty,
+						legend style={font=\tiny, at={(0.02,0.98)}, anchor=north west},
+						]
+						% "good" points (1,1),(2,2),(3,3),(4,4)
+						\addplot[only marks, mark=*, black, mark size=2.5pt]
+							coordinates {(1,1)(2,2)(3,3)(4,4)};
+						% outlier
+						\addplot[only marks, mark=*, red, mark size=3pt]
+							coordinates {(5,2.5)};
+						\node[red, font=\tiny, anchor=west] at (axis cs:5.1,2.5) {Ausreißer};
+						% OLS line: y = 1 + 0.5*x
+						\addplot[blue, dashed, thick, domain=0.5:5.5, samples=2]
+							{1 + 0.5*x};
+						\addlegendentry{KQ: $\hat{\beta}=0{,}5$}
+						% Theil-Sen line: y = x
+						\addplot[green!60!black, very thick, domain=0.5:5.5, samples=2]
+							{x};
+						\addlegendentry{Theil-Sen: $\hat{\beta}=1$}
+					\end{axis}
+				\end{tikzpicture}
+				{\tiny Ein Ausreißer verzerrt KQ stark; Theil-Sen bleibt stabil.}
+			\end{column}
+		\end{columns}
 	\end{frame}
 	
 	

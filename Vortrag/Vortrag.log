@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 17:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2050,6 +2050,29 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [4
 
 ]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 116.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 116.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 116.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 116.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 116.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 116.
+<img/messung_itter_1.jpg, id=193, 753.81625pt x 543.02875pt>
+File: img/messung_itter_1.jpg Graphic file (type jpg)
+<use img/messung_itter_1.jpg>
+Package pdftex.def Info: img/messung_itter_1.jpg  used on input line 116.
+(pdftex.def)             Requested size: 162.71146pt x 117.21527pt.
+<img/messung_itter_2.jpg, id=194, 753.81625pt x 543.02875pt>
+File: img/messung_itter_2.jpg Graphic file (type jpg)
+<use img/messung_itter_2.jpg>
+Package pdftex.def Info: img/messung_itter_2.jpg  used on input line 116.
+(pdftex.def)             Requested size: 162.71146pt x 117.21527pt.
+
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2057,45 +2080,22 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [5
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
-hit.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/l
-m/lm-rm.enc}]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 135.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 135.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 135.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 135.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 135.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 135.
-<img/messung_itter_1.jpg, id=223, 753.81625pt x 543.02875pt>
-File: img/messung_itter_1.jpg Graphic file (type jpg)
-<use img/messung_itter_1.jpg>
-Package pdftex.def Info: img/messung_itter_1.jpg  used on input line 135.
-(pdftex.def)             Requested size: 162.71146pt x 117.21527pt.
-<img/messung_itter_2.jpg, id=224, 753.81625pt x 543.02875pt>
-File: img/messung_itter_2.jpg Graphic file (type jpg)
-<use img/messung_itter_2.jpg>
-Package pdftex.def Info: img/messung_itter_2.jpg  used on input line 135.
-(pdftex.def)             Requested size: 162.71146pt x 117.21527pt.
-
+hit.enc} <./img/messung_itter_1.jpg> <./img/messung_itter_2.jpg>]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
 [6
 
- <./img/messung_itter_1.jpg> <./img/messung_itter_2.jpg>]
+]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
 [7
 
-] (./Vortrag.toc)
+{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.
+enc}] (./Vortrag.toc)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2597,7 +2597,7 @@ fb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/
 lmsy6.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/pub
 lic/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Vortrag.pdf (66 pages, 751727 bytes).
+Output written on Vortrag.pdf (66 pages, 751738 bytes).
 PDF statistics:
  2026 PDF objects out of 2073 (max. 8388607)
  1882 compressed objects within 19 object streams

@@ -94,25 +94,6 @@
 			\draw[<->] (-3,-0.6) -- (3,-0.6) node[midway,above]{\small Einfachheit vs. Flexibilität};
 		\end{tikzpicture}
 	\end{frame}
-	
-	\begin{frame}{Ausgangssituation und Zielsetzung}
-		Gegeben seien unabhängige, identisch verteilte Zufallsvariablen
-		\[
-		X_1,\dots,X_n \,\sim\, F
-		\quad\text{mit unbekannter Dichte } f.
-		\]
-		
-		\vspace{0.5cm}
-		\textbf{Zielsetzung:}
-		\[
-		\text{Schätze } f(x) \qquad\text{oder}\qquad m(x)=\mathbb E(Y|X=x)
-		\]
-		
-		\alert{ohne Annahme einer parametrischen Familie.}
-		
-		\vspace{0.5cm}
-		\textbf{Grundprinzip:} ,,Lass die Daten sprechen'' – Daten bestimmen die Form der Schätzung.
-	\end{frame}
 
 \begin{frame}[t]{Fallbeispiel: Gewässermessungen der Itter — Messungen}
 	\small
@@ -148,7 +129,26 @@
 	\end{itemize}
 	
 	\vfill
-	\footnotesize\hfill Wer sich näher interessiert, sei auf \cite{DalItter2026,DalItter2021} verwiesen.
+	\footnotesize\hfill Wer sich näher interessiert, sei auf \cite{DalItter2026,DalItter2021} verwiesen...
+\end{frame}
+
+	\begin{frame}{Ausgangssituation und Zielsetzung}
+	Gegeben seien unabhängige, identisch verteilte Zufallsvariablen
+	\[
+	X_1,\dots,X_n \,\sim\, F
+	\quad\text{mit unbekannter Dichte } f.
+	\]
+	
+	\vspace{0.5cm}
+	\textbf{Zielsetzung:}
+	\[
+	\text{Schätze } f(x) \qquad\text{oder}\qquad m(x)=\mathbb E(Y|X=x)
+	\]
+	
+	\alert{ohne Annahme einer parametrischen Familie.}
+	
+	\vspace{0.5cm}
+	\textbf{Grundprinzip:} ,,Lass die Daten sprechen'' – Daten bestimmen die Form der Schätzung.
 \end{frame}
 
 	\section{Rosenblatt-Schätzer}

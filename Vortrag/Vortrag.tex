@@ -114,36 +114,42 @@
 		\textbf{Grundprinzip:} ,,Lass die Daten sprechen'' – Daten bestimmen die Form der Schätzung.
 	\end{frame}
 
-	\begin{frame}{Fallbeispiel: Gewässermessungen der Itter}
-		\textbf{Spektralphotometrische Messungen} an der Itter (urbanes Gewässer):
-		Wellenlänge $\lambda$ vs.\ gemessene Absorption.
+\begin{frame}[t]{Fallbeispiel: Gewässermessungen der Itter — Messungen}
+	\small
+	\textbf{Spektralphotometrische Messungen:} Wellenlänge $\lambda$ vs.\ gemessene Absorption.
+	
+	\vspace{0.6em}
+	
+	\begin{columns}[T]
+		\begin{column}{0.48\textwidth}
+			\centering
+			\includegraphics[height=0.45\textheight]{img/messung_itter_1.jpg}\\
+			{\footnotesize Messung 1: logarithmisch/exponentiell abfallend}
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			\centering
+			\includegraphics[height=0.45\textheight]{img/messung_itter_2.jpg}\\
+			{\footnotesize Messung 2: eher linearer Verlauf}
+		\end{column}
+	\end{columns}
+\end{frame}
 
-		\vspace{0.4em}
-
-		\begin{columns}[T]
-			\begin{column}{0.48\textwidth}
-				\centering
-				\includegraphics[width=\linewidth]{img/messung_itter_1.jpg}\\
-				{\small Messung 1: logarithmisch/exponentiell abfallend}
-			\end{column}
-			\begin{column}{0.48\textwidth}
-				\centering
-				\includegraphics[width=\linewidth]{img/messung_itter_2.jpg}\\
-				{\small Messung 2: eher linearer Verlauf}
-			\end{column}
-		\end{columns}
-
-		\vspace{0.4em}
-
-		\ifpauseswitch
-		\pause
-		\fi
-
-		\textbf{Fazit:} Unterschiedliche Messungen desselben Gewässers zeigen grundlegend verschiedene Verteilungsmuster.
-		\alert{Man darf sich nicht blind auf eine angenommene Verteilung verlassen.}
-		Nichtparametrische Methoden sind daher besonders wertvoll, da sie keine bestimmte Verteilungsform voraussetzen.
-		\cite{DalItter2026,DalItter2021}
-	\end{frame}
+\begin{frame}[t]{Fallbeispiel: Gewässermessungen der Itter — Schlussfolgerung}
+	\small
+	\textbf{Fazit:}
+	\begin{itemize}
+		\item Unterschiedliche Messungen desselben Gewässers zeigen grundlegend verschiedene Verteilungsmuster.
+		\item Die beiden starken Sprünge sind darauf zurückzuführen, dass das Spektrometer zeitweise nicht durchgehend messen konnte und neu gestartet werden musste.
+		\begin{itemize}
+			\item \alert{Die Daten sind daher punktweise verfälscht — man sollte sie nicht zu exakt interpretieren.}
+		\end{itemize}
+		\item \alert{Man darf sich nicht blind auf eine angenommene Verteilung verlassen.}
+		\item Deshalb sind nichtparametrische Methoden besonders wertvoll: sie setzen keine bestimmte Verteilungsform voraus.
+	\end{itemize}
+	
+	\vfill
+	\footnotesize\hfill Wer sich näher interessiert, sei auf \cite{DalItter2026,DalItter2021} verwiesen.
+\end{frame}
 
 	\section{Rosenblatt-Schätzer}
 	

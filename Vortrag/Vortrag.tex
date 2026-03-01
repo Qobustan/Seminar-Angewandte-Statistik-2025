@@ -18,6 +18,10 @@
 \newif\ifpauseswitch
 \pauseswitchtrue % setze auf \pause aktivieren
 
+% Flag für Skip-Button vor der Sektion "Robuste Lineare Regression"
+\newif\ifshowskipbutton
+\showskipbuttonfalse
+
 \begin{document}
 	
 	\begin{frame}[plain,noframenumbering]
@@ -34,8 +38,8 @@
 		\begin{frame}<beamer>
 			\frametitle{Inhalt}
 			\tableofcontents[currentsection]
-			% section 6 = Robuste Lineare Regression
-			\ifnum\value{section}=6
+			\ifshowskipbutton
+				\global\showskipbuttonfalse
 				\vspace{1em}
 				\hfill\hyperlink{nachrobust}{\beamerskipbutton{Kapitel überspringen}}
 			\fi
@@ -405,7 +409,7 @@
 	\begin{frame}
 		\frametitle{Kernfunktion – Mathematische Anforderungen}
 		
-		\textbf{Ein Kern $\mathbf{K}$ muss erfüllen:}
+		\textbf{Ein Kern $K$ muss erfüllen:}
 		
 		\begin{enumerate}
 			\itemsep10pt
@@ -495,7 +499,7 @@
 			\end{axis}
 		\end{tikzpicture}
 		
-		{\small Bimodale Verteilung: $h$ zu klein $\Rightarrow$ überangepasst, $h$ optimal $\Rightarrow$ Erfasst beide Modi, $h$ zu groß $\Rightarrow$ Verwischt Struktur}
+		{\small Bimodale Verteilung: $h$ zu klein $\Rightarrow$ überangepasst, $h$ optimal $\Rightarrow$ erfasst beide Modi, $h$ zu groß $\Rightarrow$ verwischt die Struktur}
 	\end{frame}
 	
 	\begin{frame}
@@ -600,7 +604,7 @@
 		
 		\textbf{MSE-Zerlegung:} Mit $c_1, c_2 > 0$ gilt:
 		\[
-		\operatorname{MSE}\bigl(\hat{f}_n(x)\bigr) = \operatorname{Bias}^2\!\bigl(\hat{f}_n(x)\bigr) + \operatorname{Var}\bigl(\hat{f}_n(x)\bigr) = c_1 h^4 + \frac{c_2}{nh}
+		\operatorname{MSE}\bigl(\hat{f}_n(x)\bigr) = \operatorname{Bias}^2\!\bigl(\hat{f}_n(x)\bigr) + \operatorname{Var}\bigl(\hat{f}_n(x)\bigr) \approx c_1 h^4 + \frac{c_2}{nh}
 		\]
 		
 		\ifpauseswitch
@@ -729,7 +733,7 @@
 	\begin{frame}
 		\frametitle{Nichtparametrische Regression – Rolle der Bandbreite}
 		
-		\textbf{Einfluss der Bandbreite $\boldsymbol{h}$:}
+		\textbf{Einfluss der Bandbreite $h$:}
 		\begin{itemize}
 			\itemsep8pt
 			\item Ein kleines $h$ führt zu starker lokaler Anpassung und hoher Varianz.
@@ -873,6 +877,7 @@
 	\end{frame}
 	
 	
+	\showskipbuttontrue
 	\section{Robuste Lineare Regression}
 	
 	\begin{frame}
@@ -957,7 +962,7 @@
 		\hat{\beta} = \operatorname{Median}(H_{ij}).
 		\]
 		
-		\textbf{Theil-Methode I:} Berechnet Steigungen nur zwischen Paaren $(i,\, i+n/2)$.
+		\textbf{Theil-Methode I:} Berechnet Steigungen nur zwischen Paaren $(i,\, i+n/2)$, wobei $n$ gerade ist und $i = 1,\dots, n/2$.
 	\end{frame}
 	
 	

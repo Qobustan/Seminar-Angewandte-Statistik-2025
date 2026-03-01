@@ -14,6 +14,9 @@ on:
           - pdflatex
           - lualatex
 
+permissions:
+  contents: read
+
 jobs:
   build-latex:
     runs-on: ubuntu-latest
@@ -29,7 +32,7 @@ jobs:
           working_directory: Ausarbeitung
           args: -pdf
           # Use lualatex if manually dispatched with that option, otherwise defaults to pdflatex
-          latexmk_use_lualatex: ${{ github.event.inputs.latex_engine == 'lualatex' || false }}
+          latexmk_use_lualatex: ${{ github.event.inputs.latex_engine == 'lualatex' }}
 
       - name: Build Vortrag
         uses: xu-cheng/latex-action@v4
@@ -38,7 +41,7 @@ jobs:
           working_directory: Vortrag
           args: -pdf
           # Use lualatex if manually dispatched with that option, otherwise defaults to pdflatex
-          latexmk_use_lualatex: ${{ github.event.inputs.latex_engine == 'lualatex' || false }}
+          latexmk_use_lualatex: ${{ github.event.inputs.latex_engine == 'lualatex' }}
 
       - name: List generated PDFs
         run: |
@@ -51,6 +54,44 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: latex-pdfs
+          path: |
+            Ausarbeitung/*.pdf
+            Vortrag/*.pdf
+
+  build-latex-lualatex:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Ausarbeitung with LuaLaTeX
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: Ausarbeitung.tex
+          working_directory: Ausarbeitung
+          args: -pdf
+          latexmk_use_lualatex: true
+
+      - name: Build Vortrag with LuaLaTeX
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: Vortrag.tex
+          working_directory: Vortrag
+          args: -pdf
+          latexmk_use_lualatex: true
+
+      - name: List generated PDFs
+        run: |
+          echo "Ausarbeitung:"
+          ls -lh Ausarbeitung/*.pdf || true
+          echo "Vortrag:"
+          ls -lh Vortrag/*.pdf || true
+
+      - name: Upload PDFs (LuaLaTeX)
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-pdfs-lualatex
           path: |
             Ausarbeitung/*.pdf
             Vortrag/*.pdf

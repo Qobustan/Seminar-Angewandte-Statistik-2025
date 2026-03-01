@@ -69,6 +69,11 @@ jobs:
           if [ "${{ steps.codeql_analyze.outcome }}" = "success" ]; then
             echo "CodeQL analysis and SARIF upload to Code Scanning completed successfully."
           else
-            echo "::warning::CodeQL SARIF upload failed (Code Scanning may not be enabled for this repository)."
-            echo "::notice::The analysis ran successfully. Results are available as a workflow artifact."
+            if [ -d codeql-results ] && ls codeql-results/*.sarif >/dev/null 2>&1; then
+              echo "::warning::CodeQL upload to Code Scanning failed or was skipped (for example, if Code Scanning is not enabled for this repository)."
+              echo "::notice::CodeQL analysis completed and SARIF results were generated. They are available as workflow artifacts."
+            else
+              echo "::warning::CodeQL analysis or SARIF generation failed before results could be uploaded."
+              echo "::notice::No SARIF results are available. Please review the logs for the 'Perform CodeQL Analysis' step."
+            fi
           fi

@@ -68,6 +68,30 @@ Die \textit{nichtparametrische Dichteschätzung} verzichtet auf die Zugehörigke
 
 Ziel ist es, eine Annäherung an den Wert $f(x)$ an einer Stelle $x$ allein aus den Daten zu gewinnen, ohne eine bestimmte parametrische Familie vorauszusetzen (\glqq Let the data speak\grqq). Die nichtparametrische Dichteschätzung findet breite Anwendung in der explorativen Datenanalyse, der Mustererkennung und überall dort, wo die Verteilungsform a priori unbekannt ist oder nur schwach strukturierte Annahmen getroffen werden sollen.
 
+\section{Fallbeispiel: Gewässermessungen der Itter}
+
+Als motivierendes Beispiel dienen spektralphotometrische Messungen des Flusses Itter. Dabei wurde die Wellenlänge $\lambda$ gegen die gemessene Absorption aufgetragen.
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[height=0.25\textheight]{../Vortrag/img/messung_itter_1.jpg}\\
+    {\footnotesize Messung 1: logarithmisch/exponentiell abfallend}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[height=0.25\textheight]{../Vortrag/img/messung_itter_2.jpg}\\
+    {\footnotesize Messung 2: eher linearer Verlauf}
+\end{minipage}
+\caption{Spektralphotometrische Messungen der Itter. Quelle: \cite{DalItter2026, DalItter2021}}
+\end{figure}
+
+Die beiden Messungen desselben Gewässers zeigen grundlegend verschiedene Verteilungsmuster. Die starken Sprünge in den Daten sind darauf zurückzuführen, dass das Spektrometer zeitweise nicht durchgehend messen konnte und neu gestartet werden musste; die Daten sind daher punktweise verfälscht und sollten nicht zu exakt interpretiert werden.
+
+\textbf{Fazit:} Man darf sich nicht blind auf eine angenommene Verteilung verlassen. Deshalb sind nichtparametrische Methoden besonders wertvoll: sie setzen keine bestimmte Verteilungsform voraus. Wer sich näher für diese Messungen interessiert, sei auf \cite{DalItter2026, DalItter2021} verwiesen.
+
 \section{Der Schätzer von Rosenblatt (Die theoretische Basis)}
 
 Historisch betrachtet bildet der Ansatz von Rosenblatt \cite{Rosenblatt1956} (1956) das Fundament moderner Dichteschätzer. Er motiviert sich aus dem fundamentalen Zusammenhang zwischen der Dichtefunktion $f$ und der Verteilungsfunktion $F$, wobei gilt: $F'(x) = f(x)$ (sofern $F$ differenzierbar ist). Diese Beziehung legt nahe, die Ableitung durch einen Differenzenquotienten zu approximieren und die unbekannte Verteilungsfunktion durch ihre empirische Version zu ersetzen.
@@ -229,6 +253,16 @@ Gebräuchliche Kerne sind:
 
 \textbf{Praktische Empfehlung:} In den meisten Anwendungen ist die Wahl des Kerns von untergeordneter Bedeutung. Der Gauß-Kern wird häufig bevorzugt, da er glatt ist und in vielen Softwarepaketen standardmäßig implementiert ist. Entscheidender für die Güte der Schätzung ist die Bandbreitenwahl.
 
+\subsection{O-Notation}
+
+Für die asymptotische Analyse von Bias und Varianz des Kerndichteschätzers wird die $O$-Notation verwendet (angelehnt an \cite{SMI21} sowie \cite{dal2023probtest}). Seien $f, g : \mathbb{N} \to \mathbb{R}$ zwei Funktionen. Man sagt, $f$ \textbf{wächst höchstens so schnell wie} $g$, falls es Konstanten $c > 0$ und $n_0 \in \mathbb{N}$ gibt mit
+\[
+0 \leq f(n) \leq c \cdot g(n) \quad \forall\, n \geq n_0.
+\]
+In diesem Fall schreibt man $f(n) \in O(g(n))$ bzw.\ $f(n) = O(g(n))$.
+
+Diese Notation wird im Folgenden verwendet, um die Konvergenzraten von Bias und Varianz präzise zu beschreiben, ohne die genauen Konstanten angeben zu müssen.
+
 \subsection{Statistische Eigenschaften und Bandbreitenwahl}
 
 Die Qualität des Schätzers wird maßgeblich durch die Bandbreite $h$ bestimmt, die dabei wesentlich entscheidender ist als die Wahl der Kernform. Zur Analyse betrachten wir den \textbf{Mean Squared Error (MSE)} an der Stelle $x$:
@@ -349,6 +383,16 @@ Diese Darstellung zeigt, dass der Erwartungswert des Schätzers eine \textit{geg
 
 Diese Faltungsperspektive ist nicht nur mathematisch elegant, sondern auch praktisch nützlich: Sie erklärt, warum die Wahl der Bandbreite $h$ so kritisch ist und wie der Bias asymptotisch von $h$ und den Glattheitseigenschaften von $f$ abhängt.
 
+\subsection{Vorteile der Kerndichteschätzung}
+
+Die Kerndichteschätzung bietet gegenüber dem Histogramm und anderen Methoden wesentliche Vorteile:
+\begin{itemize}
+	\item Sie liefert eine stetige und glatte Schätzfunktion ohne abrupte Sprünge.
+	\item Sie ist flexibel einsetzbar ohne Annahme einer parametrischen Familie.
+	\item Sie hat gute theoretische Eigenschaften (Konsistenz, bekannte Konvergenzraten).
+	\item Sie bildet die Grundlage für weiterführende nichtparametrische Verfahren.
+\end{itemize}
+
 \section{Nichtparametrische Regression}
 
 Das Konzept der Kernschätzung lässt sich auf die Regressionsanalyse übertragen. Hier verlassen wir die Dichteschätzung und betrachten den Zusammenhang zwischen zwei Variablen $X$ und $Y$: $Y = m(X) + \epsilon$. Gegeben sind Beobachtungen $(X_i, Y_i)$ für $i = 1, \ldots, n$, und gesucht ist die unbekannte Regressionsfunktion $m(x) = \mathbb{E}(Y|X=x)$.
@@ -374,7 +418,25 @@ Datenpunkte $X_i$, die nahe an $x$ liegen, erhalten durch den Kern $K$ ein hohes
 
 \textbf{Verallgemeinerungen:} Lokale Polynomschätzer (Local Polynomial Regression) sind eine Weiterentwicklung, die viele Probleme des Nadaraya-Watson-Schätzers – insbesondere den Randbias – behebt. Dabei wird nicht nur der lokale Mittelwert, sondern ein lokales Polynom (meist linear oder quadratisch) angepasst.
 
-\subsection{Robuste Lineare Regression (Theil-Schätzer)}
+\subsection{Strukturelle Sicht: Nadaraya-Watson als Quotient von KDE}
+
+Der bedingte Erwartungswert lässt sich schreiben als:
+\[
+m(x) = \frac{\int y\, f_{XY}(x,y)\, dy}{f_X(x)}.
+\]
+Der Nadaraya-Watson-Schätzer ergibt sich daraus als Quotient zweier Kerndichteschätzer:
+\[
+\hat{m}_{\text{NW}}(x) = \frac{\hat{r}(x)}{\hat{f}_X(x)},
+\qquad
+\hat{r}(x) = \frac{1}{nh} \sum_{i=1}^n K\!\left(\frac{x-X_i}{h}\right) Y_i.
+\]
+Diese Darstellung verdeutlicht die enge strukturelle Verwandtschaft zwischen der Kerndichteschätzung und der nichtparametrischen Regression.
+
+\subsection{Gemeinsames Prinzip von Kerndichteschätzung und nichtparametrischer Regression}
+
+Kerndichteschätzung und nichtparametrische Regression folgen demselben Grundprinzip \cite{BüningTrenkler+1994, lang2004civ}: Beide verwenden Kernfunktionen zur lokalen Gewichtung von Beobachtungen, und in beiden Fällen steuert die Bandbreite $h$ den Grad der Glättung. Der wesentliche Unterschied liegt im Ziel: Während die Kerndichteschätzung die Dichte $f(x)$ von $X$ schätzt, zielt die nichtparametrische Regression auf die Schätzung von $m(x) = \mathbb{E}(Y \mid X = x)$.
+
+\section{Robuste Lineare Regression (Theil-Schätzer)}
 
 Selbst wenn wir einen linearen Trend ($Y = \alpha + \beta X$) vermuten, ist die klassische Methode der kleinsten Quadrate (OLS) anfällig für Ausreißer. Falls ein linearer Zusammenhang angenommen wird, aber die Daten Ausreißer enthalten, bieten sich robuste Alternativen an. Ein einzelner extremer Datenpunkt kann die OLS-Schätzung erheblich verzerren, während robuste Verfahren solche Einflüsse abschwächen.
 
@@ -402,34 +464,22 @@ Selbst wenn wir einen linearen Trend ($Y = \alpha + \beta X$) vermuten, ist die 
 
 \section{Zusammenfassung und Fazit}
 
-Nichtparametrische Methoden spielen eine zentrale Rolle in der modernen Statistik und Datenanalyse \cite{BüningTrenkler+1994, Wasserman2006}. Sie ermöglichen es, komplexe Datenstrukturen zu analysieren, ohne restriktive Annahmen über die zugrunde liegende Verteilung oder funktionale Form treffen zu müssen.
+Nichtparametrische Methoden spielen eine zentrale Rolle in der modernen Statistik und Datenanalyse \cite{BüningTrenkler+1994, Wasserman2006}.
 
 \begin{itemize}
-	\item \textbf{Flexibilität:} Nichtparametrische Methoden (KDE, Kernel-Regression) passen sich den Daten an (,,let the data speak``) und zwingen ihnen keine Form auf. Sie erfordern weniger Annahmen über die Datenstruktur. Diese Flexibilität macht sie besonders wertvoll in der explorativen Datenanalyse, wo die Verteilungsform a priori unbekannt ist, sowie in Situationen, in denen parametrische Modelle zu restriktiv sind. Für eine vertiefte Behandlung der Theorie und Praxis siehe \cite{Silverman1986, Wand1995, Scott1992}.
-	
-	\item \textbf{Parameter $h$:} Die Wahl der Bandbreite ist der kritischste Schritt. Es ist ein Kompromiss zwischen Rauschen (zu kleines $h$) und Informationsverlust (zu großes $h$). Der Glättungsparameter muss sorgfältig zwischen Bias und Varianz abgewogen werden. Während theoretische Faustregeln (wie die Silverman-Regel) einen guten Ausgangspunkt bieten, empfiehlt sich in der Praxis eine Sensitivitätsanalyse, bei der verschiedene Bandbreiten ausprobiert und verglichen werden.
-	
-	\item \textbf{Robustheit:} Verfahren wie der Theil-Sen-Schätzer bieten mächtige Alternativen zur klassischen Regression, besonders wenn Daten Ausreißer enthalten oder nicht normalverteilt sind. Sie ergänzen die nichtparametrischen Dichteschätzer, indem sie unempfindlich gegenüber Ausreißern sind. Diese Kombination aus Flexibilität (durch den Verzicht auf parametrische Annahmen) und Robustheit (durch die Verwendung von Medianen statt Mittelwerten) macht sie besonders geeignet für reale Datensätze.
-	
-	\item \textbf{Praktische Anwendungen:} Nichtparametrische Methoden finden breite Anwendung in zahlreichen Bereichen:
-	      \begin{itemize}
-	      	\item In der \textit{explorativen Datenanalyse} zur Visualisierung und ersten Charakterisierung von Verteilungen.
-	      	\item In der \textit{Bildverarbeitung} zur Glättung und Rauschunterdrückung.
-	      	\item In der \textit{Ökonometrie} zur Schätzung nichtlinearer Beziehungen ohne vorab spezifizierte funktionale Form.
-	      	\item In der \textit{Biometrie} zur Analyse von Überlebenszeitdaten und zur robusten Trendschätzung.
-	      \end{itemize}
-	
-	\item \textbf{Grenzen und Herausforderungen:} Trotz ihrer Vorteile haben nichtparametrische Methoden auch Einschränkungen:
-	      \begin{itemize}
-	      	\item Sie benötigen typischerweise größere Stichprobenumfänge als parametrische Methoden, um vergleichbare Genauigkeit zu erreichen.
-	      	\item In höheren Dimensionen leiden sie unter dem sogenannten ,,Fluch der Dimensionalität``: Die Anzahl der benötigten Beobachtungen wächst exponentiell mit der Dimension.
-	      	\item Die Interpretation ist oft weniger direkt als bei parametrischen Modellen (z.\,B. lässt sich bei einer linearen Regression der Effekt einer Variablenänderung direkt aus dem Koeffizienten ablesen).
-	      \end{itemize}
-	
-	\item \textbf{Ausblick:} Moderne Entwicklungen in der nichtparametrischen Statistik umfassen adaptive Bandbreitenwahl, multivariante Kerndichteschätzung, sowie Kombinationen mit maschinellem Lernen. Insbesondere die Verbindung zu neuronalen Netzen und anderen flexiblen Lernverfahren eröffnet neue Perspektiven für die Analyse komplexer Datenstrukturen.
+	\item Nichtparametrische Methoden sind lokal und datengetrieben: Sie schätzen $f(x)$ oder $m(x)$ ohne Annahme einer parametrischen Familie.
+	\item Der Kerndichteschätzer lässt sich als Faltung mit dem empirischen Maß auffassen.
+	\item Die Bandbreite $h$ ist die zentrale Stellgröße und bestimmt die Konvergenzrate.
+	\item Die nichtparametrische Regression folgt demselben Prinzip der lokalen Kerngewichtung.
+	\item Robuste Verfahren wie der Theil-Sen-Schätzer bieten Schutz vor Ausreißern bei linearen Modellen.
 \end{itemize}
 
-Nichtparametrische Methoden sind damit ein unverzichtbares Werkzeug der modernen explorativen Datenanalyse und robusten Statistik. Sie bilden eine wichtige Brücke zwischen klassischen statistischen Verfahren und modernen datengetriebenen Ansätzen des maschinellen Lernens. Ihre Fähigkeit, sich flexibel an die Daten anzupassen, ohne starke Vorannahmen zu treffen, macht sie zu einem fundamentalen Bestandteil des statistischen Werkzeugkastens.
+\textbf{Fazit:}
+\begin{itemize}
+	\item \textbf{Flexibilität:} Nichtparametrische Methoden passen sich den Daten an (,,let the data speak``), ohne eine spezifische funktionale Form vorauszusetzen. Für eine vertiefte Behandlung siehe \cite{Silverman1986, Wand1995, Scott1992}.
+	\item \textbf{Parameter $h$:} Die Wahl der Bandbreite ist der entscheidende Schritt und erfordert eine Balance zwischen Bias und Varianz.
+	\item \textbf{Robustheit:} Verfahren wie der Theil-Sen-Schätzer bieten robuste Alternativen zur klassischen linearen Regression, besonders bei Vorliegen von Ausreißern.
+\end{itemize}
 
 \ifshowtext
 % Referenzen

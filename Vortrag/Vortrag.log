@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 18:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2472,14 +2472,8 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 \openout9 = `Vortrag.snm'.
 
  (./Vortrag.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `Vortrag.out' has not changed.
 (rerunfilecheck)             Checksum: 9F8C1263E39DA465031171569E4FA694;1256.
-
-Package biblatex Warning: Please rerun LaTeX.
-
 Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 \openout1 = `Vortrag.run.xml'.
 
@@ -2487,7 +2481,7 @@ Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 Here is how much of TeX's memory you used:
  54118 strings out of 476025
  1262234 string characters out of 5790017
- 2060967 words of memory out of 5000000
+ 2061015 words of memory out of 5000000
  73463 multiletter control sequences out of 15000+600000
  627783 words of font info for 116 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
@@ -2517,7 +2511,7 @@ pe1/public/lm/lmsy5.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/f
 onts/type1/public/lm/lmsy6.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf
 -dist/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/202
 3/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Vortrag.pdf (51 pages, 744054 bytes).
+Output written on Vortrag.pdf (51 pages, 743414 bytes).
 PDF statistics:
  1642 PDF objects out of 1728 (max. 8388607)
  1510 compressed objects within 16 object streams

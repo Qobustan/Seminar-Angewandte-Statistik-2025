@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 18:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 22:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1754,8 +1754,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
-7.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 3
+8.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1763,24 +1763,24 @@ File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (./Vortrag.aux)
 \openout1 = `Vortrag.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1843,57 +1843,57 @@ topdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 27.
+Package hyperref Info: Link coloring ON on input line 38.
  (./Vortrag.out) (./Vortrag.out)
 \@outlinefile=\write6
 \openout6 = `Vortrag.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 27.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 38.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 27.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 38.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 27.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 38.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 27.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 38.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 27.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 38.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 27.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 27.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 38.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 27.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 27.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 38.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 27.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 27.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 38.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/zi4/m/n on input line 27.
+(Font)                  OT1/lmtt/m/n --> T1/zi4/m/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/zi4/m/n on input line 27.
+(Font)                  OT1/lmtt/m/n --> T1/zi4/m/n on input line 38.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 27.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 38.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 27.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 27.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 27.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 27.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 27.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/zi4/m/n --> T1/zi4/b/n on input line 27.
+(Font)                  T1/zi4/m/n --> T1/zi4/b/n on input line 38.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/translator/tran
 slator-basic-dictionary-English.dict
@@ -1956,8 +1956,8 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                - Can't use 'date' + 'year'.
 
 )
-Package biblatex Info: Reference section=0 on input line 27.
-Package biblatex Info: Reference segment=0 on input line 27.
+Package biblatex Info: Reference section=0 on input line 38.
+Package biblatex Info: Reference segment=0 on input line 38.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/upquote/upquote
 .sty
@@ -1969,7 +1969,7 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 \c@lstlisting=\count550
 (./Vortrag.nav)
-Overfull \hbox (28.13187pt too wide) in paragraph at lines 27--27
+Overfull \hbox (28.13187pt too wide) in paragraph at lines 38--38
  [][][][][][]  
  []
 
@@ -1986,60 +1986,60 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-96.
+107.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
-6.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+07.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-96.
+107.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-96.
+107.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 96.
+(Font)              <10.95> on input line 107.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 96.
+(Font)              <8> on input line 107.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 96.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
-
+(Font)              <6> on input line 107.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 107
+.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.f
 d
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 107
+.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.f
 d
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 9
-6.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
+07.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry
 .fd)
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 96.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 107.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 96.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 107.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 96.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 107.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
@@ -2049,34 +2049,41 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
 hsy.enc}]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[4
+
+]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 116.
+(Font)              <10> on input line 127.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 116.
+(Font)              <7> on input line 127.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 116.
+(Font)              <5> on input line 127.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 116.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 127.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 116.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 127.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 116.
-<img/messung_itter_1.jpg, id=167, 753.81625pt x 543.02875pt>
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 127.
+<img/messung_itter_1.jpg, id=193, 753.81625pt x 543.02875pt>
 File: img/messung_itter_1.jpg Graphic file (type jpg)
 <use img/messung_itter_1.jpg>
-Package pdftex.def Info: img/messung_itter_1.jpg  used on input line 116.
+Package pdftex.def Info: img/messung_itter_1.jpg  used on input line 127.
 (pdftex.def)             Requested size: 162.71146pt x 117.21527pt.
-<img/messung_itter_2.jpg, id=168, 753.81625pt x 543.02875pt>
+<img/messung_itter_2.jpg, id=194, 753.81625pt x 543.02875pt>
 File: img/messung_itter_2.jpg Graphic file (type jpg)
 <use img/messung_itter_2.jpg>
-Package pdftex.def Info: img/messung_itter_2.jpg  used on input line 116.
+Package pdftex.def Info: img/messung_itter_2.jpg  used on input line 127.
 (pdftex.def)             Requested size: 162.71146pt x 117.21527pt.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[4
+[5
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
 hit.enc} <./img/messung_itter_1.jpg> <./img/messung_itter_2.jpg>]
@@ -2084,14 +2091,14 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[5
+[6
 
 ]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[6
+[7
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.
 enc}] (./Vortrag.toc)
@@ -2099,11 +2106,11 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[7
+[8
 
 ]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 2
-01.
+12.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Ud
 srom.fd
@@ -2113,7 +2120,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[8
+[9
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
 hex.enc}]
@@ -2121,16 +2128,9 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[9
-
-]
-Overfull \hbox (28.13187pt too wide) has occurred while \output is active
- [][][][][][]  
- []
-
 [10
 
-] (./Vortrag.toc)
+]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2144,7 +2144,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [12
 
-]
+] (./Vortrag.toc)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2165,7 +2165,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [15
 
-] (./Vortrag.toc)
+]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2179,7 +2179,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [17
 
-]
+] (./Vortrag.toc)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2208,12 +2208,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [21
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 55
-9.
-
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
-File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2242,11 +2236,12 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [25
 
 ]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 723.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 723.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 57
+0.
 
+(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2268,13 +2263,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [28
 
 ]
-LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 812.
-LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <8> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 812.
-LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <6> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 812.
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2288,7 +2276,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [30
 
-] (./Vortrag.toc)
+]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2296,6 +2284,11 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [31
 
 ]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 734.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 734.
+
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2310,9 +2303,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [33
 
 ]
-LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <5> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 932.
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2334,6 +2324,13 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [36
 
 ]
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10.95> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 823.
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <8> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 823.
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <6> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 823.
+
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2347,7 +2344,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [38
 
-]
+] (./Vortrag.toc)
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2361,7 +2358,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [40
 
-] (./Vortrag.toc)
+]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2376,6 +2373,9 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [42
 
 ]
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <5> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 943.
+
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2383,13 +2383,6 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [43
 
 ]
-LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 1204.
-
-LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <7> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 1204.
-
-
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2410,7 +2403,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [46
 
-] (./Vortrag.toc)
+]
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2432,25 +2425,151 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [49
 
 ]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[50
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[51
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[52
+
+] (./Vortrag.toc)
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[53
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[54
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[55
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[56
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[57
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[58
+
+]
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 1215.
+
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <7> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 1215.
+
+
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[59
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[60
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[61
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[62
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[63
+
+] (./Vortrag.toc)
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[64
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[65
+
+]
+Overfull \hbox (28.13187pt too wide) has occurred while \output is active
+ [][][][][][]  
+ []
+
+[66
+
+]
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 1276.
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 1287.
 
 LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 12
-76.
+87.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/inconsolata/t1z
 i4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1276.
+(Font)              scaled to size 10.95pt on input line 1287.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[50
+[67
 
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/inconsola
 ta/i4-t1-0.enc}]
@@ -2458,7 +2577,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
 
-[51
+[68
 
 
 ]
@@ -2479,10 +2598,10 @@ Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54118 strings out of 476025
- 1262234 string characters out of 5790017
+ 54165 strings out of 476025
+ 1262800 string characters out of 5790017
  2061015 words of memory out of 5000000
- 73463 multiletter control sequences out of 15000+600000
+ 73476 multiletter control sequences out of 15000+600000
  627783 words of font info for 116 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,21n,122p,1853b,2610s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2511,10 +2630,10 @@ pe1/public/lm/lmsy5.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/f
 onts/type1/public/lm/lmsy6.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf
 -dist/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/local/texlive/202
 3/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Vortrag.pdf (51 pages, 743414 bytes).
+Output written on Vortrag.pdf (68 pages, 786103 bytes).
 PDF statistics:
- 1642 PDF objects out of 1728 (max. 8388607)
- 1510 compressed objects within 16 object streams
- 119 named destinations out of 1000 (max. 500000)
+ 2100 PDF objects out of 2487 (max. 8388607)
+ 1947 compressed objects within 20 object streams
+ 153 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

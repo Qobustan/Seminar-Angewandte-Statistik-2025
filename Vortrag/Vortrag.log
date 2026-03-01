@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 16:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.15)  1 MAR 2026 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1743,7 +1743,7 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
-5.
+7.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1751,24 +1751,24 @@ File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (./Vortrag.aux)
 \openout1 = `Vortrag.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1831,57 +1831,57 @@ topdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 25.
+Package hyperref Info: Link coloring ON on input line 27.
  (./Vortrag.out) (./Vortrag.out)
 \@outlinefile=\write6
 \openout6 = `Vortrag.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 25.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 27.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 25.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 27.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 25.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 27.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 25.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 27.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 25.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 25.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 27.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 25.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 25.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 25.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 27.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 25.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 25.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 25.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 27.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 25.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 25.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 25.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 27.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/zi4/m/n on input line 25.
+(Font)                  OT1/lmtt/m/n --> T1/zi4/m/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/zi4/m/n on input line 25.
+(Font)                  OT1/lmtt/m/n --> T1/zi4/m/n on input line 27.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 25.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 27.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 25.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 25.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 25.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 25.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 25.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/zi4/m/n --> T1/zi4/b/n on input line 25.
+(Font)                  T1/zi4/m/n --> T1/zi4/b/n on input line 27.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/translator/tran
 slator-basic-dictionary-English.dict
@@ -1935,8 +1935,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Vortrag.bbl' found.
  (./Vortrag.bbl)
-Package biblatex Info: Reference section=0 on input line 25.
-Package biblatex Info: Reference segment=0 on input line 25.
+Package biblatex Info: Reference section=0 on input line 27.
+Package biblatex Info: Reference segment=0 on input line 27.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/upquote/upquote
 .sty
@@ -1948,7 +1948,7 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 \c@lstlisting=\count550
 (./Vortrag.nav)
-Overfull \hbox (28.13187pt too wide) in paragraph at lines 25--25
+Overfull \hbox (28.13187pt too wide) in paragraph at lines 27--27
  [][][][][][]  
  []
 
@@ -1965,43 +1965,43 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-94.
+96.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
-4.
+6.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-94.
+96.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-94.
+96.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 94.
+(Font)              <10.95> on input line 96.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 94.
+(Font)              <8> on input line 96.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 94.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 94.
+(Font)              <6> on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
 
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.f
 d
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 94.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
 
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.f
@@ -2009,16 +2009,16 @@ d
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 9
-4.
+6.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry
 .fd)
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 94.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 96.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 94.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 96.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 94.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 96.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
@@ -2044,56 +2044,25 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 {/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
 hit.enc}{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/l
 m/lm-rm.enc}]
-
-LaTeX Warning: File `img/messung_itter_1.png' not found on input line 144.
-
-
-! Package pdftex.def Error: File `img/messung_itter_1.png' not found: using dra
-ft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.144 	\end{frame}
-                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 14
-4.
-
-(/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/inconsolata/t1z
-i4.fd
-File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
-)
-LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 144.
+<img/messung_itter_1.jpg, id=219, 753.81625pt x 543.02875pt>
+File: img/messung_itter_1.jpg Graphic file (type jpg)
+<use img/messung_itter_1.jpg>
+Package pdftex.def Info: img/messung_itter_1.jpg  used on input line 146.
+(pdftex.def)             Requested size: 164.36748pt x 118.40608pt.
+<img/messung_itter_2.jpg, id=220, 753.81625pt x 543.02875pt>
+File: img/messung_itter_2.jpg Graphic file (type jpg)
+<use img/messung_itter_2.jpg>
+Package pdftex.def Info: img/messung_itter_2.jpg  used on input line 146.
+(pdftex.def)             Requested size: 164.36748pt x 118.40608pt.
 
 
-LaTeX Warning: File `img/messung_itter_2.png' not found on input line 144.
+LaTeX Warning: Citation 'DalItter2026' on page 6 undefined on input line 146.
 
 
-! Package pdftex.def Error: File `img/messung_itter_2.png' not found: using dra
-ft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.144 	\end{frame}
-                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+LaTeX Warning: Citation 'DalItter2021' on page 6 undefined on input line 146.
 
 
-LaTeX Warning: Citation 'DalItter2026' on page 6 undefined on input line 144.
-
-
-LaTeX Warning: Citation 'DalItter2021' on page 6 undefined on input line 144.
-
-
-Overfull \vbox (71.94151pt too high) detected at line 144
+Overfull \vbox (25.97021pt too high) detected at line 146
  []
 
 
@@ -2103,48 +2072,24 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 [6
 
-{/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/enc/dvips/inconsola
-ta/i4-t1-0.enc}]
-
-LaTeX Warning: File `img/messung_itter_1.png' not found on input line 144.
-
-
-! Package pdftex.def Error: File `img/messung_itter_1.png' not found: using dra
-ft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.144 	\end{frame}
-                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+ <./img/messung_itter_1.jpg> <./img/messung_itter_2.jpg>]
+File: img/messung_itter_1.jpg Graphic file (type jpg)
+<use img/messung_itter_1.jpg>
+Package pdftex.def Info: img/messung_itter_1.jpg  used on input line 146.
+(pdftex.def)             Requested size: 164.36748pt x 118.40608pt.
+File: img/messung_itter_2.jpg Graphic file (type jpg)
+<use img/messung_itter_2.jpg>
+Package pdftex.def Info: img/messung_itter_2.jpg  used on input line 146.
+(pdftex.def)             Requested size: 164.36748pt x 118.40608pt.
 
 
-LaTeX Warning: File `img/messung_itter_2.png' not found on input line 144.
+LaTeX Warning: Citation 'DalItter2026' on page 7 undefined on input line 146.
 
 
-! Package pdftex.def Error: File `img/messung_itter_2.png' not found: using dra
-ft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.144 	\end{frame}
-                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+LaTeX Warning: Citation 'DalItter2021' on page 7 undefined on input line 146.
 
 
-LaTeX Warning: Citation 'DalItter2026' on page 7 undefined on input line 144.
-
-
-LaTeX Warning: Citation 'DalItter2021' on page 7 undefined on input line 144.
-
-
-Overfull \vbox (71.94151pt too high) detected at line 144
+Overfull \vbox (25.97021pt too high) detected at line 146
  []
 
 
@@ -2163,7 +2108,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
-62.
+64.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Ud
 srom.fd
@@ -2283,7 +2228,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 45
-5.
+7.
 
 (/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -2310,17 +2255,17 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 534.
+(Font)              <5> on input line 536.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 534.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 536.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 534.
+(Font)              <10> on input line 536.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 534.
+(Font)              <7> on input line 536.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 534.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 536.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 534.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 536.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
@@ -2344,9 +2289,9 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 619.
+(Font)              <14.4> on input line 621.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 619.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 621.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
@@ -2377,11 +2322,11 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 673.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 675.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <8> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 673.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 675.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <6> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 673.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 675.
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
@@ -2474,6 +2419,11 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [47
 
 ]
+
+LaTeX Warning: Citation 'BüningTrenkler+1994' on page 48 undefined on input li
+ne 893.
+
+
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2481,6 +2431,11 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 [48
 
 ]
+
+LaTeX Warning: Citation 'BüningTrenkler+1994' on page 49 undefined on input li
+ne 893.
+
+
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
  [][][][][][]  
  []
@@ -2594,7 +2549,7 @@ Overfull \hbox (28.13187pt too wide) has occurred while \output is active
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 1069.
+LaTeX Warning: Empty bibliography on input line 1074.
 
 
 Overfull \hbox (28.13187pt too wide) has occurred while \output is active
@@ -2629,37 +2584,35 @@ Package logreq Info: Writing requests to 'Vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 53919 strings out of 476025
- 1257477 string characters out of 5790017
- 2107735 words of memory out of 5000000
- 73235 multiletter control sequences out of 15000+600000
- 616675 words of font info for 112 fonts, out of 8000000 for 9000
+ 53840 strings out of 476025
+ 1255471 string characters out of 5790017
+ 2110809 words of memory out of 5000000
+ 73175 multiletter control sequences out of 15000+600000
+ 619135 words of font info for 112 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,21n,122p,754b,2548s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/inco
-nsolata/Inconsolata-zi4r.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
-ist/fonts/type1/public/doublestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/t
-exlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Volumes/Macintosh SSD
-/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Volumes/Macin
-tosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></Volume
-s/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb><
-/Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss
-10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public
-/lm/lmss12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type
-1/public/lm/lmss8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fon
-ts/type1/public/lm/lmssbx10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texm
-f-dist/fonts/type1/public/lm/lmsso10.pfb></Volumes/Macintosh SSD/local/texlive/
-2023/texmf-dist/fonts/type1/public/lm/lmsso12.pfb></Volumes/Macintosh SSD/local
-/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></Volumes/Macintosh S
-SD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Volumes/Mac
-intosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></Volu
-mes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
-></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb>
-Output written on Vortrag.pdf (65 pages, 356247 bytes).
+</Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/doub
+lestroke/dsrom10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/font
+s/type1/public/lm/lmex10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-d
+ist/fonts/type1/public/lm/lmmi10.pfb></Volumes/Macintosh SSD/local/texlive/2023
+/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></Volumes/Macintosh SSD/local/texli
+ve/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Volumes/Macintosh SSD/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></Volumes/Macintosh 
+SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></Volumes/Ma
+cintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Vol
+umes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10
+.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1/public/l
+m/lmsso10.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fonts/type1
+/public/lm/lmsso12.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf-dist/fo
+nts/type1/public/lm/lmsso8.pfb></Volumes/Macintosh SSD/local/texlive/2023/texmf
+-dist/fonts/type1/public/lm/lmsy10.pfb></Volumes/Macintosh SSD/local/texlive/20
+23/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></Volumes/Macintosh SSD/local/tex
+live/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></Volumes/Macintosh SSD/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Vortrag.pdf (65 pages, 686963 bytes).
 PDF statistics:
- 651 PDF objects out of 1000 (max. 8388607)
- 527 compressed objects within 6 object streams
+ 1960 PDF objects out of 2073 (max. 8388607)
+ 1823 compressed objects within 19 object streams
  140 named destinations out of 1000 (max. 500000)
- 155 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

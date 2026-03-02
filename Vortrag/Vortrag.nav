@@ -120,10 +120,15 @@
 \headcommand {\beamer@sectionpages {64}{66}}
 \headcommand {\beamer@subsectionpages {64}{66}}
 \headcommand {\sectionentry {8}{Literaturverzeichnis}{67}{Literaturverzeichnis}{0}}
-\headcommand {\slideentry {8}{0}{1}{67/67}{}{0}}
+\headcommand {\beamer@sectionpages {67}{66}}
+\headcommand {\beamer@subsectionpages {67}{66}}
+\headcommand {\sectionentry {9}{Literatur}{67}{Literatur}{0}}
+\headcommand {\slideentry {9}{0}{0}{67/67}{}{0}}
 \headcommand {\beamer@framepages {67}{67}}
-\headcommand {\beamer@partpages {1}{67}}
-\headcommand {\beamer@subsectionpages {67}{67}}
-\headcommand {\beamer@sectionpages {67}{67}}
-\headcommand {\beamer@documentpages {67}}
-\headcommand {\gdef \inserttotalframenumber {49}}
+\headcommand {\slideentry {9}{0}{0}{67/68}{}{0}}
+\headcommand {\beamer@framepages {67}{68}}
+\headcommand {\beamer@partpages {1}{68}}
+\headcommand {\beamer@subsectionpages {67}{68}}
+\headcommand {\beamer@sectionpages {67}{68}}
+\headcommand {\beamer@documentpages {68}}
+\headcommand {\gdef \inserttotalframenumber {50}}

@@ -44,8 +44,7 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Ausarbeitung.aux</file>
-      <file>Ausarbeitung-blx.bib</file>
+      <file>Ausarbeitung.bcf</file>
     </provides>
     <requires type="dynamic">
       <file>Ausarbeitung.bbl</file>
@@ -53,7 +52,6 @@
     <requires type="static">
       <file>blx-dm.def</file>
       <file>blx-compat.def</file>
-      <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
       <file>standard.bbx</file>
       <file>alphabetic.bbx</file>
@@ -64,14 +62,13 @@
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">
-    <generic>bibtex</generic>
+    <generic>biber</generic>
     <cmdline>
-      <binary>bibtex</binary>
-      <option>-min-crossrefs 2</option>
+      <binary>biber</binary>
       <infile>Ausarbeitung</infile>
     </cmdline>
     <input>
-      <file>Ausarbeitung.aux</file>
+      <file>Ausarbeitung.bcf</file>
     </input>
     <output>
       <file>Ausarbeitung.bbl</file>
@@ -80,14 +77,10 @@
       <file>Ausarbeitung.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Ausarbeitung.aux</file>
-      <file>Ausarbeitung-blx.bib</file>
+      <file>Ausarbeitung.bcf</file>
     </requires>
     <requires type="editable">
       <file>Ausarbeitung.bib</file>
-    </requires>
-    <requires type="static">
-      <file>biblatex.bst</file>
     </requires>
   </external>
 </requests>

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.1)  2 MAR 2026 11:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.1)  2 MAR 2026 22:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -138,6 +138,9 @@ Class scrartcl Info: Redefining `\numberline' on input line 6461.
 \bibindent=\dimen148
 )
 (./header.tex (./header-common.tex
+(/opt/texlive/texdir/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
 (/opt/texlive/texdir/texmf-dist/tex/latex/pict2e/pict2e.sty
 Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
 
@@ -987,9 +990,6 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
 (/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
 
-(/opt/texlive/texdir/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
-)
 (/opt/texlive/texdir/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
@@ -1150,31 +1150,6 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box103
 \@float@everytoks=\toks52
 \@floatcapt=\box104
-)
-(/opt/texlive/texdir/texmf-dist/tex/latex/tipa/tipa.sty
-Package: tipa 2002/08/08 TIPA version 1.1
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/tipa/t3enc.def
-File: t3enc.def 2001/12/31 T3 encoding
-Now handling font encoding T3 ...
-... no UTF-8 mapping file for font encoding T3
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-357.
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/lm/ot1lmss.fd
-File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-16.
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
-LaTeX Encoding Info:    Redeclaring text command \textdotbreve (encoding ?) on 
-input line 336.
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/units/nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
@@ -1547,20 +1522,10 @@ Package biblatex Info: ... file 'blx-compat.def' found.
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 )
-Package biblatex Info: Trying to load BibTeX backend compatibility...
-Package biblatex Info: ... file 'blx-bibtex.def' found.
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/blx-bibtex.def
-File: blx-bibtex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
-
-
-Package biblatex Warning: Using fall-back bibtex backend:
-(biblatex)                functionality may be reduced/unavailable.
-
-)
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/biblatex.def
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 \c@textcitecount=\count522
 \c@textcitetotal=\count523
@@ -1634,7 +1599,7 @@ kzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 
-Package csquotes Warning: Load 'inputenc' before 'csquotes' on input line 43.
+Package csquotes Warning: Load 'inputenc' before 'csquotes' on input line 48.
 
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -1647,7 +1612,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 43.
+(scrartcl)           before \begin{document} on input line 48.
 (/opt/texlive/texdir/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 
@@ -1662,31 +1627,24 @@ Package babel Info: 'ngerman' activates 'ngerman' shorthands.
 )
 \openout1 = `Ausarbeitung.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 43.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 43
-.
- (/opt/texlive/texdir/texmf-dist/tex/latex/tipa/t3cmr.fd
-File: t3cmr.fd 2001/12/31 TIPA font definitions
-)
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
 
 (/opt/texlive/texdir/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1726,9 +1684,9 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count540
-Package tocbasic Info: setting babel extension for `lol' on input line 43.
+Package tocbasic Info: setting babel extension for `lol' on input line 48.
 \scr@dte@lstlisting@maxnumwidth=\skip108
-Package hyperref Info: Link coloring ON on input line 43.
+Package hyperref Info: Link coloring ON on input line 48.
 Package biblatex Info: Trying to load language 'ngerman'...
 Package biblatex Info: ... file 'ngerman.lbx' found.
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
@@ -1748,72 +1706,75 @@ File: german.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Data encoding 'utf8' specified.
-(biblatex)             No need to reencode data.
-\openout4 = `Ausarbeitung-blx.bib'.
+\openout4 = `Ausarbeitung.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Ausarbeitung.bbl' found.
 
 (./Ausarbeitung.bbl
 
-Package biblatex Warning: BibTeX reported the following issues
+Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'lang2004civ':
 (biblatex)                - Can't use 'date' + 'year'.
 
 )
-Package biblatex Info: Reference section=0 on input line 43.
-Package biblatex Info: Reference segment=0 on input line 43.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 4
-6.
+Package biblatex Info: Reference section=0 on input line 48.
+Package biblatex Info: Reference segment=0 on input line 48.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 5
+1.
  (/opt/texlive/texdir/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-6.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
+1.
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
+1.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-46.
+51.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-46.
+51.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 46.
+(Font)              <14.4> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 46.
+(Font)              <10> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 46.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 46
+(Font)              <7> on input line 51.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 51
 .
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 4
-6.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
+1.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 (./Ausarbeitung.toc
@@ -1835,162 +1796,79 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [2{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/opt/texliv
 e/texdir/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/opt/texlive/texdir/texmf-dis
 t/fonts/enc/dvips/lm/lm-mathsy.enc}]
-<../Vortrag/img/messung_itter_1.jpg, id=69, 753.81625pt x 543.02875pt>
-File: ../Vortrag/img/messung_itter_1.jpg Graphic file (type jpg)
-<use ../Vortrag/img/messung_itter_1.jpg>
-Package pdftex.def Info: ../Vortrag/img/messung_itter_1.jpg  used on input line
- 84.
-(pdftex.def)             Requested size: 206.76526pt x 148.95006pt.
 
-Overfull \hbox (6.0044pt too wide) in paragraph at lines 84--84
- [][] 
- []
+LaTeX Warning: File `../Vortrag/img/messung_itter_1.jpg' not found on input lin
+e 89.
 
-<../Vortrag/img/messung_itter_2.jpg, id=70, 753.81625pt x 543.02875pt>
-File: ../Vortrag/img/messung_itter_2.jpg Graphic file (type jpg)
-<use ../Vortrag/img/messung_itter_2.jpg>
-Package pdftex.def Info: ../Vortrag/img/messung_itter_2.jpg  used on input line
- 90.
-(pdftex.def)             Requested size: 206.76526pt x 148.95006pt.
 
-Overfull \hbox (6.0044pt too wide) in paragraph at lines 90--90
- [][] 
- []
+! Package pdftex.def Error: File `../Vortrag/img/messung_itter_1.jpg' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89 ...eight]{../Vortrag/img/messung_itter_1.jpg}
+                                                  \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
+9.
+(/opt/texlive/texdir/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+LaTeX Warning: File `../Vortrag/img/messung_itter_2.jpg' not found on input lin
+e 95.
+
+
+! Package pdftex.def Error: File `../Vortrag/img/messung_itter_2.jpg' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 ...eight]{../Vortrag/img/messung_itter_2.jpg}
+                                                  \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
-06.
+11.
 (/opt/texlive/texdir/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [3{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <../Vortr
-ag/img/messung_itter_1.jpg> <../Vortrag/img/messung_itter_2.jpg>] [4]
-Overfull \hbox (8.3887pt too wide) in paragraph at lines 152--154
+) [3{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [4]
+Overfull \hbox (8.3887pt too wide) in paragraph at lines 157--159
 []\T1/lmr/bx/n/10.95 Optimale Band-brei-te ($\OML/lmm/m/it/10.95 h$\T1/lmr/bx/n
 /10.95 ): \T1/lmr/m/n/10.95 Die Wahl von $\OML/lmm/m/it/10.95 h$ \T1/lmr/m/n/10
 .95 ist ein Ba-lan-ce-akt (Bias-Varianz-Tradeoff).
  []
 
 [5]
-Overfull \hbox (5.64719pt too wide) in paragraph at lines 167--168
+Overfull \hbox (5.64719pt too wide) in paragraph at lines 172--173
 \T1/lmr/m/n/10.95 Um die Glatt-heit zu ga-ran-tie-ren, ver-all-ge-mei-nert die 
 Kern-dich-te-schät-zung den Rosenblatt-
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 199.
-[6] [7] [8] [9] [10] [11]
-
-LaTeX Warning: Command \! invalid in math mode on input line 452.
-
-LaTeX Font Info:    Trying to load font information for T3+lmr on input line 45
-2.
-LaTeX Font Info:    No file T3lmr.fd. on input line 452.
-
-LaTeX Font Warning: Font shape `T3/lmr/m/n' undefined
-(Font)              using `T3/cmr/m/n' instead on input line 452.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 452.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.452 ...ta_0 - \beta_1(X_i - x)\right)^2 K\!\left
-                                                  (\frac{x - X_i}{h}\right)
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.452 ...ta_0 - \beta_1(X_i - x)\right)^2 K\!\left
-                                                  (\frac{x - X_i}{h}\right)
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.453 \]
-        
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[12]
-
-LaTeX Warning: Command \! invalid in math mode on input line 468.
-
-
-LaTeX Warning: Command \! invalid in math mode on input line 468.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.468 ...}(x) = \frac{1}{nh} \sum_{i=1}^n K\!\left
-                                                  (\frac{x-X_i}{h}\right) Y_i.
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.468 ...}(x) = \frac{1}{nh} \sum_{i=1}^n K\!\left
-                                                  (\frac{x-X_i}{h}\right) Y_i.
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.469 \]
-        
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[13] [14] [15]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-45.
- (/opt/texlive/texdir/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [16]
-[17] (./Ausarbeitung.aux)
+(Font)              <5> on input line 204.
+[6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] (./Ausarbeitung.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
 Package logreq Info: Writing requests to 'Ausarbeitung.run.xml'.
 \openout1 = `Ausarbeitung.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57192 strings out of 467538
- 1287261 string characters out of 5421637
- 2277382 words of memory out of 5000000
- 85106 multiletter control sequences out of 15000+600000
- 714397 words of font info for 120 fonts, out of 8000000 for 9000
+ 56405 strings out of 467538
+ 1277221 string characters out of 5421637
+ 2323967 words of memory out of 5000000
+ 84343 multiletter control sequences out of 15000+600000
+ 710212 words of font info for 115 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  110i,20n,137p,11215b,2463s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb><
@@ -2012,10 +1890,10 @@ nts/type1/public/lm/lmr8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public
 dist/fonts/type1/public/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type
 1/public/lm/lmtt10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfo
 nts/symbols/msbm10.pfb>
-Output written on Ausarbeitung.pdf (17 pages, 732082 bytes).
+Output written on Ausarbeitung.pdf (17 pages, 455264 bytes).
 PDF statistics:
- 426 PDF objects out of 1000 (max. 8388607)
+ 424 PDF objects out of 1000 (max. 8388607)
  351 compressed objects within 4 object streams
  88 named destinations out of 1000 (max. 500000)
- 183 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

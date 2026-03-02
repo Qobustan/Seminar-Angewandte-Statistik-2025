@@ -34,13 +34,20 @@ The repository is designed for:
 .
 ├── Ausarbeitung/          # Written elaboration LaTeX sources
 │   ├── Ausarbeitung.tex   # Main document
-│   ├── header.tex         # Preamble and package configuration
-│   └── Ausarbeitung.bib   # Bibliography
+│   ├── header.tex         # Top-level preamble
+│   ├── header-article.tex # Article-class preamble
+│   ├── header-common.tex  # Shared preamble (both documents)
+│   ├── Ausarbeitung.bib   # Bibliography
+│   └── Ausarbeitung.pdf   # Compiled PDF (17 pages, committed to repo)
 │
 ├── Vortrag/               # Beamer presentation LaTeX sources
 │   ├── Vortrag.tex        # Main presentation file
-│   ├── header.tex         # Beamer theme and package configuration
+│   ├── header.tex         # Top-level preamble
+│   ├── header-beamer.tex  # Beamer-class preamble
+│   ├── header-common.tex  # Shared preamble (both documents)
 │   ├── Vortrag.bib        # Bibliography
+│   ├── Vortrag.pdf        # Compiled PDF (68 pages with pauses, committed)
+│   ├── Vortrag-Druckversion.pdf  # Print version (51 pages, no pauses, committed)
 │   └── img/               # Measurement images for slides
 │
 ├── Besprechung/           # Meeting notes and discussions
@@ -65,20 +72,27 @@ The repository is designed for:
 │   │   ├── spellcheck.yml                 # Spell checking
 │   │   ├── bibcheck.yml                   # Bibliography validation
 │   │   ├── publish-wiki.yml               # Wiki synchronization
-│   │   └── docker-image.yml               # Docker image building
+│   │   ├── docker-image.yml               # Docker image building
+│   │   ├── codeql-analysis.yml            # Security scanning
+│   │   ├── greetings.yml                  # First-contributor greeting
+│   │   └── format.yml                     # Code formatting
 │   ├── ISSUE_TEMPLATE/    # Issue templates
 │   ├── dependabot.yml     # Automated dependency updates
 │   └── labeler.yml        # Automatic PR labeling
 │
 ├── wiki/                  # Wiki documentation (auto-synced to GitHub Wiki)
 ├── archive/               # Historical branch documentation
+├── branch_cleanup/        # Branch deletion guides and checklists
 ├── legacy/                # Deprecated/archived files
-├── docs/                  # Additional documentation
+├── docs/                  # Additional documentation (ARCHITECTURE, CHANGELOG, etc.)
+├── latex_install/         # LaTeX installation guides (English and German)
+├── lua-5.5.0/             # Lua 5.5.0 source code (compiled from source in CI)
+├── review/                # Review summaries
 │
 ├── Dockerfile             # Container definition for LaTeX builds
 ├── .dockerignore          # Docker build context exclusions
 ├── .editorconfig          # Editor configuration for consistency
-├── .gitignore             # Git exclusions
+├── .gitignore             # Git exclusions (LaTeX aux entries are commented out)
 ├── .gitattributes         # Git attributes
 ├── cspell.json            # Spell checker configuration
 │
@@ -87,6 +101,7 @@ The repository is designed for:
 ├── SECURITY.md            # Security policy
 ├── DISCLAIMER.txt         # Legal disclaimer
 ├── CHANGELOG.md           # Version history
+├── VERSION                # Current version number
 └── LICENSE                # MIT License
 
 ```
@@ -99,19 +114,19 @@ The repository is designed for:
 
 #### Ausarbeitung (Written Elaboration)
 - **Type:** Article-class LaTeX document (KOMA-Script)
-- **Content:** Comprehensive coverage of nonparametric statistics topics
+- **Content:** Comprehensive 17-page coverage of nonparametric statistics topics
 - **Key Sections:**
-  - Introduction to nonparametric statistics
-  - Kernel Density Estimation (KDE)
-  - Histogram estimators
-  - Bandwidth selection methods (Scott's rule, Freedman-Diaconis)
-  - Kernel functions (Epanechnikov, Gaussian)
-  - Nonparametric regression (Nadaraya-Watson estimator)
-  - Robust estimation (Theil-Sen estimator)
-  - Rank-based methods
+  1. Einleitung und Motivation (with Ausgangssituation subsection)
+  2. Fallbeispiel: Gewässermessungen der Itter
+  3. Der Schätzer von Rosenblatt (with Empirische Verteilungsfunktion subsection)
+  4. Das Histogramm (Der Klassiker)
+  5. Kerndichteschätzung (KDE) — with O-Notation, Bias-Varianz-Tradeoff, Faltungsperspektive, Vorteile
+  6. Nichtparametrische Regression — Nadaraya-Watson, NW als Quotient von KDE, Bias-Problem an Datengrenzen
+  7. Robuste Lineare Regression (Theil-Schätzer)
+  8. Zusammenfassung und Fazit
 
 #### Vortrag (Presentation)
-- **Type:** Beamer presentation
+- **Type:** Beamer presentation (68 pages with pause overlays; 51-page print version)
 - **Content:** Condensed presentation format of Ausarbeitung topics
 - **Features:**
   - Professional academic theme
@@ -119,6 +134,7 @@ The repository is designed for:
   - Case study slide with real-world measurement data (Itter)
   - Progressive disclosure of concepts (configurable `\pause` switches)
   - Bibliography integration
+  - **`Vortrag-Druckversion.pdf`**: 51-page print version compiled without `\pause` overlays
 - **Subdirectories:**
   - `img/` — Images embedded in slides (e.g., spectrophotometric measurement plots)
 
@@ -134,8 +150,8 @@ Both documents use modular `header.tex` files that define:
 
 ### 3. Bibliography System
 
-- **Format:** BibTeX/BibLaTeX
-- **Backend:** BibTeX (configurable to Biber)
+- **Format:** BibLaTeX
+- **Backend:** BibTeX (`backend=bibtex` in `\usepackage[backend=bibtex, style=alphabetic]{biblatex}`)
 - **Style:** Alphabetic citation style
 - **Content:** 3 references (`BüningTrenkler+1994`, `DalItter2026`, `DalItter2021`)
 - **Integration:** Citations throughout both documents
@@ -198,12 +214,17 @@ Temporary LaTeX files (.aux, .log, .toc, .synctex.gz, etc.) are removed by:
 #### 1. Build and Publish PDFs (`build-and-publish-pdfs.yml`)
 - **Trigger:** Push to main/master, manual dispatch
 - **Engine Selection:** pdflatex (default) or lualatex (manual dispatch)
+- **Two Build Jobs:**
+  - `build-latex`: pdflatex (default) using `xu-cheng/latex-action@v4` with Docker image `ghcr.io/xu-cheng/texlive-full`
+  - `build-latex-lualatex`: lualatex (always runs) using the same action and image
 - **Process:**
   1. Checkout repository
-  2. Build Ausarbeitung.pdf using xu-cheng/latex-action@v4
-  3. Build Vortrag.pdf using xu-cheng/latex-action@v4
-  4. Upload both PDFs as artifacts (90-day retention)
+  2. Build Ausarbeitung.pdf using `xu-cheng/latex-action@v4`
+  3. Build Vortrag.pdf and Vortrag-Druckversion.pdf using `xu-cheng/latex-action@v4`
+  4. Build Lua 5.5.0 from source (`lua-5.5.0/` directory)
+  5. Upload all PDFs as artifacts (90-day retention)
 - **Artifacts:** Available in Actions tab → workflow run → latex-pdfs
+- **Note:** PDFs are also committed directly to the repository alongside LaTeX sources
 
 #### 2. LaTeX Linting (`lint.yml`)
 - **Tool:** chktex
@@ -363,11 +384,11 @@ Spell checker configuration:
 
 ### `.gitignore`
 Excludes from version control:
-- LaTeX auxiliary files (commented, but listed for reference)
 - Build artifacts (build/, out/, dist/)
 - Editor files (.vscode/, .idea/)
 - OS files (.DS_Store, Thumbs.db)
 - Python cache (__pycache__/)
+- **Note:** LaTeX auxiliary file patterns (*.aux, *.log, *.bbl, etc.) are listed but **commented out** — these files ARE tracked in this repository.
 
 ### `.dockerignore`
 Excludes from Docker build context:
@@ -435,7 +456,7 @@ Excludes from Docker build context:
 - GitHub Actions pinned to specific versions
 - Dependabot monitors for updates
 - Limited use of third-party actions
-- Docker images are built FROM `ubuntu:20.04` and install `texlive-full` from Ubuntu package repositories
+- CI builds use `xu-cheng/latex-action@v4` with Docker image `ghcr.io/xu-cheng/texlive-full`
 
 ### Access Control
 - Branch protection on main branch

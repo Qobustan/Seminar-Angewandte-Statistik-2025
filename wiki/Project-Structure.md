@@ -9,67 +9,90 @@ Seminar-Angewandte-Statistik-2025/
 ├── .github/                    # GitHub configuration and workflows
 │   ├── ISSUE_TEMPLATE/        # Issue templates
 │   ├── workflows/             # GitHub Actions CI/CD workflows
+│   │   ├── build-and-publish-pdfs.yml
+│   │   ├── lint.yml
+│   │   ├── spellcheck.yml
+│   │   ├── bibcheck.yml
+│   │   ├── publish-wiki.yml
+│   │   ├── docker-image.yml
+│   │   ├── codeql-analysis.yml
+│   │   ├── greetings.yml
+│   │   └── format.yml
 │   ├── dependabot.yml         # Dependency update automation
 │   └── labeler.yml            # Automatic PR labeling
 │
 ├── Ausarbeitung/              # Written elaboration (main paper)
 │   ├── Ausarbeitung.tex       # Main LaTeX document
-│   ├── header.tex             # LaTeX preamble and packages
-│   └── Ausarbeitung.bib       # Bibliography file
+│   ├── header.tex             # Top-level LaTeX preamble
+│   ├── header-article.tex     # Article-class preamble
+│   ├── header-common.tex      # Shared preamble (common to both documents)
+│   ├── Ausarbeitung.bib       # Bibliography file
+│   ├── Ausarbeitung.pdf       # Compiled PDF (17 pages, committed to repo)
+│   └── *.aux, *.bbl, ...      # Build auxiliary files (also committed)
 │
 ├── Vortrag/                   # Presentation slides
 │   ├── Vortrag.tex            # Main presentation document
-│   ├── header.tex             # Beamer configuration
+│   ├── header.tex             # Top-level Beamer preamble
+│   ├── header-beamer.tex      # Beamer-class preamble
+│   ├── header-common.tex      # Shared preamble (common to both documents)
 │   ├── Vortrag.bib            # Bibliography file
+│   ├── Vortrag.pdf            # Compiled PDF (68 pages with pauses, committed)
+│   ├── Vortrag-Druckversion.pdf  # Print version (51 pages, no pauses, committed)
 │   └── img/                   # Images embedded in slides
 │
 ├── Besprechung/               # Meeting notes and discussions
-│   └── Material/              # Historical meeting materials
 │
 ├── scripts/                   # Utility scripts
-│   ├── generatePdf.sh         # PDF generation script
+│   ├── generatePdf.sh         # PDF generation script (Linux/macOS)
+│   ├── generatePdf.bat        # PDF generation script (Windows)
+│   ├── delete-obsolete-branches.sh
+│   ├── delete-obsolete-branches.py
 │   └── abkuerzung.sh          # Abbreviation helper
 │
 ├── task_skripts/              # Task-specific automation
 │   ├── bash/                  # Bash scripts
-│   │   └── doc_version.sh     # Document versioning
 │   └── perl/                  # Perl utilities
-│       ├── bibtex2html.pl     # BibTeX conversion
-│       ├── texcount.pl        # Word counting
-│       └── ...                # Other LaTeX tools
 │
 ├── cleanup/                   # Maintenance and cleanup
 │   ├── Remove_Junk_Linux.sh   # Linux cleanup script
 │   └── Remove_Junk_Windows.bat # Windows cleanup script
 │
 ├── archive/                   # Historical documentation
-│   ├── README.md              # Archive overview
-│   ├── CONSOLIDATION-SUMMARY.md # Branch consolidation summary
-│   ├── branch-snapshots/      # Historical branch documentation
-│   │   ├── 01-template-fork.md
-│   │   ├── 02-development-milestones.md
-│   │   └── 03-copilot-branches.md
-│   └── unique-content/        # Preserved unique configurations
+│
+├── branch_cleanup/            # Branch deletion guides and checklists
+│   ├── BRANCHES_TO_DELETE.md
+│   ├── BRANCH_DELETION_CHECKLIST.md
+│   └── BRANCH_DELETION_GUIDE.md
+│
+├── docs/                      # Additional project documentation
+│   ├── ARCHITECTURE.md
+│   ├── CHANGELOG.md
+│   ├── PROJECT_REVIEW_SUMMARY.md
+│   └── improvement/
+│
+├── latex_install/             # LaTeX installation guides
+│   ├── LaTeX-Install.md       # English guide
+│   └── LaTeX-Install.de.md    # German guide
 │
 ├── legacy/                    # Legacy code and historical files
-│   ├── build.sh               # Old build script
-│   ├── debug.sh               # Old debug script
-│   └── README.md              # Legacy documentation
+│
+├── lua-5.5.0/                 # Lua 5.5.0 source code (compiled from source in CI)
+│
+├── review/                    # Review summaries
 │
 ├── wiki/                      # Project documentation wiki
 │   ├── Home.md                # Wiki home page
 │   ├── Getting-Started.md     # Quick start guide
 │   └── ...                    # Additional wiki pages
 │
-├── .gitignore                 # Git ignore patterns
+├── .gitignore                 # Git ignore patterns (LaTeX aux entries commented out)
 ├── .gitattributes             # Git attributes
 ├── cspell.json                # Spell-checking configuration
 ├── Dockerfile                 # Docker build environment
-├── editorconfig.txt           # Editor configuration
 ├── DISCLAIMER.txt             # Project disclaimer
 ├── SECURITY.md                # Security policy
-├── LaTeX-Install.md           # LaTeX installation guide (English)
-├── LaTeX-Install.de.md        # LaTeX installation guide (German)
+├── CONTRIBUTING.md            # Contribution guidelines
+├── VERSION                    # Current version number
 └── README.md                  # Main repository documentation
 ```
 
@@ -79,19 +102,20 @@ Seminar-Angewandte-Statistik-2025/
 
 #### `Ausarbeitung/` - Written Elaboration
 
-Contains the main LaTeX sources for the written paper/thesis:
-- **Purpose**: Academic paper or thesis document
+Contains the main LaTeX sources for the written paper:
+- **Purpose**: 17-page academic paper on Nichtparametrische Statistik (KDE, nichtparametrische Regression, robuste lineare Regression)
 - **Main file**: `Ausarbeitung.tex`
-- **Build output**: `Ausarbeitung.pdf`
-- **Structure**: Single-document format with sections
+- **Header files**: `header.tex`, `header-article.tex`, `header-common.tex`
+- **Bibliography backend**: BibTeX (`backend=bibtex`)
+- **Build output**: `Ausarbeitung.pdf` (committed directly to this directory)
 
 #### `Vortrag/` - Presentation
 
 Contains LaTeX Beamer sources for presentation slides:
-- **Purpose**: Presentation slides for seminar talks
+- **Purpose**: Beamer presentation for the seminar talk
 - **Main file**: `Vortrag.tex`
-- **Build output**: `Vortrag.pdf`
-- **Structure**: Beamer presentation with frames
+- **Header files**: `header.tex`, `header-beamer.tex`, `header-common.tex`
+- **Build outputs**: `Vortrag.pdf` (68 pages with pauses) and `Vortrag-Druckversion.pdf` (51 pages, print version without pauses) — both committed directly to this directory
 - **`img/`**: Images embedded in slides (e.g., spectrophotometric measurement plots for the Itter case study)
 
 #### `Besprechung/` - Meeting Notes
@@ -105,13 +129,14 @@ Discussion notes, meeting minutes, and collaboration materials:
 #### `.github/workflows/` - CI/CD Pipelines
 
 GitHub Actions workflows for automation:
-- **`build-and-publish-pdfs.yml`**: Builds and publishes PDFs to `pdfs` branch
+- **`build-and-publish-pdfs.yml`**: Builds PDFs using `xu-cheng/latex-action@v4` (two jobs: pdflatex + lualatex); uploads as artifacts; PDFs are also committed to repo
 - **`spellcheck.yml`**: Runs spell-checking on LaTeX and markdown files
 - **`bibcheck.yml`**: Validates BibTeX references
 - **`format.yml`**: Checks code formatting
 - **`lint.yml`**: Runs linting checks
-- **`summary.yml`**: Generates project summary
-- **`stale.yml`**: Manages stale issues and PRs
+- **`publish-wiki.yml`**: Syncs wiki/ to GitHub Wiki
+- **`docker-image.yml`**: Builds Docker image for validation
+- **`codeql-analysis.yml`**: Security scanning
 
 See [CI/CD Workflows](CI-CD-Workflows.md) for detailed documentation.
 
@@ -184,9 +209,10 @@ This wiki documentation you're currently reading:
 
 - **`README.md`**: Main repository documentation
 - **`SECURITY.md`**: Security policy and vulnerability reporting
-- **`LaTeX-Install.md`**: Installation instructions (English)
-- **`LaTeX-Install.de.md`**: Installation instructions (German)
+- **`CONTRIBUTING.md`**: Contribution guidelines
 - **`DISCLAIMER.txt`**: Legal disclaimer
+- **`latex_install/LaTeX-Install.md`**: Installation instructions (English)
+- **`latex_install/LaTeX-Install.de.md`**: Installation instructions (German)
 
 ## File Naming Conventions
 
@@ -196,9 +222,11 @@ This wiki documentation you're currently reading:
 - Headers/preambles: `header.tex`
 - Bibliography: `*.bib` files
 
-### Generated Files (Git Ignored)
+### Generated Files (Tracked in Git)
 
-- PDFs: `*.pdf`
+In this project, build artifacts **are tracked in the repository** (the `.gitignore` entries for LaTeX auxiliary files are commented out):
+
+- PDFs: `Ausarbeitung/Ausarbeitung.pdf`, `Vortrag/Vortrag.pdf`, `Vortrag/Vortrag-Druckversion.pdf`
 - LaTeX auxiliary: `*.aux`, `*.log`, `*.out`, `*.toc`, etc.
 - BibTeX files: `*.bbl`, `*.blg`, `*.bcf`
 - Temporary: `*.synctex.gz`, `*.nav`, `*.snm`
@@ -214,8 +242,7 @@ This wiki documentation you're currently reading:
 ### Active Branches
 
 - **`main`**: Primary development branch (default)
-- **`pdfs`**: Automatically updated with built PDFs
-- **Template branch**: Preserved for future reference (not to be merged)
+- **Feature branches**: Temporary branches for development
 
 ### Historical Branches
 
@@ -223,15 +250,7 @@ All development and feature branches have been consolidated and documented in th
 
 ## Build Artifacts
 
-Build artifacts are automatically excluded from Git via `.gitignore`:
-
-- PDF outputs
-- LaTeX auxiliary files
-- Bibliography intermediates
-- Index and glossary files
-- Temporary build files
-
-These are regenerated during the build process or by CI/CD workflows.
+Build artifacts (PDFs, `.aux`, `.bbl`, `.log`, etc.) **are committed to this repository**. The `.gitignore` has LaTeX auxiliary file patterns listed but commented out. They are regenerated during the build process or by CI/CD workflows, but retained in git for convenience.
 
 ## Next Steps
 

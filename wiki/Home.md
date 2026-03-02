@@ -17,11 +17,16 @@ Welcome to the project wiki for the "Angewandte Statistik" seminar (2025).
 
 This repository contains materials for the "Angewandte Statistik" seminar (2025), including:
 
-- LaTeX sources for written elaboration (`Ausarbeitung/`)
+- LaTeX sources for written elaboration (`Ausarbeitung/`) — topic: Nichtparametrische Statistik (KDE, nichtparametrische Regression, robuste lineare Regression)
 - LaTeX sources for presentation slides (`Vortrag/`)
 - Meeting notes and discussions (`Besprechung/`)
 - Automated CI/CD pipelines for PDF generation
 - Comprehensive documentation and archived historical branches
+
+The compiled PDFs are committed directly to the repository:
+- `Ausarbeitung/Ausarbeitung.pdf` — 17-page written paper
+- `Vortrag/Vortrag.pdf` — 68-page Beamer presentation (with pause overlays)
+- `Vortrag/Vortrag-Druckversion.pdf` — 51-page print version (without pauses)
 
 ## Key Features
 

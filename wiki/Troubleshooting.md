@@ -42,18 +42,18 @@ pdflatex --version
 latexmk --version
 ```
 
-### Biber Not Found
+### BibTeX Not Found
 
-**Symptom**: `biber: command not found`
+**Symptom**: `bibtex: command not found`
 
-**Solution**:
+**Solution**: BibTeX is included with any standard TeX Live installation.
 
 ```bash
 # Ubuntu/Debian
-sudo apt-get install biber
+sudo apt-get install texlive
 
 # macOS
-brew install biber
+brew install --cask mactex
 # Or it's included in MacTeX
 
 # Windows
@@ -349,17 +349,17 @@ filename\_test.txt
 
 **Solution**:
 
-1. Ensure you're using Biber (not BibTeX):
+1. Ensure you're using BibTeX (this project uses `backend=bibtex`):
    ```bash
    pdflatex Ausarbeitung.tex
-   biber Ausarbeitung  # NOT bibtex
+   bibtex Ausarbeitung  # not biber
    pdflatex Ausarbeitung.tex
    pdflatex Ausarbeitung.tex
    ```
 
-2. Configure TeXstudio for Biber:
+2. Configure TeXstudio for BibTeX:
    - Options → Configure TeXstudio → Build
-   - Default Bibliography Tool → **Biber**
+   - Default Bibliography Tool → **BibTeX**
 
 3. Check `.bib` file syntax:
    ```bibtex
@@ -382,16 +382,16 @@ filename\_test.txt
    \cite{smith2020}  % Must match exactly
    ```
 
-### Biber Errors
+### BibTeX Errors
 
-**Symptom**: "ERROR - Cannot find control file 'Ausarbeitung.bcf'"
+**Symptom**: "I couldn't open file name 'Ausarbeitung.aux'" or similar
 
 **Solution**:
 
-1. Run PDFLaTeX first to generate `.bcf`:
+1. Run PDFLaTeX first to generate `.aux`:
    ```bash
    pdflatex Ausarbeitung.tex
-   biber Ausarbeitung
+   bibtex Ausarbeitung
    pdflatex Ausarbeitung.tex
    ```
 
@@ -584,22 +584,29 @@ npx cspell "**/*.tex" "**/*.md"
 
 ### BibTeX Check Fails
 
-**Run locally**:
+**Run locally** (check for errors and warnings):
 ```bash
-biber --tool --validate-datamodel Ausarbeitung.bib
+# Build with bibtex and inspect the log
+cd Ausarbeitung
+pdflatex -interaction=nonstopmode Ausarbeitung.tex
+bibtex Ausarbeitung
+cat Ausarbeitung.blg  # BibTeX log contains errors/warnings
+
+# Check for duplicate keys
+grep -E "^@" Ausarbeitung.bib | grep -o '{[^,]*' | sort | uniq -d
 ```
 
 **Fix syntax errors** as shown in [Bibliography Issues](#bibliography-issues)
 
 ## Editor Problems
 
-### TeXstudio Not Finding Biber
+### TeXstudio Bibliography Tool Configuration
 
-**Solution**: Configure manually
+This project uses `backend=bibtex`. Ensure TeXstudio is set to use BibTeX:
 
 1. Options → Configure TeXstudio → Commands
-2. Set Biber path: `/usr/bin/biber` (Linux) or find full path
-3. Build → Default Bibliography Tool → Biber
+2. Verify BibTeX path: `/usr/bin/bibtex` (Linux) or find full path
+3. Build → Default Bibliography Tool → **BibTeX**
 
 ### VS Code LaTeX Workshop Issues
 

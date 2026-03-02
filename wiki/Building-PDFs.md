@@ -38,7 +38,7 @@ latexmk -pdf Vortrag.tex
 ```bash
 cd Ausarbeitung
 pdflatex Ausarbeitung.tex
-biber Ausarbeitung
+bibtex Ausarbeitung
 pdflatex Ausarbeitung.tex
 pdflatex Ausarbeitung.tex
 ```
@@ -51,8 +51,9 @@ Ensure you have a complete LaTeX distribution installed:
 
 - **Linux**: TeX Live
   ```bash
-  sudo apt-get install texlive texlive-lang-german texlive-latex-extra biber
+  sudo apt-get install texlive texlive-lang-german texlive-latex-extra
   ```
+  Note: In CI, this project uses `xu-cheng/latex-action@v4` with Docker image `ghcr.io/xu-cheng/texlive-full` rather than manual apt-get installation.
 
 - **macOS**: MacTeX
   ```bash
@@ -66,8 +67,8 @@ Ensure you have a complete LaTeX distribution installed:
   - Or use MiKTeX: https://miktex.org/
 
 For detailed installation instructions, see:
-- [LaTeX Installation Guide (English)](../LaTeX-Install.md)
-- [LaTeX Installation Guide (German)](../LaTeX-Install.de.md)
+- [LaTeX Installation Guide (English)](../latex_install/LaTeX-Install.md)
+- [LaTeX Installation Guide (German)](../latex_install/LaTeX-Install.de.md)
 
 ### Building the Elaboration (Ausarbeitung)
 
@@ -95,8 +96,8 @@ cd Ausarbeitung
 # First pass: generate aux files
 pdflatex -interaction=nonstopmode Ausarbeitung.tex
 
-# Process bibliography
-biber Ausarbeitung
+# Process bibliography (this project uses bibtex backend)
+bibtex Ausarbeitung
 
 # Second pass: incorporate bibliography
 pdflatex -interaction=nonstopmode Ausarbeitung.tex
@@ -107,13 +108,15 @@ pdflatex -interaction=nonstopmode Ausarbeitung.tex
 
 **Why multiple passes?**
 - **Pass 1**: Creates `.aux` files with references
-- **Biber**: Processes bibliography and creates `.bbl` file
+- **BibTeX**: Processes bibliography and creates `.bbl` file
 - **Pass 2**: Incorporates bibliography citations
 - **Pass 3**: Resolves any remaining cross-references
 
 ### Building the Presentation (Vortrag)
 
-The presentation uses LaTeX Beamer.
+The presentation uses LaTeX Beamer. There are two output variants:
+- **`Vortrag.pdf`** (68 pages): Full version with `\pause` overlays for use during the talk
+- **`Vortrag-Druckversion.pdf`** (51 pages): Print version compiled without pause overlays
 
 #### Using latexmk
 
@@ -127,7 +130,7 @@ latexmk -pdf -interaction=nonstopmode Vortrag.tex
 ```bash
 cd Vortrag
 pdflatex -interaction=nonstopmode Vortrag.tex
-biber Vortrag
+bibtex Vortrag
 pdflatex -interaction=nonstopmode Vortrag.tex
 pdflatex -interaction=nonstopmode Vortrag.tex
 ```
@@ -253,22 +256,23 @@ PDFs are automatically built by GitHub Actions on every push to `main`.
 
 #### Build Process
 
-1. **Setup**: Install minimal TeX Live
-2. **Build**: Compile both documents with latexmk
-3. **Collect**: Gather generated PDFs
-4. **Publish**: Push PDFs to `pdfs` branch
+1. **Setup**: Uses `xu-cheng/latex-action@v4` with Docker image `ghcr.io/xu-cheng/texlive-full` (no manual apt-get install)
+2. **Build jobs**: Two parallel jobs — `build-latex` (pdflatex default) and `build-latex-lualatex` (always lualatex)
+3. **Compile**: Both documents compiled with latexmk; bibtex backend used automatically
+4. **Artifacts**: Upload PDFs as GitHub Actions artifacts (90-day retention)
+
+**Note:** The compiled PDFs (`Ausarbeitung.pdf`, `Vortrag.pdf`, `Vortrag-Druckversion.pdf`) are also committed directly to the repository. Build auxiliary files (`.aux`, `.bbl`, `.blg`, `.log`, etc.) are likewise committed — the `.gitignore` entries for LaTeX auxiliary files are commented out in this project.
+
+**Note on `Vortrag.bcf`:** This file is a BibLaTeX control file that was generated during an earlier phase of the project when the bibliography backend was set to `biber`. Both documents now use `backend=bibtex` (see `Vortrag.tex` and `Ausarbeitung.tex`), so `Vortrag.bcf` is a stale historical artifact committed alongside the other build files.
 
 #### Accessing Built PDFs
 
-```bash
-# Clone the pdfs branch
-git clone -b pdfs https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git pdfs
-cd pdfs
-```
+PDFs are available directly in the repository:
+- `Ausarbeitung/Ausarbeitung.pdf`
+- `Vortrag/Vortrag.pdf`
+- `Vortrag/Vortrag-Druckversion.pdf`
 
-Or download directly from GitHub:
-- Navigate to the `pdfs` branch on GitHub
-- Download the desired PDF files
+Or download from CI artifacts after a workflow run.
 
 ### Viewing Build Logs
 
@@ -299,16 +303,16 @@ sudo apt-get install texlive-latex-extra texlive-science
 # Packages are auto-installed on first use
 ```
 
-#### Issue: "biber command not found"
+#### Issue: "bibtex command not found"
 
-**Solution**: Install Biber
+**Solution**: Install BibTeX (included with TeX Live)
 
 ```bash
 # Ubuntu/Debian
-sudo apt-get install biber
+sudo apt-get install texlive
 
 # macOS
-brew install biber
+brew install --cask mactex
 
 # Windows
 # Included with TeX Live/MiKTeX
@@ -324,18 +328,18 @@ latexmk -pdf Ausarbeitung.tex
 
 # Or manually run 3 times
 pdflatex Ausarbeitung.tex
-biber Ausarbeitung
+bibtex Ausarbeitung
 pdflatex Ausarbeitung.tex
 pdflatex Ausarbeitung.tex
 ```
 
 #### Issue: "Bibliography not showing"
 
-**Solution**: Ensure Biber is configured correctly
+**Solution**: Ensure BibTeX is configured correctly (this project uses `backend=bibtex`)
 
 In TeXstudio:
 - **Options** → **Configure TeXstudio** → **Build**
-- Set **Default Bibliography Tool** to **Biber** (not BibTeX)
+- Set **Default Bibliography Tool** to **BibTeX**
 
 #### Issue: "German characters not displaying"
 
@@ -410,7 +414,7 @@ Create `.latexmkrc` in the project root:
 
 ```perl
 $pdf_mode = 1;  # Generate PDF using pdflatex
-$bibtex_use = 2;  # Use biber for bibliography
+$bibtex_use = 1;  # Use bibtex for bibliography (matches backend=bibtex)
 $pdflatex = 'pdflatex -interaction=nonstopmode -synctex=1 %O %S';
 ```
 

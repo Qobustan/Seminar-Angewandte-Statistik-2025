@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2025)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: Vortrag.aux
+The top-level auxiliary file: Vortrag-Druckversion.aux
 The style file: biblatex.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -17,14 +17,14 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: Vortrag-blx.bib
+Database file #1: Vortrag-Druckversion-blx.bib
 Database file #2: Vortrag.bib
 Biblatex version: 3.21
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 7 entries,
             6402 wiz_defined-function locations,
-            1249 strings with 10146 characters,
+            1250 strings with 10192 characters,
 and the built_in function-call counts, 40343 in all, are:
 = -- 2623
 > -- 1329

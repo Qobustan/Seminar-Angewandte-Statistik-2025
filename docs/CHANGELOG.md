@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- New `\section{Fallbeispiel: Gewässermessungen der Itter}` in `Ausarbeitung/Ausarbeitung.tex` with spectrophotometric measurement figures (reusing Vortrag images) and motivating discussion
+- New `\subsection*{Ausgangssituation und Zielsetzung}` in Einleitung section of `Ausarbeitung/Ausarbeitung.tex` with formal model setup ($X_1,\dots,X_n \sim F$)
+- New `\subsection*{Empirische Verteilungsfunktion}` in Rosenblatt section of `Ausarbeitung/Ausarbeitung.tex` with explicit definition of $F_n$
+- New `\subsection{O-Notation}` in KDE section of `Ausarbeitung/Ausarbeitung.tex` explaining Big-O notation used in asymptotic analysis
+- New `\subsection{Vorteile der Kerndichteschätzung}` after KDE als Faltung in `Ausarbeitung/Ausarbeitung.tex`
+- New `\subsection{Vorteile und Grenzen der nichtparametrischen Regression}` in NP Regression section of `Ausarbeitung/Ausarbeitung.tex`
+- New `\subsection{Bias-Problem an den Datengrenzen}` with local polynomial regression solution in `Ausarbeitung/Ausarbeitung.tex`
+- New `\subsection{Strukturelle Sicht: Nadaraya-Watson als Quotient von KDE}` in NP Regression section of `Ausarbeitung/Ausarbeitung.tex`
+- New `\subsection{Gemeinsames Prinzip von Kerndichteschätzung und nichtparametrischer Regression}` in `Ausarbeitung/Ausarbeitung.tex`
+- 5 new bibliography entries in `Ausarbeitung/Ausarbeitung.bib`: `DalItter2026`, `DalItter2021`, `SMI21`, `dal2023probtest`, `lang2004civ`
 - New Beamer slide "Fallbeispiel: Gewässermessungen der Itter" in the "Einleitung & Motivation" section of `Vortrag/Vortrag.tex`, illustrating why a single distribution assumption is insufficient
 - `Vortrag/img/` directory with `README.md` placeholder for the measurement images (`messung_itter_1.png`, `messung_itter_2.png`)
 - Two new bibliography entries in `Vortrag/Vortrag.bib`: `DalItter2026` and `DalItter2021`
@@ -19,6 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Architecture documentation
 
 ### Changed
+- `Robuste Lineare Regression` promoted from `\subsection` to `\section` in `Ausarbeitung/Ausarbeitung.tex` to match Vortrag structure
+- `\section{Zusammenfassung und Fazit}` expanded in `Ausarbeitung/Ausarbeitung.tex`: added 5-bullet summary from Vortrag, restored rich content (Praktische Anwendungen, Grenzen und Herausforderungen, Ausblick, final paragraph)
 - `Vortrag/Vortrag.bib` trimmed to three entries only: `BüningTrenkler+1994`, `DalItter2026`, `DalItter2021`; removed `Silverman1986`, `Rosenblatt1956`, `Epanechnikov1969`, `NadarayaWatson1964`, `Watson1964`, `Sen1968`, `Wasserman2006`
 
 ## [1.0.0] - 2026-02-12

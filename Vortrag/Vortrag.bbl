@@ -1,0 +1,206 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{anyt/global//global/global/global}
+  \entry{BüningTrenkler+1994}{book}{}{}
+    \name{author}{2}{}{%
+      {{hash=BH}{%
+         family={Büning},
+         familyi={B\bibinitperiod},
+         given={Herbert},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=TG}{%
+         family={Trenkler},
+         familyi={T\bibinitperiod},
+         given={Götz},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {De Gruyter}%
+    }
+    \strng{namehash}{BHTG1}
+    \strng{fullhash}{BHTG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BT94}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb doi:10.1515/9783110902990
+    \endverb
+    \field{isbn}{9783110902990}
+    \field{title}{Nichtparametrische statistische Methoden}
+    \verb{url}
+    \verb https://doi.org/10.1515/9783110902990
+    \endverb
+    \list{location}{1}{%
+      {Berlin, Boston}%
+    }
+    \field{year}{1994}
+  \endentry
+
+  \entry{DalItter2021}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=DY}{%
+         family={Dal},
+         familyi={D\bibinitperiod},
+         given={Yavuzâlp},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DY1}
+    \strng{fullhash}{DY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Dal21}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{Schlechte Wasserqualität der Itter -- Ermittlung der
+  Ursachen und Vorschläge für die Verbesserung der Wasserqualität}
+    \field{volume}{1}
+    \field{month}{05}
+    \field{year}{2021}
+  \endentry
+
+  \entry{dal2023probtest}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=DY}{%
+         family={Dal},
+         familyi={D\bibinitperiod},
+         given={Yavuzâlp},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DY1}
+    \strng{fullhash}{DY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Dal23}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb <DEIN-DOI>
+    \endverb
+    \field{howpublished}{ResearchGate}
+    \field{note}{Vortrag im Proseminar \emph{Perlen der Linearen Algebra}}
+    \field{title}{Probabilistischer Test für algebraische Operationen}
+    \verb{url}
+    \verb <DEIN-RESEARCHGATE-LINK>
+    \endverb
+    \field{year}{2023}
+  \endentry
+
+  \entry{DalItter2026}{unpublished}{}{}
+    \name{author}{1}{}{%
+      {{hash=DY}{%
+         family={Dal},
+         familyi={D\bibinitperiod},
+         given={Yavuzâlp},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DY1}
+    \strng{fullhash}{DY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Dal26}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.13140/RG.2.2.17341.52968
+    \endverb
+    \field{title}{Multifaktorielle Belastung der Itter: Chemische, biologische
+  und hydrologische Analyse eines urbanen Gewässers}
+    \field{month}{02}
+    \field{year}{2026}
+  \endentry
+
+  \entry{lang2004civ}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=LS}{%
+         family={Lang},
+         familyi={L\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LS1}
+    \strng{fullhash}{LS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Lan04}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Skript zur Vorlesung: Computerintensive Verfahren in der
+  Statistik}
+    \verb{url}
+    \verb mailto:lang@stat.uni-muenchen.de
+    \endverb
+    \list{location}{1}{%
+      {Ludwigstraße 33, München}%
+    }
+    \list{institution}{1}{%
+      {Institut für Statistik, Ludwig-Maximilians-Universität München}%
+    }
+    \field{type}{Lecture Notes}
+    \field{day}{15}
+    \field{month}{01}
+    \field{year}{2004}
+    \warn{\item Can't use 'date' + 'year'}
+  \endentry
+
+  \entry{SMI21}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=SD}{%
+         family={Schmidt},
+         familyi={S\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Schmidt},
+         familyi={S\bibinitperiod},
+         given={Melanie},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {HHU}%
+    }
+    \strng{namehash}{SDSM1}
+    \strng{fullhash}{SDSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{SS21}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{edition}{Stand September 23}
+    \field{note}{Vorlesungsskript}
+    \field{pages}{230\bibrangedash 242}
+    \field{title}{Algorithmen und Datenstrukturen}
+    \verb{url}
+    \verb https://ilias.hhu.de/goto.php?target=file_1552977_download&client_id=
+    \verb UniRZ
+    \endverb
+    \field{journaltitle}{ILIAS}
+    \field{year}{2021}
+  \endentry
+\enddatalist
+\endinput

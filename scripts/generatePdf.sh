@@ -11,14 +11,14 @@ show_help() {
     cat << EOF
 Usage: $(basename "$0") [OPTIONS]
 
-Generate PDFs for Ausarbeitung and Vortrag using pdflatex (or lualatex) and bibtex.
+Generate PDFs for Ausarbeitung and Vortrag using pdflatex (or lualatex) and biber.
 
 OPTIONS:
     -h, --help      Show this help message and exit
 
 DESCRIPTION:
     This script compiles LaTeX documents in the Ausarbeitung and Vortrag
-    directories. It runs the LaTeX engine three times and bibtex once for each
+    directories. It runs the LaTeX engine three times and biber once for each
     document to ensure all references and cross-references are resolved.
     
     By default, pdflatex is used for backwards compatibility. To use lualatex
@@ -29,7 +29,7 @@ DESCRIPTION:
 REQUIREMENTS:
     - pdflatex (from a TeX distribution) - default
     - lualatex (from a TeX distribution) - optional
-    - bibtex (from a TeX distribution)
+    - biber (from a TeX distribution)
 
 EXAMPLES:
     # Use default pdflatex
@@ -72,8 +72,8 @@ if ! command -v "${LATEX_ENGINE}" &> /dev/null; then
     exit 1
 fi
 
-if ! command -v bibtex &> /dev/null; then
-    echo "Error: bibtex is not installed or not in PATH"
+if ! command -v biber &> /dev/null; then
+    echo "Error: biber is not installed or not in PATH"
     echo "Please install a TeX distribution (e.g., TeX Live, MiKTeX)"
     exit 1
 fi
@@ -87,8 +87,8 @@ echo "[1/2] Building Ausarbeitung..."
 cd "$(dirname "$0")/../Ausarbeitung"
 echo "  Step 1/4: Running ${LATEX_ENGINE} (first pass)..."
 "${LATEX_ENGINE}" -interaction=nonstopmode Ausarbeitung.tex > /dev/null
-echo "  Step 2/4: Running bibtex..."
-bibtex Ausarbeitung > /dev/null || true
+echo "  Step 2/4: Running biber..."
+biber Ausarbeitung > /dev/null || true
 echo "  Step 3/4: Running ${LATEX_ENGINE} (second pass)..."
 "${LATEX_ENGINE}" -interaction=nonstopmode Ausarbeitung.tex > /dev/null
 echo "  Step 4/4: Running ${LATEX_ENGINE} (third pass)..."
@@ -108,8 +108,8 @@ echo "[2/2] Building Vortrag..."
 cd ../Vortrag
 echo "  Step 1/4: Running ${LATEX_ENGINE} (first pass)..."
 "${LATEX_ENGINE}" -interaction=nonstopmode Vortrag.tex > /dev/null
-echo "  Step 2/4: Running bibtex..."
-bibtex Vortrag > /dev/null || true
+echo "  Step 2/4: Running biber..."
+biber Vortrag > /dev/null || true
 echo "  Step 3/4: Running ${LATEX_ENGINE} (second pass)..."
 "${LATEX_ENGINE}" -interaction=nonstopmode Vortrag.tex > /dev/null
 echo "  Step 4/4: Running ${LATEX_ENGINE} (third pass)..."

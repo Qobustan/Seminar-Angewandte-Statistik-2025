@@ -29,54 +29,26 @@ The project includes several automated workflows for:
 
 #### What It Does
 
-1. **Setup Environment**
-   - Installs minimal TeX Live
-   - Installs required LaTeX packages:
-     - pdflatex and core tools
-     - German language support
-     - Bibliography tools (biber)
-     - Common LaTeX packages
+1. **Build Documents** (two parallel jobs)
+   - `build-latex`: Compiles `Ausarbeitung/Ausarbeitung.tex` and `Vortrag/Vortrag.tex` using pdflatex (default) via `xu-cheng/latex-action@v4` with Docker image `ghcr.io/xu-cheng/texlive-full`
+   - `build-latex-lualatex`: Same documents compiled with lualatex (always runs)
+   - Also builds Lua 5.5.0 from source (`lua-5.5.0/` directory in repo)
 
-2. **Build Documents**
-   - Compiles `Ausarbeitung/Ausarbeitung.tex` → PDF
-   - Compiles `Vortrag/Vortrag.tex` → PDF
-   - Uses latexmk with PDFLaTeX
-   - Handles multiple passes automatically
+2. **Collect Artifacts**
+   - Gathers generated PDFs (`Ausarbeitung.pdf`, `Vortrag.pdf`, `Vortrag-Druckversion.pdf`)
+   - Uploads as GitHub Actions artifacts (90-day retention)
 
-3. **Collect Artifacts**
-   - Gathers generated PDFs
-   - Prepares for deployment
-
-4. **Publish to Branch**
-   - Pushes PDFs to `pdfs` branch
-   - Maintains history of builds
-   - Accessible via GitHub web interface
+3. **Note on PDFs in repo**
+   - The compiled PDFs are also committed directly to the repository (`Ausarbeitung/` and `Vortrag/` directories)
 
 #### Accessing Built PDFs
 
-```bash
-# Clone the pdfs branch
-git clone -b pdfs https://github.com/Qobustan/Seminar-Angewandte-Statistik-2025.git
+PDFs are available directly in the repository:
+- `Ausarbeitung/Ausarbeitung.pdf`
+- `Vortrag/Vortrag.pdf`
+- `Vortrag/Vortrag-Druckversion.pdf`
 
-# Or fetch specific PDF
-curl -O https://raw.githubusercontent.com/Qobustan/Seminar-Angewandte-Statistik-2025/pdfs/Ausarbeitung.pdf
-```
-
-#### Customizing the Workflow
-
-To add packages, edit the workflow file:
-
-```yaml
-- name: Install TeX Live packages
-  run: |
-    sudo apt-get update
-    sudo apt-get install -y \
-      texlive-latex-base \
-      texlive-latex-extra \
-      texlive-lang-german \
-      biber \
-      your-additional-package
-```
+Or download from the Actions tab after a workflow run.
 
 ### 2. Spell Check
 
@@ -465,7 +437,8 @@ npx cspell "**/*.tex" "**/*.md"
 
 **Validate locally**:
 ```bash
-biber --tool --validate-datamodel Ausarbeitung/Ausarbeitung.bib
+# Check for duplicate keys and syntax errors
+grep -E "^@" Ausarbeitung/Ausarbeitung.bib | sort | uniq -d
 ```
 
 **Fix**:

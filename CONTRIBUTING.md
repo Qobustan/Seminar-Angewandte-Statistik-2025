@@ -20,7 +20,7 @@ Before contributing, ensure you have the following installed:
 
 - **TeX Live** (or MiKTeX on Windows) - LaTeX distribution
   - `pdflatex` - PDF generation
-  - `bibtex` or `biber` - Bibliography management
+  - `bibtex` - Bibliography management (`backend=bibtex` is used in this project)
   - `latexmk` - Automated LaTeX building (recommended)
 - **Git** - Version control
 - **chktex** - LaTeX linter (optional, used in CI)

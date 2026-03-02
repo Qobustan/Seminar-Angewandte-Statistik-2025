@@ -32,8 +32,9 @@ A comprehensive LaTeX project repository for the Applied Statistics seminar, Win
 
 ```
 .
-├── Ausarbeitung/            # LaTeX sources for the written elaboration
-├── Vortrag/                 # LaTeX sources for the presentation
+├── Ausarbeitung/            # LaTeX sources for the written elaboration (+ Ausarbeitung.pdf)
+├── Vortrag/                 # LaTeX sources for the presentation (+ Vortrag.pdf, Vortrag-Druckversion.pdf)
+│   └── img/                 # Images for slides
 ├── Besprechung/             # Meeting notes and discussions
 ├── scripts/                 # Build and utility scripts
 ├── cleanup/                 # Cleanup scripts for temporary LaTeX files
@@ -42,22 +43,30 @@ A comprehensive LaTeX project repository for the Applied Statistics seminar, Win
 │   └── perl/
 ├── legacy/                  # Archived, deprecated files
 ├── archive/                 # Branch documentation and historical content
-│   ├── branch-snapshots/
-│   └── unique-content/
+├── branch_cleanup/          # Branch deletion guides and checklists
+├── docs/                    # Additional documentation (ARCHITECTURE.md, CHANGELOG.md, etc.)
+├── latex_install/           # LaTeX installation guides (English and German)
+├── lua-5.5.0/               # Lua 5.5.0 source code (compiled in CI)
+├── review/                  # Review summaries
 ├── .github/workflows/       # CI/CD automation
 └── wiki/                    # Project wiki documentation
 ```
 
 ### Directory Descriptions
 
-- **`Ausarbeitung/`** - Contains LaTeX source files for the written elaboration (Ausarbeitung.tex, header.tex, bibliography)
-- **`Vortrag/`** - Contains LaTeX source files for the Beamer presentation (Vortrag.tex)
+- **`Ausarbeitung/`** - Contains LaTeX source files for the written elaboration (`Ausarbeitung.tex`, `header.tex`, `header-article.tex`, `header-common.tex`, bibliography). The compiled `Ausarbeitung.pdf` (17 pages) is committed directly to this directory.
+- **`Vortrag/`** - Contains LaTeX source files for the Beamer presentation (`Vortrag.tex`, `header.tex`, `header-beamer.tex`, `header-common.tex`, bibliography, `img/`). The compiled `Vortrag.pdf` (68 pages with pause overlays) and `Vortrag-Druckversion.pdf` (51 pages, print version without pauses) are committed directly to this directory.
 - **`Besprechung/`** - Meeting notes, discussion materials, and related documents
 - **`scripts/`** - Utility scripts for PDF generation (`generatePdf.sh`, `generatePdf.bat`)
 - **`cleanup/`** - Scripts to remove temporary LaTeX auxiliary files (`Remove_Junk_*.sh|bat`)
 - **`task_skripts/`** - Task-specific scripts organized by language (bash, perl)
 - **`legacy/`** - Archived files and historical code no longer actively used
 - **`archive/`** - Historical branch documentation and unique content preservation
+- **`branch_cleanup/`** - Branch deletion guides, checklists, and lists of obsolete branches
+- **`docs/`** - Additional documentation including `ARCHITECTURE.md`, `CHANGELOG.md`, `PROJECT_REVIEW_SUMMARY.md`
+- **`latex_install/`** - LaTeX installation guides: `LaTeX-Install.md` (English) and `LaTeX-Install.de.md` (German)
+- **`lua-5.5.0/`** - Lua 5.5.0 source code, compiled from source in the CI pipeline
+- **`review/`** - Review summaries and improvement notes
 - **`.github/workflows/`** - GitHub Actions workflows for automated building, linting, and testing
 
 ---
@@ -68,7 +77,7 @@ A comprehensive LaTeX project repository for the Applied Statistics seminar, Win
 
 - **TeX Live** (or MiKTeX on Windows) - LaTeX distribution
   - `pdflatex` - PDF generation
-  - `bibtex` or `biber` - Bibliography management
+  - `bibtex` - Bibliography management (this project uses `backend=bibtex`)
   - `latexmk` - Automated LaTeX building (recommended)
 - **Git** - Version control
 
@@ -173,11 +182,11 @@ The Dockerfile includes TeX Live with full LaTeX support (pdflatex, lualatex, xe
 
 ### Using GitHub Actions
 
-PDFs are automatically built on every push to the `main` branch using pdflatex by default:
+PDFs are automatically built on every push to the `main` branch using pdflatex by default. Additionally, the compiled PDFs (`Ausarbeitung.pdf`, `Vortrag.pdf`, `Vortrag-Druckversion.pdf`) are committed directly to the repository alongside the LaTeX sources:
 
 1. Push your changes to the `main` branch
-2. GitHub Actions automatically builds both PDFs
-3. Download generated PDFs from the workflow artifacts
+2. GitHub Actions automatically builds both PDFs (two jobs: pdflatex default and lualatex)
+3. Download generated PDFs from the workflow artifacts, or access them directly from the repo
 
 **Using LuaLaTeX in GitHub Actions:**
 
@@ -230,10 +239,15 @@ The repository includes comprehensive GitHub Actions workflows in `.github/workf
 
 ### Accessing Generated PDFs
 
-After a successful build:
+The compiled PDFs are committed directly to the repository:
+- `Ausarbeitung/Ausarbeitung.pdf` — 17-page written paper
+- `Vortrag/Vortrag.pdf` — 68-page Beamer presentation (with pause overlays)
+- `Vortrag/Vortrag-Druckversion.pdf` — 51-page print version (without pauses)
+
+After a CI build:
 1. Go to the Actions tab in the GitHub repository
 2. Select the latest workflow run
-3. Download the `latex-pdfs` artifact containing both PDFs
+3. Download the `latex-pdfs` artifact
 
 ---
 

@@ -11,8 +11,8 @@ Before you begin, ensure you have the following installed:
 - **LaTeX Editor** (optional but recommended): TeXstudio or your preferred editor
 
 For detailed LaTeX installation instructions, see:
-- [LaTeX Installation Guide (English)](../LaTeX-Install.md)
-- [LaTeX Installation Guide (German)](../LaTeX-Install.de.md)
+- [LaTeX Installation Guide (English)](../latex_install/LaTeX-Install.md)
+- [LaTeX Installation Guide (German)](../latex_install/LaTeX-Install.de.md)
 
 ## Quick Start
 
@@ -94,7 +94,9 @@ When you push to GitHub, the CI/CD workflows will automatically:
 - ✅ Validate formatting
 - ✅ Run spell-checking
 - ✅ Build PDFs (on push to main)
-- ✅ Publish PDFs to the `pdfs` branch
+- ✅ Upload PDFs as GitHub Actions artifacts
+
+The compiled PDFs are also committed directly to the repository (`Ausarbeitung/Ausarbeitung.pdf`, `Vortrag/Vortrag.pdf`, `Vortrag/Vortrag-Druckversion.pdf`).
 
 See [CI/CD Workflows](CI-CD-Workflows.md) for more details.
 
@@ -102,9 +104,9 @@ See [CI/CD Workflows](CI-CD-Workflows.md) for more details.
 
 ### TeXstudio Setup
 
-After installing TeXstudio, configure Biber as the bibliography backend:
+This project uses `backend=bibtex` for bibliography processing. After installing TeXstudio, ensure the bibliography tool is set to BibTeX:
 
-**Options** → **Configure TeXstudio** → **Build** → **Default Bibliography Tool: Biber**
+**Options** → **Configure TeXstudio** → **Build** → **Default Bibliography Tool: BibTeX**
 
 ### Visual Studio Code
 

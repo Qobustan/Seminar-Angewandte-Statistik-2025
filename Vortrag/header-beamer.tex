@@ -14,9 +14,18 @@
 % =================================================
 % Schrift & Kodierung
 % =================================================
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{inconsolata}
+\usepackage{iftex}
+\ifluatex
+  % LuaLaTeX: fontspec statt fontenc für volle Unicode-Unterstützung
+  \usepackage{fontspec}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+  \usepackage{inconsolata}
+\fi
 
 % Entfernt: \newunicodechar{̈}{\"} (führt zu Endlosschleife!)
 

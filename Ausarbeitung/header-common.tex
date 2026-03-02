@@ -8,14 +8,19 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Für LuaLaTeX/pdfLaTeX Unterscheidung
+\usepackage{iftex}
+
 % Bildoptionen?
 \usepackage{pict2e}
 
 % Latex - Symbole
 \usepackage{latexsym}
 
-% Zusätzliche Kodierungen
-\usepackage{inconsolata}
+% Zusätzliche Kodierungen (nur für pdflatex; LuaLaTeX nutzt fontspec)
+\ifluatex\else
+  \usepackage{inconsolata}
+\fi
 
 % Nicht - umbrechbare Leerzeichen
 \usepackage{newunicodechar}
@@ -78,14 +83,13 @@
 % Klickbare Verweise
 \usepackage{hyperref}
 
-% Schönere Schriftart
-\usepackage{lmodern}
+% Schönere Schriftart (nur für pdflatex; LuaLaTeX nutzt fontspec)
+\ifluatex\else
+  \usepackage{lmodern}
+\fi
 
 % Tabellen ausrichten
 \usepackage{float}
-
-% Mehr (mathematische) Symbole
-\usepackage{tipa}
 
 % Um schönere Brüche darstellen zu können
 \usepackage{nicefrac}

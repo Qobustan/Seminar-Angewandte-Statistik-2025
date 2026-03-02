@@ -36,14 +36,14 @@ echo.
 echo Building Ausarbeitung...
 cd /d "%~dp0..\Ausarbeitung" || exit /b 1
 %LATEX_ENGINE% -interaction=nonstopmode Ausarbeitung.tex || exit /b 1
-bibtex Ausarbeitung 2>nul
+biber Ausarbeitung 2>nul
 %LATEX_ENGINE% -interaction=nonstopmode Ausarbeitung.tex || exit /b 1
 %LATEX_ENGINE% -interaction=nonstopmode Ausarbeitung.tex || exit /b 1
 
 echo Building Vortrag...
 cd /d "%~dp0..\Vortrag" || exit /b 1
 %LATEX_ENGINE% -interaction=nonstopmode Vortrag.tex || exit /b 1
-bibtex Vortrag 2>nul
+biber Vortrag 2>nul
 %LATEX_ENGINE% -interaction=nonstopmode Vortrag.tex || exit /b 1
 %LATEX_ENGINE% -interaction=nonstopmode Vortrag.tex || exit /b 1
 

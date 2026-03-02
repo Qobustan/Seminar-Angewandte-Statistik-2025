@@ -13,16 +13,21 @@
   % erforderlich und würde im besten Fall wirkungslos bleiben, kann aber
   % zu subtilen Konflikten führen (z. B. doppeltes Einlesen von
   % Zeichencodierungen durch fontspec/luainputenc).
+  % fontspec statt fontenc für volle Unicode-Unterstützung
+  \usepackage{fontspec}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
 \else
   % pdflatex benötigt inputenc, um UTF-8-kodierte Quelldateien korrekt zu
   % verarbeiten.  Ohne dieses Paket werden Umlaute und andere Nicht-ASCII-
   % Zeichen falsch dargestellt oder führen zu Kompilierungsfehlern.
   \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
 \fi
-\usepackage[T1]{fontenc}
 
 \usepackage[ngerman]{babel}
-\usepackage[backend=bibtex, style=alphabetic]{biblatex}
+\usepackage[backend=biber, style=alphabetic]{biblatex}
 \addbibresource{Ausarbeitung.bib}
 
 % Mathematik-Pakete

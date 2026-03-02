@@ -1,0 +1,8 @@
+\babel@toc {ngerman}{}\relax 
+\beamer@sectionintoc {1}{Einleitung \& Motivation}{2}{0}{1}
+\beamer@sectionintoc {2}{Rosenblatt-Schätzer}{7}{0}{2}
+\beamer@sectionintoc {3}{Histogramm}{11}{0}{3}
+\beamer@sectionintoc {4}{Kerndichteschätzer}{16}{0}{4}
+\beamer@sectionintoc {5}{Nichtparametrische Regression}{31}{0}{5}
+\beamer@sectionintoc {6}{Robuste Lineare Regression}{41}{0}{6}
+\beamer@sectionintoc {7}{Zusammenfassung}{47}{0}{7}

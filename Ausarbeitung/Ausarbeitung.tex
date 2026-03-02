@@ -64,9 +64,14 @@ Die \textit{nichtparametrische Dichteschätzung} verzichtet auf die Zugehörigke
 
 \textbf{Wichtige Anmerkung:} Hierbei ist zu betonen, dass das Ziel nicht die vollständige Auflösung der Kopplung zwischen Annahmen und Schätzung ist – dies wäre auch gar nicht möglich. Vielmehr möchten wir diese Kopplung \textit{abschwächen}, indem wir nur minimale Annahmen (wie Stetigkeit oder Glattheit) treffen, statt eine spezifische parametrische Familie vorauszusetzen.
 
-\subsection*{Zielsetzung}
+\subsection*{Ausgangssituation und Zielsetzung}
 
-Ziel ist es, eine Annäherung an den Wert $f(x)$ an einer Stelle $x$ allein aus den Daten zu gewinnen, ohne eine bestimmte parametrische Familie vorauszusetzen (\glqq Let the data speak\grqq). Die nichtparametrische Dichteschätzung findet breite Anwendung in der explorativen Datenanalyse, der Mustererkennung und überall dort, wo die Verteilungsform a priori unbekannt ist oder nur schwach strukturierte Annahmen getroffen werden sollen.
+Gegeben seien unabhängige, identisch verteilte Zufallsvariablen
+\[
+X_1, \dots, X_n \,\sim\, F
+\quad\text{mit unbekannter Dichte } f.
+\]
+Ziel ist es, $f(x)$ oder die Regressionsfunktion $m(x) = \mathbb{E}(Y \mid X = x)$ allein aus den Daten zu schätzen, ohne eine bestimmte parametrische Familie vorauszusetzen (\glqq Let the data speak\grqq). Die nichtparametrische Dichteschätzung findet breite Anwendung in der explorativen Datenanalyse, der Mustererkennung und überall dort, wo die Verteilungsform a priori unbekannt ist oder nur schwach strukturierte Annahmen getroffen werden sollen.
 
 \section{Fallbeispiel: Gewässermessungen der Itter}
 
@@ -93,6 +98,14 @@ Die beiden Messungen desselben Gewässers zeigen grundlegend verschiedene Vertei
 \textbf{Fazit:} Man darf sich nicht blind auf eine angenommene Verteilung verlassen. Deshalb sind nichtparametrische Methoden besonders wertvoll: sie setzen keine bestimmte Verteilungsform voraus. Wer sich näher für diese Messungen interessiert, sei auf \cite{DalItter2026, DalItter2021} verwiesen.
 
 \section{Der Schätzer von Rosenblatt (Die theoretische Basis)}
+
+\subsection*{Empirische Verteilungsfunktion}
+
+Die empirische Verteilungsfunktion ist definiert als:
+\[
+F_n(x) = \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\{X_i \le x\}}
+\]
+Sie ist ein konsistenter Schätzer für $F$, jedoch eine Treppenfunktion. Die Frage, wie man daraus eine stetige Dichte gewinnt, führt direkt auf den Differenzenquotienten-Ansatz von Rosenblatt.
 
 Historisch betrachtet bildet der Ansatz von Rosenblatt \cite{Rosenblatt1956} (1956) das Fundament moderner Dichteschätzer. Er motiviert sich aus dem fundamentalen Zusammenhang zwischen der Dichtefunktion $f$ und der Verteilungsfunktion $F$, wobei gilt: $F'(x) = f(x)$ (sofern $F$ differenzierbar ist). Diese Beziehung legt nahe, die Ableitung durch einen Differenzenquotienten zu approximieren und die unbekannte Verteilungsfunktion durch ihre empirische Version zu ersetzen.
 
@@ -416,6 +429,30 @@ Datenpunkte $X_i$, die nahe an $x$ liegen, erhalten durch den Kern $K$ ein hohes
 	\item \textbf{Bandbreitenwahl:} Wie bei der Kerndichteschätzung ist die Wahl von $h$ entscheidend. Zu kleine Werte führen zu überangepassten, ,,zackigen`` Schätzungen, zu große Werte glätten wichtige Strukturen weg.
 \end{itemize}
 
+\subsection{Vorteile und Grenzen der nichtparametrischen Regression}
+
+\textbf{Vorteile:}
+\begin{itemize}
+	\item Hohe Flexibilität – keine Modellfehlanpassung durch falsche Annahmen über die funktionale Form.
+	\item Anwendbar auch wenn die Form von $m$ a priori unbekannt ist.
+\end{itemize}
+
+\textbf{Grenzen:}
+\begin{itemize}
+	\item Die Wahl der Bandbreite $h$ ist entscheidend für die Schätzgüte; es gilt derselbe Bias-Varianz-Tradeoff wie bei der Kerndichteschätzung.
+	\item Randprobleme: erhöhter Bias an den Grenzen des Datenbereichs (Randproblem).
+\end{itemize}
+
+\subsection{Bias-Problem an den Datengrenzen}
+
+Der Nadaraya-Watson-Schätzer weist starken Bias an den Datengrenzen auf: An den Rändern stehen weniger Datenpunkte in der lokalen Umgebung zur Verfügung, und die asymmetrische Gewichtung führt zu einer systematischen Verzerrung der Schätzung nach innen.
+
+\textbf{Lösungsansatz – Lokale Polynomschätzer:} Durch die Anpassung lokaler Polynome (meist linear oder quadratisch) statt einer lokalen Konstante lässt sich der Randbias erheblich reduzieren. Dabei wird für jeden Punkt $x$ ein gewichtetes Regressionsproblem
+\[
+\min_{\beta_0, \beta_1} \sum_{i=1}^n \left(Y_i - \beta_0 - \beta_1(X_i - x)\right)^2 K\!\left(\frac{x - X_i}{h}\right)
+\]
+gelöst; der Schätzer für $m(x)$ ist dann $\hat{\beta}_0$. Lokale Polynomschätzer sind eine Verallgemeinerung des Nadaraya-Watson-Ansatzes und korrigieren den Randbias ohne die Flexibilität der nichtparametrischen Regression zu verlieren.
+
 \textbf{Verallgemeinerungen:} Lokale Polynomschätzer (Local Polynomial Regression) sind eine Weiterentwicklung, die viele Probleme des Nadaraya-Watson-Schätzers – insbesondere den Randbias – behebt. Dabei wird nicht nur der lokale Mittelwert, sondern ein lokales Polynom (meist linear oder quadratisch) angepasst.
 
 \subsection{Strukturelle Sicht: Nadaraya-Watson als Quotient von KDE}
@@ -464,22 +501,44 @@ Selbst wenn wir einen linearen Trend ($Y = \alpha + \beta X$) vermuten, ist die 
 
 \section{Zusammenfassung und Fazit}
 
-Nichtparametrische Methoden spielen eine zentrale Rolle in der modernen Statistik und Datenanalyse \cite{BüningTrenkler+1994, Wasserman2006}.
+Nichtparametrische Methoden spielen eine zentrale Rolle in der modernen Statistik und Datenanalyse \cite{BüningTrenkler+1994, Wasserman2006}. Sie ermöglichen es, komplexe Datenstrukturen zu analysieren, ohne restriktive Annahmen über die zugrunde liegende Verteilung oder funktionale Form treffen zu müssen.
 
+\textbf{Kernaussagen:}
 \begin{itemize}
 	\item Nichtparametrische Methoden sind lokal und datengetrieben: Sie schätzen $f(x)$ oder $m(x)$ ohne Annahme einer parametrischen Familie.
 	\item Der Kerndichteschätzer lässt sich als Faltung mit dem empirischen Maß auffassen.
-	\item Die Bandbreite $h$ ist die zentrale Stellgröße und bestimmt die Konvergenzrate.
+	\item Die Bandbreite $h$ ist die zentrale Stellgröße und bestimmt die Konvergenzrate ($h_{\text{opt}} \sim n^{-1/5}$, MSE $\sim n^{-4/5}$).
 	\item Die nichtparametrische Regression folgt demselben Prinzip der lokalen Kerngewichtung.
 	\item Robuste Verfahren wie der Theil-Sen-Schätzer bieten Schutz vor Ausreißern bei linearen Modellen.
 \end{itemize}
 
 \textbf{Fazit:}
 \begin{itemize}
-	\item \textbf{Flexibilität:} Nichtparametrische Methoden passen sich den Daten an (,,let the data speak``), ohne eine spezifische funktionale Form vorauszusetzen. Für eine vertiefte Behandlung siehe \cite{Silverman1986, Wand1995, Scott1992}.
-	\item \textbf{Parameter $h$:} Die Wahl der Bandbreite ist der entscheidende Schritt und erfordert eine Balance zwischen Bias und Varianz.
-	\item \textbf{Robustheit:} Verfahren wie der Theil-Sen-Schätzer bieten robuste Alternativen zur klassischen linearen Regression, besonders bei Vorliegen von Ausreißern.
+	\item \textbf{Flexibilität:} Nichtparametrische Methoden (KDE, Kernel-Regression) passen sich den Daten an (,,let the data speak``) und zwingen ihnen keine Form auf. Diese Flexibilität macht sie besonders wertvoll in der explorativen Datenanalyse, wo die Verteilungsform a priori unbekannt ist, sowie in Situationen, in denen parametrische Modelle zu restriktiv sind. Für eine vertiefte Behandlung der Theorie und Praxis siehe \cite{Silverman1986, Wand1995, Scott1992}.
+
+	\item \textbf{Parameter $h$:} Die Wahl der Bandbreite ist der kritischste Schritt. Es ist ein Kompromiss zwischen Rauschen (zu kleines $h$) und Informationsverlust (zu großes $h$). Während theoretische Faustregeln (wie die Silverman-Regel) einen guten Ausgangspunkt bieten, empfiehlt sich in der Praxis eine Sensitivitätsanalyse.
+
+	\item \textbf{Robustheit:} Verfahren wie der Theil-Sen-Schätzer bieten mächtige Alternativen zur klassischen Regression, besonders wenn Daten Ausreißer enthalten. Diese Kombination aus Flexibilität (durch den Verzicht auf parametrische Annahmen) und Robustheit (durch die Verwendung von Medianen) macht sie besonders geeignet für reale Datensätze.
+
+	\item \textbf{Praktische Anwendungen:} Nichtparametrische Methoden finden breite Anwendung in zahlreichen Bereichen:
+	      \begin{itemize}
+	      	\item In der \textit{explorativen Datenanalyse} zur Visualisierung und ersten Charakterisierung von Verteilungen.
+	      	\item In der \textit{Bildverarbeitung} zur Glättung und Rauschunterdrückung.
+	      	\item In der \textit{Ökonometrie} zur Schätzung nichtlinearer Beziehungen ohne vorab spezifizierte funktionale Form.
+	      	\item In der \textit{Biometrie} zur Analyse von Überlebenszeitdaten und zur robusten Trendschätzung.
+	      \end{itemize}
+
+	\item \textbf{Grenzen und Herausforderungen:} Trotz ihrer Vorteile haben nichtparametrische Methoden auch Einschränkungen:
+	      \begin{itemize}
+	      	\item Sie benötigen typischerweise größere Stichprobenumfänge als parametrische Methoden, um vergleichbare Genauigkeit zu erreichen.
+	      	\item In höheren Dimensionen leiden sie unter dem sogenannten ,,Fluch der Dimensionalität``: Die Anzahl der benötigten Beobachtungen wächst exponentiell mit der Dimension.
+	      	\item Die Interpretation ist oft weniger direkt als bei parametrischen Modellen.
+	      \end{itemize}
+
+	\item \textbf{Ausblick:} Moderne Entwicklungen in der nichtparametrischen Statistik umfassen adaptive Bandbreitenwahl, multivariate Kerndichteschätzung sowie Kombinationen mit maschinellem Lernen. Insbesondere die Verbindung zu neuronalen Netzen und anderen flexiblen Lernverfahren eröffnet neue Perspektiven für die Analyse komplexer Datenstrukturen.
 \end{itemize}
+
+Nichtparametrische Methoden sind damit ein unverzichtbares Werkzeug der modernen explorativen Datenanalyse und robusten Statistik. Sie bilden eine wichtige Brücke zwischen klassischen statistischen Verfahren und modernen datengetriebenen Ansätzen des maschinellen Lernens. Ihre Fähigkeit, sich flexibel an die Daten anzupassen, ohne starke Vorannahmen zu treffen, macht sie zu einem fundamentalen Bestandteil des statistischen Werkzeugkastens.
 
 \ifshowtext
 % Referenzen

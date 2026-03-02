@@ -1,0 +1,584 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{anyt/global//global/global/global}
+  \entry{BüningTrenkler+1994}{book}{}{}
+    \name{author}{2}{}{%
+      {{hash=BH}{%
+         family={Büning},
+         familyi={B\bibinitperiod},
+         given={Herbert},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=TG}{%
+         family={Trenkler},
+         familyi={T\bibinitperiod},
+         given={Götz},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {De Gruyter}%
+    }
+    \strng{namehash}{BHTG1}
+    \strng{fullhash}{BHTG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BT94}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb doi:10.1515/9783110902990
+    \endverb
+    \field{isbn}{9783110902990}
+    \field{title}{Nichtparametrische statistische Methoden}
+    \verb{url}
+    \verb https://doi.org/10.1515/9783110902990
+    \endverb
+    \list{location}{1}{%
+      {Berlin, Boston}%
+    }
+    \field{year}{1994}
+  \endentry
+
+  \entry{DalItter2021}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=DY}{%
+         family={Dal},
+         familyi={D\bibinitperiod},
+         given={Yavuzâlp},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DY1}
+    \strng{fullhash}{DY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Dal21}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{Schlechte Wasserqualität der Itter -- Ermittlung der
+  Ursachen und Vorschläge für die Verbesserung der Wasserqualität}
+    \field{volume}{1}
+    \field{month}{05}
+    \field{year}{2021}
+  \endentry
+
+  \entry{dal2023probtest}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=DY}{%
+         family={Dal},
+         familyi={D\bibinitperiod},
+         given={Yavuzâlp},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DY1}
+    \strng{fullhash}{DY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Dal23}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb <DEIN-DOI>
+    \endverb
+    \field{howpublished}{ResearchGate}
+    \field{note}{Vortrag im Proseminar \emph{Perlen der Linearen Algebra}}
+    \field{title}{Probabilistischer Test für algebraische Operationen}
+    \verb{url}
+    \verb <DEIN-RESEARCHGATE-LINK>
+    \endverb
+    \field{year}{2023}
+  \endentry
+
+  \entry{DalItter2026}{unpublished}{}{}
+    \name{author}{1}{}{%
+      {{hash=DY}{%
+         family={Dal},
+         familyi={D\bibinitperiod},
+         given={Yavuzâlp},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DY1}
+    \strng{fullhash}{DY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Dal26}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.13140/RG.2.2.17341.52968
+    \endverb
+    \field{title}{Multifaktorielle Belastung der Itter: Chemische, biologische
+  und hydrologische Analyse eines urbanen Gewässers}
+    \field{month}{02}
+    \field{year}{2026}
+  \endentry
+
+  \entry{Epanechnikov1969}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=EVA}{%
+         family={Epanechnikov},
+         familyi={E\bibinitperiod},
+         given={V.\bibnamedelima A.},
+         giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EVA1}
+    \strng{fullhash}{EVA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Epa69}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{number}{1}
+    \field{pages}{153\bibrangedash 158}
+    \field{title}{Non-Parametric Estimation of a Multivariate Probability
+  Density}
+    \field{volume}{14}
+    \field{journaltitle}{Theory of Probability \& Its Applications}
+    \field{year}{1969}
+  \endentry
+
+  \entry{FreedmanDiaconis1981}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=FD}{%
+         family={Freedman},
+         familyi={F\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={Diaconis},
+         familyi={D\bibinitperiod},
+         given={Persi},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FDDP1}
+    \strng{fullhash}{FDDP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{FD81}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{4}
+    \field{pages}{453\bibrangedash 476}
+    \field{title}{On the Histogram as a Density Estimator: L2 Theory}
+    \field{volume}{57}
+    \field{journaltitle}{Zeitschrift für Wahrscheinlichkeitstheorie und
+  Verwandte Gebiete}
+    \field{year}{1981}
+  \endentry
+
+  \entry{Kendall1938}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=KMG}{%
+         family={Kendall},
+         familyi={K\bibinitperiod},
+         given={Maurice\bibnamedelima G.},
+         giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KMG1}
+    \strng{fullhash}{KMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Ken38}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{1/2}
+    \field{pages}{81\bibrangedash 93}
+    \field{title}{A New Measure of Rank Correlation}
+    \field{volume}{30}
+    \field{journaltitle}{Biometrika}
+    \field{year}{1938}
+  \endentry
+
+  \entry{lang2004civ}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=LS}{%
+         family={Lang},
+         familyi={L\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LS1}
+    \strng{fullhash}{LS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Lan04}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Skript zur Vorlesung: Computerintensive Verfahren in der
+  Statistik}
+    \verb{url}
+    \verb mailto:lang@stat.uni-muenchen.de
+    \endverb
+    \list{location}{1}{%
+      {Ludwigstraße 33, München}%
+    }
+    \list{institution}{1}{%
+      {Institut für Statistik, Ludwig-Maximilians-Universität München}%
+    }
+    \field{type}{Lecture Notes}
+    \field{day}{15}
+    \field{month}{01}
+    \field{year}{2004}
+    \warn{\item Can't use 'date' + 'year'}
+  \endentry
+
+  \entry{NadarayaWatson1964}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=NEA}{%
+         family={Nadaraya},
+         familyi={N\bibinitperiod},
+         given={E.\bibnamedelima A.},
+         giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NEA1}
+    \strng{fullhash}{NEA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Nad64}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{number}{1}
+    \field{pages}{141\bibrangedash 142}
+    \field{title}{On Estimating Regression}
+    \field{volume}{9}
+    \field{journaltitle}{Theory of Probability \& Its Applications}
+    \field{year}{1964}
+  \endentry
+
+  \entry{Parzen1962}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=PE}{%
+         family={Parzen},
+         familyi={P\bibinitperiod},
+         given={Emanuel},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Institute of Mathematical Statistics}%
+    }
+    \strng{namehash}{PE1}
+    \strng{fullhash}{PE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Par62}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{3}
+    \field{pages}{1065\bibrangedash 1076}
+    \field{title}{On Estimation of a Probability Density Function and Mode}
+    \field{volume}{33}
+    \field{journaltitle}{The Annals of Mathematical Statistics}
+    \field{year}{1962}
+  \endentry
+
+  \entry{Rosenblatt1956}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=RM}{%
+         family={Rosenblatt},
+         familyi={R\bibinitperiod},
+         given={Murray},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Institute of Mathematical Statistics}%
+    }
+    \strng{namehash}{RM1}
+    \strng{fullhash}{RM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Ros56}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{number}{3}
+    \field{pages}{832\bibrangedash 837}
+    \field{title}{Remarks on Some Nonparametric Estimates of a Density
+  Function}
+    \field{volume}{27}
+    \field{journaltitle}{The Annals of Mathematical Statistics}
+    \field{year}{1956}
+  \endentry
+
+  \entry{Scott1979}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=SDW}{%
+         family={Scott},
+         familyi={S\bibinitperiod},
+         given={David\bibnamedelima W.},
+         giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SDW1}
+    \strng{fullhash}{SDW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sco79}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{3}
+    \field{pages}{605\bibrangedash 610}
+    \field{title}{On Optimal and Data-Based Histograms}
+    \field{volume}{66}
+    \field{journaltitle}{Biometrika}
+    \field{year}{1979}
+  \endentry
+
+  \entry{Scott1992}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=SDW}{%
+         family={Scott},
+         familyi={S\bibinitperiod},
+         given={David\bibnamedelima W.},
+         giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {John Wiley \& Sons}%
+    }
+    \strng{namehash}{SDW1}
+    \strng{fullhash}{SDW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sco92}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{isbn}{978-0471547709}
+    \field{title}{Multivariate Density Estimation: Theory, Practice, and
+  Visualization}
+    \list{location}{1}{%
+      {New York}%
+    }
+    \field{year}{1992}
+  \endentry
+
+  \entry{Sen1968}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=SPK}{%
+         family={Sen},
+         familyi={S\bibinitperiod},
+         given={Pranab\bibnamedelima Kumar},
+         giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SPK1}
+    \strng{fullhash}{SPK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sen68}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{324}
+    \field{pages}{1379\bibrangedash 1389}
+    \field{title}{Estimates of the Regression Coefficient Based on Kendall's
+  Tau}
+    \field{volume}{63}
+    \field{journaltitle}{Journal of the American Statistical Association}
+    \field{year}{1968}
+  \endentry
+
+  \entry{Silverman1986}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=SBW}{%
+         family={Silverman},
+         familyi={S\bibinitperiod},
+         given={Bernard\bibnamedelima W.},
+         giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Chapman}%
+      {Hall}%
+    }
+    \strng{namehash}{SBW1}
+    \strng{fullhash}{SBW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sil86}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{isbn}{978-0412246203}
+    \field{series}{Monographs on Statistics and Applied Probability}
+    \field{title}{Density Estimation for Statistics and Data Analysis}
+    \list{location}{1}{%
+      {London}%
+    }
+    \field{year}{1986}
+  \endentry
+
+  \entry{SMI21}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=SD}{%
+         family={Schmidt},
+         familyi={S\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Schmidt},
+         familyi={S\bibinitperiod},
+         given={Melanie},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {HHU}%
+    }
+    \strng{namehash}{SDSM1}
+    \strng{fullhash}{SDSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{SS21}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{edition}{Stand September 23}
+    \field{note}{Vorlesungsskript}
+    \field{pages}{230\bibrangedash 242}
+    \field{title}{Algorithmen und Datenstrukturen}
+    \verb{url}
+    \verb https://ilias.hhu.de/goto.php?target=file_1552977_download&client_id=
+    \verb UniRZ
+    \endverb
+    \field{journaltitle}{ILIAS}
+    \field{year}{2021}
+  \endentry
+
+  \entry{Theil1950}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=TH}{%
+         family={Theil},
+         familyi={T\bibinitperiod},
+         given={Henri},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TH1}
+    \strng{fullhash}{TH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{The50}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{pages}{386\bibrangedash 392, 521\bibrangedash 525, 1397\bibrangedash
+  1412}
+    \field{title}{A Rank-Invariant Method of Linear and Polynomial Regression
+  Analysis}
+    \field{volume}{53}
+    \field{journaltitle}{Proceedings of the Koninklijke Nederlandse Akademie
+  van Wetenschappen}
+    \field{year}{1950}
+  \endentry
+
+  \entry{Wasserman2006}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=WL}{%
+         family={Wasserman},
+         familyi={W\bibinitperiod},
+         given={Larry},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{WL1}
+    \strng{fullhash}{WL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Was06}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{isbn}{978-0387251455}
+    \field{series}{Springer Texts in Statistics}
+    \field{title}{All of Nonparametric Statistics}
+    \list{location}{1}{%
+      {New York}%
+    }
+    \field{year}{2006}
+  \endentry
+
+  \entry{Watson1964}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=WGS}{%
+         family={Watson},
+         familyi={W\bibinitperiod},
+         given={Geoffrey\bibnamedelima S.},
+         giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WGS1}
+    \strng{fullhash}{WGS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Wat64}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{number}{4}
+    \field{pages}{359\bibrangedash 372}
+    \field{title}{Smooth Regression Analysis}
+    \field{volume}{26}
+    \field{journaltitle}{Sankhyā: The Indian Journal of Statistics, Series A}
+    \field{year}{1964}
+  \endentry
+
+  \entry{Wand1995}{book}{}{}
+    \name{author}{2}{}{%
+      {{hash=WMP}{%
+         family={Wand},
+         familyi={W\bibinitperiod},
+         given={M.\bibnamedelima P.},
+         giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=JMC}{%
+         family={Jones},
+         familyi={J\bibinitperiod},
+         given={M.\bibnamedelima C.},
+         giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Chapman}%
+      {Hall}%
+    }
+    \strng{namehash}{WMPJMC1}
+    \strng{fullhash}{WMPJMC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{WJ95}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{isbn}{978-0412552700}
+    \field{series}{Monographs on Statistics and Applied Probability}
+    \field{title}{Kernel Smoothing}
+    \list{location}{1}{%
+      {London}%
+    }
+    \field{year}{1995}
+  \endentry
+\enddatalist
+\endinput

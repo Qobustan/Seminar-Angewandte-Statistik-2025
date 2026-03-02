@@ -1,0 +1,242 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{BüningTrenkler+1994}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=ee46292485332edd7cb749ba9db67e6a}{%
+           family={Büning},
+           familyi={B\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod}}}%
+        {{hash=cb6441a749d67258d4e4ef455bd0d487}{%
+           family={Trenkler},
+           familyi={T\bibinitperiod},
+           given={Götz},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Boston}%
+      }
+      \list{publisher}{1}{%
+        {De Gruyter}%
+      }
+      \strng{namehash}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{fullhash}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{fullhashraw}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{bibnamehash}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{authorbibnamehash}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{authornamehash}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{authorfullhash}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{authorfullhashraw}{2cda2e4daa3c910395bbb02931c8c566}
+      \field{labelalpha}{BT94}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9783110902990}
+      \field{title}{Nichtparametrische statistische Methoden}
+      \field{year}{1994}
+      \verb{doi}
+      \verb doi:10.1515/9783110902990
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1515/9783110902990
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1515/9783110902990
+      \endverb
+    \endentry
+    \entry{DalItter2021}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=f32fb2eccb54c2e0ffa2301235801d04}{%
+           family={Dal},
+           familyi={D\bibinitperiod},
+           given={Yavuzâlp},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{fullhash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{fullhashraw}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{bibnamehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authorbibnamehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authornamehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authorfullhash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authorfullhashraw}{f32fb2eccb54c2e0ffa2301235801d04}
+      \field{extraname}{1}
+      \field{labelalpha}{Dal21}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{05}
+      \field{title}{Schlechte Wasserqualität der Itter -- Ermittlung der Ursachen und Vorschläge für die Verbesserung der Wasserqualität}
+      \field{volume}{1}
+      \field{year}{2021}
+    \endentry
+    \entry{dal2023probtest}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f32fb2eccb54c2e0ffa2301235801d04}{%
+           family={Dal},
+           familyi={D\bibinitperiod},
+           given={Yavuzâlp},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{fullhash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{fullhashraw}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{bibnamehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authorbibnamehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authornamehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authorfullhash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authorfullhashraw}{f32fb2eccb54c2e0ffa2301235801d04}
+      \field{extraname}{2}
+      \field{labelalpha}{Dal23}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{ResearchGate}
+      \field{note}{Vortrag im Proseminar \emph{Perlen der Linearen Algebra}}
+      \field{title}{Probabilistischer Test für algebraische Operationen}
+      \field{year}{2023}
+      \verb{doi}
+      \verb <DEIN-DOI>
+      \endverb
+      \verb{urlraw}
+      \verb <DEIN-RESEARCHGATE-LINK>
+      \endverb
+      \verb{url}
+      \verb DEIN-RESEARCHGATE-LINK
+      \endverb
+    \endentry
+    \entry{DalItter2026}{unpublished}{}{}
+      \name{author}{1}{}{%
+        {{hash=f32fb2eccb54c2e0ffa2301235801d04}{%
+           family={Dal},
+           familyi={D\bibinitperiod},
+           given={Yavuzâlp},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{fullhash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{fullhashraw}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{bibnamehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authorbibnamehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authornamehash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authorfullhash}{f32fb2eccb54c2e0ffa2301235801d04}
+      \strng{authorfullhashraw}{f32fb2eccb54c2e0ffa2301235801d04}
+      \field{extraname}{3}
+      \field{labelalpha}{Dal26}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{02}
+      \field{title}{Multifaktorielle Belastung der Itter: Chemische, biologische und hydrologische Analyse eines urbanen Gewässers}
+      \field{year}{2026}
+      \verb{doi}
+      \verb 10.13140/RG.2.2.17341.52968
+      \endverb
+    \endentry
+    \entry{lang2004civ}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=2979075266629fa1d790fb7c7f4a940a}{%
+           family={Lang},
+           familyi={L\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Institut für Statistik, Ludwig-Maximilians-Universität München}%
+      }
+      \list{location}{1}{%
+        {Ludwigstraße 33, München}%
+      }
+      \strng{namehash}{2979075266629fa1d790fb7c7f4a940a}
+      \strng{fullhash}{2979075266629fa1d790fb7c7f4a940a}
+      \strng{fullhashraw}{2979075266629fa1d790fb7c7f4a940a}
+      \strng{bibnamehash}{2979075266629fa1d790fb7c7f4a940a}
+      \strng{authorbibnamehash}{2979075266629fa1d790fb7c7f4a940a}
+      \strng{authornamehash}{2979075266629fa1d790fb7c7f4a940a}
+      \strng{authorfullhash}{2979075266629fa1d790fb7c7f4a940a}
+      \strng{authorfullhashraw}{2979075266629fa1d790fb7c7f4a940a}
+      \field{labelalpha}{Lan04}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Skript zur Vorlesung: Computerintensive Verfahren in der Statistik}
+      \field{type}{Lecture Notes}
+      \field{year}{2004}
+      \verb{urlraw}
+      \verb mailto:lang@stat.uni-muenchen.de
+      \endverb
+      \verb{url}
+      \verb mailto:lang@stat.uni-muenchen.de
+      \endverb
+    \endentry
+    \entry{SMI21}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d67d8cf0c11995175e99c8f63889a34c}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=114f2c0206727955aef8e8c98ed68c95}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Melanie},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {HHU}%
+      }
+      \strng{namehash}{9ca8b3dbd5c6760c2480d1db65620bde}
+      \strng{fullhash}{9ca8b3dbd5c6760c2480d1db65620bde}
+      \strng{fullhashraw}{9ca8b3dbd5c6760c2480d1db65620bde}
+      \strng{bibnamehash}{9ca8b3dbd5c6760c2480d1db65620bde}
+      \strng{authorbibnamehash}{9ca8b3dbd5c6760c2480d1db65620bde}
+      \strng{authornamehash}{9ca8b3dbd5c6760c2480d1db65620bde}
+      \strng{authorfullhash}{9ca8b3dbd5c6760c2480d1db65620bde}
+      \strng{authorfullhashraw}{9ca8b3dbd5c6760c2480d1db65620bde}
+      \field{labelalpha}{SS21}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Stand September 23}
+      \field{journaltitle}{ILIAS}
+      \field{note}{Vorlesungsskript}
+      \field{title}{Algorithmen und Datenstrukturen}
+      \field{year}{2021}
+      \field{pages}{230\bibrangedash 242}
+      \range{pages}{13}
+      \verb{urlraw}
+      \verb https://ilias.hhu.de/goto.php?target=file_1552977_download&client_id=UniRZ
+      \endverb
+      \verb{url}
+      \verb https://ilias.hhu.de/goto.php?target=file_1552977_download&client_id=UniRZ
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

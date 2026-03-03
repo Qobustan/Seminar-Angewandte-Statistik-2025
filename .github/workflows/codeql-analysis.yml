@@ -31,14 +31,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v4
         with:
           languages: ${{ matrix.language }}
           # Optionally specify queries to run
           # queries: security-extended,security-and-quality
 
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
+        uses: github/codeql-action/autobuild@v4
         # Note: For Python, autobuild typically doesn't need to do much
         # as CodeQL analyzes the source code directly
 
@@ -48,7 +48,7 @@ jobs:
         # Code Scanning / GitHub Advanced Security is not enabled and the SARIF
         # upload would otherwise fail with "Code scanning is not enabled".
         continue-on-error: true
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@v4
         with:
           category: "/language:${{ matrix.language }}"
           # Save SARIF to a local path so we can always upload it as an artifact

@@ -151,7 +151,7 @@ Both documents use modular `header.tex` files that define:
 ### 3. Bibliography System
 
 - **Format:** BibLaTeX
-- **Backend:** BibTeX (`backend=bibtex` in `\usepackage[backend=bibtex, style=alphabetic]{biblatex}`)
+- **Backend:** Biber (`backend=biber` in `\usepackage[backend=biber, style=alphabetic]{biblatex}`)
 - **Style:** Alphabetic citation style
 - **Content:** 3 references (`BüningTrenkler+1994`, `DalItter2026`, `DalItter2021`)
 - **Integration:** Citations throughout both documents
@@ -181,7 +181,7 @@ The standard LaTeX multi-pass compilation:
 
 ```
 1. LaTeX engine (pdflatex/lualatex) → .aux, .log, .toc files
-2. BibTeX → .bbl, .blg files (bibliography processing)
+2. Biber → .bbl, .blg files (bibliography processing)
 3. LaTeX engine → Integrate bibliography references
 4. LaTeX engine → Resolve cross-references
 ```
@@ -191,7 +191,7 @@ The standard LaTeX multi-pass compilation:
 #### `scripts/generatePdf.sh` (Linux/macOS)
 - Configurable LaTeX engine via `LATEX_ENGINE` environment variable
 - Automatic working directory detection
-- Multi-pass compilation with BibTeX
+- Multi-pass compilation with Biber
 - Error handling and validation
 
 #### `scripts/generatePdf.bat` (Windows)
@@ -349,7 +349,7 @@ Stage 2: Application setup with non-root user
 - **latexmk:** Automated LaTeX building with dependency tracking
 - **pdflatex:** Standard LaTeX to PDF compiler
 - **lualatex:** Modern LaTeX compiler with extended features
-- **bibtex:** Bibliography processor
+- **biber:** Bibliography processor
 
 ### CI/CD Tools
 - **GitHub Actions:** Workflow automation

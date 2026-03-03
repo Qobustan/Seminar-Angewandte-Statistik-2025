@@ -77,7 +77,7 @@ A comprehensive LaTeX project repository for the Applied Statistics seminar, Win
 
 - **TeX Live** (or MiKTeX on Windows) - LaTeX distribution
   - `pdflatex` - PDF generation
-  - `bibtex` - Bibliography management (this project uses `backend=bibtex`)
+  - `biber` - Bibliography management (this project uses `backend=biber`)
   - `latexmk` - Automated LaTeX building (recommended)
 - **Git** - Version control
 
@@ -99,20 +99,20 @@ For detailed installation instructions, see:
 
 ### Manual Compilation
 
-Build PDFs using the traditional pdflatex + bibtex multi-pass approach:
+Build PDFs using the pdflatex + biber multi-pass approach:
 
 ```bash
 # Build Ausarbeitung
 cd Ausarbeitung
 pdflatex -interaction=nonstopmode Ausarbeitung.tex
-bibtex Ausarbeitung
+biber Ausarbeitung
 pdflatex -interaction=nonstopmode Ausarbeitung.tex
 pdflatex -interaction=nonstopmode Ausarbeitung.tex
 
 # Build Vortrag
 cd ../Vortrag
 pdflatex -interaction=nonstopmode Vortrag.tex
-bibtex Vortrag
+biber Vortrag
 pdflatex -interaction=nonstopmode Vortrag.tex
 pdflatex -interaction=nonstopmode Vortrag.tex
 ```
@@ -125,14 +125,14 @@ LuaLaTeX is available as an alternative to pdflatex. It provides better Unicode 
 # Build Ausarbeitung with LuaLaTeX
 cd Ausarbeitung
 lualatex -interaction=nonstopmode Ausarbeitung.tex
-bibtex Ausarbeitung
+biber Ausarbeitung
 lualatex -interaction=nonstopmode Ausarbeitung.tex
 lualatex -interaction=nonstopmode Ausarbeitung.tex
 
 # Build Vortrag with LuaLaTeX
 cd ../Vortrag
 lualatex -interaction=nonstopmode Vortrag.tex
-bibtex Vortrag
+biber Vortrag
 lualatex -interaction=nonstopmode Vortrag.tex
 lualatex -interaction=nonstopmode Vortrag.tex
 ```
@@ -257,7 +257,7 @@ After a CI build:
 
 **`scripts/generatePdf.sh`** (Linux/macOS) / **`scripts/generatePdf.bat`** (Windows)
 - Builds both Ausarbeitung and Vortrag PDFs
-- Runs the LaTeX engine (pdflatex by default) and bibtex with proper multi-pass compilation
+- Runs the LaTeX engine (pdflatex by default) and biber with proper multi-pass compilation
 - Supports optional LuaLaTeX via LATEX_ENGINE environment variable
 - Usage (default): `./scripts/generatePdf.sh`
 - Usage (LuaLaTeX): `LATEX_ENGINE=lualatex ./scripts/generatePdf.sh`

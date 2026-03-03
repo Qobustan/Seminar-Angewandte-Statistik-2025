@@ -1,0 +1,65 @@
+# ============================================================
+# Repository label definitions
+# ============================================================
+#
+# These labels are used by:
+#   - Dependabot (dependabot.yml): "ci", "dependencies"
+#   - Labeler  (labeler.yml):      "documentation", "latex",
+#                                  "workflows", "docker", "scripts"
+#   - Stale    (stale.yml):        "no-issue-activity", "no-pr-activity"
+#   - Contributing docs:           "question"
+#
+# Synced automatically via the create-labels workflow.
+# ============================================================
+
+- name: "ci"
+  color: "0075ca"
+  description: "Changes to CI/CD workflows and GitHub Actions"
+
+- name: "dependencies"
+  color: "0366d6"
+  description: "Dependency updates (Dependabot, npm, pip, …)"
+
+- name: "documentation"
+  color: "0075ca"
+  description: "Improvements or additions to documentation"
+
+- name: "latex"
+  color: "e4e669"
+  description: "Changes to LaTeX source files"
+
+- name: "workflows"
+  color: "d93f0b"
+  description: "Changes to GitHub Actions workflow files"
+
+- name: "docker"
+  color: "1d76db"
+  description: "Changes to Dockerfile or Docker-related files"
+
+- name: "scripts"
+  color: "5319e7"
+  description: "Changes to build or utility scripts"
+
+- name: "no-issue-activity"
+  color: "e4e669"
+  description: "Issue marked stale due to inactivity"
+
+- name: "no-pr-activity"
+  color: "e4e669"
+  description: "Pull request marked stale due to inactivity"
+
+- name: "question"
+  color: "d876e3"
+  description: "Further information is requested"
+
+- name: "bug"
+  color: "d73a4a"
+  description: "Something isn't working"
+
+- name: "enhancement"
+  color: "a2eeef"
+  description: "New feature or request"
+
+- name: "wontfix"
+  color: "ffffff"
+  description: "This will not be worked on"

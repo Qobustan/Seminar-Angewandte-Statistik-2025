@@ -31,7 +31,11 @@ jobs:
 
       - name: Run spellcheck and save report
         run: |
-          cspell "**/*.tex" "**/*.md" "**/*.txt" --config ./cspell.json > spellcheck-report.txt || true
+          cspell "**/*.tex" "**/*.md" "**/*.txt" \
+            --config ./cspell.json \
+            --no-progress \
+            --no-summary \
+            > spellcheck-report.txt 2>&1 || true
 
       - name: Check if report is empty
         id: check_report
@@ -47,6 +51,7 @@ jobs:
         with:
           name: spellcheck-report
           path: spellcheck-report.txt
+          if-no-files-found: ignore
 
       - name: Comment results on PR
         if: github.event_name == 'pull_request' && steps.check_report.outputs.report_has_errors == 'true'

@@ -42,15 +42,15 @@ pdflatex --version
 latexmk --version
 ```
 
-### BibTeX Not Found
+### Biber Not Found
 
-**Symptom**: `bibtex: command not found`
+**Symptom**: `biber: command not found`
 
-**Solution**: BibTeX is included with any standard TeX Live installation.
+**Solution**: Biber is included with any standard TeX Live installation.
 
 ```bash
 # Ubuntu/Debian
-sudo apt-get install texlive
+sudo apt-get install texlive biber
 
 # macOS
 brew install --cask mactex
@@ -349,17 +349,17 @@ filename\_test.txt
 
 **Solution**:
 
-1. Ensure you're using BibTeX (this project uses `backend=bibtex`):
+1. Ensure you're using Biber (this project uses `backend=biber`):
    ```bash
    pdflatex Ausarbeitung.tex
-   bibtex Ausarbeitung  # not biber
+   biber Ausarbeitung
    pdflatex Ausarbeitung.tex
    pdflatex Ausarbeitung.tex
    ```
 
-2. Configure TeXstudio for BibTeX:
+2. Configure TeXstudio for Biber:
    - Options → Configure TeXstudio → Build
-   - Default Bibliography Tool → **BibTeX**
+   - Default Bibliography Tool → **Biber**
 
 3. Check `.bib` file syntax:
    ```bibtex
@@ -391,7 +391,7 @@ filename\_test.txt
 1. Run PDFLaTeX first to generate `.aux`:
    ```bash
    pdflatex Ausarbeitung.tex
-   bibtex Ausarbeitung
+   biber Ausarbeitung
    pdflatex Ausarbeitung.tex
    ```
 
@@ -586,11 +586,11 @@ npx cspell "**/*.tex" "**/*.md"
 
 **Run locally** (check for errors and warnings):
 ```bash
-# Build with bibtex and inspect the log
+# Build with biber and inspect the log
 cd Ausarbeitung
 pdflatex -interaction=nonstopmode Ausarbeitung.tex
-bibtex Ausarbeitung
-cat Ausarbeitung.blg  # BibTeX log contains errors/warnings
+biber Ausarbeitung
+cat Ausarbeitung.blg  # Biber log contains errors/warnings
 
 # Check for duplicate keys
 grep -E "^@" Ausarbeitung.bib | grep -o '{[^,]*' | sort | uniq -d
@@ -602,11 +602,11 @@ grep -E "^@" Ausarbeitung.bib | grep -o '{[^,]*' | sort | uniq -d
 
 ### TeXstudio Bibliography Tool Configuration
 
-This project uses `backend=bibtex`. Ensure TeXstudio is set to use BibTeX:
+This project uses `backend=biber`. Ensure TeXstudio is set to use Biber:
 
 1. Options → Configure TeXstudio → Commands
-2. Verify BibTeX path: `/usr/bin/bibtex` (Linux) or find full path
-3. Build → Default Bibliography Tool → **BibTeX**
+2. Verify Biber path: `/usr/bin/biber` (Linux) or find full path
+3. Build → Default Bibliography Tool → **Biber**
 
 ### VS Code LaTeX Workshop Issues
 

@@ -158,7 +158,7 @@ wäre auch gar nicht möglich. Vielmehr möchten wir diese Kopplung \textit{absc
 ```
 ```latex
 % HINWEIS: \bibliographystyle wird nicht benötigt, da biblatex verwendet wird
-% Der Zitierstil wird direkt bei \usepackage[backend=bibtex, style=alphabetic]{biblatex} festgelegt
+% Der Zitierstil wird direkt bei \usepackage[backend=biber, style=alphabetic]{biblatex} festgelegt
 ```
 
 **Impact:** Clear documentation, no confusing TODOs
@@ -286,7 +286,7 @@ While the core improvements are complete, consider:
 1. **Spell Check:** Run a German spell checker on the final document
 2. **Visual Validation:** Compile PDFs and visually inspect formatting
 3. **Peer Review:** Have another German speaker review for language quality
-4. **Bibliography Format:** Consider using Biber instead of BibTeX backend for better Unicode support
+4. **Bibliography Format:** Biber backend is already in use for better Unicode support (biber replaces bibtex as backend)
 
 ---
 

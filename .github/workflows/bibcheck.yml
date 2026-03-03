@@ -17,7 +17,7 @@ jobs:
       - name: Build Lua interpreter
         run: |
           cd lua-5.5.0
-          make linux -j$(nproc) 2>/dev/null
+          make linux -j$(nproc)
           echo "Lua $(src/lua -v 2>&1 | head -1) built successfully"
 
       - name: Check .bib files for duplicate keys

@@ -9,7 +9,7 @@
 #   - Stale    (stale.yml):        "no-issue-activity", "no-pr-activity"
 #   - Contributing docs:           "question"
 #
-# Synced automatically via the create-labels workflow.
+# Synced automatically via the sync-labels workflow.
 # ============================================================
 
 - name: "ci"
@@ -27,6 +27,10 @@
 - name: "latex"
   color: "e4e669"
   description: "Changes to LaTeX source files"
+
+- name: "lua"
+  color: "000080"
+  description: "Changes to Lua scripts or the Lua interpreter source"
 
 - name: "workflows"
   color: "d93f0b"

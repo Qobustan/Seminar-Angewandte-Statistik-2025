@@ -31,7 +31,7 @@ jobs:
 
       - name: Run spellcheck and save report
         run: |
-          cspell "**/*.tex" "**/*.md" "**/*.txt" \
+          cspell "**/*.tex" "**/*.md" "**/*.txt" "**/*.sh" "**/*.py" "**/*.lua" \
             --config ./cspell.json \
             --no-progress \
             --no-summary \

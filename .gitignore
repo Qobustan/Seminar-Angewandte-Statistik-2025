@@ -91,3 +91,11 @@ __pycache__/
 .Python
 
 *.backup
+
+# -----------------------
+# Lua compiled binaries and objects
+# -----------------------
+lua-5.5.0/src/lua
+lua-5.5.0/src/luac
+lua-5.5.0/src/*.o
+lua-5.5.0/src/liblua.a

@@ -37,17 +37,18 @@ local function read_file(path)
 end
 
 -- Parse a .bib file and return a list of entries.
+-- (This code seems to be problematic; we need to clarify it later...)
 -- Each entry is { type, key, fields = {field = value, ...}, line = N }
-local function parse_bib(content)
-    local entries = {}
+--local function parse_bib(content)
+--    local entries = {}
 
     -- Build a lookup table: byte offset → line number (1-based).
     -- We precompute every newline position once so per-entry line
     -- lookup is O(log n) instead of O(n).
-    local newlines = {}   -- newlines[i] = byte offset of the i-th '\n'
-    for nl_pos in content:gmatch("()\n") do
-        newlines[#newlines + 1] = nl_pos
-    end
+--    local newlines = {}   -- newlines[i] = byte offset of the i-th '\n'
+--    for nl_pos in content:gmatch("()\n") do
+--        newlines[#newlines + 1] = nl_pos
+--    end
 
     -- Return the 1-based line number for a given byte offset.
     local function line_at(offset)

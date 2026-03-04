@@ -1,0 +1,65 @@
+name: CI Smoke Tests
+
+# Smoke tests that verify the LaTeX templates compile without errors.
+#
+# Synced from: Qobustan/LaTeX-Template-Beamer-und-Ausarbeitungen
+# Adaptation: seminar-content scan is omitted here because this repo
+#             intentionally contains seminar-specific content.
+#
+# Local test commands (requires TeX Live installed):
+#   cd Ausarbeitung && latexmk -pdf -interaction=nonstopmode Ausarbeitung.tex
+#   cd Vortrag      && latexmk -pdf -interaction=nonstopmode Vortrag.tex
+#   # or using the helper script:
+#   ./scripts/generatePdf.sh
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+  workflow_dispatch:
+
+jobs:
+  smoke-test-ausarbeitung:
+    name: Smoke test – Ausarbeitung
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile Ausarbeitung (smoke test)
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: Ausarbeitung.tex
+          working_directory: Ausarbeitung
+          args: -pdf -interaction=nonstopmode
+
+      - name: Verify PDF was produced
+        run: |
+          ls -lh Ausarbeitung/Ausarbeitung.pdf
+          echo "Ausarbeitung smoke test passed."
+
+  smoke-test-vortrag:
+    name: Smoke test – Vortrag
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile Vortrag (smoke test)
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: Vortrag.tex
+          working_directory: Vortrag
+          args: -pdf -interaction=nonstopmode
+
+      - name: Verify PDF was produced
+        run: |
+          ls -lh Vortrag/Vortrag.pdf
+          echo "Vortrag smoke test passed."

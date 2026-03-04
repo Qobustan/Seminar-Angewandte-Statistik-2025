@@ -77,7 +77,7 @@ A comprehensive LaTeX project repository for the Applied Statistics seminar, Win
 
 - **TeX Live** (or MiKTeX on Windows) - LaTeX distribution
   - `pdflatex` - PDF generation
-  - `bibtex` - Bibliography management (this project uses `backend=bibtex`)
+  - `biber` - Bibliography management (this project uses `backend=biber`)
   - `latexmk` - Automated LaTeX building (recommended)
 - **Git** - Version control
 
@@ -99,20 +99,20 @@ For detailed installation instructions, see:
 
 ### Manual Compilation
 
-Build PDFs using the traditional pdflatex + bibtex multi-pass approach:
+Build PDFs using the pdflatex + biber multi-pass approach:
 
 ```bash
 # Build Ausarbeitung
 cd Ausarbeitung
 pdflatex -interaction=nonstopmode Ausarbeitung.tex
-bibtex Ausarbeitung
+biber Ausarbeitung
 pdflatex -interaction=nonstopmode Ausarbeitung.tex
 pdflatex -interaction=nonstopmode Ausarbeitung.tex
 
 # Build Vortrag
 cd ../Vortrag
 pdflatex -interaction=nonstopmode Vortrag.tex
-bibtex Vortrag
+biber Vortrag
 pdflatex -interaction=nonstopmode Vortrag.tex
 pdflatex -interaction=nonstopmode Vortrag.tex
 ```
@@ -125,14 +125,14 @@ LuaLaTeX is available as an alternative to pdflatex. It provides better Unicode 
 # Build Ausarbeitung with LuaLaTeX
 cd Ausarbeitung
 lualatex -interaction=nonstopmode Ausarbeitung.tex
-bibtex Ausarbeitung
+biber Ausarbeitung
 lualatex -interaction=nonstopmode Ausarbeitung.tex
 lualatex -interaction=nonstopmode Ausarbeitung.tex
 
 # Build Vortrag with LuaLaTeX
 cd ../Vortrag
 lualatex -interaction=nonstopmode Vortrag.tex
-bibtex Vortrag
+biber Vortrag
 lualatex -interaction=nonstopmode Vortrag.tex
 lualatex -interaction=nonstopmode Vortrag.tex
 ```
@@ -257,7 +257,7 @@ After a CI build:
 
 **`scripts/generatePdf.sh`** (Linux/macOS) / **`scripts/generatePdf.bat`** (Windows)
 - Builds both Ausarbeitung and Vortrag PDFs
-- Runs the LaTeX engine (pdflatex by default) and bibtex with proper multi-pass compilation
+- Runs the LaTeX engine (pdflatex by default) and biber with proper multi-pass compilation
 - Supports optional LuaLaTeX via LATEX_ENGINE environment variable
 - Usage (default): `./scripts/generatePdf.sh`
 - Usage (LuaLaTeX): `LATEX_ENGINE=lualatex ./scripts/generatePdf.sh`
@@ -290,6 +290,24 @@ Most scripts support a `--help` option for usage information.
 - Usage (Bash): `./scripts/delete-obsolete-branches.sh`
 - Usage (Python): `python3 scripts/delete-obsolete-branches.py` (requires `GITHUB_TOKEN` environment variable)
 - Dry run: `python3 scripts/delete-obsolete-branches.py --dry-run`
+
+### Lua Utility Scripts
+
+> **Prerequisite**: Build the Lua interpreter once (`cd lua-5.5.0 && make linux -j$(nproc)`).
+> The compiled binary is excluded from version control but built automatically in CI.
+> See [`docs/scripts/LUA-SCRIPTS.md`](docs/scripts/LUA-SCRIPTS.md) for full reference.
+
+**`scripts/word-count.lua`**
+- Strips LaTeX commands, math, and common environments; counts body words
+- Usage: `lua-5.5.0/src/lua scripts/word-count.lua` (defaults to both main documents)
+- Usage (explicit): `lua-5.5.0/src/lua scripts/word-count.lua Ausarbeitung/Ausarbeitung.tex`
+
+**`scripts/check-bib.lua`**
+- Validates required BibTeX fields for every entry in a `.bib` file
+- Reports errors with file name and line number
+- Usage: `lua-5.5.0/src/lua scripts/check-bib.lua` (defaults to `Ausarbeitung/Ausarbeitung.bib`)
+- Usage (explicit): `lua-5.5.0/src/lua scripts/check-bib.lua Ausarbeitung/Ausarbeitung.bib`
+- Also runs automatically as part of the `Bibliography Check` CI workflow
 
 ---
 
@@ -329,8 +347,13 @@ For information about supported versions and reporting vulnerabilities, see [SEC
 
 ## Additional Documentation
 
+- **[Documentation Index](docs/README.md)** — Central index linking every documentation file in the repository
 - [Architecture Documentation](docs/ARCHITECTURE.md) - Comprehensive project architecture and design overview
 - [Changelog](CHANGELOG.md) - Version history and notable changes
+- [Lua Scripts Reference](docs/scripts/LUA-SCRIPTS.md) - Reference for `word-count.lua` and `check-bib.lua`
+- [Improvement Summary 3.0](docs/improvement/IMPROVEMENT_SUMMARY_3.0.md) - v3.0 fixes: spellchecker, biber/bibtex, Lua, labels
+- [Improvement Summary 2.0](docs/improvement/IMPROVEMENT_SUMMARY_2.0.md) - v2.0 critical review improvements
+- [Improvement Summary 1.0](docs/improvement/IMPROVEMENTS_SUMMARY_1.0.md) - v1.0 minimal-loss improvements
 - [Contributing Guidelines](CONTRIBUTING.md) - How to contribute to this project
 - [LaTeX Installation Guide (English)](latex_install/LaTeX-Install.md) - Comprehensive LaTeX setup instructions
 - [LaTeX Installation Guide (German)](latex_install/LaTeX-Install.de.md) - Deutsche LaTeX-Installationsanleitung

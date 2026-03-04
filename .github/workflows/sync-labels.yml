@@ -1,0 +1,31 @@
+name: Sync Labels
+
+# Runs whenever .github/labels.yml changes or can be triggered manually.
+# Creates / updates all labels defined in .github/labels.yml so that
+# Dependabot and the Labeler workflow always find the labels they need.
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - '.github/labels.yml'
+  workflow_dispatch:
+
+jobs:
+  sync-labels:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read   # required by actions/checkout@v4
+      contents: read   # required by actions/checkout@v4
+      issues: write    # required to create/update labels
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Sync labels
+        uses: EndBug/label-sync@v2
+        with:
+          config-file: .github/labels.yml
+          delete-other-labels: false
+          token: ${{ secrets.GITHUB_TOKEN }}

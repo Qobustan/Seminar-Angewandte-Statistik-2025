@@ -106,7 +106,7 @@ Contains the main LaTeX sources for the written paper:
 - **Purpose**: 17-page academic paper on Nichtparametrische Statistik (KDE, nichtparametrische Regression, robuste lineare Regression)
 - **Main file**: `Ausarbeitung.tex`
 - **Header files**: `header.tex`, `header-article.tex`, `header-common.tex`
-- **Bibliography backend**: BibTeX (`backend=bibtex`)
+- **Bibliography backend**: Biber (`backend=biber`)
 - **Build output**: `Ausarbeitung.pdf` (committed directly to this directory)
 
 #### `Vortrag/` - Presentation

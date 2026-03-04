@@ -52,7 +52,7 @@ See the [Getting Started Guide](Getting-Started.md) for details.
 
 **Minimum requirements**:
 - PDFLaTeX compiler
-- BibTeX (bibliography processor — this project uses `backend=bibtex`)
+- Biber (bibliography processor — this project uses `backend=biber`)
 - Common LaTeX packages (listed in workflow files)
 
 ### Do I need a specific editor?
@@ -90,9 +90,9 @@ Multiple methods:
 # Method 2: latexmk (recommended)
 cd Ausarbeitung && latexmk -pdf Ausarbeitung.tex
 
-# Method 3: Manual (this project uses bibtex backend)
+# Method 3: Manual (this project uses biber backend)
 pdflatex Ausarbeitung.tex
-bibtex Ausarbeitung
+biber Ausarbeitung
 pdflatex Ausarbeitung.tex
 pdflatex Ausarbeitung.tex
 ```
@@ -109,13 +109,13 @@ LaTeX requires multiple passes to resolve:
 
 **Typical sequence**:
 1. First pass: Generate `.aux` files
-2. BibTeX: Process bibliography
+2. Biber: Process bibliography
 3. Second pass: Incorporate citations
 4. Third pass: Resolve cross-references
 
 ### What is latexmk and should I use it?
 
-`latexmk` is a Perl script that automatically runs LaTeX and BibTeX the correct number of times. **Yes, you should use it** - it's the easiest method.
+`latexmk` is a Perl script that automatically runs LaTeX and Biber the correct number of times. **Yes, you should use it** - it's the easiest method.
 
 ```bash
 latexmk -pdf Ausarbeitung.tex
@@ -231,16 +231,16 @@ See [Project Structure](Project-Structure.md) for details.
 
 ### Citations aren't showing up
 
-Ensure you're using BibTeX (this project uses `backend=bibtex`, not biber):
+Ensure you're using Biber (this project uses `backend=biber`):
 
 **In TeXstudio**:
 - Options → Configure TeXstudio → Build
-- Set "Default Bibliography Tool" to **BibTeX**
+- Set "Default Bibliography Tool" to **Biber**
 
 **Command line**:
 ```bash
 pdflatex Ausarbeitung.tex
-bibtex Ausarbeitung      # NOT biber
+biber Ausarbeitung
 pdflatex Ausarbeitung.tex
 ```
 

@@ -30,3 +30,9 @@ scripts:
       - any-glob-to-any-file:
           - '**/*.sh'
           - 'scripts/**'
+
+lua:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.lua'
+          - 'lua-5.5.0/**'

@@ -104,9 +104,9 @@ See [CI/CD Workflows](CI-CD-Workflows.md) for more details.
 
 ### TeXstudio Setup
 
-This project uses `backend=bibtex` for bibliography processing. After installing TeXstudio, ensure the bibliography tool is set to BibTeX:
+This project uses `backend=biber` for bibliography processing. After installing TeXstudio, ensure the bibliography tool is set to Biber:
 
-**Options** → **Configure TeXstudio** → **Build** → **Default Bibliography Tool: BibTeX**
+**Options** → **Configure TeXstudio** → **Build** → **Default Bibliography Tool: Biber**
 
 ### Visual Studio Code
 

@@ -1,4 +1,7 @@
 #!/bin/bash
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: The Project Authors
+#
 # Script to update abbreviations index
 
 set -euo pipefail

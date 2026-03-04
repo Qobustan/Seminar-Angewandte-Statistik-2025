@@ -2,8 +2,9 @@
 -- SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
 --
 -- Bibliography (.bib) validator for this project.
--- Checks that required fields are present for each entry type and
--- reports any issues to stdout.
+-- Checks that required fields are present for each entry type,
+-- detects duplicate keys, validates year format, and reports
+-- all issues to stdout with file name and line number.
 --
 -- Usage:
 --   lua scripts/check-bib.lua [FILE...]
@@ -37,22 +38,18 @@ local function read_file(path)
 end
 
 -- Parse a .bib file and return a list of entries.
--- (This code seems to be problematic; we need to clarify it later...)
 -- Each entry is { type, key, fields = {field = value, ...}, line = N }
---local function parse_bib(content)
---    local entries = {}
+local function parse_bib(content)
+    local entries = {}
 
-    -- Build a lookup table: byte offset → line number (1-based).
-    -- We precompute every newline position once so per-entry line
-    -- lookup is O(log n) instead of O(n).
---    local newlines = {}   -- newlines[i] = byte offset of the i-th '\n'
---    for nl_pos in content:gmatch("()\n") do
---        newlines[#newlines + 1] = nl_pos
---    end
+    -- Build a newline-offset table once so line_at() is O(log n).
+    local newlines = {}
+    for nl_pos in content:gmatch("()\n") do
+        newlines[#newlines + 1] = nl_pos
+    end
 
     -- Return the 1-based line number for a given byte offset.
     local function line_at(offset)
-        -- Binary search in newlines table
         local lo, hi = 1, #newlines
         while lo <= hi do
             local mid = math.floor((lo + hi) / 2)
@@ -62,22 +59,21 @@ end
                 hi = mid - 1
             end
         end
-        return lo   -- lo = number of newlines before offset + 1
+        return lo   -- number of newlines before offset + 1
     end
 
     -- Iterate over @TYPE{KEY, ...} blocks
     for entry_type, rest_start in content:gmatch("@(%a+)%s*[{(]()") do
         local etype = entry_type:lower()
-        if etype == "comment" or etype == "preamble" or etype == "string" then
-            -- skip special entries
-        else
-            -- Find matching closing brace/paren by counting depth
+        if etype ~= "comment" and etype ~= "preamble" and etype ~= "string" then
+            -- Find matching closing brace by counting depth
             local depth = 1
             local i = rest_start
             local entry_body = {}
             while i <= #content and depth > 0 do
                 local ch = content:sub(i, i)
-                if ch == "{" then depth = depth + 1
+                if ch == "{" then
+                    depth = depth + 1
                 elseif ch == "}" then
                     depth = depth - 1
                     if depth == 0 then break end
@@ -90,12 +86,12 @@ end
             -- Extract key (first token before the first comma)
             local key = body:match("^%s*([^,%s]+)")
             if key then
-                -- Extract fields: fieldname = {value} or fieldname = "value" or fieldname = number
+                -- Extract single-word / quoted fields
                 local fields = {}
                 for fname, fval in body:gmatch(",?%s*(%a[%a%d_%-]*)%s*=%s*[{\"']?([^,}\"']+)[,}\"']?") do
                     fields[fname:lower()] = fval:match("^%s*(.-)%s*$")
                 end
-                -- Also handle fields with braced values (multi-word)
+                -- Also detect multi-word braced fields not yet captured
                 for fname in body:gmatch(",?%s*(%a[%a%d_%-]*)%s*=%s*{") do
                     if not fields[fname:lower()] then
                         fields[fname:lower()] = "(present)"
@@ -117,26 +113,57 @@ local function check_entries(entries, path)
     local errors = 0
     local warnings = 0
 
+    -- Duplicate-key detection
+    local seen_keys = {}
+    for _, entry in ipairs(entries) do
+        local lkey = entry.key:lower()
+        if seen_keys[lkey] then
+            io.write(string.format("[ERROR] %s:%d @%s{%s}: duplicate key (first seen at line %d)\n",
+                path, entry.line, entry.type, entry.key, seen_keys[lkey]))
+            errors = errors + 1
+        else
+            seen_keys[lkey] = entry.line
+        end
+    end
+
     for _, entry in ipairs(entries) do
         local loc = string.format("%s:%d @%s{%s}", path, entry.line, entry.type, entry.key)
         local required = REQUIRED_FIELDS[entry.type]
+
+        -- Unknown entry type
         if required == nil then
             io.write(string.format("[WARN]  %s: unknown entry type\n", loc))
             warnings = warnings + 1
         else
+            -- Missing required fields
             for _, field in ipairs(required) do
                 if not entry.fields[field] then
-                    io.write(string.format("[ERROR] %s: missing required field '%s'\n",
-                        loc, field))
+                    io.write(string.format("[ERROR] %s: missing required field '%s'\n", loc, field))
                     errors = errors + 1
                 end
             end
         end
 
-        -- Warn about entries without a year (common oversight)
+        -- Missing year (not required for misc/online but still useful to flag)
         if entry.type ~= "misc" and entry.type ~= "online" and not entry.fields["year"] then
             io.write(string.format("[WARN]  %s: missing 'year' field\n", loc))
             warnings = warnings + 1
+        end
+
+        -- Year must be a 4-digit number when present
+        local yr = entry.fields["year"]
+        if yr and not yr:match("^%d%d%d%d$") then
+            io.write(string.format("[WARN]  %s: 'year' value '%s' is not a 4-digit number\n", loc, yr))
+            warnings = warnings + 1
+        end
+
+        -- URL field should look like a URL for @online entries
+        if entry.type == "online" then
+            local url = entry.fields["url"]
+            if url and not url:match("^https?://") and not url:match("^ftp://") then
+                io.write(string.format("[WARN]  %s: 'url' value does not look like a URL: %s\n", loc, url))
+                warnings = warnings + 1
+            end
         end
     end
     return errors, warnings

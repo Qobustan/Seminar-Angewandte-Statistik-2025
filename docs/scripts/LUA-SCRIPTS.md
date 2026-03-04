@@ -107,23 +107,29 @@ Ausarbeitung/Ausarbeitung.bib                        20 entries,  2 errors,  0 w
 | `@misc` | *(none required)* |
 | `@online` | `url` |
 
-Additionally, a **warning** is issued for any entry (except `@misc` and
-`@online`) that is missing a `year` field.
+Additionally the validator checks:
+
+- **Missing year** — warns for any entry (except `@misc` and `@online`) without a `year` field
+- **Year format** — warns when `year` is present but is not a 4-digit number (e.g. `26` instead of `2026`)
+- **Duplicate keys** — errors when the same key appears more than once (case-insensitive)
+- **URL format** — warns when an `@online` entry has a `url` that does not start with `http://`, `https://`, or `ftp://`
 
 ### CI Integration
 
 The `bibliography-check` job in `.github/workflows/bibcheck.yml` builds Lua
-from source and then runs this script as a required CI step:
+from source and then runs this script as a required CI step, followed by a
+cross-reference check:
 
 ```yaml
 - name: Build Lua interpreter
-  run: |
-    cd lua-5.5.0
-    make linux -j$(nproc)
+  run: cd lua-5.5.0 && make linux -j$(nproc)
 
 - name: Validate required .bib fields (Lua)
+  run: lua-5.5.0/src/lua scripts/check-bib.lua Ausarbeitung/Ausarbeitung.bib
+
+- name: Cross-reference check (cited keys exist in .bib)
   run: |
-    lua-5.5.0/src/lua scripts/check-bib.lua Ausarbeitung/Ausarbeitung.bib
+    # Verifies every \cite{key} in Ausarbeitung/ and Vortrag/ exists in the .bib
 ```
 
 ### Exit Codes

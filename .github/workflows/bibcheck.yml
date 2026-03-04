@@ -18,7 +18,7 @@ jobs:
         run: |
           cd lua-5.5.0
           make linux -j$(nproc)
-          echo "Lua $(src/lua -v 2>&1 | head -1) built successfully"
+          echo "Lua $(./src/lua -v 2>&1) built successfully"
 
       - name: Check .bib files for duplicate keys
         run: |
@@ -47,3 +47,43 @@ jobs:
       - name: Validate required .bib fields (Lua)
         run: |
           lua-5.5.0/src/lua scripts/check-bib.lua Ausarbeitung/Ausarbeitung.bib
+
+      - name: Cross-reference check (cited keys exist in .bib)
+        run: |
+          # Collect all defined keys from the .bib file
+          bib_keys=$(grep -i "^@" Ausarbeitung/Ausarbeitung.bib \
+            | grep -iv "^@comment\|^@string\|^@preamble" \
+            | sed 's/^@[^{]*{\([^,}]*\).*/\1/' \
+            | tr '[:upper:]' '[:lower:]' \
+            | sort -u)
+
+          # Collect all \cite{...}, \citep{...}, \citet{...}, \textcite{...}, \parencite{...}
+          # and multi-key variants \cite{key1,key2}
+          cited_keys=$(grep -roh \
+              -e '\\cite{[^}]*}' \
+              -e '\\citep{[^}]*}' \
+              -e '\\citet{[^}]*}' \
+              -e '\\textcite{[^}]*}' \
+              -e '\\parencite{[^}]*}' \
+              -e '\\autocite{[^}]*}' \
+              Ausarbeitung/ Vortrag/ \
+            | sed 's/^[^{]*{//;s/}//' \
+            | tr ',' '\n' \
+            | tr -d ' ' \
+            | tr '[:upper:]' '[:lower:]' \
+            | sort -u)
+
+          missing=false
+          while IFS= read -r key; do
+            [ -z "$key" ] && continue
+            if ! echo "$bib_keys" | grep -qx "$key"; then
+              echo "❌ Cited key not found in .bib: $key"
+              missing=true
+            fi
+          done <<< "$cited_keys"
+
+          if [ "$missing" = false ]; then
+            echo "✅ All cited keys found in .bib"
+          else
+            exit 1
+          fi

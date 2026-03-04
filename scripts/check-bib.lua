@@ -40,18 +40,30 @@ end
 -- Each entry is { type, key, fields = {field = value, ...}, line = N }
 local function parse_bib(content)
     local entries = {}
-    local line_num = 1
 
-    -- Track line numbers
-    local pos = 1
-    local function current_line()
-        local n = 1
-        for nl in content:sub(1, pos):gmatch("\n") do n = n + 1 end
-        return n
+    -- Build a lookup table: byte offset → line number (1-based).
+    -- We precompute every newline position once so per-entry line
+    -- lookup is O(log n) instead of O(n).
+    local newlines = {}   -- newlines[i] = byte offset of the i-th '\n'
+    for nl_pos in content:gmatch("()\n") do
+        newlines[#newlines + 1] = nl_pos
     end
 
-    -- Remove comments (% to end of line in .bib files are NOT standard,
-    -- but the % inside field values must be kept; we skip @comment entries)
+    -- Return the 1-based line number for a given byte offset.
+    local function line_at(offset)
+        -- Binary search in newlines table
+        local lo, hi = 1, #newlines
+        while lo <= hi do
+            local mid = math.floor((lo + hi) / 2)
+            if newlines[mid] < offset then
+                lo = mid + 1
+            else
+                hi = mid - 1
+            end
+        end
+        return lo   -- lo = number of newlines before offset + 1
+    end
+
     -- Iterate over @TYPE{KEY, ...} blocks
     for entry_type, rest_start in content:gmatch("@(%a+)%s*[{(]()") do
         local etype = entry_type:lower()
@@ -92,7 +104,7 @@ local function parse_bib(content)
                     type   = etype,
                     key    = key,
                     fields = fields,
-                    pos    = rest_start,
+                    line   = line_at(rest_start),
                 })
             end
         end
@@ -105,16 +117,16 @@ local function check_entries(entries, path)
     local warnings = 0
 
     for _, entry in ipairs(entries) do
+        local loc = string.format("%s:%d @%s{%s}", path, entry.line, entry.type, entry.key)
         local required = REQUIRED_FIELDS[entry.type]
         if required == nil then
-            io.write(string.format("[WARN]  %s @%s{%s}: unknown entry type\n",
-                path, entry.type, entry.key))
+            io.write(string.format("[WARN]  %s: unknown entry type\n", loc))
             warnings = warnings + 1
         else
             for _, field in ipairs(required) do
                 if not entry.fields[field] then
-                    io.write(string.format("[ERROR] %s @%s{%s}: missing required field '%s'\n",
-                        path, entry.type, entry.key, field))
+                    io.write(string.format("[ERROR] %s: missing required field '%s'\n",
+                        loc, field))
                     errors = errors + 1
                 end
             end
@@ -122,8 +134,7 @@ local function check_entries(entries, path)
 
         -- Warn about entries without a year (common oversight)
         if entry.type ~= "misc" and entry.type ~= "online" and not entry.fields["year"] then
-            io.write(string.format("[WARN]  %s @%s{%s}: missing 'year' field\n",
-                path, entry.type, entry.key))
+            io.write(string.format("[WARN]  %s: missing 'year' field\n", loc))
             warnings = warnings + 1
         end
     end

@@ -15,6 +15,7 @@ jobs:
   sync-labels:
     runs-on: ubuntu-latest
     permissions:
+      contents: read   # required by actions/checkout@v4
       issues: write    # required to create/update labels
 
     steps:

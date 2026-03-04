@@ -291,6 +291,24 @@ Most scripts support a `--help` option for usage information.
 - Usage (Python): `python3 scripts/delete-obsolete-branches.py` (requires `GITHUB_TOKEN` environment variable)
 - Dry run: `python3 scripts/delete-obsolete-branches.py --dry-run`
 
+### Lua Utility Scripts
+
+> **Prerequisite**: Build the Lua interpreter once (`cd lua-5.5.0 && make linux -j$(nproc)`).
+> The compiled binary is excluded from version control but built automatically in CI.
+> See [`docs/scripts/LUA-SCRIPTS.md`](docs/scripts/LUA-SCRIPTS.md) for full reference.
+
+**`scripts/word-count.lua`**
+- Strips LaTeX commands, math, and common environments; counts body words
+- Usage: `lua-5.5.0/src/lua scripts/word-count.lua` (defaults to both main documents)
+- Usage (explicit): `lua-5.5.0/src/lua scripts/word-count.lua Ausarbeitung/Ausarbeitung.tex`
+
+**`scripts/check-bib.lua`**
+- Validates required BibTeX fields for every entry in a `.bib` file
+- Reports errors with file name and line number
+- Usage: `lua-5.5.0/src/lua scripts/check-bib.lua` (defaults to `Ausarbeitung/Ausarbeitung.bib`)
+- Usage (explicit): `lua-5.5.0/src/lua scripts/check-bib.lua Ausarbeitung/Ausarbeitung.bib`
+- Also runs automatically as part of the `Bibliography Check` CI workflow
+
 ---
 
 ## Contributing
@@ -329,8 +347,13 @@ For information about supported versions and reporting vulnerabilities, see [SEC
 
 ## Additional Documentation
 
+- **[Documentation Index](docs/README.md)** — Central index linking every documentation file in the repository
 - [Architecture Documentation](docs/ARCHITECTURE.md) - Comprehensive project architecture and design overview
 - [Changelog](CHANGELOG.md) - Version history and notable changes
+- [Lua Scripts Reference](docs/scripts/LUA-SCRIPTS.md) - Reference for `word-count.lua` and `check-bib.lua`
+- [Improvement Summary 3.0](docs/improvement/IMPROVEMENT_SUMMARY_3.0.md) - v3.0 fixes: spellchecker, biber/bibtex, Lua, labels
+- [Improvement Summary 2.0](docs/improvement/IMPROVEMENT_SUMMARY_2.0.md) - v2.0 critical review improvements
+- [Improvement Summary 1.0](docs/improvement/IMPROVEMENTS_SUMMARY_1.0.md) - v1.0 minimal-loss improvements
 - [Contributing Guidelines](CONTRIBUTING.md) - How to contribute to this project
 - [LaTeX Installation Guide (English)](latex_install/LaTeX-Install.md) - Comprehensive LaTeX setup instructions
 - [LaTeX Installation Guide (German)](latex_install/LaTeX-Install.de.md) - Deutsche LaTeX-Installationsanleitung

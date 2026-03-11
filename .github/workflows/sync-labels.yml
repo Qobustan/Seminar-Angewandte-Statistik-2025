@@ -15,13 +15,13 @@ jobs:
   sync-labels:
     runs-on: ubuntu-latest
     permissions:
-      contents: read   # required by actions/checkout@v4
-      contents: read   # required by actions/checkout@v4
+      contents: read   # required by actions/checkout@v6
+      contents: read   # required by actions/checkout@v6
       issues: write    # required to create/update labels
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Sync labels
         uses: EndBug/label-sync@v2

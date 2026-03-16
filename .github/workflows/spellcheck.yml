@@ -55,6 +55,6 @@ jobs:
 
       - name: Comment results on PR
         if: github.event_name == 'pull_request' && steps.check_report.outputs.report_has_errors == 'true'
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v3
         with:
           path: spellcheck-report.txt

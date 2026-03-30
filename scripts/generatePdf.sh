@@ -88,7 +88,11 @@ cd "$(dirname "$0")/../Ausarbeitung"
 echo "  Step 1/4: Running ${LATEX_ENGINE} (first pass)..."
 "${LATEX_ENGINE}" -interaction=nonstopmode Ausarbeitung.tex > /dev/null
 echo "  Step 2/4: Running biber..."
-biber Ausarbeitung > /dev/null || true
+if ! biber Ausarbeitung > /dev/null; then
+    echo "  ✗ Error: biber failed for Ausarbeitung. Log:"
+    cat Ausarbeitung.blg 2>/dev/null || true
+    exit 1
+fi
 echo "  Step 3/4: Running ${LATEX_ENGINE} (second pass)..."
 "${LATEX_ENGINE}" -interaction=nonstopmode Ausarbeitung.tex > /dev/null
 echo "  Step 4/4: Running ${LATEX_ENGINE} (third pass)..."
@@ -109,7 +113,11 @@ cd ../Vortrag
 echo "  Step 1/4: Running ${LATEX_ENGINE} (first pass)..."
 "${LATEX_ENGINE}" -interaction=nonstopmode Vortrag.tex > /dev/null
 echo "  Step 2/4: Running biber..."
-biber Vortrag > /dev/null || true
+if ! biber Vortrag > /dev/null; then
+    echo "  ✗ Error: biber failed for Vortrag. Log:"
+    cat Vortrag.blg 2>/dev/null || true
+    exit 1
+fi
 echo "  Step 3/4: Running ${LATEX_ENGINE} (second pass)..."
 "${LATEX_ENGINE}" -interaction=nonstopmode Vortrag.tex > /dev/null
 echo "  Step 4/4: Running ${LATEX_ENGINE} (third pass)..."

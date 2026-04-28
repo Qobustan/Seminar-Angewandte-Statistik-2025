@@ -1,5 +1,9 @@
 name: Summarize new issues
 
+permissions:
+  id-token: write # Erforderlich, um das OIDC-Token anzufordern
+  contents: read  # Standard-Leserechte
+
 on:
   issues:
     types: [opened]

@@ -1,5 +1,9 @@
 name: Summarize new issues
 
+permissions:
+  id-token: write # Erforderlich, um das OIDC-Token anzufordern
+  contents: read  # Standard-Leserechte
+
 on:
   issues:
     types: [opened]
@@ -31,9 +35,9 @@ jobs:
           # (With passing through an parameter unchecked input is always
           # considered as text and NEVER as CODE even and especially if it
           # is VALID code!)
-          PARAMETER: ${{ steps.inference.outputs.response }}
-          gh issue comment $ISSUE_NUMBER --body '"$PARAMETER"'
+          gh issue comment "$ISSUE_NUMBER" --body "$PARAMETER"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           RESPONSE: ${{ steps.inference.outputs.response }}
+          PARAMETER: ${{ steps.inference.outputs.response }}

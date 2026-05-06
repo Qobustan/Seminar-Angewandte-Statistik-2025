@@ -18,6 +18,8 @@ natively in GitHub Markdown.
 ## 1. LaTeX Documents
 
 Dependency trees based on `\input`, `\addbibresource`, and `\includegraphics`.
+The `.latexmkrc` files in each document directory are read automatically by
+`latexmk` whenever it runs there.
 
 ### 1a. Ausarbeitung (Written Report)
 
@@ -28,13 +30,17 @@ flowchart TD
     A_common["Ausarbeitung/header-common.tex"]
     A_article["Ausarbeitung/header-article.tex"]
     A_bib[("Ausarbeitung/Ausarbeitung.bib")]
+    A_latexmkrc[("Ausarbeitung/.latexmkrc")]
     V_img[/"Vortrag/img/"/]
+    latexmk("latexmk")
 
     A_tex -->|"\input"| A_header
     A_header -->|"\input"| A_common
     A_header -->|"\input"| A_article
     A_tex -->|"\addbibresource"| A_bib
     A_tex -->|"\includegraphics"| V_img
+    latexmk -->|"reads config"| A_latexmkrc
+    latexmk -->|"compiles"| A_tex
 ```
 
 ### 1b. Vortrag (Presentation)
@@ -46,18 +52,79 @@ flowchart TD
     V_common["Vortrag/header-common.tex"]
     V_beamer["Vortrag/header-beamer.tex"]
     V_bib[("Vortrag/Vortrag.bib")]
+    V_latexmkrc[("Vortrag/.latexmkrc")]
     V_img[/"Vortrag/img/"/]
+    latexmk_v("latexmk")
 
     V_tex -->|"\input"| V_header
     V_header -->|"\input"| V_common
     V_header -->|"\input"| V_beamer
     V_tex -->|"\addbibresource"| V_bib
     V_tex -->|"\includegraphics"| V_img
+    latexmk_v -->|"reads config"| V_latexmkrc
+    latexmk_v -->|"compiles"| V_tex
+```
+
+### 1c. Historical / Archive LaTeX Snapshots
+
+These are frozen snapshots kept for reference (review meetings, secondary
+drafts). They are self-contained and are never rebuilt by the CI workflows.
+
+```mermaid
+flowchart TD
+    subgraph sek ["Ausarbeitung/Sekundärentwurf (als Entwurf eingereicht)/"]
+        sek_tex["Ausarbeitung.tex"]
+        sek_hdr["header.tex"]
+        sek_bib[("Ausarbeitung.bib")]
+        sek_tex -->|"\input"| sek_hdr
+        sek_tex -->|"\addbibresource"| sek_bib
+    end
+
+    subgraph besp_aus ["Besprechung/Material/1. Besprechung/Ausarbeitung/"]
+        ba_tex["Ausarbeitung.tex"]
+        ba_hdr["header.tex"]
+        ba_bib[("Ausarbeitung.bib")]
+        ba_tex -->|"\input"| ba_hdr
+        ba_tex -->|"\addbibresource"| ba_bib
+    end
+
+    subgraph besp_vor ["Besprechung/Material/1. Besprechung/Vortrag/"]
+        bv_tex["Vortrag.tex"]
+        bv_hdr["header.tex"]
+        bv_bib[("Vortrag.bib")]
+        bv_tex -->|"\input"| bv_hdr
+        bv_tex -->|"\addbibresource"| bv_bib
+    end
+
+    subgraph besp_stabil_aus ["Besprechung/Material/1. Besprechung/Stabil/Ausarbeitung/"]
+        bsa_tex["Ausarbeitung.tex"]
+        bsa_hdr["header.tex"]
+        bsa_common["header-common.tex"]
+        bsa_article["header-article.tex"]
+        bsa_bib[("Ausarbeitung.bib")]
+        bsa_sek["Sekundärentwurf/Ausarbeitung.tex"]
+        bsa_tex -->|"\input"| bsa_hdr
+        bsa_hdr -->|"\input"| bsa_common
+        bsa_hdr -->|"\input"| bsa_article
+        bsa_tex -->|"\addbibresource"| bsa_bib
+    end
+
+    subgraph besp_stabil_vor ["Besprechung/Material/1. Besprechung/Stabil/Vortrag/"]
+        bsv_tex["Vortrag.tex"]
+        bsv_hdr["header.tex"]
+        bsv_common["header-common.tex"]
+        bsv_beamer["header-beamer.tex"]
+        bsv_bib[("Vortrag.bib")]
+        bsv_tex -->|"\input"| bsv_hdr
+        bsv_hdr -->|"\input"| bsv_common
+        bsv_hdr -->|"\input"| bsv_beamer
+        bsv_tex -->|"\addbibresource"| bsv_bib
+    end
 ```
 
 ---
 
-## 2. Shell Scripts
+## 2. Shell Scripts (Linux / macOS)
 
 Call graph: which script delegates to or invokes which other script/tool.
 
@@ -129,6 +196,63 @@ flowchart LR
 
     remove_junk -->|"cleans aux files in"| aus_dir
     remove_junk -->|"cleans aux files in"| vor_dir
+```
+
+---
+
+## 2b. Windows Batch Scripts
+
+Windows counterparts to every `.sh` script above.  
+The call chain mirrors section 2 exactly, using `call` instead of `exec`.
+
+```mermaid
+flowchart LR
+    subgraph bin_bat ["bin/  (Windows)"]
+        pdf_bat["bin/pdf.bat"]
+        lualatex_bat["bin/lualatex.bat"]
+        docker_bat["bin/docker.bat"]
+    end
+
+    subgraph scripts_bat ["scripts/  (Windows)"]
+        generatePdf_bat["scripts/generatePdf.bat"]
+        generatePdfLua_bat["scripts/generatePdf-lualatex.bat"]
+        abkuerzung_bat["scripts/abkuerzung.bat\n(placeholder — not yet configured)"]
+    end
+
+    subgraph task_bat ["task_skripts/bash/  (Windows)"]
+        doc_version_bat["task_skripts/bash/doc_version.bat"]
+    end
+
+    subgraph cleanup_bat ["cleanup/  (Windows)"]
+        remove_junk_bat["cleanup/Remove_Junk_Windows.bat"]
+    end
+
+    subgraph latex_docs_bat ["LaTeX Document Roots"]
+        aus_dir_bat[/"Ausarbeitung/"/]
+        vor_dir_bat[/"Vortrag/"/]
+    end
+
+    subgraph ext_tools_bat ["External Tools"]
+        pdflatex_biber_bat("pdflatex / biber")
+        git_bat("git")
+        docker_bat_ext("Docker daemon")
+    end
+
+    pdf_bat      -->|"call"| generatePdf_bat
+    lualatex_bat -->|"call"| generatePdfLua_bat
+    generatePdfLua_bat -->|"LATEX_ENGINE=lualatex call"| generatePdf_bat
+    generatePdf_bat --> pdflatex_biber_bat
+    generatePdf_bat --> aus_dir_bat
+    generatePdf_bat --> vor_dir_bat
+
+    docker_bat --> docker_bat_ext
+    docker_bat -->|"volume mount"| aus_dir_bat
+    docker_bat -->|"volume mount"| vor_dir_bat
+
+    doc_version_bat --> git_bat
+
+    remove_junk_bat -->|"cleans aux files in"| aus_dir_bat
+    remove_junk_bat -->|"cleans aux files in"| vor_dir_bat
 ```
 
 ---
@@ -252,7 +376,7 @@ flowchart LR
 ## 6. GitHub Actions Workflows
 
 Dependencies between each workflow and the repository files, scripts, and
-external actions it uses. Workflows are split into three groups for clarity.
+external actions it uses. Workflows are split into groups for clarity.
 
 ### 6a. Build & Compilation Workflows
 
@@ -361,6 +485,9 @@ flowchart LR
 
 ### 6c. Repository Management Workflows
 
+Includes `.github/dependabot.yml`, which is not a workflow itself but
+monitors the `workflows/` directory for dependency updates.
+
 ```mermaid
 flowchart LR
     subgraph wf_mgmt ["Workflows"]
@@ -376,6 +503,8 @@ flowchart LR
         labeler_yml_m[(".github/labeler.yml")]
         labels_yml_m[(".github/labels.yml")]
         wiki_dir_m[/"wiki/"/]
+        dependabot_m[(".github/dependabot.yml")]
+        workflows_dir_m[/".github/workflows/"/]
     end
 
     subgraph actions_mgmt ["GitHub Actions"]
@@ -385,6 +514,7 @@ flowchart LR
         stale_m("actions/stale@v10")
         ai_inference_m("actions/ai-inference@v2")
         label_sync_m("EndBug/label-sync@v2")
+        dependabot_svc("GitHub Dependabot service")
     end
 
     greetings_wf    --> first_interaction_m
@@ -404,4 +534,30 @@ flowchart LR
     sync_labels_wf  --> checkout_m
     sync_labels_wf  --> label_sync_m
     sync_labels_wf  --> labels_yml_m
+
+    dependabot_m    -->|"monitors for updates"| workflows_dir_m
+    dependabot_svc  -->|"reads"| dependabot_m
+```
+
+### 6d. Legacy / Archived Workflow
+
+`legacy/github_workflow/docker-image.yml` is an archived predecessor of
+`.github/workflows/docker-image.yml`. It is kept for historical reference
+and is **not** executed by GitHub Actions.
+
+```mermaid
+flowchart LR
+    legacy_docker["legacy/github_workflow/\ndocker-image.yml\n(archived — not executed)"]
+    current_docker[".github/workflows/\ndocker-image.yml\n(active)"]
+    dockerfile_d["Dockerfile"]
+    buildx("docker/setup-buildx-action@v2\n(legacy only)")
+    cache("actions/cache@v3\n(legacy only)")
+    dockerhub("Docker Hub push\n(legacy only)")
+
+    legacy_docker -.->|"superseded by"| current_docker
+    legacy_docker --> dockerfile_d
+    legacy_docker --> buildx
+    legacy_docker --> cache
+    legacy_docker --> dockerhub
+    current_docker --> dockerfile_d
 ```

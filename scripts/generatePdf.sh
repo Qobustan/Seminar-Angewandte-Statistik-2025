@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# Code to generate PDF
+
+#!/bin/bash
 # SPDX-License-Identifier: MIT
 # SPDX-FileCopyrightText: 2026 Yavuzâlp Dal
 #
@@ -85,6 +89,7 @@ echo ""
 # Build Ausarbeitung
 echo "[1/2] Building Ausarbeitung..."
 cd "$(dirname "$0")/../Ausarbeitung"
+
 echo "  Step 1/4: Running ${LATEX_ENGINE} (first pass)..."
 "${LATEX_ENGINE}" -interaction=nonstopmode Ausarbeitung.tex > /dev/null
 echo "  Step 2/4: Running biber..."
@@ -97,6 +102,12 @@ echo "  Step 3/4: Running ${LATEX_ENGINE} (second pass)..."
 "${LATEX_ENGINE}" -interaction=nonstopmode Ausarbeitung.tex > /dev/null
 echo "  Step 4/4: Running ${LATEX_ENGINE} (third pass)..."
 "${LATEX_ENGINE}" -interaction=nonstopmode Ausarbeitung.tex > /dev/null
+
+# Line 112 update
+if ! biber Vortrag > /dev/null; then
+    echo "Error: biber Vortrag failed!"
+    exit 1
+fi
 
 if [[ -f "Ausarbeitung.pdf" ]]; then
     AUSARBEITUNG_SIZE=$(du -h "Ausarbeitung.pdf" | cut -f1)

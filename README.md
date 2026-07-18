@@ -253,6 +253,19 @@ After a CI build:
 
 ## Available Scripts
 
+### Unified Script Manager (Linux/macOS)
+
+**`scripts/manage.sh`**
+- Single entrypoint that routes to the most common project tools
+- Helps users avoid remembering multiple script paths
+- Usage: `./scripts/manage.sh help`
+- Examples:
+  - `./scripts/manage.sh build-pdf`
+  - `./scripts/manage.sh clean`
+  - `./scripts/manage.sh build-lua`
+  - `./scripts/manage.sh word-count`
+  - `./scripts/manage.sh check-bib`
+
 ### PDF Generation
 
 **`scripts/generatePdf.sh`** (Linux/macOS) / **`scripts/generatePdf.bat`** (Windows)
